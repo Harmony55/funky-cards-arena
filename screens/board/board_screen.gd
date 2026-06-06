@@ -2553,6 +2553,8 @@ func take_damage(target_row: int, attacker_row: int, damage: int, type: String =
 		if type != "noharam" and type != "spell" and type != "magic":
 			if type == "chob":
 				hurtOrbe(2, attacker_row)
+			if type =="justice":
+				return
 			hurtOrbe(damage, attacker_row)
 	
 	if data:
