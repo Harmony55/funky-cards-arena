@@ -1,0 +1,860 @@
+[gd_scene load_steps=98 format=2]
+
+[ext_resource path="res://fonts/ArchivoNarrow-Bold.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://fonts/SuperMario.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://screens/casier/TemplateCasier.png" type="Texture" id=3]
+[ext_resource path="res://screens/casier/indicator.png" type="Texture" id=4]
+[ext_resource path="res://audio/opening.ogg" type="AudioStream" id=5]
+[ext_resource path="res://screens/casier/casier.gd" type="Script" id=6]
+[ext_resource path="res://widgets/small_button/small_button.tscn" type="PackedScene" id=7]
+[ext_resource path="res://audio/Effect/click-sound.wav" type="AudioStream" id=8]
+[ext_resource path="res://audio/Effect/hover1.wav" type="AudioStream" id=9]
+[ext_resource path="res://screens/casier/button/OrbeBase.png" type="Texture" id=10]
+[ext_resource path="res://screens/casier/backgroundCasier.png" type="Texture" id=11]
+[ext_resource path="res://screens/builder/boxEmpty.png" type="Texture" id=12]
+[ext_resource path="res://audio/deck.ogg" type="AudioStream" id=13]
+[ext_resource path="res://screens/builder/blan.png" type="Texture" id=14]
+[ext_resource path="res://screens/casier/button/FunkyCardsActive.png" type="Texture" id=15]
+[ext_resource path="res://audio/Effect/accept-deck.wav" type="AudioStream" id=16]
+[ext_resource path="res://containers/card_list/card_list.tscn" type="PackedScene" id=17]
+[ext_resource path="res://screens/casier/obamium/frame_11_delay-0.03s.png" type="Texture" id=18]
+[ext_resource path="res://screens/casier/button/CollectionBase.png" type="Texture" id=19]
+[ext_resource path="res://screens/casier/obamium/frame_24_delay-0.03s.png" type="Texture" id=20]
+[ext_resource path="res://screens/casier/button/AreneBase.png" type="Texture" id=21]
+[ext_resource path="res://screens/casier/obamium/frame_16_delay-0.03s.png" type="Texture" id=22]
+[ext_resource path="res://screens/casier/button/SkinOrbeBase.png" type="Texture" id=23]
+[ext_resource path="res://screens/casier/obamium/frame_17_delay-0.03s.png" type="Texture" id=24]
+[ext_resource path="res://screens/casier/casierCharm.png" type="Texture" id=25]
+[ext_resource path="res://screens/casier/button/EmoteBase.png" type="Texture" id=26]
+[ext_resource path="res://screens/casier/obamium/frame_45_delay-0.03s.png" type="Texture" id=27]
+[ext_resource path="res://screens/casier/obamium/frame_35_delay-0.03s.png" type="Texture" id=28]
+[ext_resource path="res://screens/casier/obamium/frame_18_delay-0.03s.png" type="Texture" id=29]
+[ext_resource path="res://screens/casier/obamium/frame_47_delay-0.03s.png" type="Texture" id=30]
+[ext_resource path="res://screens/casier/obamium/frame_21_delay-0.03s.png" type="Texture" id=31]
+[ext_resource path="res://screens/casier/obamium/frame_40_delay-0.03s.png" type="Texture" id=32]
+[ext_resource path="res://screens/casier/obamium/frame_05_delay-0.03s.png" type="Texture" id=33]
+[ext_resource path="res://screens/casier/obamium/frame_27_delay-0.03s.png" type="Texture" id=34]
+[ext_resource path="res://screens/casier/obamium/frame_38_delay-0.03s.png" type="Texture" id=35]
+[ext_resource path="res://screens/casier/obamium/frame_19_delay-0.03s.png" type="Texture" id=36]
+[ext_resource path="res://screens/casier/obamium/frame_23_delay-0.03s.png" type="Texture" id=37]
+[ext_resource path="res://screens/casier/obamium/frame_03_delay-0.03s.png" type="Texture" id=38]
+[ext_resource path="res://screens/casier/obamium/frame_20_delay-0.03s.png" type="Texture" id=39]
+[ext_resource path="res://screens/casier/obamium/frame_22_delay-0.03s.png" type="Texture" id=40]
+[ext_resource path="res://screens/casier/obamium/frame_46_delay-0.03s.png" type="Texture" id=41]
+[ext_resource path="res://screens/casier/obamium/frame_10_delay-0.03s.png" type="Texture" id=42]
+[ext_resource path="res://screens/casier/obamium/frame_14_delay-0.03s.png" type="Texture" id=43]
+[ext_resource path="res://screens/casier/obamium/frame_26_delay-0.03s.png" type="Texture" id=44]
+[ext_resource path="res://screens/casier/obamium/frame_43_delay-0.03s.png" type="Texture" id=45]
+[ext_resource path="res://screens/casier/obamium/frame_02_delay-0.03s.png" type="Texture" id=46]
+[ext_resource path="res://screens/casier/obamium/frame_31_delay-0.03s.png" type="Texture" id=47]
+[ext_resource path="res://screens/casier/obamium/frame_49_delay-0.03s.png" type="Texture" id=48]
+[ext_resource path="res://screens/casier/obamium/frame_34_delay-0.03s.png" type="Texture" id=49]
+[ext_resource path="res://screens/casier/obamium/frame_25_delay-0.03s.png" type="Texture" id=50]
+[ext_resource path="res://screens/casier/obamium/frame_08_delay-0.03s.png" type="Texture" id=51]
+[ext_resource path="res://screens/casier/obamium/frame_09_delay-0.03s.png" type="Texture" id=52]
+[ext_resource path="res://screens/casier/obamium/frame_07_delay-0.03s.png" type="Texture" id=53]
+[ext_resource path="res://screens/casier/obamium/frame_32_delay-0.03s.png" type="Texture" id=54]
+[ext_resource path="res://screens/casier/obamium/frame_00_delay-0.03s.png" type="Texture" id=55]
+[ext_resource path="res://screens/casier/obamium/frame_04_delay-0.03s.png" type="Texture" id=56]
+[ext_resource path="res://screens/casier/obamium/frame_28_delay-0.03s.png" type="Texture" id=57]
+[ext_resource path="res://screens/casier/obamium/frame_33_delay-0.03s.png" type="Texture" id=58]
+[ext_resource path="res://screens/casier/obamium/frame_12_delay-0.03s.png" type="Texture" id=59]
+[ext_resource path="res://screens/casier/obamium/frame_29_delay-0.03s.png" type="Texture" id=60]
+[ext_resource path="res://screens/casier/obamium/frame_41_delay-0.03s.png" type="Texture" id=61]
+[ext_resource path="res://screens/casier/obamium/frame_48_delay-0.03s.png" type="Texture" id=62]
+[ext_resource path="res://screens/casier/obamium/frame_13_delay-0.03s.png" type="Texture" id=63]
+[ext_resource path="res://screens/casier/obamium/frame_15_delay-0.03s.png" type="Texture" id=64]
+[ext_resource path="res://screens/casier/obamium/frame_06_delay-0.03s.png" type="Texture" id=65]
+[ext_resource path="res://screens/casier/obamium/frame_37_delay-0.03s.png" type="Texture" id=66]
+[ext_resource path="res://screens/casier/obamium/frame_36_delay-0.03s.png" type="Texture" id=67]
+[ext_resource path="res://screens/casier/obamium/frame_30_delay-0.03s.png" type="Texture" id=68]
+[ext_resource path="res://screens/casier/obamium/frame_42_delay-0.03s.png" type="Texture" id=69]
+[ext_resource path="res://screens/casier/obamium/frame_44_delay-0.03s.png" type="Texture" id=70]
+[ext_resource path="res://screens/casier/ban.png" type="Texture" id=71]
+[ext_resource path="res://screens/casier/obamium/frame_39_delay-0.03s.png" type="Texture" id=72]
+[ext_resource path="res://screens/casier/obamium/frame_01_delay-0.03s.png" type="Texture" id=73]
+[ext_resource path="res://screens/casier/button/OuvrirBase.png" type="Texture" id=74]
+[ext_resource path="res://screens/casier/button/RetourHover.png" type="Texture" id=75]
+[ext_resource path="res://screens/casier/button/RetourBase.png" type="Texture" id=76]
+[ext_resource path="res://screens/casier/button/RetourClicked.png" type="Texture" id=77]
+[ext_resource path="res://screens/casier/Prix.png" type="Texture" id=78]
+[ext_resource path="res://screens/magasin/buttons/Obamium/ObamiumBase.png" type="Texture" id=79]
+[ext_resource path="res://widgets/menu_button/QuitterJeu_Pressed.png" type="Texture" id=80]
+[ext_resource path="res://widgets/menu_button/QuitterJeu_Base.png" type="Texture" id=81]
+[ext_resource path="res://widgets/menu_button/QuitterJeu_Hover.png" type="Texture" id=82]
+[ext_resource path="res://audio/Effect/ciao.wav" type="AudioStream" id=83]
+
+[sub_resource type="DynamicFont" id=16]
+size = 36
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=14]
+size = 38
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=1]
+size = 20
+font_data = ExtResource( 1 )
+
+[sub_resource type="Shader" id=10]
+code = "shader_type canvas_item;
+
+// Ranges from 0 to 1 over the course of the transition.
+// We use this to actually animate the shader.
+uniform float progress : hint_range(0, 1);
+
+// Size of each diamond, in pixels.
+uniform float diamondPixelSize = 10f;
+
+void fragment() {
+	float xFraction = fract(FRAGCOORD.x / diamondPixelSize);
+	float yFraction = fract(FRAGCOORD.y / diamondPixelSize);
+	float xDistance = abs(xFraction - 0.5);
+	float yDistance = abs(yFraction - 0.5);
+	if (xDistance + yDistance + UV.x + UV.y > progress * 4f) {
+		discard;
+	}
+}"
+
+[sub_resource type="ShaderMaterial" id=11]
+shader = SubResource( 10 )
+
+[sub_resource type="Animation" id=12]
+resource_name = "FadeIn"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:material:shader_param/progress")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 1.0, 0.0 ]
+}
+
+[sub_resource type="Animation" id=13]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:material:shader_param/progress")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 1.0 ]
+}
+
+[sub_resource type="DynamicFont" id=18]
+size = 24
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=22]
+size = 52
+outline_size = 3
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=17]
+size = 40
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+extra_spacing_char = 1
+extra_spacing_space = 1
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=21]
+size = 59
+outline_size = 3
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=23]
+size = 60
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
+
+[sub_resource type="SpriteFrames" id=24]
+animations = [ {
+"frames": [ ExtResource( 55 ), ExtResource( 73 ), ExtResource( 46 ), ExtResource( 38 ), ExtResource( 56 ), ExtResource( 33 ), ExtResource( 65 ), ExtResource( 53 ), ExtResource( 51 ), ExtResource( 52 ), ExtResource( 42 ), ExtResource( 18 ), ExtResource( 59 ), ExtResource( 63 ), ExtResource( 43 ), ExtResource( 64 ), ExtResource( 22 ), ExtResource( 24 ), ExtResource( 29 ), ExtResource( 36 ), ExtResource( 39 ), ExtResource( 31 ), ExtResource( 40 ), ExtResource( 37 ), ExtResource( 20 ), ExtResource( 50 ), ExtResource( 44 ), ExtResource( 34 ), ExtResource( 57 ), ExtResource( 60 ), ExtResource( 68 ), ExtResource( 47 ), ExtResource( 54 ), ExtResource( 58 ), ExtResource( 49 ), ExtResource( 28 ), ExtResource( 67 ), ExtResource( 66 ), ExtResource( 35 ), ExtResource( 72 ), ExtResource( 32 ), ExtResource( 61 ), ExtResource( 69 ), ExtResource( 45 ), ExtResource( 70 ), ExtResource( 27 ), ExtResource( 41 ), ExtResource( 30 ), ExtResource( 62 ), ExtResource( 48 ) ],
+"loop": true,
+"name": "default",
+"speed": 24.0
+} ]
+
+[sub_resource type="DynamicFont" id=25]
+size = 60
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
+
+[node name="CasierScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( 335, 227 )
+script = ExtResource( 6 )
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+margin_right = 1280.0
+margin_bottom = 720.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ColorRect2"]
+margin_left = 14.0
+margin_top = 23.0
+margin_right = 624.0
+margin_bottom = 160.0
+custom_fonts/font = SubResource( 16 )
+text = "Trier par : Twitch  Hongrie  Naruto"
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="TextureRect" parent="."]
+margin_right = 1280.0
+margin_bottom = 720.0
+texture = ExtResource( 25 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect3" type="TextureRect" parent="."]
+margin_right = 1280.0
+margin_bottom = 720.0
+texture = ExtResource( 11 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="categories" type="Control" parent="."]
+visible = false
+margin_left = -147.0
+margin_top = 148.0
+margin_right = 37.0
+margin_bottom = 626.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GridContainer" type="GridContainer" parent="categories"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FunkyPack" type="Label" parent="categories/GridContainer"]
+margin_right = 177.0
+margin_bottom = 39.0
+custom_fonts/font = SubResource( 14 )
+text = "Funky Pack"
+
+[node name="SkinOrbe" type="Label" parent="categories/GridContainer"]
+margin_top = 43.0
+margin_right = 177.0
+margin_bottom = 82.0
+custom_fonts/font = SubResource( 14 )
+text = "Skin d'orbe"
+
+[node name="SkinOrbe2" type="Label" parent="categories/GridContainer"]
+margin_top = 86.0
+margin_right = 177.0
+margin_bottom = 125.0
+custom_fonts/font = SubResource( 14 )
+text = "Fortnite"
+
+[node name="Control" type="Control" parent="."]
+margin_left = 78.0
+margin_top = 230.0
+margin_right = 779.0
+margin_bottom = 657.0
+
+[node name="Selector" type="TextureRect" parent="Control"]
+visible = false
+margin_left = 1.0
+margin_top = 91.0
+margin_right = 186.0
+margin_bottom = 276.0
+texture = ExtResource( 4 )
+stretch_mode = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Panel" type="Panel" parent="Control/VBoxContainer"]
+margin_right = 701.0
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/VBoxContainer/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 15.0
+margin_right = -6.0
+margin_bottom = 444.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Control"]
+anchor_top = 0.028
+anchor_right = 1.037
+anchor_bottom = 1.028
+margin_top = 0.0439997
+margin_right = 0.0629883
+margin_bottom = 0.0440063
+
+[node name="GridContainer" type="GridContainer" parent="Control/ScrollContainer"]
+columns = 4
+
+[node name="TitleBg" type="ColorRect" parent="."]
+visible = false
+anchor_right = 1.0
+margin_left = 20.0
+margin_top = 20.0
+margin_right = -20.0
+rect_min_size = Vector2( 0, 60 )
+color = Color( 0, 0, 0, 0.784314 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TitleLayout" type="HBoxContainer" parent="TitleBg"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 5.0
+margin_top = 5.0
+margin_right = -5.0
+margin_bottom = -5.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="TitleBg/TitleLayout"]
+margin_right = 61.0
+margin_bottom = 51.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "Gestion
+Deck"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Separator" type="Control" parent="TitleBg/TitleLayout"]
+margin_left = 65.0
+margin_right = 85.0
+margin_bottom = 51.0
+rect_min_size = Vector2( 20, 0 )
+
+[node name="CategoriesLayout" type="VBoxContainer" parent="TitleBg/TitleLayout"]
+margin_left = 89.0
+margin_right = 347.0
+margin_bottom = 51.0
+
+[node name="ClassLayout" type="HBoxContainer" parent="TitleBg/TitleLayout/CategoriesLayout"]
+margin_right = 258.0
+margin_bottom = 20.0
+
+[node name="ClassLbl" type="Label" parent="TitleBg/TitleLayout/CategoriesLayout/ClassLayout"]
+margin_top = 3.0
+margin_right = 94.0
+margin_bottom = 17.0
+text = "Filtrer par type"
+
+[node name="Class" type="OptionButton" parent="TitleBg/TitleLayout/CategoriesLayout/ClassLayout"]
+margin_left = 98.0
+margin_right = 248.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 150, 0 )
+
+[node name="RarityLayout" type="HBoxContainer" parent="TitleBg/TitleLayout/CategoriesLayout"]
+margin_top = 24.0
+margin_right = 258.0
+margin_bottom = 48.0
+
+[node name="RarityLbl" type="Label" parent="TitleBg/TitleLayout/CategoriesLayout/RarityLayout"]
+margin_right = 104.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 0, 24 )
+text = "Filtrer par rareté"
+valign = 1
+
+[node name="Rarity" type="OptionButton" parent="TitleBg/TitleLayout/CategoriesLayout/RarityLayout"]
+margin_left = 108.0
+margin_right = 258.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 150, 0 )
+
+[node name="ValuesLayout" type="VBoxContainer" parent="TitleBg/TitleLayout"]
+margin_left = 351.0
+margin_right = 501.0
+margin_bottom = 51.0
+
+[node name="Values" type="OptionButton" parent="TitleBg/TitleLayout/ValuesLayout"]
+margin_right = 150.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 150, 0 )
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ComparisionLayout" type="HBoxContainer" parent="TitleBg/TitleLayout/ValuesLayout"]
+margin_top = 24.0
+margin_right = 150.0
+margin_bottom = 48.0
+
+[node name="ComparisonOperator" type="OptionButton" parent="TitleBg/TitleLayout/ValuesLayout/ComparisionLayout"]
+margin_right = 72.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+text = "="
+clip_text = true
+items = [ "=", null, false, 0, null, ">", null, false, 1, null, ">=", null, false, 2, null, "<", null, false, 3, null, "<=", null, false, 4, null ]
+selected = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ComparisonValue" type="SpinBox" parent="TitleBg/TitleLayout/ValuesLayout/ComparisionLayout"]
+margin_left = 76.0
+margin_right = 150.0
+margin_bottom = 24.0
+min_value = -1000.0
+max_value = 1000.0
+allow_greater = true
+allow_lesser = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SortLayout" type="GridContainer" parent="TitleBg/TitleLayout"]
+visible = false
+margin_left = 659.0
+margin_right = 900.0
+margin_bottom = 52.0
+columns = 2
+
+[node name="RaritySort" type="CheckBox" parent="TitleBg/TitleLayout/SortLayout"]
+margin_right = 118.0
+margin_bottom = 24.0
+text = "Trie par rareté"
+
+[node name="ManaSort" type="CheckBox" parent="TitleBg/TitleLayout/SortLayout"]
+margin_left = 122.0
+margin_right = 241.0
+margin_bottom = 24.0
+text = "Trie par bobux"
+
+[node name="NameSort" type="CheckBox" parent="TitleBg/TitleLayout/SortLayout"]
+margin_top = 28.0
+margin_right = 118.0
+margin_bottom = 52.0
+text = "Trie par nom"
+
+[node name="Spacer" type="Control" parent="TitleBg/TitleLayout"]
+margin_left = 505.0
+margin_right = 1230.0
+margin_bottom = 51.0
+size_flags_horizontal = 3
+
+[node name="TextsLayout" type="VBoxContainer" parent="."]
+margin_left = 407.0
+margin_top = 21.0
+margin_right = 619.0
+margin_bottom = 53.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Texts" type="OptionButton" parent="TextsLayout"]
+visible = false
+margin_right = 212.0
+margin_bottom = 26.0
+rect_min_size = Vector2( 150, 0 )
+icon = ExtResource( 14 )
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BackBtn" parent="." instance=ExtResource( 7 )]
+margin_left = 78.0
+margin_top = 31.0
+margin_right = 278.0
+margin_bottom = 86.0
+rect_min_size = Vector2( 200, 0 )
+texture_normal = ExtResource( 76 )
+texture_pressed = ExtResource( 77 )
+texture_hover = ExtResource( 75 )
+stretch_mode = 5
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 13 )
+autoplay = true
+bus = "Musique"
+
+[node name="MusicOpening" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+bus = "Musique"
+
+[node name="click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+bus = "Effect"
+
+[node name="accept" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 16 )
+bus = "Effect"
+
+[node name="hover" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
+volume_db = -10.0
+bus = "Effect"
+
+[node name="TextureRect" type="ColorRect" parent="."]
+visible = false
+material = SubResource( 11 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="TextureRect"]
+anims/FadeIn = SubResource( 12 )
+anims/RESET = SubResource( 13 )
+
+[node name="Button" type="TextureButton" parent="."]
+margin_left = 843.0
+margin_top = 587.0
+margin_right = 1155.0
+margin_bottom = 664.0
+texture_normal = ExtResource( 74 )
+expand = true
+stretch_mode = 5
+
+[node name="Sprite2" type="TextureRect" parent="."]
+visible = false
+anchor_right = 0.053
+anchor_bottom = 0.07
+margin_left = 986.0
+margin_top = 184.0
+margin_right = 1121.16
+margin_bottom = 255.6
+rect_min_size = Vector2( 100, 100 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FunkyPackButton" type="TextureButton" parent="."]
+margin_left = 64.0
+margin_top = 147.0
+margin_right = 249.0
+margin_bottom = 225.0
+texture_normal = ExtResource( 15 )
+expand = true
+stretch_mode = 5
+
+[node name="OrbeButton" type="TextureButton" parent="."]
+margin_left = 249.0
+margin_top = 147.0
+margin_right = 441.0
+margin_bottom = 225.0
+texture_normal = ExtResource( 10 )
+expand = true
+stretch_mode = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SkinOrbeButton" type="TextureButton" parent="."]
+margin_left = 441.0
+margin_top = 147.0
+margin_right = 633.0
+margin_bottom = 225.0
+texture_normal = ExtResource( 23 )
+expand = true
+stretch_mode = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ArenaButton" type="TextureButton" parent="."]
+margin_left = 632.0
+margin_top = 147.0
+margin_right = 825.0
+margin_bottom = 225.0
+texture_normal = ExtResource( 21 )
+expand = true
+stretch_mode = 5
+
+[node name="EmoteButton" type="TextureButton" parent="."]
+margin_left = 824.0
+margin_top = 147.0
+margin_right = 1017.0
+margin_bottom = 225.0
+texture_normal = ExtResource( 26 )
+expand = true
+stretch_mode = 5
+
+[node name="CollectionButton" type="TextureButton" parent="."]
+margin_left = 1016.0
+margin_top = 147.0
+margin_right = 1201.0
+margin_bottom = 225.0
+texture_normal = ExtResource( 19 )
+expand = true
+stretch_mode = 5
+
+[node name="RareButton" type="TextureButton" parent="."]
+visible = false
+margin_left = 1040.0
+margin_top = 114.0
+margin_right = 1071.0
+margin_bottom = 144.0
+texture_normal = ExtResource( 12 )
+expand = true
+stretch_mode = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RareLabel" type="Label" parent="."]
+visible = false
+margin_left = 1078.0
+margin_top = 115.0
+margin_right = 1252.0
+margin_bottom = 142.0
+custom_fonts/font = SubResource( 18 )
+text = "Couleurs vives"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BuilderLayout" type="HBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 71.0
+margin_top = 234.0
+margin_right = -510.0
+margin_bottom = -48.0
+
+[node name="LibraryBg" type="TextureRect" parent="BuilderLayout"]
+margin_right = 699.0
+margin_bottom = 438.0
+rect_min_size = Vector2( 0, 60 )
+size_flags_horizontal = 3
+
+[node name="LibraryScroll" type="ScrollContainer" parent="BuilderLayout/LibraryBg"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 15.0
+margin_top = 16.0
+margin_right = -11.0
+
+[node name="LibraryContainer" parent="BuilderLayout/LibraryBg/LibraryScroll" instance=ExtResource( 17 )]
+margin_right = 673.0
+margin_bottom = 422.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+in_anchor = NodePath("../../InAnchor")
+out_anchor = NodePath("../../OutAnchor")
+
+[node name="InAnchor" type="Control" parent="BuilderLayout/LibraryBg"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+rect_rotation = 90.0
+rect_scale = Vector2( 1e-05, 1e-05 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OutAnchor" type="Control" parent="BuilderLayout/LibraryBg"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+rect_rotation = 90.0
+rect_scale = Vector2( 1e-05, 1e-05 )
+
+[node name="Prix" type="TextureRect" parent="."]
+visible = false
+margin_left = 843.0
+margin_top = 512.0
+margin_right = 1232.0
+margin_bottom = 645.0
+rect_scale = Vector2( 0.8, 0.8 )
+texture = ExtResource( 78 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Prix" type="Label" parent="Prix"]
+margin_left = 133.75
+margin_top = 40.0
+margin_right = 324.75
+margin_bottom = 93.0
+custom_fonts/font = SubResource( 22 )
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="RichTextLabel" parent="."]
+margin_left = 836.0
+margin_top = 297.0
+margin_right = 1167.0
+margin_bottom = 546.0
+custom_constants/table_vseparation = 0
+custom_constants/table_hseparation = 0
+custom_constants/line_separation = -3
+custom_fonts/normal_font = SubResource( 17 )
+text = "Qu'attendez vous pour ouvrir ce pack qui vous réserve tant de surprises ?..."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="."]
+margin_left = 836.5
+margin_top = 232.0
+margin_right = 1213.5
+margin_bottom = 292.0
+custom_fonts/font = SubResource( 21 )
+text = "Funky Pack"
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+visible = false
+position = Vector2( 640, 360 )
+scale = Vector2( 1.17647, 1.1784 )
+texture = ExtResource( 3 )
+
+[node name="EmoteSound" type="AudioStreamPlayer" parent="."]
+bus = "Effect"
+
+[node name="Ciao" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 83 )
+bus = "Effect"
+
+[node name="ObamiumContainer" type="TextureButton" parent="."]
+visible = false
+margin_left = 974.0
+margin_top = 9.0
+margin_right = 1208.0
+margin_bottom = 116.0
+texture_normal = ExtResource( 79 )
+expand = true
+stretch_mode = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ObamiumNumber" type="Label" parent="."]
+visible = false
+margin_left = 1039.0
+margin_top = 33.0
+margin_right = 1199.0
+margin_bottom = 93.0
+rect_pivot_offset = Vector2( 145, 60 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 23 )
+text = "3902"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Obamium" type="AnimatedSprite" parent="."]
+visible = false
+position = Vector2( 1013, 62 )
+scale = Vector2( 0.15, 0.15 )
+frames = SubResource( 24 )
+frame = 9
+playing = true
+
+[node name="Ban" type="TextureRect" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 71 )
+expand = true
+
+[node name="BanText" type="Label" parent="Ban"]
+margin_left = 671.0
+margin_top = 340.0
+margin_right = 997.0
+margin_bottom = 400.0
+custom_colors/font_color = Color( 1, 0.968627, 0.968627, 1 )
+custom_fonts/font = SubResource( 25 )
+text = "jusqu'à la pire saison"
+
+[node name="BanBtn" parent="Ban" instance=ExtResource( 7 )]
+margin_left = 423.0
+margin_top = 450.0
+margin_right = 864.0
+margin_bottom = 541.0
+rect_min_size = Vector2( 200, 0 )
+texture_normal = ExtResource( 81 )
+texture_pressed = ExtResource( 80 )
+texture_hover = ExtResource( 82 )
+stretch_mode = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="scroll_started" from="Control/ScrollContainer" to="." method="_on_ScrollContainer_scroll_started"]
+[connection signal="item_selected" from="TitleBg/TitleLayout/CategoriesLayout/ClassLayout/Class" to="." method="_on_Class_item_selected"]
+[connection signal="toggled" from="TitleBg/TitleLayout/CategoriesLayout/ClassLayout/Class" to="." method="_on_Class_toggled"]
+[connection signal="item_selected" from="TitleBg/TitleLayout/CategoriesLayout/RarityLayout/Rarity" to="." method="_on_Rarity_item_selected"]
+[connection signal="toggled" from="TitleBg/TitleLayout/CategoriesLayout/RarityLayout/Rarity" to="." method="_on_Rarity_toggled"]
+[connection signal="item_selected" from="TitleBg/TitleLayout/ValuesLayout/Values" to="." method="_on_Values_item_selected"]
+[connection signal="toggled" from="TitleBg/TitleLayout/ValuesLayout/Values" to="." method="_on_Values_toggled"]
+[connection signal="item_selected" from="TitleBg/TitleLayout/ValuesLayout/ComparisionLayout/ComparisonOperator" to="." method="_on_ComparisonOperator_item_selected"]
+[connection signal="pressed" from="TitleBg/TitleLayout/ValuesLayout/ComparisionLayout/ComparisonOperator" to="." method="_on_ComparisonOperator_pressed"]
+[connection signal="toggled" from="TitleBg/TitleLayout/ValuesLayout/ComparisionLayout/ComparisonOperator" to="." method="_on_ComparisonOperator_toggled"]
+[connection signal="value_changed" from="TitleBg/TitleLayout/ValuesLayout/ComparisionLayout/ComparisonValue" to="." method="_on_ComparisonValue_value_changed"]
+[connection signal="toggled" from="TitleBg/TitleLayout/SortLayout/RaritySort" to="." method="_on_RaritySort_toggled"]
+[connection signal="toggled" from="TitleBg/TitleLayout/SortLayout/ManaSort" to="." method="_on_ManaSort_toggled"]
+[connection signal="toggled" from="TitleBg/TitleLayout/SortLayout/NameSort" to="." method="_on_NameSort_toggled"]
+[connection signal="item_selected" from="TextsLayout/Texts" to="." method="_on_Texts_item_selected"]
+[connection signal="toggled" from="TextsLayout/Texts" to="." method="_on_Texts_toggled"]
+[connection signal="pressed" from="BackBtn" to="." method="_on_BackBtn_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="FunkyPackButton" to="." method="_on_FunkyPackButton_pressed"]
+[connection signal="pressed" from="FunkyPackButton" to="." method="_on_button_pressed" binds= [ 1 ]]
+[connection signal="pressed" from="OrbeButton" to="." method="_on_OrbeButton_pressed"]
+[connection signal="pressed" from="OrbeButton" to="." method="_on_button_pressed" binds= [ 2 ]]
+[connection signal="pressed" from="SkinOrbeButton" to="." method="_on_SkinOrbeButton_pressed"]
+[connection signal="pressed" from="SkinOrbeButton" to="." method="_on_button_pressed" binds= [ 3 ]]
+[connection signal="pressed" from="ArenaButton" to="." method="_on_ArenaButton_pressed"]
+[connection signal="pressed" from="ArenaButton" to="." method="_on_button_pressed" binds= [ 4 ]]
+[connection signal="pressed" from="EmoteButton" to="." method="_on_EmoteButton_pressed"]
+[connection signal="pressed" from="EmoteButton" to="." method="_on_button_pressed" binds= [ 5 ]]
+[connection signal="pressed" from="CollectionButton" to="." method="_on_CollectionButton_pressed"]
+[connection signal="pressed" from="CollectionButton" to="." method="_on_button_pressed" binds= [ 6 ]]
+[connection signal="pressed" from="RareButton" to="." method="_on_RareButton_pressed"]
+[connection signal="card_clicked" from="BuilderLayout/LibraryBg/LibraryScroll/LibraryContainer" to="." method="_on_LibraryContainer_card_clicked"]
+[connection signal="pressed" from="ObamiumContainer" to="." method="_on_ObamiumContainer_pressed"]
+[connection signal="pressed" from="Ban/BanBtn" to="." method="_on_BanBtn_pressed"]

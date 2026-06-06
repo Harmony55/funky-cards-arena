@@ -1,0 +1,1416 @@
+[gd_scene load_steps=55 format=2]
+
+[ext_resource path="res://addons/cardengine/card/abstract_card.tscn" type="PackedScene" id=1]
+[ext_resource path="res://cards/normal/normal_card.gd" type="Script" id=2]
+[ext_resource path="res://cards/normal/card_back_background.png" type="Texture" id=3]
+[ext_resource path="res://cards/normal/card_front_background.png" type="Texture" id=4]
+[ext_resource path="res://cards/normal/card_name_background.png" type="Texture" id=5]
+[ext_resource path="res://fonts/ArchivoNarrow-Bold.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://cards/normal/card_shadow.png" type="Texture" id=7]
+[ext_resource path="res://cards/normal/card_desc_background.png" type="Texture" id=8]
+[ext_resource path="res://screens/board/Particle/GreenCross.png" type="Texture" id=9]
+[ext_resource path="res://cards/normal/card_picture_placeholder.png" type="Texture" id=10]
+[ext_resource path="res://cards/normal/card_placeholder.png" type="Texture" id=11]
+[ext_resource path="res://cards/normal/1 - Bernadette.png" type="Texture" id=12]
+[ext_resource path="res://cards/normal/card_picture_texxit.png" type="Texture" id=13]
+[ext_resource path="res://cards/normal/card_front_background_ultrarare.png" type="Texture" id=14]
+[ext_resource path="res://cards/normal/3 - Kirbo.png" type="Texture" id=15]
+[ext_resource path="res://cards/normal/CardDark.png" type="Texture" id=16]
+[ext_resource path="res://cards/normal/card_front_background_divin.png" type="Texture" id=17]
+[ext_resource path="res://cards/normal/card_front_background_commun.png" type="Texture" id=18]
+[ext_resource path="res://cards/normal/5 - Dodo.png" type="Texture" id=19]
+[ext_resource path="res://cards/normal/card_picture_MapendoBoy.png" type="Texture" id=20]
+[ext_resource path="res://cards/normal/7 - Cyprien.png" type="Texture" id=21]
+[ext_resource path="res://fonts/SuperMario.ttf" type="DynamicFontData" id=22]
+[ext_resource path="res://fonts/normal_cardBig.tres" type="DynamicFont" id=23]
+[ext_resource path="res://cards/normal/card_front_background_spell_ultrarare.png" type="Texture" id=24]
+[ext_resource path="res://cards/normal/card_front_background_spell_commun.png" type="Texture" id=25]
+[ext_resource path="res://cards/normal/card_mana.png" type="Texture" id=26]
+[ext_resource path="res://cards/normal/card_front_background_atypique.png" type="Texture" id=27]
+[ext_resource path="res://screens/board/Particle/RedSword.png" type="Texture" id=28]
+[ext_resource path="res://cards/74 - Ariana Grande.png" type="Texture" id=29]
+
+[sub_resource type="Shader" id=57]
+code = "/*
+Shader from Godot Shaders - the free shader library.
+godotshaders.com/shader/teleport-effect
+
+This shader is under CC0 license. Feel free to use, improve and 
+change this shader according to your needs and consider sharing 
+the modified result on godotshaders.com.
+*/
+
+shader_type canvas_item;
+
+uniform float progress : hint_range(0.0, 1.0);
+uniform float noise_desnity = 60;
+uniform float beam_size : hint_range(0, 0.15);
+uniform vec4 color : hint_color = vec4(0.0, 1.02, 1.2, 1.0);
+
+// We are generating our own noise here. You could experiment with the 
+// built in SimplexNoise or your own noise texture for other effects.
+vec2 random(vec2 uv){
+    uv = vec2( dot(uv, vec2(127.1,311.7) ),
+               dot(uv, vec2(269.5,183.3) ) );
+    return -1.0 + 2.0 * fract(sin(uv) * 43758.5453123);
+}
+
+float noise(vec2 uv) {
+    vec2 uv_index = floor(uv);
+    vec2 uv_fract = fract(uv);
+
+    vec2 blur = smoothstep(0.0, 1.0, uv_fract);
+
+    return mix( mix( dot( random(uv_index + vec2(0.0,0.0) ), uv_fract - vec2(0.0,0.0) ),
+                     dot( random(uv_index + vec2(1.0,0.0) ), uv_fract - vec2(1.0,0.0) ), blur.x),
+                mix( dot( random(uv_index + vec2(0.0,1.0) ), uv_fract - vec2(0.0,1.0) ),
+                     dot( random(uv_index + vec2(1.0,1.0) ), uv_fract - vec2(1.0,1.0) ), blur.x), blur.y) * 0.5 + 0.5;
+}
+
+void fragment()
+{
+	vec4 tex = texture(TEXTURE, UV);
+	
+	float noise = noise(UV * noise_desnity) * UV.y;
+	
+	float d1 = step(progress, noise);
+	float d2 = step(progress - beam_size, noise);
+	
+	vec3 beam = vec3(d2 - d1) * color.rgb;
+	
+	tex.rgb += beam;
+	tex.a *= d2;
+	
+	COLOR = tex;
+}"
+
+[sub_resource type="ShaderMaterial" id=9]
+shader = SubResource( 57 )
+shader_param/progress = 0.0
+shader_param/noise_desnity = 60.0
+shader_param/beam_size = null
+shader_param/color = Color( 0, 1.02, 1.2, 1 )
+
+[sub_resource type="Animation" id=14]
+resource_name = "Fade"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:material:shader_param/progress")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../PictureGroup/Bernadette:material:shader_param/progress")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+
+[sub_resource type="Animation" id=15]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:material:shader_param/progress")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../PictureGroup/Bernadette:material:shader_param/progress")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+
+[sub_resource type="DynamicFont" id=6]
+size = 32
+outline_size = 3
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 22 )
+
+[sub_resource type="Shader" id=12]
+code = "/*
+Shader from Godot Shaders - the free shader library.
+godotshaders.com/shader/teleport-effect
+
+This shader is under CC0 license. Feel free to use, improve and 
+change this shader according to your needs and consider sharing 
+the modified result on godotshaders.com.
+*/
+
+shader_type canvas_item;
+
+uniform float progress : hint_range(0.0, 1.0);
+uniform float noise_desnity = 60;
+uniform float beam_size : hint_range(0.01, 0.15);
+uniform vec4 color : hint_color = vec4(0.0, 1.02, 1.2, 1.0);
+
+// We are generating our own noise here. You could experiment with the 
+// built in SimplexNoise or your own noise texture for other effects.
+vec2 random(vec2 uv){
+    uv = vec2( dot(uv, vec2(127.1,311.7) ),
+               dot(uv, vec2(269.5,183.3) ) );
+    return -1.0 + 2.0 * fract(sin(uv) * 43758.5453123);
+}
+
+float noise(vec2 uv) {
+    vec2 uv_index = floor(uv);
+    vec2 uv_fract = fract(uv);
+
+    vec2 blur = smoothstep(0.0, 1.0, uv_fract);
+
+    return mix( mix( dot( random(uv_index + vec2(0.0,0.0) ), uv_fract - vec2(0.0,0.0) ),
+                     dot( random(uv_index + vec2(1.0,0.0) ), uv_fract - vec2(1.0,0.0) ), blur.x),
+                mix( dot( random(uv_index + vec2(0.0,1.0) ), uv_fract - vec2(0.0,1.0) ),
+                     dot( random(uv_index + vec2(1.0,1.0) ), uv_fract - vec2(1.0,1.0) ), blur.x), blur.y) * 0.5 + 0.5;
+}
+
+void fragment()
+{
+	vec4 tex = texture(TEXTURE, UV);
+	
+	float noise = noise(UV * noise_desnity) * UV.y;
+	
+	float d1 = step(progress, noise);
+	float d2 = step(progress - beam_size, noise);
+	
+	vec3 beam = vec3(d2 - d1) * color.rgb;
+	
+	tex.rgb += beam;
+	tex.a *= d2;
+	
+	COLOR = tex;
+}"
+
+[sub_resource type="ShaderMaterial" id=13]
+shader = SubResource( 12 )
+shader_param/progress = null
+shader_param/noise_desnity = 60.0
+shader_param/beam_size = null
+shader_param/color = Color( 0, 1.02, 1.2, 1 )
+
+[sub_resource type="DynamicFont" id=1]
+size = 28
+outline_size = 3
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+font_data = ExtResource( 6 )
+
+[sub_resource type="Shader" id=10]
+code = "/*
+Shader from Godot Shaders - the free shader library.
+godotshaders.com/shader/teleport-effect
+
+This shader is under CC0 license. Feel free to use, improve and 
+change this shader according to your needs and consider sharing 
+the modified result on godotshaders.com.
+*/
+
+shader_type canvas_item;
+
+uniform float progress : hint_range(0.0, 1.0);
+uniform float noise_desnity = 60;
+uniform float beam_size : hint_range(0, 0.15);
+uniform vec4 color : hint_color = vec4(0.0, 1.02, 1.2, 1.0);
+
+// We are generating our own noise here. You could experiment with the 
+// built in SimplexNoise or your own noise texture for other effects.
+vec2 random(vec2 uv){
+    uv = vec2( dot(uv, vec2(127.1,311.7) ),
+               dot(uv, vec2(269.5,183.3) ) );
+    return -1.0 + 2.0 * fract(sin(uv) * 43758.5453123);
+}
+
+float noise(vec2 uv) {
+    vec2 uv_index = floor(uv);
+    vec2 uv_fract = fract(uv);
+
+    vec2 blur = smoothstep(0.0, 1.0, uv_fract);
+
+    return mix( mix( dot( random(uv_index + vec2(0.0,0.0) ), uv_fract - vec2(0.0,0.0) ),
+                     dot( random(uv_index + vec2(1.0,0.0) ), uv_fract - vec2(1.0,0.0) ), blur.x),
+                mix( dot( random(uv_index + vec2(0.0,1.0) ), uv_fract - vec2(0.0,1.0) ),
+                     dot( random(uv_index + vec2(1.0,1.0) ), uv_fract - vec2(1.0,1.0) ), blur.x), blur.y) * 0.5 + 0.5;
+}
+
+void fragment()
+{
+	vec4 tex = texture(TEXTURE, UV);
+	
+	float noise = noise(UV * noise_desnity) * UV.y;
+	
+	float d1 = step(progress, noise);
+	float d2 = step(progress - beam_size, noise);
+	
+	vec3 beam = vec3(d2 - d1) * color.rgb;
+	
+	tex.rgb += beam;
+	tex.a *= d2;
+	
+	COLOR = tex;
+}"
+
+[sub_resource type="ShaderMaterial" id=11]
+shader = SubResource( 10 )
+shader_param/progress = 0.0
+shader_param/noise_desnity = 60.0
+shader_param/beam_size = 0.01
+shader_param/color = Color( 0, 1.02, 1.2, 1 )
+
+[sub_resource type="Shader" id=19]
+code = "shader_type canvas_item;
+
+uniform vec4 hit_color : hint_color = vec4(1.0, 1.0, 1.0, 1.0);
+uniform float hit_strength : hint_range(0.0,1.0) = 0.0;
+
+void fragment() {
+	vec4 custom_color = texture(TEXTURE, UV);
+	custom_color.rgb = mix(custom_color.rgb, hit_color.rgb, hit_strength);
+	COLOR = custom_color;
+}"
+
+[sub_resource type="ShaderMaterial" id=20]
+shader = SubResource( 19 )
+shader_param/hit_color = Color( 1, 1, 1, 1 )
+shader_param/hit_strength = 0.0
+
+[sub_resource type="DynamicFont" id=4]
+size = 11
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 29
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 22 )
+
+[sub_resource type="DynamicFont" id=58]
+size = 55
+outline_size = 4
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 22 )
+
+[sub_resource type="DynamicFont" id=59]
+size = 55
+outline_size = 4
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 22 )
+
+[sub_resource type="DynamicFont" id=60]
+size = 55
+outline_size = 4
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 22 )
+
+[sub_resource type="DynamicFont" id=25]
+size = 100
+outline_size = 10
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 22 )
+
+[sub_resource type="Gradient" id=23]
+colors = PoolColorArray( 1, 1, 1, 1, 1, 1, 1, 0 )
+
+[sub_resource type="GradientTexture" id=24]
+gradient = SubResource( 23 )
+
+[sub_resource type="ParticlesMaterial" id=22]
+lifetime_randomness = 0.3
+emission_shape = 1
+emission_sphere_radius = 71.27
+flag_disable_z = true
+direction = Vector3( 1, -90, 0 )
+gravity = Vector3( 0, -20, 0 )
+initial_velocity = 100.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+color_ramp = SubResource( 24 )
+anim_speed_random = 0.26
+
+[sub_resource type="Animation" id=18]
+resource_name = "AttackDown"
+length = 0.4
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimContainer/Front/BackgroundCommun:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.25, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, -100 ), Vector2( 0, 20 ), Vector2( 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AnimContainer/Front/PictureGroup/Bernadette:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.25, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, -100 ), Vector2( 0, 20 ), Vector2( 0, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("AnimContainer/Shadow:offset")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.25, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, -100 ), Vector2( 0, 20 ), Vector2( 0, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("AnimContainer/Front/Element:margin_bottom")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.25, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0.0, -100, 20, 0.0 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("AnimContainer/Front/Element/Attack:rect_position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.25, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -205, 243 ), Vector2( -205, 143 ), Vector2( -205, 263 ), Vector2( -205, 243 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("AnimContainer/Front/Element/Hp:rect_position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 0.25, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 122, 243 ), Vector2( 122, 143 ), Vector2( 122, 263 ), Vector2( 122, 243 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("AnimContainer/Front/Mana:offset")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 0.25, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, -93.237 ), Vector2( 0, 19 ), Vector2( 0, 0 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("AnimContainer/Front/Element/Attack:rect_size")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0.25 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 54, 55 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("AnimContainer/Front/Element/Cost:rect_position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0, 0.25, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 122, -274 ), Vector2( 122, -374 ), Vector2( 122, -254 ), Vector2( 122, -274 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("AnimContainer/Front/Element/Cost:rect_size")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0.25 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 50, 55 ) ]
+}
+
+[sub_resource type="Animation" id=16]
+resource_name = "AttackUp"
+length = 0.4
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimContainer/Front/BackgroundCommun:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.25, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, 100 ), Vector2( 0, -20 ), Vector2( 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AnimContainer/Front/PictureGroup/Bernadette:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.25, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, 100 ), Vector2( 0, -20 ), Vector2( 0, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("AnimContainer/Shadow:offset")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.25, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, 100 ), Vector2( 0, -20 ), Vector2( 0, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("AnimContainer/Front/Element:margin_bottom")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.25, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0.0, 100.0, -20.0, 0.0 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("AnimContainer/Front/Element/Attack:rect_position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.25, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -205, 243 ), Vector2( -205, 343 ), Vector2( -205, 223 ), Vector2( -205, 243 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("AnimContainer/Front/Element/Hp:rect_position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 0.25, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 122, 243 ), Vector2( 122, 343 ), Vector2( 122, 223 ), Vector2( 122, 243 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("AnimContainer/Front/Mana:offset")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 0.25, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, 93.237 ), Vector2( 0, -19.067 ), Vector2( 0, 0 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("AnimContainer/Front/Element/Attack:rect_size")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0.25 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 54, 55 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("AnimContainer/Front/Element/Cost:rect_position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0, 0.25, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 122, -274 ), Vector2( 122, -174 ), Vector2( 122, -294 ), Vector2( 122, -274 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("AnimContainer/Front/Element/Cost:rect_size")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0.25 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 50, 55 ) ]
+}
+
+[sub_resource type="Animation" id=17]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimContainer/Front/BackgroundCommun:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AnimContainer/Front/PictureGroup/Bernadette:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("AnimContainer/Shadow:offset")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("AnimContainer/Front/Element:margin_bottom")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("AnimContainer/Front/Mana:offset")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("AnimContainer/Front/Element/Attack:rect_position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -205, 243 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("AnimContainer/Front/Element/Hp:rect_position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 122, 243 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("AnimContainer/Front/Element/Attack:rect_size")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 54, 55 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("AnimContainer/Front/Element/Cost:rect_position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 122, -274 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("AnimContainer/Front/Element/Cost:rect_size")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 50, 55 ) ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("AnimContainer/Shadow:scale")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("AnimContainer/Front/PictureGroup/Bernadette:scale")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("AnimContainer/Front/BackgroundCommun:scale")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath("AnimContainer/Front/PictureGroup/Bernadette:modulate")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/14/type = "value"
+tracks/14/path = NodePath("AnimContainer/Front/BackgroundCommun:modulate")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/15/type = "value"
+tracks/15/path = NodePath("AnimContainer/Shadow:modulate")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/16/type = "value"
+tracks/16/path = NodePath("AnimContainer/Front/Element/ColorRect:color")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=21]
+resource_name = "Spell"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimContainer/Shadow:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AnimContainer/Front/PictureGroup/Bernadette:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("AnimContainer/Front/BackgroundCommun:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("AnimContainer/Front/PictureGroup/Bernadette:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 4, 5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("AnimContainer/Front/BackgroundCommun:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 4, 5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("AnimContainer/Shadow:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 4, 5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("AnimContainer/Front/Element/ColorRect:color")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[node name="NormalCard" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+size = Vector2( 420, 600 )
+
+[node name="AnimContainer" parent="." index="0"]
+position = Vector2( -1, 0 )
+
+[node name="Shadow" type="Sprite" parent="AnimContainer" index="0"]
+texture = ExtResource( 7 )
+
+[node name="Background" type="Sprite" parent="AnimContainer/Placeholder" index="0"]
+visible = false
+texture = ExtResource( 11 )
+
+[node name="Front" parent="AnimContainer" index="2"]
+visible = true
+position = Vector2( -1, 0 )
+
+[node name="BackgroundCommun" type="Sprite" parent="AnimContainer/Front" index="0"]
+material = SubResource( 9 )
+texture = ExtResource( 18 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimContainer/Front/BackgroundCommun" index="0"]
+anims/Fade = SubResource( 14 )
+anims/RESET = SubResource( 15 )
+
+[node name="BackgroundAtypique" type="Sprite" parent="AnimContainer/Front" index="1"]
+visible = false
+texture = ExtResource( 27 )
+
+[node name="BackgroundRare" type="Sprite" parent="AnimContainer/Front" index="2"]
+visible = false
+texture = ExtResource( 4 )
+
+[node name="BackgroundUltraRare" type="Sprite" parent="AnimContainer/Front" index="3"]
+visible = false
+texture = ExtResource( 14 )
+
+[node name="BackgroundDivin" type="Sprite" parent="AnimContainer/Front" index="4"]
+visible = false
+texture = ExtResource( 17 )
+
+[node name="BackgroundSortCommun" type="Sprite" parent="AnimContainer/Front" index="5"]
+visible = false
+texture = ExtResource( 25 )
+
+[node name="BackgroundSortUltraRare" type="Sprite" parent="AnimContainer/Front" index="6"]
+visible = false
+texture = ExtResource( 24 )
+
+[node name="NameBackground" type="Sprite" parent="AnimContainer/Front" index="7"]
+position = Vector2( -48, -256 )
+texture = ExtResource( 5 )
+offset = Vector2( -10009, -10000 )
+
+[node name="Name" type="Label" parent="AnimContainer/Front/NameBackground" index="0"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -156.0
+margin_top = -28.0
+margin_right = -182.0
+margin_bottom = -63.0
+custom_fonts/font = ExtResource( 23 )
+text = "10 - Maes Yves Oscar II"
+align = 1
+valign = 1
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DescBackground" type="Sprite" parent="AnimContainer/Front" index="8"]
+visible = false
+position = Vector2( -3714.31, 316.357 )
+texture = ExtResource( 8 )
+
+[node name="Desc" type="Label" parent="AnimContainer/Front/DescBackground" index="0"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 3512.0
+margin_top = -239.0
+margin_right = 3613.0
+margin_bottom = -238.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 6 )
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tempus, enim eu blandit sodales, risus mi egestas felis, non mattis tellus est vel turpis. Sed fermentum rutrum varius. "
+align = 1
+autowrap = true
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Mana" type="Sprite" parent="AnimContainer/Front" index="9"]
+visible = false
+position = Vector2( 165.902, -258.84 )
+scale = Vector2( 1.03759, 1.07093 )
+texture = ExtResource( 26 )
+
+[node name="PictureGroup" type="Node2D" parent="AnimContainer/Front" index="10"]
+material = SubResource( 13 )
+
+[node name="Common" type="Sprite" parent="AnimContainer/Front/PictureGroup" index="0"]
+visible = false
+position = Vector2( 0, -150 )
+texture = ExtResource( 10 )
+
+[node name="Text" type="Label" parent="AnimContainer/Front/PictureGroup/Common" index="0"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -152.0
+margin_top = -104.0
+margin_right = -152.0
+margin_bottom = -104.0
+custom_fonts/font = SubResource( 1 )
+text = "Common"
+align = 1
+valign = 1
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Uncommon" type="Sprite" parent="AnimContainer/Front/PictureGroup" index="1"]
+visible = false
+position = Vector2( 0, -150 )
+texture = ExtResource( 10 )
+
+[node name="Text" type="Label" parent="AnimContainer/Front/PictureGroup/Uncommon" index="0"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -152.0
+margin_top = -104.0
+margin_right = -152.0
+margin_bottom = -104.0
+custom_fonts/font = SubResource( 1 )
+text = "Uncommon"
+align = 1
+valign = 1
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Rare" type="Sprite" parent="AnimContainer/Front/PictureGroup" index="2"]
+visible = false
+position = Vector2( 0, -150 )
+texture = ExtResource( 10 )
+
+[node name="Text" type="Label" parent="AnimContainer/Front/PictureGroup/Rare" index="0"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -152.0
+margin_top = -104.0
+margin_right = -152.0
+margin_bottom = -104.0
+custom_fonts/font = SubResource( 1 )
+text = "Rare"
+align = 1
+valign = 1
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MythicRare" type="Sprite" parent="AnimContainer/Front/PictureGroup" index="3"]
+visible = false
+position = Vector2( 0, -150 )
+texture = ExtResource( 10 )
+
+[node name="Text" type="Label" parent="AnimContainer/Front/PictureGroup/MythicRare" index="0"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -152.0
+margin_top = -104.0
+margin_right = -152.0
+margin_bottom = -104.0
+custom_fonts/font = SubResource( 1 )
+text = "Mythic Rare"
+align = 1
+valign = 1
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BasicLand" type="Sprite" parent="AnimContainer/Front/PictureGroup" index="4"]
+visible = false
+position = Vector2( 0, -150 )
+texture = ExtResource( 10 )
+
+[node name="Text" type="Label" parent="AnimContainer/Front/PictureGroup/BasicLand" index="0"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -152.0
+margin_top = -104.0
+margin_right = -152.0
+margin_bottom = -104.0
+custom_fonts/font = SubResource( 1 )
+text = "Basic Land"
+align = 1
+valign = 1
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Bernadette" type="Sprite" parent="AnimContainer/Front/PictureGroup" index="5"]
+material = SubResource( 11 )
+texture = ExtResource( 12 )
+
+[node name="Text" type="Label" parent="AnimContainer/Front/PictureGroup/Bernadette" index="0"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -152.0
+margin_top = -104.0
+margin_right = -152.0
+margin_bottom = -104.0
+custom_fonts/font = SubResource( 1 )
+text = "Common"
+align = 1
+valign = 1
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Texxit" type="Sprite" parent="AnimContainer/Front/PictureGroup" index="6"]
+visible = false
+position = Vector2( -0.153503, 0.0722961 )
+texture = ExtResource( 13 )
+
+[node name="Text" type="Label" parent="AnimContainer/Front/PictureGroup/Texxit" index="0"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -152.0
+margin_top = -104.0
+margin_right = -152.0
+margin_bottom = -104.0
+custom_fonts/font = SubResource( 1 )
+text = "Common"
+align = 1
+valign = 1
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Kirbo" type="Sprite" parent="AnimContainer/Front/PictureGroup" index="7"]
+visible = false
+position = Vector2( -0.153503, 0.0722961 )
+texture = ExtResource( 15 )
+
+[node name="Text" type="Label" parent="AnimContainer/Front/PictureGroup/Kirbo" index="0"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -152.0
+margin_top = -104.0
+margin_right = -152.0
+margin_bottom = -104.0
+custom_fonts/font = SubResource( 1 )
+text = "Common"
+align = 1
+valign = 1
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Dodo" type="Sprite" parent="AnimContainer/Front/PictureGroup" index="8"]
+visible = false
+position = Vector2( -0.153503, 0.0722961 )
+texture = ExtResource( 19 )
+
+[node name="Text" type="Label" parent="AnimContainer/Front/PictureGroup/Dodo" index="0"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -152.0
+margin_top = -104.0
+margin_right = -152.0
+margin_bottom = -104.0
+custom_fonts/font = SubResource( 1 )
+text = "Common"
+align = 1
+valign = 1
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Mapendo" type="Sprite" parent="AnimContainer/Front/PictureGroup" index="9"]
+visible = false
+position = Vector2( -0.153503, 0.0722961 )
+texture = ExtResource( 20 )
+
+[node name="Text" type="Label" parent="AnimContainer/Front/PictureGroup/Mapendo" index="0"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -152.0
+margin_top = -104.0
+margin_right = -152.0
+margin_bottom = -104.0
+custom_fonts/font = SubResource( 1 )
+text = "Common"
+align = 1
+valign = 1
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="cyprien" type="Sprite" parent="AnimContainer/Front/PictureGroup" index="10"]
+visible = false
+material = SubResource( 20 )
+position = Vector2( -0.153503, 0.0722961 )
+texture = ExtResource( 21 )
+
+[node name="Text" type="Label" parent="AnimContainer/Front/PictureGroup/cyprien" index="0"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -152.0
+margin_top = -104.0
+margin_right = -152.0
+margin_bottom = -104.0
+custom_fonts/font = SubResource( 1 )
+text = "Common"
+align = 1
+valign = 1
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CardId" type="Label" parent="AnimContainer/Front" index="11"]
+visible = false
+margin_left = 76.0
+margin_top = 230.0
+margin_right = 141.0
+margin_bottom = 244.0
+custom_colors/font_color = Color( 0.67451, 0.67451, 0.67451, 1 )
+custom_fonts/font = SubResource( 4 )
+text = "card_id"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Def" type="Label" parent="AnimContainer/Front" index="12"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 160.0
+margin_top = 233.0
+margin_right = 200.0
+margin_bottom = 294.0
+custom_fonts/font = SubResource( 7 )
+text = "def"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Def2" type="Label" parent="AnimContainer/Front" index="13"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 156.0
+margin_top = 212.0
+margin_right = 196.0
+margin_bottom = 273.0
+custom_fonts/font = SubResource( 7 )
+text = "+1"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Element" type="Control" parent="AnimContainer/Front" index="14"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 4.0
+margin_top = -20.0
+margin_right = 4.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Hp" type="Label" parent="AnimContainer/Front/Element" index="0"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 122.0
+margin_top = 223.0
+margin_right = 183.0
+margin_bottom = 282.0
+custom_fonts/font = SubResource( 58 )
+text = "0"
+valign = 1
+
+[node name="Attack" type="Label" parent="AnimContainer/Front/Element" index="1"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -205.0
+margin_top = 243.0
+margin_right = -151.0
+margin_bottom = 278.0
+custom_fonts/font = SubResource( 59 )
+text = "0"
+valign = 1
+
+[node name="Cost" type="Label" parent="AnimContainer/Front/Element" index="2"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = 122.0
+margin_top = -274.0
+margin_right = 172.0
+margin_bottom = -219.0
+custom_fonts/font = SubResource( 60 )
+text = "3"
+align = 1
+valign = 1
+clip_text = true
+
+[node name="Number" type="Label" parent="AnimContainer/Front/Element" index="3"]
+visible = false
+margin_left = -60.0
+margin_top = -349.0
+margin_right = 123.0
+margin_bottom = -151.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 25 )
+text = "12"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="AnimContainer/Front/Element" index="4"]
+anchor_top = -9.203
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -105.0
+margin_top = 22.06
+margin_right = 105.0
+margin_bottom = 92.0
+color = Color( 1, 1, 1, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HealthParticle" type="Particles2D" parent="AnimContainer/Front" index="15"]
+position = Vector2( 163, 259 )
+scale = Vector2( 0.6, 0.6 )
+emitting = false
+amount = 16
+lifetime = 2.0
+randomness = 1.0
+process_material = SubResource( 22 )
+texture = ExtResource( 9 )
+
+[node name="AtkParticle" type="Particles2D" parent="AnimContainer/Front" index="16"]
+position = Vector2( -166, 259 )
+scale = Vector2( 0.6, 0.6 )
+emitting = false
+amount = 16
+lifetime = 2.0
+randomness = 1.0
+process_material = SubResource( 22 )
+texture = ExtResource( 28 )
+
+[node name="ColorRect" type="TextureRect" parent="AnimContainer/Front" index="17"]
+margin_left = -210.0
+margin_top = -300.0
+margin_right = 212.0
+margin_bottom = 300.0
+texture = ExtResource( 16 )
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="74-ArianaGrande" type="Sprite" parent="AnimContainer/Front" index="18"]
+visible = false
+modulate = Color( 1, 1, 1, 0.341176 )
+position = Vector2( -3.57628e-06, 2 )
+scale = Vector2( 1.044, 1.079 )
+texture = ExtResource( 29 )
+
+[node name="Background" type="Sprite" parent="AnimContainer/Back" index="0"]
+texture = ExtResource( 3 )
+
+[node name="MouseArea" parent="AnimContainer" index="4"]
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -210.0
+margin_top = -303.0
+margin_right = 210.0
+margin_bottom = 297.0
+
+[node name="Attaque" type="AnimationPlayer" parent="." index="5"]
+anims/AttackDown = SubResource( 18 )
+anims/AttackUp = SubResource( 16 )
+anims/RESET = SubResource( 17 )
+anims/Spell = SubResource( 21 )
+
+[node name="hurt" type="AudioStreamPlayer" parent="." index="6"]
+
+[connection signal="instance_changed" from="." to="." method="_on_NormalCard_instance_changed"]

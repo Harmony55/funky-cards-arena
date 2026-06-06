@@ -1,0 +1,1296 @@
+[gd_scene load_steps=119 format=2]
+
+[ext_resource path="res://audio/Effect/click-sound.wav" type="AudioStream" id=1]
+[ext_resource path="res://audio/Effect/hover1.wav" type="AudioStream" id=2]
+[ext_resource path="res://audio/Effect/accept-deck.wav" type="AudioStream" id=3]
+[ext_resource path="res://audio/magasin.ogg" type="AudioStream" id=4]
+[ext_resource path="res://screens/casier/template.png" type="Texture" id=5]
+[ext_resource path="res://screens/magasin/buttons/categories/Embauche.png" type="Texture" id=6]
+[ext_resource path="res://screens/casier/obamium/frame_27_delay-0.03s.png" type="Texture" id=7]
+[ext_resource path="res://screens/casier/obamium/frame_25_delay-0.03s.png" type="Texture" id=8]
+[ext_resource path="res://screens/casier/obamium/frame_28_delay-0.03s.png" type="Texture" id=9]
+[ext_resource path="res://screens/casier/obamium/frame_30_delay-0.03s.png" type="Texture" id=10]
+[ext_resource path="res://screens/casier/obamium/frame_31_delay-0.03s.png" type="Texture" id=11]
+[ext_resource path="res://screens/casier/obamium/frame_20_delay-0.03s.png" type="Texture" id=12]
+[ext_resource path="res://screens/casier/obamium/frame_29_delay-0.03s.png" type="Texture" id=13]
+[ext_resource path="res://screens/casier/obamium/frame_26_delay-0.03s.png" type="Texture" id=14]
+[ext_resource path="res://screens/casier/obamium/frame_17_delay-0.03s.png" type="Texture" id=15]
+[ext_resource path="res://screens/casier/obamium/frame_43_delay-0.03s.png" type="Texture" id=16]
+[ext_resource path="res://screens/casier/obamium/frame_32_delay-0.03s.png" type="Texture" id=17]
+[ext_resource path="res://screens/casier/obamium/frame_33_delay-0.03s.png" type="Texture" id=18]
+[ext_resource path="res://screens/casier/obamium/frame_24_delay-0.03s.png" type="Texture" id=19]
+[ext_resource path="res://screens/casier/obamium/frame_16_delay-0.03s.png" type="Texture" id=20]
+[ext_resource path="res://screens/casier/obamium/frame_02_delay-0.03s.png" type="Texture" id=21]
+[ext_resource path="res://screens/casier/obamium/frame_04_delay-0.03s.png" type="Texture" id=22]
+[ext_resource path="res://screens/casier/obamium/frame_37_delay-0.03s.png" type="Texture" id=23]
+[ext_resource path="res://screens/casier/obamium/frame_36_delay-0.03s.png" type="Texture" id=24]
+[ext_resource path="res://screens/casier/obamium/frame_38_delay-0.03s.png" type="Texture" id=25]
+[ext_resource path="res://screens/casier/obamium/frame_21_delay-0.03s.png" type="Texture" id=26]
+[ext_resource path="res://screens/casier/obamium/frame_45_delay-0.03s.png" type="Texture" id=27]
+[ext_resource path="res://screens/casier/obamium/frame_00_delay-0.03s.png" type="Texture" id=28]
+[ext_resource path="res://screens/casier/obamium/frame_12_delay-0.03s.png" type="Texture" id=29]
+[ext_resource path="res://screens/casier/obamium/frame_49_delay-0.03s.png" type="Texture" id=30]
+[ext_resource path="res://screens/casier/obamium/frame_46_delay-0.03s.png" type="Texture" id=31]
+[ext_resource path="res://screens/casier/obamium/frame_35_delay-0.03s.png" type="Texture" id=32]
+[ext_resource path="res://screens/casier/obamium/frame_15_delay-0.03s.png" type="Texture" id=33]
+[ext_resource path="res://screens/casier/obamium/frame_41_delay-0.03s.png" type="Texture" id=34]
+[ext_resource path="res://screens/casier/obamium/frame_18_delay-0.03s.png" type="Texture" id=35]
+[ext_resource path="res://screens/casier/obamium/frame_07_delay-0.03s.png" type="Texture" id=36]
+[ext_resource path="res://screens/casier/obamium/frame_47_delay-0.03s.png" type="Texture" id=37]
+[ext_resource path="res://screens/casier/obamium/frame_48_delay-0.03s.png" type="Texture" id=38]
+[ext_resource path="res://screens/casier/obamium/frame_34_delay-0.03s.png" type="Texture" id=39]
+[ext_resource path="res://screens/casier/obamium/frame_13_delay-0.03s.png" type="Texture" id=40]
+[ext_resource path="res://screens/casier/obamium/frame_19_delay-0.03s.png" type="Texture" id=41]
+[ext_resource path="res://screens/casier/obamium/frame_03_delay-0.03s.png" type="Texture" id=42]
+[ext_resource path="res://screens/casier/obamium/frame_08_delay-0.03s.png" type="Texture" id=43]
+[ext_resource path="res://screens/casier/obamium/frame_09_delay-0.03s.png" type="Texture" id=44]
+[ext_resource path="res://screens/casier/obamium/frame_06_delay-0.03s.png" type="Texture" id=45]
+[ext_resource path="res://screens/casier/obamium/frame_23_delay-0.03s.png" type="Texture" id=46]
+[ext_resource path="res://screens/casier/obamium/frame_22_delay-0.03s.png" type="Texture" id=47]
+[ext_resource path="res://screens/casier/obamium/frame_42_delay-0.03s.png" type="Texture" id=48]
+[ext_resource path="res://screens/casier/obamium/frame_44_delay-0.03s.png" type="Texture" id=49]
+[ext_resource path="res://screens/casier/obamium/frame_40_delay-0.03s.png" type="Texture" id=50]
+[ext_resource path="res://screens/casier/obamium/frame_11_delay-0.03s.png" type="Texture" id=51]
+[ext_resource path="res://screens/casier/obamium/frame_05_delay-0.03s.png" type="Texture" id=52]
+[ext_resource path="res://screens/casier/obamium/frame_10_delay-0.03s.png" type="Texture" id=53]
+[ext_resource path="res://screens/casier/obamium/frame_14_delay-0.03s.png" type="Texture" id=54]
+[ext_resource path="res://screens/casier/obamium/frame_39_delay-0.03s.png" type="Texture" id=55]
+[ext_resource path="res://screens/casier/obamium/frame_01_delay-0.03s.png" type="Texture" id=56]
+[ext_resource path="res://screens/magasin/buttons/Illustration/UpdatePack.png" type="Texture" id=57]
+[ext_resource path="res://widgets/small_button/small_button.tscn" type="PackedScene" id=58]
+[ext_resource path="res://fonts/SuperMario.ttf" type="DynamicFontData" id=59]
+[ext_resource path="res://screens/magasin/magasin2.png" type="Texture" id=60]
+[ext_resource path="res://screens/magasin/magasin.gd" type="Script" id=61]
+[ext_resource path="res://screens/magasin/ObscrueArrow.png" type="Texture" id=62]
+[ext_resource path="res://screens/magasin/buttons/categories/OrbeOff.png" type="Texture" id=63]
+[ext_resource path="res://screens/magasin/buttons/Illustration/FunkyPack.png" type="Texture" id=64]
+[ext_resource path="res://screens/magasin/buttons/categories/BabsSeed.png" type="Texture" id=65]
+[ext_resource path="res://screens/magasin/buttons/categories/ArenaOff.png" type="Texture" id=66]
+[ext_resource path="res://screens/magasin/buttons/categories/EmoteOff.png" type="Texture" id=67]
+[ext_resource path="res://screens/magasin/buttons/categories/FunkyPackOff.png" type="Texture" id=68]
+[ext_resource path="res://screens/casier/button/RetourClicked.png" type="Texture" id=69]
+[ext_resource path="res://screens/magasin/buttons/Illustration/OrbeBase.png" type="Texture" id=70]
+[ext_resource path="res://screens/casier/button/RetourBase.png" type="Texture" id=71]
+[ext_resource path="res://screens/casier/button/RetourHover.png" type="Texture" id=72]
+[ext_resource path="res://screens/magasin/buttons/Illustration/OrbeFrance.png" type="Texture" id=73]
+[ext_resource path="res://screens/magasin/buttons/Preview/OrbeJaune.png" type="Texture" id=74]
+[ext_resource path="res://screens/magasin/buttons/Obamium/ObamiumBase.png" type="Texture" id=75]
+[ext_resource path="res://screens/magasin/buttons/Obamium/ObamiumHover.png" type="Texture" id=76]
+[ext_resource path="res://screens/magasin/buttons/Obamium/achat_dobamium.png" type="Texture" id=77]
+[ext_resource path="res://screens/magasin/buttons/Obamium/9ObamiumsFull.png" type="Texture" id=78]
+[ext_resource path="res://screens/magasin/buttons/Obamium/9Obamiums.png" type="Texture" id=79]
+[ext_resource path="res://screens/magasin/buttons/Obamium/5Obamiums.png" type="Texture" id=80]
+[ext_resource path="res://screens/magasin/buttons/Obamium/3Obamiums.png" type="Texture" id=81]
+[ext_resource path="res://screens/magasin/buttons/Obamium/1Obamium.png" type="Texture" id=82]
+[ext_resource path="res://screens/magasin/buttons/Obamium/3ObamiumsFull.png" type="Texture" id=83]
+[ext_resource path="res://screens/magasin/buttons/Obamium/1ObamiumFull.png" type="Texture" id=84]
+[ext_resource path="res://screens/magasin/buttons/Obamium/Achatx1.png" type="Texture" id=85]
+[ext_resource path="res://screens/magasin/buttons/Obamium/TAVInclus.png" type="Texture" id=86]
+[ext_resource path="res://screens/magasin/buttons/Obamium/NumeroCarte.png" type="Texture" id=87]
+[ext_resource path="res://screens/magasin/buttons/categories/SkinOff.png" type="Texture" id=88]
+[ext_resource path="res://screens/magasin/buttons/Obamium/Expiration.png" type="Texture" id=89]
+[ext_resource path="res://screens/magasin/buttons/Obamium/CVV.png" type="Texture" id=90]
+[ext_resource path="res://screens/magasin/buttons/Obamium/ConfirmerHover.png" type="Texture" id=91]
+[ext_resource path="res://screens/magasin/buttons/Obamium/ConfirmerBase.png" type="Texture" id=92]
+[ext_resource path="res://screens/magasin/buttons/Obamium/ConfirmerClick.png" type="Texture" id=93]
+[ext_resource path="res://screens/magasin/buttons/Obamium/achat_effectue.png" type="Texture" id=94]
+[ext_resource path="res://screens/magasin/une/Trorbe Face.png" type="Texture" id=95]
+[ext_resource path="res://screens/magasin/magasin_background.png" type="Texture" id=96]
+[ext_resource path="res://screens/magasin/reset_du_magasin.png" type="Texture" id=97]
+[ext_resource path="res://screens/magasin/buttons/Illustration/AreneBase.png" type="Texture" id=98]
+[ext_resource path="res://screens/magasin/buttons/Illustration/LockedPack.png" type="Texture" id=99]
+[ext_resource path="res://screens/magasin/posede.png" type="Texture" id=100]
+
+[sub_resource type="DynamicFont" id=29]
+size = 46
+outline_size = 4
+use_filter = true
+font_data = ExtResource( 59 )
+
+[sub_resource type="DynamicFont" id=26]
+size = 30
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+font_data = ExtResource( 59 )
+
+[sub_resource type="DynamicFont" id=28]
+size = 49
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+font_data = ExtResource( 59 )
+
+[sub_resource type="DynamicFont" id=27]
+size = 42
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+font_data = ExtResource( 59 )
+
+[sub_resource type="Shader" id=10]
+code = "shader_type canvas_item;
+
+// Ranges from 0 to 1 over the course of the transition.
+// We use this to actually animate the shader.
+uniform float progress : hint_range(0, 1);
+
+// Size of each diamond, in pixels.
+uniform float diamondPixelSize = 10f;
+
+void fragment() {
+	float xFraction = fract(FRAGCOORD.x / diamondPixelSize);
+	float yFraction = fract(FRAGCOORD.y / diamondPixelSize);
+	float xDistance = abs(xFraction - 0.5);
+	float yDistance = abs(yFraction - 0.5);
+	if (xDistance + yDistance + UV.x + UV.y > progress * 4f) {
+		discard;
+	}
+}"
+
+[sub_resource type="ShaderMaterial" id=11]
+shader = SubResource( 10 )
+
+[sub_resource type="Animation" id=12]
+resource_name = "FadeIn"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:material:shader_param/progress")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 1.0, 0.0 ]
+}
+
+[sub_resource type="Animation" id=13]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:material:shader_param/progress")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 1.0 ]
+}
+
+[sub_resource type="DynamicFont" id=25]
+size = 60
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 59 )
+
+[sub_resource type="SpriteFrames" id=17]
+animations = [ {
+"frames": [ ExtResource( 28 ), ExtResource( 56 ), ExtResource( 21 ), ExtResource( 42 ), ExtResource( 22 ), ExtResource( 52 ), ExtResource( 45 ), ExtResource( 36 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 53 ), ExtResource( 51 ), ExtResource( 29 ), ExtResource( 40 ), ExtResource( 54 ), ExtResource( 33 ), ExtResource( 20 ), ExtResource( 15 ), ExtResource( 35 ), ExtResource( 41 ), ExtResource( 12 ), ExtResource( 26 ), ExtResource( 47 ), ExtResource( 46 ), ExtResource( 19 ), ExtResource( 8 ), ExtResource( 14 ), ExtResource( 7 ), ExtResource( 9 ), ExtResource( 13 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 39 ), ExtResource( 32 ), ExtResource( 24 ), ExtResource( 23 ), ExtResource( 25 ), ExtResource( 55 ), ExtResource( 50 ), ExtResource( 34 ), ExtResource( 48 ), ExtResource( 16 ), ExtResource( 49 ), ExtResource( 27 ), ExtResource( 31 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 30 ) ],
+"loop": true,
+"name": "default",
+"speed": 24.0
+} ]
+
+[sub_resource type="DynamicFont" id=33]
+size = 94
+outline_size = 6
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 59 )
+
+[sub_resource type="Animation" id=31]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ "Chargement du shop" ]
+}
+
+[sub_resource type="Animation" id=32]
+resource_name = "chargement"
+length = 1.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1, 1.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ "Chargement du shop", "Chargement du shop.", "Chargement du shop..", "Chargement du shop...", "Chargement du shop..", "Chargement du shop.", "Chargement du shop" ]
+}
+
+[sub_resource type="DynamicFont" id=20]
+size = 30
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+font_data = ExtResource( 59 )
+
+[sub_resource type="StyleBoxFlat" id=21]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=22]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="DynamicFont" id=23]
+size = 27
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+font_data = ExtResource( 59 )
+
+[sub_resource type="DynamicFont" id=24]
+size = 33
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+font_data = ExtResource( 59 )
+
+[node name="MagasinScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 61 )
+
+[node name="Store" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 96 )
+expand = true
+
+[node name="ColorRect2" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 60 )
+expand = true
+
+[node name="Reset" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -10.0
+margin_top = -3.0
+margin_right = -10.0
+margin_bottom = -3.0
+texture = ExtResource( 97 )
+expand = true
+
+[node name="Timer" type="Label" parent="Reset"]
+margin_left = 1170.0
+margin_top = 656.0
+margin_right = 1261.0
+margin_bottom = 703.0
+custom_colors/font_color = Color( 0.0313726, 1, 0.388235, 1 )
+custom_fonts/font = SubResource( 29 )
+text = "48h"
+valign = 1
+
+[node name="ObscureArrow" type="TextureRect" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 62 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Statique" type="TextureButton" parent="."]
+margin_left = 135.0
+margin_top = 236.0
+margin_right = 450.0
+margin_bottom = 624.0
+texture_normal = ExtResource( 64 )
+expand = true
+stretch_mode = 4
+
+[node name="Prix" type="Label" parent="Statique"]
+margin_left = 52.0
+margin_top = 356.0
+margin_right = 243.0
+margin_bottom = 386.0
+rect_pivot_offset = Vector2( -186, -51 )
+custom_fonts/font = SubResource( 26 )
+text = "1000"
+valign = 1
+
+[node name="SpecialPack" type="TextureButton" parent="."]
+margin_left = 495.0
+margin_top = 236.0
+margin_right = 810.0
+margin_bottom = 624.0
+texture_normal = ExtResource( 57 )
+expand = true
+stretch_mode = 4
+
+[node name="Prix" type="Label" parent="SpecialPack"]
+margin_left = 51.0
+margin_top = 356.0
+margin_right = 242.0
+margin_bottom = 386.0
+custom_fonts/font = SubResource( 26 )
+text = "300"
+valign = 1
+
+[node name="TemporairePack" type="TextureButton" parent="."]
+margin_left = 855.0
+margin_top = 236.0
+margin_right = 1147.0
+margin_bottom = 624.0
+texture_normal = ExtResource( 99 )
+expand = true
+stretch_mode = 4
+
+[node name="Temporaire" type="TextureButton" parent="."]
+visible = false
+margin_left = 168.0
+margin_top = 237.0
+margin_right = 607.0
+margin_bottom = 635.0
+texture_normal = ExtResource( 95 )
+expand = true
+stretch_mode = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Nom" type="Label" parent="Temporaire"]
+margin_left = 4.0
+margin_top = 309.0
+margin_right = 238.0
+margin_bottom = 359.0
+rect_pivot_offset = Vector2( 112, -43 )
+custom_fonts/font = SubResource( 28 )
+text = "Trorbe face"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Prix" type="Label" parent="Temporaire"]
+margin_left = 72.0
+margin_top = 355.0
+margin_right = 263.0
+margin_bottom = 398.0
+custom_fonts/font = SubResource( 27 )
+text = "500"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Posede" type="Sprite" parent="Temporaire"]
+visible = false
+position = Vector2( 357, 375 )
+texture = ExtResource( 100 )
+
+[node name="Temporaire2" type="TextureButton" parent="."]
+visible = false
+margin_left = 619.0
+margin_top = 437.0
+margin_right = 858.0
+margin_bottom = 634.0
+texture_normal = ExtResource( 70 )
+expand = true
+stretch_mode = 5
+
+[node name="Sprite" type="Sprite" parent="Temporaire2"]
+position = Vector2( 120, 71 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 74 )
+
+[node name="Nom" type="Label" parent="Temporaire2"]
+margin_left = 2.0
+margin_top = 135.0
+margin_right = 236.0
+margin_bottom = 165.0
+rect_pivot_offset = Vector2( 112, -43 )
+custom_fonts/font = SubResource( 26 )
+text = "Orbe jaune"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Prix" type="Label" parent="Temporaire2"]
+margin_left = 48.0
+margin_top = 165.0
+margin_right = 239.0
+margin_bottom = 195.0
+custom_fonts/font = SubResource( 26 )
+text = "150"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Posede" type="Sprite" parent="Temporaire2"]
+visible = false
+position = Vector2( 171, 180 )
+scale = Vector2( 0.9, 0.9 )
+texture = ExtResource( 100 )
+
+[node name="Temporaire5" type="TextureButton" parent="."]
+visible = false
+margin_left = 866.0
+margin_top = 235.0
+margin_right = 1103.0
+margin_bottom = 431.0
+texture_normal = ExtResource( 70 )
+expand = true
+stretch_mode = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="Temporaire5"]
+position = Vector2( 120, 71 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 74 )
+
+[node name="Nom" type="Label" parent="Temporaire5"]
+margin_left = 2.0
+margin_top = 135.0
+margin_right = 236.0
+margin_bottom = 165.0
+rect_pivot_offset = Vector2( 112, -43 )
+custom_fonts/font = SubResource( 26 )
+text = "Orbe jaune"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Prix" type="Label" parent="Temporaire5"]
+margin_left = 48.0
+margin_top = 165.0
+margin_right = 239.0
+margin_bottom = 195.0
+custom_fonts/font = SubResource( 26 )
+text = "150"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Posede" type="Sprite" parent="Temporaire5"]
+visible = false
+position = Vector2( 171, 180 )
+scale = Vector2( 0.9, 0.9 )
+texture = ExtResource( 100 )
+
+[node name="Temporaire3" type="TextureButton" parent="."]
+visible = false
+margin_left = 866.0
+margin_top = 438.0
+margin_right = 1104.0
+margin_bottom = 635.0
+texture_normal = ExtResource( 70 )
+expand = true
+stretch_mode = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="Temporaire3"]
+position = Vector2( 120, 71 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 74 )
+
+[node name="Nom" type="Label" parent="Temporaire3"]
+margin_left = 2.0
+margin_top = 135.0
+margin_right = 236.0
+margin_bottom = 165.0
+rect_pivot_offset = Vector2( 112, -43 )
+custom_fonts/font = SubResource( 26 )
+text = "Orbe jaune"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Prix" type="Label" parent="Temporaire3"]
+margin_left = 48.0
+margin_top = 165.0
+margin_right = 239.0
+margin_bottom = 195.0
+custom_fonts/font = SubResource( 26 )
+text = "150"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Posede" type="Sprite" parent="Temporaire3"]
+visible = false
+position = Vector2( 171, 180 )
+scale = Vector2( 0.9, 0.9 )
+texture = ExtResource( 100 )
+
+[node name="Temporaire4" type="TextureButton" parent="."]
+margin_left = 619.0
+margin_top = 235.0
+margin_right = 856.0
+margin_bottom = 431.0
+texture_normal = ExtResource( 70 )
+expand = true
+stretch_mode = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="Temporaire4"]
+position = Vector2( 120, 71 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 74 )
+
+[node name="Nom" type="Label" parent="Temporaire4"]
+margin_left = 2.0
+margin_top = 135.0
+margin_right = 236.0
+margin_bottom = 165.0
+rect_pivot_offset = Vector2( 112, -43 )
+custom_fonts/font = SubResource( 26 )
+text = "Orbe jaune"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Prix" type="Label" parent="Temporaire4"]
+margin_left = 48.0
+margin_top = 165.0
+margin_right = 239.0
+margin_bottom = 195.0
+custom_fonts/font = SubResource( 26 )
+text = "150"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Posede" type="Sprite" parent="Temporaire4"]
+visible = false
+position = Vector2( 171, 180 )
+scale = Vector2( 0.9, 0.9 )
+texture = ExtResource( 100 )
+
+[node name="Temporaire7" type="TextureButton" parent="."]
+visible = false
+margin_left = 282.0
+margin_top = 235.0
+margin_right = 519.0
+margin_bottom = 431.0
+texture_normal = ExtResource( 98 )
+expand = true
+stretch_mode = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="Temporaire7"]
+position = Vector2( 120, 71 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 74 )
+
+[node name="Nom" type="Label" parent="Temporaire7"]
+margin_left = 2.0
+margin_top = 135.0
+margin_right = 236.0
+margin_bottom = 165.0
+rect_pivot_offset = Vector2( 112, -43 )
+custom_fonts/font = SubResource( 26 )
+text = "Orbe jaune"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Prix" type="Label" parent="Temporaire7"]
+margin_left = 48.0
+margin_top = 165.0
+margin_right = 239.0
+margin_bottom = 195.0
+custom_fonts/font = SubResource( 26 )
+text = "150"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Posede" type="Sprite" parent="Temporaire7"]
+visible = false
+position = Vector2( 171, 180 )
+scale = Vector2( 0.9, 0.9 )
+texture = ExtResource( 100 )
+
+[node name="Temporaire8" type="TextureButton" parent="."]
+visible = false
+margin_left = 282.0
+margin_top = 438.0
+margin_right = 519.0
+margin_bottom = 634.0
+texture_normal = ExtResource( 98 )
+expand = true
+stretch_mode = 5
+
+[node name="Sprite" type="Sprite" parent="Temporaire8"]
+position = Vector2( 120, 71 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 74 )
+
+[node name="Nom" type="Label" parent="Temporaire8"]
+margin_left = 2.0
+margin_top = 135.0
+margin_right = 236.0
+margin_bottom = 165.0
+rect_pivot_offset = Vector2( 112, -43 )
+custom_fonts/font = SubResource( 26 )
+text = "Orbe jaune"
+align = 1
+valign = 1
+
+[node name="Prix" type="Label" parent="Temporaire8"]
+margin_left = 48.0
+margin_top = 165.0
+margin_right = 239.0
+margin_bottom = 195.0
+custom_fonts/font = SubResource( 26 )
+text = "150"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Posede" type="Sprite" parent="Temporaire8"]
+visible = false
+position = Vector2( 171, 180 )
+scale = Vector2( 0.9, 0.9 )
+texture = ExtResource( 100 )
+
+[node name="Temporaire6" type="TextureButton" parent="."]
+visible = false
+margin_left = 823.0
+margin_top = 218.0
+margin_right = 1225.0
+margin_bottom = 546.0
+texture_normal = ExtResource( 73 )
+expand = true
+stretch_mode = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="TextureRect" parent="."]
+visible = false
+self_modulate = Color( 1, 1, 1, 0.513726 )
+margin_right = 1280.0
+margin_bottom = 720.0
+texture = ExtResource( 6 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = -4.0
+autoplay = true
+bus = "Musique"
+
+[node name="click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+bus = "Effect"
+
+[node name="accept" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+bus = "Effect"
+
+[node name="hover" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+volume_db = -10.0
+bus = "Effect"
+
+[node name="TextureRect" type="ColorRect" parent="."]
+visible = false
+material = SubResource( 11 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="TextureRect"]
+anims/FadeIn = SubResource( 12 )
+anims/RESET = SubResource( 13 )
+
+[node name="Sprite" type="Sprite" parent="."]
+visible = false
+modulate = Color( 1, 1, 1, 0.584314 )
+position = Vector2( 640.25, 362 )
+scale = Vector2( 1.06359, 1 )
+texture = ExtResource( 5 )
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="FunkyPackButton" type="TextureButton" parent="."]
+margin_left = 167.0
+margin_top = 148.0
+margin_right = 354.0
+margin_bottom = 229.0
+texture_normal = ExtResource( 68 )
+expand = true
+stretch_mode = 4
+
+[node name="OrbeButton" type="TextureButton" parent="."]
+margin_left = 354.0
+margin_top = 148.0
+margin_right = 543.0
+margin_bottom = 229.0
+texture_normal = ExtResource( 63 )
+expand = true
+stretch_mode = 4
+
+[node name="SkinOrbeButton" type="TextureButton" parent="."]
+margin_left = 543.0
+margin_top = 148.0
+margin_right = 736.0
+margin_bottom = 229.0
+texture_normal = ExtResource( 88 )
+expand = true
+stretch_mode = 4
+
+[node name="ArenaButton" type="TextureButton" parent="."]
+margin_left = 733.0
+margin_top = 148.0
+margin_right = 926.0
+margin_bottom = 229.0
+rect_pivot_offset = Vector2( -902, 362 )
+texture_normal = ExtResource( 66 )
+expand = true
+stretch_mode = 4
+
+[node name="EmoteButton" type="TextureButton" parent="."]
+margin_left = 926.0
+margin_top = 148.0
+margin_right = 1113.0
+margin_bottom = 229.0
+texture_normal = ExtResource( 67 )
+expand = true
+stretch_mode = 4
+
+[node name="ObamiumContainer" type="TextureButton" parent="."]
+margin_left = 35.0
+margin_top = 631.0
+margin_right = 269.0
+margin_bottom = 738.0
+texture_normal = ExtResource( 75 )
+texture_hover = ExtResource( 76 )
+expand = true
+stretch_mode = 5
+
+[node name="ObamiumNumber" type="Label" parent="."]
+margin_left = 100.0
+margin_top = 655.0
+margin_right = 260.0
+margin_bottom = 715.0
+rect_pivot_offset = Vector2( 145, 60 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 25 )
+text = "3902"
+align = 2
+
+[node name="BabsSeed" type="TextureRect" parent="."]
+visible = false
+modulate = Color( 1, 1, 1, 0.588235 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 65 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Obamium" type="AnimatedSprite" parent="."]
+position = Vector2( 74, 684 )
+scale = Vector2( 0.15, 0.15 )
+frames = SubResource( 17 )
+playing = true
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+
+[node name="ResetButton" type="Button" parent="."]
+margin_left = 629.0
+margin_top = 699.0
+margin_right = 713.0
+margin_bottom = 719.0
+text = "Reset forcé"
+
+[node name="GiveItem" type="Button" parent="."]
+margin_left = 757.0
+margin_top = 699.0
+margin_right = 852.0
+margin_bottom = 719.0
+text = "Obtenir item"
+
+[node name="CategoryEdit" type="OptionButton" parent="."]
+margin_left = 855.0
+margin_top = 696.0
+margin_right = 925.0
+margin_bottom = 720.0
+text = "orbe"
+items = [ "orbe", null, false, 0, null, "orbeSkin", null, false, 1, null, "arena", null, false, 2, null, "emote", null, false, 3, null ]
+selected = 0
+
+[node name="NameEdit" type="LineEdit" parent="."]
+margin_left = 926.0
+margin_top = 696.0
+margin_right = 1081.0
+margin_bottom = 720.0
+placeholder_text = "nom"
+
+[node name="Chargement" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 96 )
+expand = true
+
+[node name="Loading" type="Label" parent="Chargement"]
+margin_left = 88.0
+margin_top = 296.0
+margin_right = 1246.0
+margin_bottom = 391.0
+custom_fonts/font = SubResource( 33 )
+text = "Chargement du shop"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Chargement/Loading"]
+anims/RESET = SubResource( 31 )
+anims/chargement = SubResource( 32 )
+
+[node name="Erreur" type="Label" parent="Chargement"]
+visible = false
+margin_left = 88.0
+margin_top = 296.0
+margin_right = 1246.0
+margin_bottom = 391.0
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+custom_fonts/font = SubResource( 33 )
+text = "Erreur de chargement
+Veuillez acheter une co SVP"
+
+[node name="BackBtn" parent="." instance=ExtResource( 58 )]
+margin_left = 73.0
+margin_top = 37.0
+margin_right = 273.0
+margin_bottom = 87.0
+rect_min_size = Vector2( 200, 0 )
+texture_normal = ExtResource( 71 )
+texture_pressed = ExtResource( 69 )
+texture_hover = ExtResource( 72 )
+stretch_mode = 4
+
+[node name="AchatObamium" type="TextureRect" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 77 )
+expand = true
+
+[node name="TextureRect" type="TextureRect" parent="AchatObamium"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 78 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect2" type="TextureRect" parent="AchatObamium"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 84 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect3" type="TextureRect" parent="AchatObamium"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 83 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect4" type="TextureRect" parent="AchatObamium"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 84 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="9Obamiums" type="TextureButton" parent="AchatObamium"]
+margin_left = 921.0
+margin_top = 235.0
+margin_right = 1157.0
+margin_bottom = 577.0
+texture_normal = ExtResource( 79 )
+expand = true
+stretch_mode = 4
+
+[node name="5Obamiums" type="TextureButton" parent="AchatObamium"]
+margin_left = 654.0
+margin_top = 235.0
+margin_right = 890.0
+margin_bottom = 577.0
+texture_normal = ExtResource( 80 )
+expand = true
+stretch_mode = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="3Obamiums" type="TextureButton" parent="AchatObamium"]
+margin_left = 382.0
+margin_top = 236.0
+margin_right = 618.0
+margin_bottom = 578.0
+texture_normal = ExtResource( 81 )
+expand = true
+stretch_mode = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="1Obamium" type="TextureButton" parent="AchatObamium"]
+margin_left = 113.0
+margin_top = 235.0
+margin_right = 349.0
+margin_bottom = 577.0
+texture_normal = ExtResource( 82 )
+expand = true
+stretch_mode = 4
+
+[node name="Return" type="TextureButton" parent="AchatObamium"]
+margin_left = 1081.0
+margin_top = 660.0
+margin_right = 1273.0
+margin_bottom = 712.0
+texture_normal = ExtResource( 71 )
+texture_pressed = ExtResource( 69 )
+texture_hover = ExtResource( 72 )
+expand = true
+stretch_mode = 5
+
+[node name="CB" type="TextureRect" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 77 )
+expand = true
+
+[node name="AchatDex" type="TextureRect" parent="CB"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 85 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TVA" type="TextureRect" parent="CB"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 86 )
+expand = true
+
+[node name="NumeroCarte" type="Sprite" parent="CB"]
+position = Vector2( -409, 256 )
+scale = Vector2( 0.665161, 0.66129 )
+texture = ExtResource( 87 )
+offset = Vector2( 1180.16, 252.537 )
+
+[node name="Expiration" type="Sprite" parent="CB"]
+position = Vector2( 246, 472.5 )
+scale = Vector2( 0.664921, 0.693549 )
+texture = ExtResource( 89 )
+
+[node name="CVV" type="Sprite" parent="CB"]
+position = Vector2( 507, 472.5 )
+scale = Vector2( 0.670157, 0.693549 )
+texture = ExtResource( 90 )
+
+[node name="Carte1" type="LineEdit" parent="CB"]
+margin_left = 281.0
+margin_top = 403.0
+margin_right = 377.0
+margin_bottom = 441.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 20 )
+custom_styles/focus = SubResource( 21 )
+custom_styles/normal = SubResource( 22 )
+max_length = 4
+context_menu_enabled = false
+selecting_enabled = false
+placeholder_alpha = 0.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Carte2" type="LineEdit" parent="CB"]
+margin_left = 364.0
+margin_top = 403.0
+margin_right = 460.0
+margin_bottom = 441.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 20 )
+custom_styles/focus = SubResource( 21 )
+custom_styles/normal = SubResource( 22 )
+max_length = 4
+context_menu_enabled = false
+selecting_enabled = false
+placeholder_alpha = 0.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Carte3" type="LineEdit" parent="CB"]
+margin_left = 449.0
+margin_top = 403.0
+margin_right = 545.0
+margin_bottom = 441.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 20 )
+custom_styles/focus = SubResource( 21 )
+custom_styles/normal = SubResource( 22 )
+max_length = 4
+context_menu_enabled = false
+selecting_enabled = false
+placeholder_alpha = 0.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Carte4" type="LineEdit" parent="CB"]
+margin_left = 531.0
+margin_top = 403.0
+margin_right = 627.0
+margin_bottom = 441.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 20 )
+custom_styles/focus = SubResource( 21 )
+custom_styles/normal = SubResource( 22 )
+max_length = 4
+context_menu_enabled = false
+selecting_enabled = false
+placeholder_alpha = 0.5
+
+[node name="CVVText" type="LineEdit" parent="CB"]
+margin_left = 436.0
+margin_top = 455.0
+margin_right = 523.0
+margin_bottom = 491.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 20 )
+custom_styles/focus = SubResource( 21 )
+custom_styles/normal = SubResource( 22 )
+max_length = 3
+context_menu_enabled = false
+selecting_enabled = false
+placeholder_alpha = 0.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Expiration1Text" type="LineEdit" parent="CB"]
+margin_left = 227.0
+margin_top = 455.0
+margin_right = 323.0
+margin_bottom = 491.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 20 )
+custom_styles/focus = SubResource( 21 )
+custom_styles/normal = SubResource( 22 )
+max_length = 2
+context_menu_enabled = false
+selecting_enabled = false
+placeholder_alpha = 0.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Expiration2Text" type="LineEdit" parent="CB"]
+margin_left = 271.0
+margin_top = 455.0
+margin_right = 367.0
+margin_bottom = 491.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 20 )
+custom_styles/focus = SubResource( 21 )
+custom_styles/normal = SubResource( 22 )
+max_length = 2
+context_menu_enabled = false
+selecting_enabled = false
+placeholder_alpha = 0.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="CB"]
+margin_left = 259.0
+margin_top = 458.0
+margin_right = 274.0
+margin_bottom = 489.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 20 )
+text = "/"
+
+[node name="Erreur" type="Label" parent="CB"]
+visible = false
+margin_left = 235.0
+margin_top = 499.0
+margin_right = 539.0
+margin_bottom = 530.0
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+custom_fonts/font = SubResource( 20 )
+text = "Carte banquaire invalide"
+
+[node name="ConfirmeAchat" type="TextureButton" parent="CB"]
+margin_left = 435.0
+margin_top = 541.0
+margin_right = 880.0
+margin_bottom = 615.0
+texture_normal = ExtResource( 92 )
+texture_pressed = ExtResource( 93 )
+texture_hover = ExtResource( 91 )
+expand = true
+stretch_mode = 4
+
+[node name="Prix" type="Label" parent="CB"]
+margin_left = 838.0
+margin_top = 204.0
+margin_right = 893.0
+margin_bottom = 234.0
+rect_pivot_offset = Vector2( 47, 15 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 23 )
+text = "100€"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Bon" type="Label" parent="CB"]
+margin_left = 966.0
+margin_top = 226.0
+margin_right = 1021.0
+margin_bottom = 256.0
+rect_pivot_offset = Vector2( 47, 15 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 23 )
+text = "0€"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Total" type="Label" parent="CB"]
+margin_left = 891.0
+margin_top = 281.0
+margin_right = 958.0
+margin_bottom = 315.0
+rect_pivot_offset = Vector2( 47, 15 )
+custom_fonts/font = SubResource( 24 )
+text = "100€"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AchatEffectuer" type="TextureRect" parent="CB"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 152.0
+margin_top = 70.0
+margin_right = -157.0
+margin_bottom = -63.0
+texture = ExtResource( 94 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Return" type="TextureButton" parent="CB"]
+margin_left = 1081.0
+margin_top = 660.0
+margin_right = 1273.0
+margin_bottom = 712.0
+texture_normal = ExtResource( 71 )
+texture_pressed = ExtResource( 69 )
+texture_hover = ExtResource( 72 )
+expand = true
+stretch_mode = 5
+
+[connection signal="pressed" from="Statique" to="." method="_on_Statique_pressed"]
+[connection signal="pressed" from="SpecialPack" to="." method="_on_ColorRect4_pressed"]
+[connection signal="pressed" from="Temporaire" to="." method="_on_Temporaire_pressed"]
+[connection signal="pressed" from="Temporaire2" to="." method="_on_Temporaire2_pressed"]
+[connection signal="pressed" from="Temporaire5" to="." method="_on_Temporaire5_pressed"]
+[connection signal="pressed" from="Temporaire3" to="." method="_on_Temporaire3_pressed"]
+[connection signal="pressed" from="Temporaire4" to="." method="_on_Temporaire4_pressed"]
+[connection signal="pressed" from="Temporaire7" to="." method="_on_Temporaire7_pressed"]
+[connection signal="pressed" from="Temporaire8" to="." method="_on_Temporaire8_pressed"]
+[connection signal="pressed" from="Temporaire6" to="." method="_on_Temporaire6_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="pressed" from="FunkyPackButton" to="." method="_on_FunkyPackButton_pressed"]
+[connection signal="pressed" from="OrbeButton" to="." method="_on_OrbeButton_pressed"]
+[connection signal="pressed" from="SkinOrbeButton" to="." method="_on_SkinOrbeButton_pressed"]
+[connection signal="pressed" from="ArenaButton" to="." method="_on_ArenaButton_pressed"]
+[connection signal="pressed" from="EmoteButton" to="." method="_on_EmoteButton_pressed"]
+[connection signal="pressed" from="ObamiumContainer" to="." method="_on_ObamiumContainer_pressed"]
+[connection signal="request_completed" from="HTTPRequest" to="." method="_on_HTTPRequest_request_completed"]
+[connection signal="pressed" from="ResetButton" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="GiveItem" to="." method="_on_GiveItem_pressed"]
+[connection signal="pressed" from="BackBtn" to="." method="_on_BackBtn_pressed"]
+[connection signal="pressed" from="AchatObamium/9Obamiums" to="." method="_on_Obamium_pressed" binds= [ 4 ]]
+[connection signal="pressed" from="AchatObamium/5Obamiums" to="." method="_on_Obamium_pressed" binds= [ 3 ]]
+[connection signal="pressed" from="AchatObamium/3Obamiums" to="." method="_on_Obamium_pressed" binds= [ 2 ]]
+[connection signal="pressed" from="AchatObamium/1Obamium" to="." method="_on_Obamium_pressed" binds= [ 1 ]]
+[connection signal="pressed" from="AchatObamium/Return" to="." method="_on_Return_pressed"]
+[connection signal="text_change_rejected" from="CB/Carte1" to="." method="_on_Carte1_text_change_rejected"]
+[connection signal="text_changed" from="CB/Carte1" to="." method="_on_Carte1_text_changed"]
+[connection signal="text_changed" from="CB/Carte2" to="." method="_on_Carte2_text_changed"]
+[connection signal="focus_entered" from="CB/Carte3" to="." method="_on_Carte3_focus_entered"]
+[connection signal="text_changed" from="CB/Carte3" to="." method="_on_Carte3_text_changed"]
+[connection signal="focus_entered" from="CB/Carte4" to="." method="_on_Carte4_focus_entered"]
+[connection signal="text_changed" from="CB/Carte4" to="." method="_on_Carte4_text_changed"]
+[connection signal="focus_entered" from="CB/Expiration1Text" to="." method="_on_Expiration1Text_focus_entered"]
+[connection signal="text_changed" from="CB/Expiration1Text" to="." method="_on_Expiration1Text_text_changed"]
+[connection signal="focus_entered" from="CB/Expiration2Text" to="." method="_on_Expiration2Text_focus_entered"]
+[connection signal="text_changed" from="CB/Expiration2Text" to="." method="_on_Expiration2Text_text_changed"]
+[connection signal="pressed" from="CB/ConfirmeAchat" to="." method="_on_ConfirmeAchat_pressed"]
+[connection signal="pressed" from="CB/Return" to="." method="_on_Return_pressed"]

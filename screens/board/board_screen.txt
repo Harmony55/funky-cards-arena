@@ -1,0 +1,5294 @@
+extends AbstractScreen
+
+var _hand_store: CardHand = CardHand.new()
+var _pile1_store: CardPile = CardPile.new()
+var _pile2_store: CardPile = CardPile.new()
+var _pile3_store: CardPile = CardPile.new()
+var _pile4_store: CardPile = CardPile.new()
+var _pile5_store: CardPile = CardPile.new()
+var _pile6_store: CardPile = CardPile.new()
+
+var _pile21_store: CardPile = CardPile.new()
+var _pile22_store: CardPile = CardPile.new()
+var _pile23_store: CardPile = CardPile.new()
+var _pile24_store: CardPile = CardPile.new()
+var _pile25_store: CardPile = CardPile.new()
+
+var effect_click
+var effect_card
+var is_animation = false
+var playing = false
+var hidenRows = []
+
+var buffKratos = 0
+var cardKilled = 0
+var cardKilledBobux = 0
+
+var juan_buff
+
+var deadCardBobux = 0
+var invisibleCards = 0
+
+var hurt_kuikui
+var dead = false
+var doubleLife = false
+
+var bruteInvincible = true
+
+var ref
+
+var is_chicken
+
+var cowboy_atk
+
+
+
+var ccNn
+var bleach = 0
+
+var instance1
+var instance2
+var instance3
+var instance4
+var instance5
+
+var spot1_mimir = false
+var spot2_mimir = false
+var spot3_mimir = false
+var spot4_mimir = false
+var spot5_mimir = false
+
+var spots_mimir_ennemie = [null, null, null, null, null]
+var spots_mimir = [null, null, null, null, null]
+
+var spot1_mimir_own = false
+var spot2_mimir_own = false
+var spot3_mimir_own = false
+var spot4_mimir_own = false
+var spot5_mimir_own = false
+
+var spot1_balayed = false
+var spot2_balayed = false
+var spot3_balayed = false
+var spot4_balayed = false
+var spot5_balayed = false
+
+var fisc = 0
+
+var carte1
+var carte2
+var carte4
+var carte5
+var carte6
+
+var carte21
+var carte22
+var carte23
+var carte24
+
+var can_pick
+
+var kuikui_china = 0
+
+var real_turn = 1
+
+var play_01 = [1,4,5,8,9,12,13,16,17,20,21,24,25,28,29,33,34,37,38,41,42,45,46,49,50,53,54,57,58,61,62,65,66,69,70,73,74,77,78,81,82,85,86,89,90]
+var play_02 = [2,3,6,7,10,11,14,15,18,19,22,23,26,27,31,32,35,36,39,40,43,44,47,48,51,52,55,56,59,60,63,64,67,68,71,72,75,76,79,80,83,84,87,88,91,92]
+
+#var play_1 = [1,4,5,8,9,12,13,16,17,20,21,24,25,28,29,33,34,37,38,41,42,45,46,49,50,53,54,57,58,61,62,65,66,69,70,73,74,77,78,81,82,85,86,89,90]
+#var play_2 = [2,3,6,7,10,11,14,15,18,19,22,23,26,27,31,32,35,36,39,40,43,44,47,48,51,52,55,56,59,60,63,64,67,68,71,72,75,76,79,80,83,84,87,88,91,92]
+#var bobux_turn = [1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,46,48,50,52,54,56,58,60,62,64,66,68,70,72,74,76,78,80,82,84,86,88,90,92,94]
+#var combat = [2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79,81,83,85,87,89,91,93]
+var play_1 = []
+var play_2 = []
+var bobux_turn = []
+var combat = []
+
+var need_hurt = false
+
+var bobux = 1
+var usedBobux = 0
+var totalBobux = 0
+
+var play_turn = 1
+var turn2 = true
+
+var vaccined = [0,0,0,0,0]
+
+var orbeEnnemieHp = 0
+
+puppet var card_number = 0
+
+onready var _board = $Board
+
+onready var _hand = $Board/Hand
+onready var _pile1 = $Board/Pile1
+onready var _pile2 = $Board/Pile2
+onready var _pile3 = $Board/Pile3
+onready var _pile4 = $Board/Pile4
+onready var _pile5 = $Board/Pile5
+onready var _pile6 = $Board/Pile6
+
+onready var _pile21 = $Board/Pile21
+onready var _pile22 = $Board/Pile22
+onready var _pile23 = $Board/Pile23
+onready var _pile24 = $Board/Pile24
+onready var _pile25 = $Board/Pile25
+
+onready var orbeEnnemie = $Board/OrbeHPEnnemie
+
+var OrbeVerte = preload("res://screens/board/Orbe_Verte.png")
+var OrbeRouge = preload("res://screens/board/Orbe_Rouge.png")
+var OrbeJaune = preload("res://screens/board/Orbe_Jaune_.png")
+var OrbeBleue = preload("res://screens/board/Orbe_Bleue.png")
+var OrbeOrange = preload("res://screens/board/Orbe_Orange.png")
+var OrbeFrance = preload("res://screens/board/Orbe_France.png")
+var OrbeCoco = preload("res://screens/board/Orbe_Coco.png")
+
+var DripSupreme = preload("res://screens/magasin/buttons/Preview/DripSupreme.png")
+var HautForme = preload("res://screens/board/Orbe/Skin/HautForme.png")
+var NerdSkin = preload("res://screens/board/Orbe/Skin/Nerd.png")
+var PipeSkin = preload("res://screens/board/Orbe/Skin/Pipe.png")
+var FezSkin = preload("res://screens/board/Orbe/Skin/Fez.png")
+var LunetteSkin = preload("res://screens/board/Orbe/Skin/Sunglass.png")
+var DripShoeSkin = preload("res://screens/board/Orbe/Skin/DripShoe.png")
+var TubaSkin = preload("res://screens/board/Orbe/Skin/Tuba.png")
+
+#var DefaultArena = preload("res://screens/board/ArenaTest.png")
+#var AndorraLaVella = preload("res://screens/board/Arena/AndorraLaVellaArena.png")
+#var CyprienArena = preload("res://screens/board/Arena/Cyprien.png")
+#var KilpoArena = preload("res://screens/board/Arena/Kilpo.png")
+#var ZigArena = preload("res://screens/board/Arena/Zig.png")
+#var FortniteArena = preload("res://screens/board/Arena/Fortnite.png")
+#var SonicArena = preload("res://screens/board/Arena/Sonic.png")
+#var PlageArena = preload("res://screens/board/Arena/Plage.png")
+
+signal droped(card)
+
+func spectator():
+	$Board/NextTurn.visible = false
+	$Board/DrawBtn.visible = false
+	$Board/Hand.visible = false
+	$Board/Pile3.visible = false
+	$Board/Bobux.visible = false
+
+remote func en_orbe(value):
+	orbeEnnemie.text = str(value)+"/30"
+	$Board/HPEnnemie.value = value
+	if ennemieDynamique:
+		if value >= 15:
+			$Board/OrbeEnnemie.texture = OrbeVerte
+		elif value > 5 and value < 15:
+			$Board/OrbeEnnemie.texture = OrbeJaune
+		else:
+			$Board/OrbeEnnemie.texture = OrbeRouge
+	if ennemieComedie:
+		if value >= 15:
+			$Board/OrbeEnnemie.texture = load("res://screens/board/orbe_masque_content.png")
+		else:
+			$Board/OrbeEnnemie.texture = load("res://screens/board/orbe_masque_aigri.png")
+
+master func en_orbee(value):
+	orbeEnnemie.text = str(value)+"/30"
+	$Board/HPEnnemie.value = value
+	if ennemieDynamique:
+		if value >= 15:
+			$Board/OrbeEnnemie.texture = OrbeVerte
+		elif value > 5 and value < 15:
+			$Board/OrbeEnnemie.texture = OrbeJaune
+		else:
+			$Board/OrbeEnnemie.texture = OrbeRouge
+	if ennemieComedie:
+		if value >= 15:
+			$Board/OrbeEnnemie.texture = load("res://screens/board/orbe_masque_content.png")
+		else:
+			$Board/OrbeEnnemie.texture = load("res://screens/board/orbe_masque_aigri.png")
+
+var ennemieDynamique = false
+var ennemieComedie
+
+func _process(delta):
+#	$Board/Pile21.get_node("DropArea/Cards").visible = false
+#	$Board/Pile22.get_node("DropArea/Cards").visible = false
+#	$Board/Pile23.get_node("DropArea/Cards").visible = false
+#	$Board/Pile24.get_node("DropArea/Cards").visible = false
+#	$Board/Pile25.get_node("DropArea/Cards").visible = false
+
+	
+	$Board/OrbeHP.text = str(Global.orbe)+"/30"
+	$Board/TextureProgress.value = Global.orbe
+	
+	if Global.orbeSelected == "Orbe dynamique":
+		if Global.orbe >= 15:
+			$Board/Orbe.texture = OrbeVerte
+			$Board/Music.pitch_scale = 1
+		elif Global.orbe > 5 and Global.orbe < 15:
+			$Board/Orbe.texture = OrbeJaune
+			$Board/Music.pitch_scale = 1.3
+		else:
+			$Board/Orbe.texture = OrbeRouge
+			$Board/Music.pitch_scale = 1.6
+	if Global.orbeSelected == "Orbe Comédie et Tragédie":
+		if Global.orbe >= 15:
+			$Board/Orbe.texture = load("res://screens/board/orbe_masque_content.png")
+		else:
+			$Board/Orbe.texture = load("res://screens/board/orbe_masque_aigri.png")
+	
+	$Board/Bobux.text = str(bobux)
+	
+	if bobux_turn(Global.real_turn):
+		bobux = play_turn - fisc
+		fisc = 0
+		totalBobux += bobux
+		play_turn += 1
+		
+				
+		bobux_turn.append(Global.real_turn)
+		
+
+		
+	if can_pick == true:
+		$Board/DrawBtn.disabled = false
+	else:
+		$Board/DrawBtn.disabled = true
+
+func is_after_combat(turn):
+	for i in combat:
+		if turn == i+1:
+			return true
+	return false
+	
+remote func fisc(index):
+	fisc += index
+
+
+#var audioBruh = preload("res://audio/Effect/bruh.wav")
+#var audioEnjoy = preload("res://audio/Effect/enjoy.wav")
+#var audioHorse = preload("res://audio/Effect/horse.wav")
+#var audioWarning = preload("res://audio/Effect/warning.wav")
+#var audioMdr = preload("res://audio/Effect/mdr.wav")
+#var audioNo = preload("res://audio/Effect/hellno.wav")
+
+remote func setOnlyFish(value):
+	otherOnlyFish = value
+
+var onlySpell = true
+
+var otherOnlyFish = true
+
+var onlyFish = true
+var noFish = true
+
+remote func playSoundOther(title):
+	
+	$Board/EmoteCard2/AnimationPlayer.play("Spawn")
+	
+	$Board/EmoteCard2.visible = true
+	$Board/BubbleEnnemie.visible = true
+	
+	for i in Global.dataBaseCosmetics:
+		if i.get_text("name") == title:
+			$Board/EmoteCard2.texture = load(i.get_text("texture_casier"))
+			$Board/EnnemieSound.stream = load("res://audio/Effect/"+title+".wav")
+			$Board/EnnemieSound.play()
+	
+	yield($Board/EnnemieSound, "finished")
+	$Board/EmoteCard2/AnimationPlayer.play("Despawn")
+	
+	if title == "Enjoy the next 45 seconds":
+		var timeDict = OS.get_time();
+		var hour = timeDict.hour;
+#		var random_float = randf()
+#		if random_float < 0.1:
+		if hour == Global.thatTime or hour == 3:
+			yield(get_tree().create_timer(45), "timeout")
+			$Board/JumpScare.play()
+			$Board/FNAF.visible = true
+			$Board/FNAF.play()
+			yield(get_tree().create_timer(3), "timeout")
+			$Board/FNAF.visible = false
+
+var ipAdressed = []
+
+func playSound(title):
+	rpc("playSoundOther", title)
+	$Board/EmoteCard/AnimationPlayer.play("Spawn")
+	$Board/EmoteCard.visible = true
+	$Board/Bubble.visible = true
+	
+	for i in Global.dataBaseCosmetics:
+		if i.get_text("name") == title:
+			$Board/EmoteCard.texture = load(i.get_text("texture_casier"))
+			$Board/bruh.stream = load("res://audio/Effect/"+title+".wav")
+			$Board/bruh.play()
+			
+	yield($Board/bruh, "finished")
+	$Board/EmoteCard/AnimationPlayer.play("Despawn")
+
+func changeRich(title: String, description: String) -> void:
+	var activity = Discord.Activity.new()
+	activity.set_type(Discord.ActivityType.Playing)
+	activity.set_details(title)
+	activity.set_state(description)
+		
+	var result = yield(Discord.activity_manager.update_activity(activity), "result").result
+	if result != Discord.Result.Ok:
+		push_error(result)
+
+
+func arrays_have_same_content(array1, array2):
+	if array1.size() != array2.size(): return false
+	for item in array1:
+		if !array2.has(item):
+			 return false
+		if array1.count(item) != array2.count(item):
+			 return false
+	return true
+	
+var startingHands = []
+
+func _ready() -> void:
+	
+
+	var image = get_viewport().get_texture().get_data()
+	image.flip_y()
+	image.save_png("user://screenshots//screenshot.png")
+	
+	$Board/DrawBtn/AnimationPlayer.play("RESET")
+	randomize()
+	if is_network_master():
+		can_pick = true
+	else:
+		can_pick = false
+		
+	for ip in IP.get_local_addresses():
+		ipAdressed.append(ip)
+		
+#	$Control/VBoxContainer/Panel/MarginContainer/ScrollContainer/Grid.add_constant_override("hseparation", 100)
+		
+	
+	if UserStores._get_items().has("emote"):
+		$Board/Button.visible = true
+		var indicator = 0
+		for i in UserStores._get_items()["emote"]:
+			var pack = load("res://screens/casier/FunkyPack.tscn").instance()
+			indicator += 1
+			pack.setUp(i)
+			$Control/ScrollContainer/VBoxContainer.add_child(pack)
+#		$Control/ScrollContainer/VBoxContainer.rect_min_size = Vector2($Control/ScrollContainer/VBoxContainer.get_child_count()*100, 100)
+	else:
+		$Board/Button.visible = false
+		
+
+		
+		
+	if OS.is_debug_build():
+		$Board/Cheat.visible = true
+	else:
+		$Board/Cheat.visible = false
+		
+	$Background.visible = false
+	
+	if Global.skinSelected == "null":
+		$Board/SkinOrbe.visible = false
+		$YouIcon/SkinOrbe.visible = false
+	elif Global.skinSelected == "Haut de forme":
+		$Board/SkinOrbe.texture = HautForme
+		$YouIcon/SkinOrbe.texture = HautForme
+	elif Global.skinSelected == "Nerd":
+		$Board/SkinOrbe.visible = true
+		$Board/SkinOrbe.texture = NerdSkin
+		$YouIcon/SkinOrbe.texture = NerdSkin
+	elif Global.skinSelected == "Sherlock Horbes":
+		$Board/SkinOrbe.visible = true
+		$Board/SkinOrbe.texture = PipeSkin
+		$YouIcon/SkinOrbe.texture = PipeSkin
+	elif Global.skinSelected == "Fez":
+		$Board/SkinOrbe.visible = true
+		$Board/SkinOrbe.texture = FezSkin
+		$YouIcon/SkinOrbe.texture = FezSkin
+	elif Global.skinSelected == "Lunettes stylé":
+		$Board/SkinOrbe.visible = true
+		$Board/SkinOrbe.texture = LunetteSkin
+		$YouIcon/SkinOrbe.texture = LunetteSkin
+	elif Global.skinSelected == "Chaussures drip":
+		$Board/SkinOrbe.visible = true
+		$Board/SkinOrbe.texture = DripShoeSkin
+		$YouIcon/SkinOrbe.texture = DripShoeSkin
+	elif Global.skinSelected == "Tuba":
+		$Board/SkinOrbe.visible = true
+		$Board/SkinOrbe.texture = TubaSkin
+		$YouIcon/SkinOrbe.texture = TubaSkin
+	else:
+		for i in Global.dataBaseCosmetics:
+			if i.get_text("name") == Global.skinSelected:
+				$Board/SkinOrbe.visible = true
+				$Board/SkinOrbe.texture = load(i.get_text("texture_casier"))
+				$YouIcon/SkinOrbe.texture = load(i.get_text("texture_casier"))
+	
+	for i in Global.dataBaseCosmetics:
+		if i.get_text("name") == Global.orbeSelected:
+			$Board/Orbe.texture = load(i.get_text("texture_casier"))
+			$YouIcon/Orbe.texture = load(i.get_text("texture_casier"))
+		if i.get_text("name") == Global.arenaSelected:
+			$TextureRect.texture = load(i.get_text("texture_casier"))
+			$coeur/YourArena.texture = load(i.get_text("texture_casier"))
+	
+	if Global.orbeSelected == "Orbama":
+		$YouIcon/Obamasphere.visible = true
+		$YouIcon/Orbe.visible = false
+		$Board/Orbe.visible = false
+		$Board/Obamasphere.visible = true
+	
+#	if Global.orbeSelected == "Orbe Bleue": 1
+#		$Board/Orbe.texture = OrbeBleue 
+#		$YouIcon/Orbe.texture = OrbeBleue 
+#	elif Global.orbeSelected == "Orbe Jaune": 2
+#		$Board/Orbe.texture = OrbeJaune
+#		$YouIcon/Orbe.texture = OrbeJaune
+#	elif Global.orbeSelected == "Orbe Orange":3
+#		$Board/Orbe.texture = OrbeOrange
+#		$YouIcon/Orbe.texture = OrbeOrange
+#	elif Global.orbeSelected == "Orbe Rouge":4
+#		$Board/Orbe.texture = OrbeRouge
+#		$YouIcon/Orbe.texture = OrbeRouge
+#	elif Global.orbeSelected == "Orbe Verte":5
+#		$Board/Orbe.texture = OrbeVerte
+#		$YouIcon/Orbe.texture = OrbeVerte
+#	elif Global.orbeSelected == "Orbe Française":6
+#		$Board/Orbe.texture = OrbeFrance
+#		$YouIcon/Orbe.texture = OrbeFrance
+#	elif Global.orbeSelected == "Noix de coco":7
+#		$Board/Orbe.texture = OrbeCoco
+#		$YouIcon/Orbe.texture = OrbeCoco
+		
+#	if Global.arenaSelected == "Andorra-La-Vella":
+#		$TextureRect.texture = AndorraLaVella
+#	elif Global.arenaSelected == "Funky Cards Arena":
+#		$TextureRect.texture = DefaultArena
+#	elif Global.arenaSelected == "Studio de Cyprien":
+#		$TextureRect.texture = CyprienArena
+#	elif Global.arenaSelected == "6-KILPO":
+#		$TextureRect.texture = KilpoArena
+#	elif Global.arenaSelected == "Zig et Sharko":
+#		$TextureRect.texture = ZigArena
+#	elif Global.arenaSelected == "Fortnite":
+#		$TextureRect.texture = FortniteArena
+#	elif Global.arenaSelected == "Sonic":
+#		$TextureRect.texture = SonicArena
+#	elif Global.arenaSelected == "Plage":
+#		$TextureRect.texture = PlageArena
+	
+	Global.board = self
+	var db = CardEngine.db().get_database("main")
+	
+	_pile1.data_id = "pile_1"
+	_pile2.data_id = "pile_2"
+	_pile3.data_id = "pile_3"
+	_pile4.data_id = "pile_4"
+	_pile5.data_id = "pile_5"
+	_pile6.data_id = "pile_6"
+	
+	_pile21.data_id = "pile_21"
+	_pile22.data_id = "pile_22"
+	_pile23.data_id = "pile_23"
+	_pile24.data_id = "pile_24"
+	_pile25.data_id = "pile_25"
+	
+	var cards = []
+	for i in Gameplay.current_deck.cards():
+		cards.append(i.data().id)
+	
+	cards.shuffle()
+	
+	
+	var hand = left(cards, 5)
+	var deck = right(cards, 27)
+	
+	_hand_store.populate(db, hand)
+	
+#	_hand_store.keep(5)
+	
+	_hand.set_store(_hand_store)
+	
+	for i in _hand_store.cards():
+		startingHands.append(i._data)
+	
+	_pile3_store.populate(db, deck)
+	_pile3_store.shuffle()
+	
+	for i in _pile3_store.cards():
+		if str(i._data.id)[5] != "0":
+			onlySpell = false
+		if i._data.get_category("creature_type") == "poisson":
+			noFish = false
+		if i._data.get_category("creature_type") != "poisson":
+			onlyFish = false
+			rpc("setOnlyFish", onlyFish)
+	
+
+
+	_pile3.set_store(_pile3_store)
+	
+	
+
+	_pile1.get_drop_area().set_source_filter(["hand"])
+	_pile2.get_drop_area().set_source_filter(["hand"])
+	_pile3.get_drop_area().set_source_filter([])
+	_pile4.get_drop_area().set_source_filter(["hand"])
+	_pile5.get_drop_area().set_source_filter(["hand"])
+	_pile6.get_drop_area().set_source_filter(["hand"])
+	
+	_pile21.get_drop_area().set_source_filter(["hand"])
+	_pile22.get_drop_area().set_source_filter(["hand"])
+	_pile23.get_drop_area().set_source_filter(["hand"])
+	_pile24.get_drop_area().set_source_filter(["hand"])
+	_pile25.get_drop_area().set_source_filter(["hand"])
+
+	_pile1.set_store(_pile1_store)
+	_pile2.set_store(_pile2_store)
+	_pile3.set_store(_pile3_store)
+	_pile4.set_store(_pile4_store)
+	_pile5.set_store(_pile5_store)
+	_pile6.set_store(_pile6_store)
+	
+	_pile21.set_store(_pile21_store)
+	_pile22.set_store(_pile22_store)
+	_pile23.set_store(_pile23_store)
+	_pile24.set_store(_pile24_store)
+	_pile25.set_store(_pile25_store)
+	
+	reload()
+
+func left(array, x):
+	return array.slice(0, x-1)
+
+func right(array, x):
+	return array.slice(array.size()-x, array.size()-1)
+
+
+func returnPressed():
+	$Board/click.play()
+	Global.play_turn = 1 #Nombre de tour que les gens on jouer
+	Global.real_turn = 1 #Tour afficher
+	Global.orbe = 30
+	bobux = 1
+	emit_signal("next_screen", "menu")
+
+func _on_MenuButton_pressed() -> void:
+	$Board/click.play()
+	Global.play_turn = 1 #Nombre de tour que les gens on jouer
+	Global.real_turn = 1 #Tour afficher
+	Global.orbe = 30
+	bobux = 1
+	emit_signal("next_screen", "menu")
+
+remote func changeRandomHandCard(number, hp, atk, def, bobux):
+	for i in range(0,number):
+		var hand = _hand_store.cards()
+		if hand.size() < 1:
+			return
+		hand.shuffle()
+		if hand[0].data().has_value("hp"):
+			hand[0].data().set_value("hp", hand[0].data().get_value("hp")+hp)
+		if hand[0].data().has_value("attack"):
+			hand[0].data().set_value("attack", hand[0].data().get_value("attack")+atk)
+		hand[0].data().set_value("mana", hand[0].data().get_value("mana")+bobux)
+		hand[0].emit_signal("need")
+		hand[0].card._update_data(hand[0].data())
+
+func get_hand_cards():
+	return _hand_store.cards()
+
+func useRandomSpell():
+	var hand = _hand_store.cards()
+	for i in hand:
+		if i.daya().get_category("class") != "sort":
+			hand.erase(i)
+	hand.shuffle()
+
+master func change_fake_card(card):
+	$Board/FakeCard/Name.text = card[0]
+	$Board/FakeCard/Attack.text = str(card[2])
+	$Board/FakeCard/Mana.text = str(card[1])
+	$Board/FakeCard/HP.text = str(card[3])
+	
+	if card[0] == "7 - Cyprien":
+		if card[2] == 9 and card[3] == 9:
+			if not UserStores._get_items().has("SuccesOhOh") and Global.sameIP == false:
+				$Sprite.texture = load("res://screens/menu/succes/Ohoh.png")
+				UserStores.save_item("SuccesOhOh",1)
+				$SuccesAnim.play("Slideup")
+				$succes.play()
+	
+slave func schange_fake_card(card):
+	$Board/FakeCard/Name.text = card[0]
+	$Board/FakeCard/Attack.text = str(card[2])
+	$Board/FakeCard/Mana.text = str(card[1])
+	$Board/FakeCard/HP.text = str(card[3])
+
+remote func randomHandCardRemote():
+	var cards = _hand_store.cards()
+	if cards.size() == 0:
+		return
+	cards.shuffle()
+	var cardPicked
+	cardPicked = cards[0]
+#	for card in _hand_store.cards():
+#		if card.data().get_text("name") == cardPicked.data().get_text("name"):
+	_hand_store.remove_card(cardPicked.ref())
+	rpc("giveCardRemote", cardPicked.data().get_text("name"), 1)
+
+remote func setFakeStore(store):
+	var db = CardEngine.db().get_database("main")
+	var _store: CardDeck = CardDeck.new()
+	var cards = []
+	for data in store:
+		cards.append(data[0])
+	
+	_store.populate(db, cards)
+	$Board/Pile30.set_store(_store)
+
+remote func getHandStats():
+	
+	var cards = _hand_store.cards()
+
+	var data = []
+	for card in _hand_store:
+		var array = []
+		array.append(card.data().get_text("name"))
+		array.append(card.data().get_value("mana"))
+		array.append(card.data().get_value("attack"))
+		array.append(card.data().get_value("hp"))
+		data.append(array)
+		
+	rpc("setFakeStore", data)
+	
+
+slave func get_random_hand_stats(one):
+	var cards = _hand_store.cards()
+	cards.shuffle()
+	var array = []
+	array.append(cards[0].data().get_text("name"))
+	array.append(cards[0].data().get_value("mana"))
+	array.append(cards[0].data().get_value("attack"))
+	array.append(cards[0].data().get_value("hp"))
+	rpc_id(1, "change_fake_card", array)
+	return cards[0]
+	
+master func mget_random_hand_stats(one):
+	var cards = _hand_store.cards()
+	cards.shuffle()
+	var array = []
+	array.append(cards[0].data().get_text("name"))
+	array.append(cards[0].data().get_value("mana"))
+	array.append(cards[0].data().get_value("attack"))
+	array.append(cards[0].data().get_value("hp"))
+	rpc_id(Global.other_id, "schange_fake_card", array)
+	return cards[0]
+	
+func check_juan():
+	yield(get_tree().create_timer(0.2), "timeout")
+	if ennemie_has_card("38 - Poulet") or has_card("38 - Poulet"):
+		change_cards("32 - Juan", 2, 2)
+		juan_buff = true
+	else:
+		if juan_buff == true:
+			juan_buff = false
+			change_cards("32 - Juan", -2, -2)
+	reload()
+
+func change_cards(name, hp, atk):
+	for i in range(1,6):
+		if get_store(i).cards().size() > 0:
+			if get_store(i).cards()[0].data().get_text("name") == name:
+				if name == "32 - Juan":
+					if get_store(i).cards()[0].data().get_text("desc") == "Lorsqu'il meurt, invoque un os dans la main" and hp > 0:
+						break
+				particle(i, hp*-1, atk*-1)
+				get_store(i).cards()[0].data().set_value("hp", hp+get_store(i).cards()[0].data().get_value("hp"))
+				get_store(i).cards()[0].data().set_value("attack", atk+get_store(i).cards()[0].data().get_value("attack"))
+				if name == "32 - Juan":
+					if get_store(i).cards()[0].data().get_text("desc") == "Lorsqu'il meurt, invoque un os dans la main.":
+						get_store(i).cards()[0].data().set_text("desc", "Lorsqu'il meurt, invoque un os dans la main")
+	reload()
+
+func ennemie_has_card(name):
+	for i in range(1,6):
+		if get_store_ennemie(i).cards().size() > 0:
+			if get_store_ennemie(i).cards()[0].data().get_text("name") == name:
+				return true
+	return false
+
+func has_card(name):
+	for i in range(1,6):
+		if get_store(i).cards().size() > 0:
+			if get_store(i).cards()[0].data().get_text("name") == name:
+				return true
+	return false
+	
+func cardsNumber(name):
+	var number = 0
+	for i in range(1,6):
+		if get_store(i).cards().size() > 0:
+			if get_store(i).cards()[0].data().get_text("name") == name:
+				number += 1
+	return number
+
+func returnCardsEnnemie(name):
+	var listPos = []
+	for i in range(1,6):
+		if get_store_ennemie(i).cards().size() > 0:
+			if get_store_ennemie(i).cards()[0].data().get_text("name") == name:
+				listPos.append(i)
+	return listPos
+	
+func returnCards(name):
+	var listPos = []
+	for i in range(1,6):
+		if get_store(i).cards().size() > 0:
+			if get_store(i).cards()[0].data().get_text("name") == name:
+				listPos.append(i)
+	return listPos
+
+func ennemie_card_placed(card, row):
+	check_juan()
+	
+	if card.data().get_value("hp")+card.data().get_value("attack") > 12:
+		$Board/power.play()
+		
+		
+func intersect(array1: Array, array2: Array):
+	var intersection = []
+	for item in array1:
+		if array2.has(item):
+			intersection.append(item)
+	return intersection
+
+func getNumberRarity(rarity):
+	if rarity == "commun":
+		return 1
+	elif rarity == "atypique":
+		return 2
+	elif rarity == "rare":
+		return 3
+	elif rarity == "ultra_rare":
+		return 4
+	elif rarity == "divin":
+		return 5
+
+func getCardsRarity(index):
+	var db = CardEngine.db().get_database("main")
+	var q = Query.new()
+	var cards = q.from(["rarity:commun"]).execute(db)
+	if index == 1:
+		return cards
+	cards += q.from(["rarity:atypique"]).execute(db)
+	if index == 2:
+		return cards
+	cards += q.from(["rarity:rare"]).execute(db)
+	if index == 3:
+		return cards
+	cards += q.from(["rarity:ultra_rare"]).execute(db)
+	if index == 4:
+		return cards
+	cards += q.from(["rarity:divin"]).execute(db)
+	return cards
+	
+func getCardsRarityMin(index):
+	var db = CardEngine.db().get_database("main")
+	var q = Query.new()
+	var cards = q.from(["rarity:divin"]).execute(db)
+	if index == 1:
+		return cards
+	cards += q.from(["rarity:ultra_rare"]).execute(db)
+	if index == 2:
+		return cards
+	cards += q.from(["rarity:rare"]).execute(db)
+	if index == 3:
+		return cards
+	cards += q.from(["rarity:atypique"]).execute(db)
+	if index == 4:
+		return cards
+	cards += q.from(["rarity:commun"]).execute(db)
+	return cards
+	
+func giveCardRarityMin(number, maxi):
+		var db = CardEngine.db().get_database("main")
+		var cards = getCardsRarityMin(maxi)
+		
+		cards.erase("card_011")
+		
+		var store = CardPile.new()
+		
+		var list = []
+		
+		var list2 = []
+		
+		for i in _pile3_store.cards():
+			list.append(i.data().id)
+			
+		
+		store.populate(db, cards)
+		store.shuffle()
+		store.keep(number)
+		
+		for i in store.cards():
+			list2.append(i.data().id)
+		
+		list += list2
+		_pile3_store.populate(db, list)
+		
+
+		_pile3.set_store(_pile3_store)
+		
+		for i in range(0,number):
+			var carde := _pile3_store.get_last()
+			if carde != null:
+				if has_card("58 - Harmony55"):
+					for k in returnCards("58 - Harmony55"):
+						carde.data().set_value("mana", carde.data().get_value("mana")-1)
+				# warning-ignore:return_value_discarded
+				_pile3_store.move_card(carde.ref(), _hand_store)
+		
+func giveCardClassMax(classe, number, maxi):
+		var db = CardEngine.db().get_database("main")
+		var q = Query.new()
+		var cards = q.from(["class:"+str(classe)]).execute(db)
+		var store = CardPile.new()
+		
+		cards = intersect(cards, getCardsRarity(maxi))
+
+		var banned = ["card_020"]
+		for card in banned:
+			if cards.has(card):
+				cards.erase(card)
+		
+		var list = []
+		
+		var list2 = []
+		
+		for i in _pile3_store.cards():
+			list.append(i.data().id)
+			
+		
+		store.populate(db, cards)
+		store.shuffle()
+		store.keep(number)
+		
+		for i in store.cards():
+			list2.append(i.data().id)
+		
+		list += list2
+		_pile3_store.populate(db, list)
+		
+
+		_pile3.set_store(_pile3_store)
+		
+		for i in range(0,number):
+			var carde := _pile3_store.get_last()
+			if carde != null:
+				if has_card("58 - Harmony55"):
+					for k in returnCards("58 - Harmony55"):
+						carde.data().set_value("mana", carde.data().get_value("mana")-1)
+				# warning-ignore:return_value_discarded
+				_pile3_store.move_card(carde.ref(), _hand_store)
+		
+func getTypeNumber(type):
+	var number = 0
+	for i in range(1,6):
+		if get_store(i).cards().size() > 0:
+			if get_store(i).cards()[0].data().get_category("creature_type") == type:
+				number += 1
+	return number
+
+remote func giveCardTypeRemote(type, number):
+	giveCardTypeMax(type, number, 5)
+
+func giveCardTypeMax(type, number, maxi):
+		var db = CardEngine.db().get_database("main")
+		var q = Query.new()
+		var cards = q.from(["creature_type:"+str(type)]).execute(db)
+		var store = CardPile.new()
+		
+		cards = intersect(cards, getCardsRarity(maxi))
+		
+		var list = []
+		
+		var list2 = []
+		
+		for i in _pile3_store.cards():
+			list.append(i.data().id)
+			
+		
+		store.populate(db, cards)
+		store.shuffle()
+		store.keep(number)
+		
+		for i in store.cards():
+			list2.append(i.data().id)
+		
+		list += list2
+		_pile3_store.populate(db, list)
+		
+
+		_pile3.set_store(_pile3_store)
+		
+		for i in range(0,number):
+			var carde := _pile3_store.get_last()
+			if carde != null:
+				if has_card("58 - Harmony55"):
+					for k in returnCards("58 - Harmony55"):
+						carde.data().set_value("mana", carde.data().get_value("mana")-1)
+				# warning-ignore:return_value_discarded
+				_pile3_store.move_card(carde.ref(), _hand_store)
+
+remote func giveCardRemote(name, number):
+	giveCard(name, number)
+
+remote func giveCardModifyRemote(name, number, atk, hp, bobux):
+	giveCardModify(name, number, atk, hp, bobux)
+
+func giveCardModify(name, number, atk, hp, bobux):
+		var db = CardEngine.db().get_database("main")
+		var q = Query.new()
+		var cards = q.contains(["name:"+name]).execute(db)
+		var store = CardPile.new()
+		
+		var list = []
+		
+		var list2 = []
+		
+		for i in _pile3_store.cards():
+			list.append(i.data().id)
+			
+		
+		store.populate(db, cards)
+		store.shuffle()
+		store.keep(number)
+		
+		for i in store.cards():
+			list2.append(i.data().id)
+		
+		list += list2
+		_pile3_store.populate(db, list)
+		
+
+		_pile3.set_store(_pile3_store)
+		
+		for i in range(0,number):
+			var carde := _pile3_store.get_last()
+			if carde != null:
+				if has_card("58 - Harmony55"):
+					for k in returnCards("58 - Harmony55"):
+						carde.data().set_value("mana", carde.data().get_value("mana")-1)
+				carde.set_value("mana", carde.get_value("mana")+bobux)
+				# warning-ignore:return_value_discarded
+				_pile3_store.move_card(carde.ref(), _hand_store)
+
+func giveCard(name, number):
+		var db = CardEngine.db().get_database("main")
+		var q = Query.new()
+		var cards = q.contains(["name:"+name]).execute(db)
+		var store = CardPile.new()
+		
+		var list = []
+		
+		var list2 = []
+		
+		for i in _pile3_store.cards():
+			list.append(i.data().id)
+			
+		
+		store.populate(db, cards)
+		store.shuffle()
+		store.keep(number)
+		
+		for i in store.cards():
+			list2.append(i.data().id)
+		
+		list += list2
+		_pile3_store.populate(db, list)
+		
+
+		_pile3.set_store(_pile3_store)
+		
+		for i in range(0,number):
+			var carde := _pile3_store.get_last()
+			if carde != null:
+				if has_card("58 - Harmony55"):
+					for k in returnCards("58 - Harmony55"):
+						carde.data().set_value("mana", carde.data().get_value("mana")-1)
+				# warning-ignore:return_value_discarded
+				_pile3_store.move_card(carde.ref(), _hand_store)
+				
+remote func killFish():
+	for i in range(1,6):
+		if get_store(i).cards().size() > 0:
+			if get_data(i).get_category("creature_type") == "poisson":
+				effectCard(i, 0, 2)
+	reload()
+	check_death()
+
+remote func invisiCards(number):
+	if number < 0:
+		if invisibleCards == 0:
+			hidenRows = []
+			for i in range(1,6):
+				get_pile_ref_ennemie(i).get_node("DropArea/Cards").visible = true
+			return
+	invisibleCards += number
+	
+remote func placeCardRemote(row, hp, atk, bobux, name, desc, def):
+	if hp < 1 and get_store_ennemie(row).cards().size() > 0:
+		if invisibleCards > 0:
+			hidenRows.append(row)
+		ennemieDeathAnimation(row)
+		set_pile_store_ennemie(row, CardPile.new())
+		get_pile_ennemie(row).set_store(get_store_ennemie(row))
+		return
+	if get_store_ennemie(row).cards().size() == 0:
+		if name == "":
+			return
+		if invisibleCards > 0:
+			hidenRows.append(row)
+		var db = CardEngine.db().get_database("main")
+		var q = Query.new()
+		var cards = q.contains(["name:"+name]).execute(db)
+
+		var store = CardPile.new()
+		
+		store.populate(db, cards)
+		store.keep(1)
+		get_pile_ennemie(row).set_store(store)
+		set_pile_store_ennemie(row, get_pile_ennemie(row).store())
+		_hand_store.play_card(get_store_ennemie(row).cards()[0].ref(), get_pile_ennemie(row))
+	else:
+		var card = get_store_ennemie(row).cards()[0].data()
+		card.set_value("hp", hp)
+		card.set_value("attack", atk)
+		card.set_value("mana", bobux)
+		card.set_text("name", name)
+		card.set_text("desc", desc)
+		if card.has_value("def"):
+			card.set_value("def", def)
+		else:
+			if def != 0:
+				card.add_value("def", def)
+		
+		get_store_ennemie(row).cards()[0].emit_signal("need")
+		get_store_ennemie(row).cards()[0].card._update_data(card)
+		
+	for i in range(1,6):
+		if hidenRows.has(i):
+			get_pile_ref_ennemie(i).get_node("DropArea/Cards").visible = false
+		else:
+			get_pile_ref_ennemie(i).get_node("DropArea/Cards").visible = true
+
+remote func remoteBruteInvincible():
+	bruteInvincible = false
+
+var currentChoice
+
+#Pour les choix du genre Eddy Malou
+func choice(row, id):
+	$Board/Darken.visible = true
+	$Choix1.visible = true
+	$Choix2.visible = true
+	$Board.move_child(get_pile_ref(row), $Board.get_child_count())
+	currentChoice = Vector2(row, id)
+	$Choix1.rect_position = Vector2(0+((row-1)*110), 280)
+	$Choix2.rect_position = Vector2(158+((row-1)*110), 280)
+
+var bananakat_placed = 0
+
+func card_placed(card, row):
+	$Board/spawn.play()
+	
+	if card.data().has_value("def"):
+		rpc("placeCardRemote", row, card.data().get_value("hp"), card.data().get_value("attack"), card.data().get_value("mana"), card.data().get_text("name"), card.data().get_text("desc"), card.data().get_value("def"))
+	else:
+		rpc("placeCardRemote", row, card.data().get_value("hp"), card.data().get_value("attack"), card.data().get_value("mana"), card.data().get_text("name"), card.data().get_text("desc"), 0)
+	
+	
+	check_juan()
+	
+#	var noPlace = ["1 - Bernadette", "6 - Mapendoboy", "7 - Cyprien", "8 - Bananakat", "9 - Arab", "10 - Maes Yves Oscar II", "14 - Kuikui Caillou Obèse"]
+#	noPlace += ["16 - Dekeskui Cowboy", "18 - Kuikui cochon", "22 - Truite", "23 - Daurade", "24 - Espadon", "25 - Carpe Lame", "26 - Requin Lutin"]
+#	noPlace += ["27 - Bar", "28 - Vivaneau", "29 - tropical_fish", "30 - Poisson Arabe", "31 - Requin Cerbère"]
+#	noPlace += ["32 - Juan"]
+	
+	var place = ["2 - TeXXit", "3 - Kirbo", "4 - Funky Kong", "5 - Dodo", "11 - Armand le balayeur de daronnes", "12 - Marselo", "13 - Kuikui Caillou", "15 - Kuikui Yéti", "17 - Kuikui Vert", "19 - Kuikui china"]
+	place += ["20 - Sparkle", "21 - Xi Jinping", "34 - Chippeur", "39 - Megamind", "40 - Cludine", "42 - Sharko", "43 - Naruto", "44 - Kratos", "46 - Marshmello", "48 - Le Mandalorien", "51 - Boshi", "52 - Slippy Toad", "67 - Speedrunner Mario", "68 - Nouri Al-Maliki","60 - Zeko'Chu","64 - Fredender"]
+	
+	UserStores.save_item("StatCardPlay",1)
+	
+	if ccNn == true and place.has(card.data().get_text("name")):
+		ccNn = false
+		return
+	
+	if card.data().get_value("mana") < 3 and (card.data().get_category("creature_type") == "china" or card.data().get_category("type2") == "china"):
+		if not UserStores._get_items().has("SuccesMadeInChina") and Global.sameIP == false:
+			$Sprite.texture = load("res://screens/menu/succes/MadeInChina.png")
+			UserStores.save_item("SuccesMadeInChina",1)
+			$SuccesAnim.play("Slideup")
+			$succes.play()
+	
+	if get_data_ennemie(row):
+		if get_data_ennemie(row).get_text("name") == "53 - Meta Knight":
+			if card.data().get_value("attack") >= get_data_ennemie(row).get_value("hp"):
+				rpc("effectCardRemote", row, -2, 0)
+
+	if card.data().get_text("name") == "8 - Bananakat":
+		bananakat_placed += 1
+	
+	if card.data().get_text("name") == "71 - Eddy-Malou":
+		choice(row, 1)
+		
+	if card.data().get_text("name") == "119 - Diddy Kong":
+		choice(row, 2)
+		
+	if card.data().get_text("name") == "55 - Kiibo":
+		rpc("changeRandomHandCard", 1, 0, 0, 0, 1)
+	
+	if card.data().get_text("name") == "113 - Donkey Kong":
+		rpc("hurtOtherOrbe", getTypeNumber("monke")+1)
+	
+	if card.data().get_text("name") == "120 - Santa Funky":
+		effectAllCard(0, 1)
+		rpc("effectAllCardRemote", 0, 1)
+	
+	if card.data().get_text("name") == "82 - Lisa Simpson":
+		rpc("changeRandomHandCard", 2, 0, -1, 0, 0)
+		
+	if card.data().get_category("creature_type") == "simpson":
+		for i in returnCards("80 - Marge Simpson"):
+			effectCard(i, 0, -1)
+	
+	if card.data().get_text("name") == "80 - Marge Simpson":
+		var freeSpace = []
+		if get_store(1).cards().size() == 0 and row != 1:
+			freeSpace.append(1)
+		if get_store(2).cards().size() == 0 and row != 2:
+			freeSpace.append(2)
+		if get_store(3).cards().size() == 0 and row != 3:
+			freeSpace.append(3)
+		if get_store(4).cards().size() == 0 and row != 4:
+			freeSpace.append(4)
+		if get_store(5).cards().size() == 0 and row != 5:
+			freeSpace.append(5)
+		yield(get_tree().create_timer(0.1), "timeout")
+		effectCard(row, 0, (4-freeSpace.size())*-1)
+	
+	if card.data().get_text("name") == "79 - Bebe George":
+		for i in range(1,6):
+			if get_store(i).cards().size() > 0:
+				if get_data(i).get_value("mana") >= 5:
+					yield(get_tree().create_timer(0.1), "timeout")
+					bonusAttack(i)
+					yield(get_tree().create_timer(0.1), "timeout")
+					reload()
+			
+	
+	if card.data().get_text("name") == "49 - B.R.U.T.E.":
+		bruteInvincible = false
+		rpc("remoteBruteInvincible")
+	
+	if card.data().get_text("name") == "74 - Ariana Grande":
+		Global.orbe += 1
+		
+	if card.data().get_text("name") == "33 - Dora":
+		rpc("effectAllCardRemote", -1, 0)
+		
+	if card.data().get_text("name") == "64 - Fredender":
+		if get_store(1).cards().size() > 0:
+			$Board/Spot6.visible = true
+		if get_store(2).cards().size() > 0:
+			$Board/Spot7.visible = true
+		if get_store(3).cards().size() > 0:
+			$Board/Spot8.visible = true
+		if get_store(4).cards().size() > 0:
+			$Board/Spot9.visible = true
+		if get_store(5).cards().size() > 0:
+			$Board/Spot10.visible = true
+		effect_click = "move"+str(row)+"a"
+	
+	if card.data().get_text("name") == "60 - Zeko'Chu":
+		rpc("ccNn")
+	
+	if card.data().get_text("name") == "4 - Funky Kong":
+		if get_store_ennemie(row).cards().size() > 0:
+			rpc("effectCardRemote", row, 0, 3)
+		else:
+			rpc("hurtOtherOrbe", 3)
+			
+	if card.data().get_text("name") == "53 - Meta Knight":
+		if get_store_ennemie(row).cards().size() > 0:
+			if get_data_ennemie(row).get_value("attack") > 2:
+				yield(get_tree().create_timer(0.1), "timeout")
+				effectCard(row, -2, 0)
+			
+	if card.data().get_text("name") == "58 - Harmony55":
+		effectAllCardHand(0, 0, -1)
+	
+	if card.data().get_text("name") == "68 - Nouri Al-Maliki":
+		var freeSpace = []
+		if get_store(1).cards().size() == 0 and row != 1:
+			freeSpace.append(1)
+		if get_store(2).cards().size() == 0 and row != 2:
+			freeSpace.append(2)
+		if get_store(3).cards().size() == 0 and row != 3:
+			freeSpace.append(3)
+		if get_store(4).cards().size() == 0 and row != 4:
+			freeSpace.append(4)
+		if get_store(5).cards().size() == 0 and row != 5:
+			freeSpace.append(5)
+		
+		freeSpace.shuffle()
+		
+		if has_card("69 - Maliki"):
+			if freeSpace.size() == 0:
+				return
+			placeCardBobux(freeSpace[0], 2)
+			if freeSpace.size() == 1:
+				return
+			placeCardBobux(freeSpace[1], 2)
+		else:
+			if freeSpace.size() == 0:
+				return
+			placeCardBobux(freeSpace[0], 1)
+			if freeSpace.size() == 1:
+				return
+			placeCardBobux(freeSpace[1], 1)
+		
+		
+		
+	
+	if card.data().get_text("name") == "67 - Speedrunner Mario":
+		yield(get_tree().create_timer(0.1), "timeout")
+		bonusAttack(row)
+		yield(get_tree().create_timer(0.1), "timeout")
+		reload()
+	
+	if card.data().get_text("name") == "52 - Slippy Toad":
+		var changed = 2
+		var affectable = range(0,_hand_store.cards().size())
+		var compatible = []
+		
+		for i in affectable:
+			var carte = _hand_store.cards()[i]
+			if carte.data().get_category("rarity") == "commun" or carte.data().get_category("rarity") == "atypique" or carte.data().get_category("rarity") == "rare":
+				if changed > 0 and carte != card:
+					compatible.append(i)
+					
+					
+		if compatible.size() == 1:
+			var carte = _hand_store.cards()[compatible[randi() % compatible.size()]]
+			carte.data().set_value("mana", carte.data().get_value("mana")-1)
+			carte.emit_signal("need")
+			carte.card._update_data(carte.data())
+		if compatible.size() > 1:
+			var generateCompatible = compatible[randi() % compatible.size()]
+			compatible.erase(generateCompatible)
+			var generateCompatible2 = compatible[randi() % compatible.size()]
+			
+			var carte = _hand_store.cards()[generateCompatible]
+			carte.data().set_value("mana", carte.data().get_value("mana")-1)
+			carte.emit_signal("need")
+			carte.card._update_data(carte.data())
+			
+			carte = _hand_store.cards()[generateCompatible2]
+			carte.data().set_value("mana", carte.data().get_value("mana")-1)
+			carte.emit_signal("need")
+			carte.card._update_data(carte.data())
+
+
+	
+	if card.data().get_text("name") == "51 - Boshi":
+		if row != 5:
+			effectCard(row+1, -1, -1)
+		if row != 1:
+			effectCard(row-1, -1, -1)
+	
+	if card.data().get_text("name") == "48 - Le Mandalorien":
+		rpc("effectAllCardRemote", 0, -1)
+		
+	
+	if card.data().get_text("name") == "46 - Marshmello":
+		yield(get_tree().create_timer(0.1), "timeout")
+		if row != 5:
+			effectCard(row+1, 0, -2)
+		if row != 1:
+			effectCard(row-1, 0, -2)
+#		effectCard(row, 0, -2)
+	
+	if card.data().get_text("name") == "44 - Kratos":
+		effectAllCard(2,0)
+		buffKratos += 1
+	
+	if card.data().get_text("name") == "43 - Naruto":
+		var freeSpace = []
+		if get_store(1).cards().size() == 0 and row != 1:
+			freeSpace.append(1)
+		if get_store(2).cards().size() == 0 and row != 2:
+			freeSpace.append(2)
+		if get_store(3).cards().size() == 0 and row != 3:
+			freeSpace.append(3)
+		if get_store(4).cards().size() == 0 and row != 4:
+			freeSpace.append(4)
+		if get_store(5).cards().size() == 0 and row != 5:
+			freeSpace.append(5)
+		
+		freeSpace.shuffle()
+		
+		if freeSpace.size() > 0:
+			placeCard(freeSpace[0], "43 - Naruto")
+	
+	for i in returnCardsEnnemie("33 - Dora"):
+		yield(get_tree().create_timer(0.2), "timeout")
+		effectCard(row, 1, 0)
+		
+	if card.data().get_text("name") == "42 - Sharko":
+		rpc("killFish")
+	
+	if card.data().get_text("name") == "19 - Kuikui china":
+		yield(get_tree().create_timer(0.1), "timeout")
+		effectAllCardBut(row, 1, 1)
+		
+	if card.data().get_text("name") == "34 - Chippeur":
+		if not ennemie_has_card("33 - Dora"):
+			rpc("randomHandCardRemote")
+		
+	if card.data().get_text("name") == "20 - Sparkle":
+#		rpc("getHandStats")
+		if is_network_master():
+			$Board/FakeCard.visible = true
+			rpc_id(Global.other_id, "get_random_hand_stats", 1)
+		else:
+			$Board/FakeCard.visible = true
+			rpc_id(1, "mget_random_hand_stats", 1)
+#			var elcarte = rpc_id(1, "mget_random_hand_stats")
+#			$Board/FakeCard/Name.text = elcarte.data().get_text("name")
+			
+
+	if card.data().get_text("name") == "21 - Xi Jinping":
+		choice(row, 3)
+		
+	
+	if card.data().get_text("name") == "15 - Kuikui Yéti":
+		effectAllCard(1, 0)
+	
+	if card.data().get_text("name") == "11 - Armand le balayeur de daronnes":
+		var alive = false
+		if get_store_ennemie(row).cards().size() > 0:
+			alive = true
+		rpc("effectCardRemote", row, 1, 1)
+		yield(get_tree().create_timer(3), "timeout")
+		if get_store_ennemie(row).cards().size() == 0 and alive == true:
+			if not UserStores._get_items().has("SuccesPoubelles"):
+				var succesBaston = load("res://screens/menu/succes/SortLesPoubelles.png")
+				$Sprite.texture = succesBaston
+				UserStores.save_item("SuccesPoubelles",1)
+				$SuccesAnim.play("Slideup")
+				$succes.play()
+	
+	if card.data().get_text("name") == "5 - Dodo" or card.data().get_text("name") == "40 - Cludine":
+		effect_click = "mimir"
+		if _pile21_store.cards().size() > 0:
+			$Board/Spot1.visible = true
+		if _pile22_store.cards().size() > 0:
+			$Board/Spot2.visible = true
+		if _pile23_store.cards().size() > 0:
+			$Board/Spot3.visible = true
+		if _pile24_store.cards().size() > 0:
+			$Board/Spot4.visible = true
+		if _pile25_store.cards().size() > 0:
+			$Board/Spot5.visible = true
+			
+	if card.data().get_text("name") == "12 - Marselo":
+		effect_click = "copy"
+		effect_card = card
+		if _pile21_store.cards().size() > 0:
+			$Board/Spot1.visible = true
+		if _pile22_store.cards().size() > 0:
+			$Board/Spot2.visible = true
+		if _pile23_store.cards().size() > 0:
+			$Board/Spot3.visible = true
+		if _pile24_store.cards().size() > 0:
+			$Board/Spot4.visible = true
+		if _pile25_store.cards().size() > 0:
+			$Board/Spot5.visible = true
+
+	if card.data().get_text("name") == "39 - Megamind":
+		effect_click = "megamind"
+		effect_card = card
+		if _pile1_store.cards().size() > 0:
+			$Board/Spot6.visible = true
+		if _pile2_store.cards().size() > 0:
+			$Board/Spot7.visible = true
+		if _pile4_store.cards().size() > 0:
+			$Board/Spot8.visible = true
+		if _pile5_store.cards().size() > 0:
+			$Board/Spot9.visible = true
+		if _pile6_store.cards().size() > 0:
+			$Board/Spot10.visible = true
+			
+	if card.data().get_text("name") == "83 - Mama Cerdita":
+		effect_click = "cerdita"
+		effect_card = card
+		if _pile1_store.cards().size() > 0:
+			$Board/Spot6.visible = true
+		if _pile2_store.cards().size() > 0:
+			$Board/Spot7.visible = true
+		if _pile4_store.cards().size() > 0:
+			$Board/Spot8.visible = true
+		if _pile5_store.cards().size() > 0:
+			$Board/Spot9.visible = true
+		if _pile6_store.cards().size() > 0:
+			$Board/Spot10.visible = true
+			
+	if card.data().get_text("name") == "73 - Patrik Kvikant":
+		effect_click = "kvikant"
+		effect_card = card
+		effect_base = row
+		if _pile1_store.cards().size() > 0 and getNumberRarity(get_data(1).get_category("rarity")) < 4:
+			$Board/Spot6.visible = true
+		if _pile2_store.cards().size() > 0 and getNumberRarity(get_data(2).get_category("rarity")) < 4:
+			$Board/Spot7.visible = true
+		if _pile4_store.cards().size() > 0 and getNumberRarity(get_data(3).get_category("rarity")) < 4:
+			$Board/Spot8.visible = true
+		if _pile5_store.cards().size() > 0 and getNumberRarity(get_data(4).get_category("rarity")) < 4:
+			$Board/Spot9.visible = true
+		if _pile6_store.cards().size() > 0 and getNumberRarity(get_data(5).get_category("rarity")) < 4:
+			$Board/Spot10.visible = true
+			
+	if card.data().get_text("name") == "13 - Kuikui Caillou":
+		effect_click = "hurt"
+		effect_card = card
+		if _pile21_store.cards().size() > 0:
+			$Board/Spot1.visible = true
+		if _pile22_store.cards().size() > 0:
+			$Board/Spot2.visible = true
+		if _pile23_store.cards().size() > 0:
+			$Board/Spot3.visible = true
+		if _pile24_store.cards().size() > 0:
+			$Board/Spot4.visible = true
+		if _pile25_store.cards().size() > 0:
+			$Board/Spot5.visible = true
+			
+	if get_store(row+1) != null:
+		if get_store(row+1).cards().size() > 0:
+			if get_data(row+1).get_text("name") == "1 - Bernadette":
+				effectCardVar(card, 0, 1)
+			if get_data(row+1).get_text("name") == "114 - Dixie Kong":
+				draw()
+	
+	if get_store(row-1) != null:
+		if get_store(row-1).cards().size() > 0:
+			if get_data(row-1).get_text("name") == "1 - Bernadette":
+				effectCardVar(card, 0, 1)
+			if get_data(row-1).get_text("name") == "114 - Dixie Kong":
+				draw()
+	
+	
+	if card.data().get_text("name") == "3 - Kirbo":
+		
+		var db = CardEngine.db().get_database("main")
+		var q = Query.new()
+		var cards = q.from(["creature_type:monke"]).execute(db)
+		var store = CardPile.new()
+		
+		var list = []
+		
+		var list2 = []
+		
+		for i in _pile3_store.cards():
+			list.append(i.data().id)
+			
+		
+		store.populate(db, cards)
+		store.shuffle()
+		store.keep(2)
+		
+		for i in store.cards():
+			list2.append(i.data().id)
+		
+		list += list2
+		_pile3_store.populate(db, list)
+		
+
+		_pile3.set_store(_pile3_store)
+		
+		var carde := _pile3_store.get_last()
+		if carde != null:
+			if has_card("58 - Harmony55"):
+				for k in returnCards("58 - Harmony55"):
+					carde.data().set_value("mana", carde.data().get_value("mana")-1)
+			# warning-ignore:return_value_discarded
+			_pile3_store.move_card(carde.ref(), _hand_store)
+			
+		carde = _pile3_store.get_last()
+		if carde != null:
+			if has_card("58 - Harmony55"):
+				for k in returnCards("58 - Harmony55"):
+					carde.data().set_value("mana", carde.data().get_value("mana")-1)
+			# warning-ignore:return_value_discarded
+			_pile3_store.move_card(carde.ref(), _hand_store)
+		
+	if card.data().get_text("name") == "17 - Kuikui Vert":
+		
+		var db = CardEngine.db().get_database("main")
+		var q = Query.new()
+		var cards = q.from(["creature_type:dekeskui"]).execute(db)
+		var store = CardPile.new()
+		
+		cards.erase("card_17")
+		
+		var list = []
+		
+		var list2 = []
+		
+		for i in _pile3_store.cards():
+			list.append(i.data().id)
+			
+		
+		store.populate(db, cards)
+		store.shuffle()
+		store.keep(2)
+		
+		for i in store.cards():
+			list2.append(i.data().id)
+		
+		list += list2
+		_pile3_store.populate(db, list)
+		
+
+		_pile3.set_store(_pile3_store)
+		
+		var carde := _pile3_store.get_last()
+		if carde != null:
+			if has_card("58 - Harmony55"):
+				for i in returnCards("58 - Harmony55"):
+					card.data().set_value("mana", card.data().get_value("mana")-1)
+			# warning-ignore:return_value_discarded
+			_pile3_store.move_card(carde.ref(), _hand_store)
+			
+		carde = _pile3_store.get_last()
+		if carde != null:
+			if has_card("58 - Harmony55"):
+				for i in returnCards("58 - Harmony55"):
+					card.data().set_value("mana", card.data().get_value("mana")-1)
+			# warning-ignore:return_value_discarded
+			_pile3_store.move_card(carde.ref(), _hand_store)
+	
+	for i in returnCards("19 - Kuikui china"):
+		if i != row:
+			yield(get_tree().create_timer(1), "timeout")
+			effectCard(row, -1, -1)
+
+
+		
+func death_carpe(row):
+	if _pile6_store.cards().size() > 0 and row != 5:
+		var cartos6 = _pile6_store.cards()[0].data()
+		cartos6.set_value("attack", cartos6.get_value("attack")+2)
+	if _pile5_store.cards().size() > 0 and row != 4:
+		var cartos5 = _pile5_store.cards()[0].data()
+		cartos5.set_value("attack", cartos5.get_value("attack")+2)
+	if _pile4_store.cards().size() > 0 and row != 3:
+		var cartos4 = _pile4_store.cards()[0].data()
+		cartos4.set_value("attack", cartos4.get_value("attack")+2)
+	if _pile2_store.cards().size() > 0 and row != 2:
+		var cartos2 = _pile2_store.cards()[0].data()
+		cartos2.set_value("attack", cartos2.get_value("attack")+2)
+	if _pile1_store.cards().size() > 0 and row != 1:
+		var cartos1 = get_data(1)
+		cartos1.set_value("attack", cartos1.get_value("attack")+2)
+	reload()
+
+func effectAllCardsEnnemie(atk, hp):
+	rpc("effectAllCardsRemove", atk, hp)
+
+remote func effectAllCardsRemote(atk, hp):
+	effectAllCard(atk, hp)
+
+func _on_Pile1_card_dropped(card: CardInstance, source: String, _on_card: CardInstance) -> void:
+	if get_store(1).cards().size() > 0 and card.data().get_category("class") == "character":
+		return
+	if $Board/NextTurn.disabled == false and Global.canPlay == true and source == "hand" and bobux >= card.data().get_value("mana") and card.data().get_category("class") == "character":
+		_hand_store.play_card(card.ref(), _pile1_store)
+		card_placed(card, 1)
+		bobux -= card.data().get_value("mana")
+		UserStores.save_item("StatBobuxSpend",card.data().get_value("mana"))
+		usedBobux += card.data().get_value("mana")
+		
+		carte1 = card
+		
+		for _i in $Board/Pile1.get_children():
+			if _i.name == "CardPath":
+				pass
+			
+		
+		if card.data().get_text("name") == "2 - TeXXit":
+			#_pile2_store.set_value(_pile2_store.get_value("hp")+3)
+			tex_heal(1)
+#			carte2.card._update_data(carte2)
+	elif $Board/NextTurn.disabled == false and Global.canPlay == true and source == "hand" and card.data().get_category("class") == "sort":
+		if card.data().get_text("name") == "Banane Glissante":
+			return
+		if card.data().get_text("name") == "Jaxi" and not get_data(1):
+			return
+		if card.data().get_text("name") == "Cucui Ganon" and not get_data(1):
+			return
+		if card.data().get_text("name") == "Gilet Jaune" and not get_data(1):
+			return
+		if card.data().get_text("name") == "Banane Glissante" and freeBanana > 0:
+			spell(card,1)
+			return
+
+		if bobux < card.data().get_value("mana") and freeSpell < 1:
+			return
+			
+		spell(card, 1)
+	else:
+		return
+
+func change_value(data, value, new):
+	data.set_value(value, new)
+	
+slave func playPower():
+	$Board/power.play()
+	
+master func playPowerm():
+	$Board/power.play()
+	
+var soundPlayed = false
+	
+func powerSound(card):
+	if card.data().get_value("hp")+card.data().get_value("attack") > 14 and soundPlayed == false:
+		soundPlayed = true
+		
+		if not UserStores._get_items().has("SuccesPanique") and Global.sameIP == false:
+			$Sprite.texture = load("res://screens/menu/succes/Panique.png")
+			UserStores.save_item("SuccesPanique",1)
+			$SuccesAnim.play("Slideup")
+			$succes.play()
+		
+		if is_network_master():
+			rpc_id(Global.other_id, "playPower")
+		else:
+			rpc_id(1, "playPowerm")
+
+func reload():
+	rpc("en_orbe", Global.orbe)
+	if carte1 != null:
+		if carte1.data().has_value("def"):
+			rpc("placeCardRemote", 1, carte1.data().get_value("hp"), carte1.data().get_value("attack"), carte1.data().get_value("mana"), carte1.data().get_text("name"), carte1.data().get_text("desc"), carte1.data().get_value("def"))
+		else:
+			rpc("placeCardRemote", 1, carte1.data().get_value("hp"), carte1.data().get_value("attack"), carte1.data().get_value("mana"), carte1.data().get_text("name"), carte1.data().get_text("desc"), 0)
+		carte1.emit_signal("need")
+		carte1.card._update_data(carte1.data())
+		powerSound(carte1)
+		
+	if carte2 != null:
+		if carte2.data().has_value("def"):
+			rpc("placeCardRemote", 2, carte2.data().get_value("hp"), carte2.data().get_value("attack"), carte2.data().get_value("mana"), carte2.data().get_text("name"), carte2.data().get_text("desc"), carte2.data().get_value("def"))
+		else:
+			rpc("placeCardRemote", 2, carte2.data().get_value("hp"), carte2.data().get_value("attack"), carte2.data().get_value("mana"), carte2.data().get_text("name"), carte2.data().get_text("desc"), 0)
+		carte2.emit_signal("need")
+		carte2.card._update_data(carte2.data())
+		powerSound(carte2)
+	if carte4 != null:
+		if carte4.data().has_value("def"):
+			rpc("placeCardRemote", 3, carte4.data().get_value("hp"), carte4.data().get_value("attack"), carte4.data().get_value("mana"), carte4.data().get_text("name"), carte4.data().get_text("desc"), carte4.data().get_value("def"))
+		else:
+			rpc("placeCardRemote", 3, carte4.data().get_value("hp"), carte4.data().get_value("attack"), carte4.data().get_value("mana"), carte4.data().get_text("name"), carte4.data().get_text("desc"), 0)
+		carte4.emit_signal("need")
+		carte4.card._update_data(carte4.data())
+		powerSound(carte4)
+	if carte5 != null:
+		if carte5.data().has_value("def"):
+			rpc("placeCardRemote", 4, carte5.data().get_value("hp"), carte5.data().get_value("attack"), carte5.data().get_value("mana"), carte5.data().get_text("name"), carte5.data().get_text("desc"), carte5.data().get_value("def"))
+		else:
+			rpc("placeCardRemote", 4, carte5.data().get_value("hp"), carte5.data().get_value("attack"), carte5.data().get_value("mana"), carte5.data().get_text("name"), carte5.data().get_text("desc"), 0)
+		carte5.emit_signal("need")
+		carte5.card._update_data(carte5.data())
+		powerSound(carte5)
+	if carte6 != null:
+		if carte6.data().has_value("def"):
+			rpc("placeCardRemote", 5, carte6.data().get_value("hp"), carte6.data().get_value("attack"), carte6.data().get_value("mana"), carte6.data().get_text("name"), carte6.data().get_text("desc"), carte6.data().get_value("def"))
+		else:
+			rpc("placeCardRemote", 5, carte6.data().get_value("hp"), carte6.data().get_value("attack"), carte6.data().get_value("mana"), carte6.data().get_text("name"), carte6.data().get_text("desc"), 0)
+		carte6.emit_signal("need")
+		carte6.card._update_data(carte6.data())
+		powerSound(carte6)
+
+func _on_Pile2_card_dropped(card: CardInstance, source: String, _on_card: CardInstance) -> void:
+	if get_store(2).cards().size() > 0 and card.data().get_category("class") == "character":
+		return
+	if $Board/NextTurn.disabled == false and Global.canPlay == true and source == "hand" and bobux >= card.data().get_value("mana") and card.data().get_category("class") == "character":
+		bobux -= card.data().get_value("mana")
+		UserStores.save_item("StatBobuxSpend",card.data().get_value("mana"))
+		usedBobux += card.data().get_value("mana")
+		card_placed(card, 2)
+		_hand_store.play_card(card.ref(), _pile2_store)
+		carte2 = card
+		if card.data().get_text("name") == "2 - TeXXit":
+			tex_heal(2)
+	elif $Board/NextTurn.disabled == false and Global.canPlay == true and source == "hand" and card.data().get_category("class") == "sort":
+		if card.data().get_text("name") == "Banane Glissante":
+			return
+		if card.data().get_text("name") == "Jaxi" and not get_data(2):
+			return
+		if card.data().get_text("name") == "Cucui Ganon" and not get_data(2):
+			return
+		if card.data().get_text("name") == "Gilet Jaune" and not get_data(2):
+			return
+		if card.data().get_text("name") == "Banane Glissante" and freeBanana > 0:
+			spell(card,2)
+			return
+
+		if bobux < card.data().get_value("mana") and freeSpell < 1:
+			return
+		spell(card, 2)
+	else:
+		return
+
+
+#func _on_Pile3_card_dropped(card: CardInstance, source: String, _on_card: CardInstance) -> void:
+#	if source == "hand":
+#		_hand_store.play_card(card.ref(), _pile3_store)
+#	elif source == "pile_1":
+#		# warning-ignore:return_value_discarded
+#		_pile1_store.move_card(card.ref(), _pile3_store)
+#	else:
+	#		return
+
+
+func _on_DiscardBtn_pressed() -> void:
+	var card := _hand_store.get_last()
+	if card != null:
+		# warning-ignore:return_value_discarded
+		_hand_store.move_card(card.ref(), _pile3_store)
+
+
+func _on_ShuffleBtn_pressed() -> void:
+	_pile3_store.shuffle()
+
+func draw():
+	if cardsNumber("45 - Ryu") > 0:
+		rpc("hurtOtherOrbe", cardsNumber("45 - Ryu"))
+		reload()
+
+	if _hand_store:
+		if _hand_store.cards().size() < 1:
+			if not UserStores._get_items().has("SuccesPenurie") and Global.sameIP == false:
+				$Sprite.texture = load("res://screens/menu/succes/Penurie.png")
+				UserStores.save_item("SuccesPenurie",1)
+				$SuccesAnim.play("Slideup")
+				$succes.play()
+	else:
+		return
+	
+	for i in _hand_store.cards():
+		i.emit_signal("need")
+		
+		if i.card._name.text == "7 - Cyprien":
+			if i.data().get_value("hp") < 9:
+				i.data().set_value("attack", i.data().get_value("attack")+1)
+				i.data().set_value("hp", i.data().get_value("hp")+1)
+				i.card._update_data(i.data())
+			else:
+				if not UserStores._get_items().has("Succesmdr") and Global.sameIP == false:
+					$Sprite.texture = load("res://screens/menu/succes/mdr.png")
+					UserStores.save_item("Succesmdr",1)
+					$SuccesAnim.play("Slideup")
+					$succes.play()
+			
+	var card := _pile3_store.get_last()
+	if card != null:
+		if has_card("58 - Harmony55"):
+			for i in returnCards("58 - Harmony55"):
+				card.data().set_value("mana", card.data().get_value("mana")-1)
+		if bleach > 0:
+			if card.data().get_category("class") == "sort":
+				card.data().set_value("mana", card.data().get_value("mana")-2)
+		# warning-ignore:return_value_discarded
+		_pile3_store.move_card(card.ref(), _hand_store)
+	
+	
+	
+	if _pile3_store.cards().size() < 1:
+		if not UserStores._get_items().has("SuccesFamine") and Global.sameIP == false:
+			$Sprite.texture = load("res://screens/menu/succes/Famine.png")
+			UserStores.save_item("SuccesFamine",1)
+			$SuccesAnim.play("Slideup")
+			$succes.play()
+
+func _on_DrawBtn_pressed() -> void:
+	$Board/click.play()
+	$Board/draw.play()
+	draw()
+	can_pick = false
+	
+	if has_card("10 - Maes Yves Oscar II"):
+		for i in returnCards("10 - Maes Yves Oscar II"):
+			draw()
+	
+	
+	
+	
+	if 1 == 2:#can_pick == true:
+		if _pile1_store.cards().size() > 0:
+			if get_data(1).get_text("name") == "10 - Maes Yves Oscar II":
+				var card := _pile3_store.get_last()
+				if card != null:
+					# warning-ignore:return_value_discarded
+					_pile3_store.move_card(card.ref(), _hand_store)
+				
+		if _pile2_store.cards().size() > 0:
+			if _pile2_store.cards()[0].data().get_text("name") == "10 - Maes Yves Oscar II":
+				var card := _pile3_store.get_last()
+				if card != null:
+					# warning-ignore:return_value_discarded
+					_pile3_store.move_card(card.ref(), _hand_store)
+				
+		if _pile4_store.cards().size() > 0:
+			if _pile4_store.cards()[0].data().get_text("name") == "10 - Maes Yves Oscar II":
+				var card := _pile3_store.get_last()
+				if card != null:
+					# warning-ignore:return_value_discarded
+					_pile3_store.move_card(card.ref(), _hand_store)
+				
+		if _pile5_store.cards().size() > 0:
+			if _pile5_store.cards()[0].data().get_text("name") == "10 - Maes Yves Oscar II":
+				var card := _pile3_store.get_last()
+				if card != null:
+					# warning-ignore:return_value_discarded
+					_pile3_store.move_card(card.ref(), _hand_store)
+				
+		if _pile6_store.cards().size() > 0:
+			if _pile6_store.cards()[0].data().get_text("name") == "10 - Maes Yves Oscar II":
+				var card := _pile3_store.get_last()
+				if card != null:
+					# warning-ignore:return_value_discarded
+					_pile3_store.move_card(card.ref(), _hand_store)
+		
+		
+
+
+func _on_Pile4_card_dropped(card, source, on_card):
+	if get_store(3).cards().size() > 0 and card.data().get_category("class") == "character":
+		return
+	if $Board/NextTurn.disabled == false and Global.canPlay == true and source == "hand" and bobux >= card.data().get_value("mana") and card.data().get_category("class") == "character":
+		bobux -= card.data().get_value("mana")
+		UserStores.save_item("StatBobuxSpend",card.data().get_value("mana"))
+		usedBobux += card.data().get_value("mana")
+		card_placed(card, 3)
+		_hand_store.play_card(card.ref(), _pile4_store)
+		carte4 = card
+		if card.data().get_text("name") == "2 - TeXXit":
+			tex_heal(3)
+	elif $Board/NextTurn.disabled == false and Global.canPlay == true and source == "hand" and card.data().get_category("class") == "sort":
+		if card.data().get_text("name") == "Banane Glissante":
+			return
+		if card.data().get_text("name") == "Jaxi" and not get_data(3):
+			return
+		if card.data().get_text("name") == "Cucui Ganon" and not get_data(3):
+			return
+		if card.data().get_text("name") == "Gilet Jaune" and not get_data(3):
+			return
+		if card.data().get_text("name") == "Banane Glissante" and freeBanana > 0:
+			spell(card,3)
+			return
+		if bobux < card.data().get_value("mana") and freeSpell < 1:
+			return
+		spell(card, 3)
+	else:
+		return
+
+
+func _on_Pile5_card_dropped(card, source, on_card):
+	if get_store(4).cards().size() > 0 and card.data().get_category("class") == "character":
+		return
+	if $Board/NextTurn.disabled == false and Global.canPlay == true and source == "hand" and bobux >= card.data().get_value("mana") and card.data().get_category("class") == "character":
+		bobux -= card.data().get_value("mana")
+		UserStores.save_item("StatBobuxSpend",card.data().get_value("mana"))
+		usedBobux += card.data().get_value("mana")
+		card_placed(card, 4)
+		_hand_store.play_card(card.ref(), _pile5_store)
+		carte5 = card
+		if card.data().get_text("name") == "2 - TeXXit":
+			tex_heal(4)
+	elif $Board/NextTurn.disabled == false and Global.canPlay == true and source == "hand" and card.data().get_category("class") == "sort":
+		if card.data().get_text("name") == "Banane Glissante":
+			return
+		if card.data().get_text("name") == "Jaxi" and not get_data(4):
+			return
+		if card.data().get_text("name") == "Cucui Ganon" and not get_data(4):
+			return
+		if card.data().get_text("name") == "Gilet Jaune" and not get_data(4):
+			return
+		if card.data().get_text("name") == "Banane Glissante" and freeBanana > 0:
+			spell(card,4)
+			return
+		if bobux < card.data().get_value("mana") and freeSpell < 1:
+			return
+		spell(card, 4)
+	else:
+		return
+
+
+func _on_Pile6_card_dropped(card, source, on_card):
+	if get_store(5).cards().size() > 0 and card.data().get_category("class") == "character":
+		return
+	if $Board/NextTurn.disabled == false and Global.canPlay == true and source == "hand" and bobux >= card.data().get_value("mana") and card.data().get_category("class") == "character":
+		bobux -= card.data().get_value("mana")
+		UserStores.save_item("StatBobuxSpend",card.data().get_value("mana"))
+		usedBobux += card.data().get_value("mana")
+		card_placed(card, 5)
+		_hand_store.play_card(card.ref(), _pile6_store)
+		carte6 = card
+		if card.data().get_text("name") == "2 - TeXXit":
+			tex_heal(5)
+	elif $Board/NextTurn.disabled == false and Global.canPlay == true and source == "hand" and card.data().get_category("class") == "sort":
+		if card.data().get_text("name") == "Banane Glissante":
+			return
+		if card.data().get_text("name") == "Jaxi" and not get_data(5):
+			return
+		if card.data().get_text("name") == "Cucui Ganon" and not get_data(5):
+			return
+		if card.data().get_text("name") == "Gilet Jaune" and not get_data(5):
+			return
+		if card.data().get_text("name") == "Banane Glissante" and freeBanana > 0:
+			spell(card,5)
+			return
+		if bobux < card.data().get_value("mana") and freeSpell < 1:
+			return
+		spell(card, 5)
+	else:
+		return
+		
+remote func ghoul(row):
+	var ligne = row
+	if ligne > 10:
+		ligne -= 20
+	effectCard(ligne, 0, 3)
+	if ligne != 5:
+		effectCard(ligne+1, 0, 1)
+	if ligne != 1:
+		effectCard(ligne-1, 0, 1)
+	
+	check_death()
+		
+func hurtOrbe(hp):
+	if has_card("77 - Papa Cerdito"):
+		take_damage(returnCards("77 - Papa Cerdito")[0], hp)
+	else:
+		Global.orbe -= hp
+		UserStores.save_item("StatDamageTaken",hp)
+	changeRich("Joue contre "+$EnnemieName.text, "PV de l'orbe : "+str(Global.orbe))
+	reload()
+		
+remote func hurtOtherOrbe(hp):
+	hurtOrbe(hp)
+	reload()
+	
+remote func reloadRemote():
+	reload()
+		
+remote func spellOther(card):
+	var custom_data = CardData.new(str(card[3]), str(CardEngine.db().get_database("main")))
+	var card_normal = load("res://cards/normal/normal_card.tscn")
+	var card_normal_instance = card_normal.instance()
+	add_child(card_normal_instance)
+	
+#	custom_data._init(str(card[3]), str(CardEngine.db().get_database("main")))
+	custom_data.set_value("mana", card[0])
+	custom_data.set_text("name", card[1])
+	custom_data.set_category("rarity", card[2])
+	custom_data.set_category("class", "sort")
+	card_normal_instance._update_data(custom_data)
+
+
+	card_normal_instance.position.x = 108+(5*172)
+	card_normal_instance.position.y = 456-110
+	card_normal_instance.scale.x = 0.4
+	card_normal_instance.scale.y = 0.4
+	
+	card_normal_instance.spell()
+	
+	if has_card("76 - Bart Simpson"):
+		rpc("hurtOtherOrbe", 3)
+	
+remote func attack_animation_ennemie(row):
+	attack_animation(row + 20)
+
+func bonusAttack(row):
+	attack_row(row, true)
+	attack_animation(row)
+	rpc("attack_animation_ennemie", row)
+	check_death()
+	yield(get_tree().create_timer(0.5), "timeout")
+	reload()
+
+func moveCard(base, destination):
+	if get_store(destination).cards().size() == 0:
+		var carteBase = get_store(base)
+		
+		set_pile_store(destination, carteBase)
+		get_pile(destination).set_store(carteBase)
+		set_carte_variable(destination, carteBase.cards()[0])
+			
+		set_pile_store(base, CardPile.new())
+		get_pile(base).set_store(get_store(base))
+		set_carte_variable(base, null)
+		
+		var card = get_store(destination).cards()[0]
+		
+		if card.data().has_value("def"):
+			rpc("placeCardRemote", destination, card.data().get_value("hp"), card.data().get_value("attack"), card.data().get_value("mana"), card.data().get_text("name"), card.data().get_text("desc"), card.data().get_value("def"))
+		else:
+			rpc("placeCardRemote", destination, card.data().get_value("hp"), card.data().get_value("attack"), card.data().get_value("mana"), card.data().get_text("name"), card.data().get_text("desc"), 0)
+		rpc("placeCardRemote", base, 0, card.data().get_value("attack"), card.data().get_value("mana"), card.data().get_text("name"), card.data().get_text("desc"), 0)
+		reload()
+	else:
+		var carteDestination = get_store(destination)
+		var carteBase = get_store(base)
+		
+		set_pile_store(base, carteDestination)
+		get_pile(base).set_store(carteDestination)
+		set_carte_variable(base, get_store(base).cards()[0])
+		
+		set_pile_store(destination, carteBase)
+		get_pile(destination).set_store(carteBase)
+		set_carte_variable(destination, get_store(destination).cards()[0])
+		
+		
+		carteBase = get_store(base).cards()[0]
+		carteDestination = get_store(destination).cards()[0]
+		
+		if carteBase.data().has_value("def"):
+			rpc("placeCardRemote", destination, carteBase.data().get_value("hp"), carteBase.data().get_value("attack"), carteBase.data().get_value("mana"), carteBase.data().get_text("name"), carteBase.data().get_text("desc"), carteBase.data().get_value("def"))
+		else:
+			rpc("placeCardRemote", destination, carteBase.data().get_value("hp"), carteBase.data().get_value("attack"), carteBase.data().get_value("mana"), carteBase.data().get_text("name"), carteBase.data().get_text("desc"), 0)
+			
+		if carteDestination.data().has_value("def"):
+			rpc("placeCardRemote", base, carteDestination.data().get_value("hp"), carteDestination.data().get_value("attack"), carteDestination.data().get_value("mana"), carteDestination.data().get_text("name"), carteDestination.data().get_text("desc"), carteDestination.data().get_value("def"))
+		else:
+			rpc("placeCardRemote", base, carteDestination.data().get_value("hp"), carteDestination.data().get_value("attack"), carteDestination.data().get_value("mana"), carteDestination.data().get_text("name"), carteDestination.data().get_text("desc"), 0)
+	reload()
+
+
+func is_spot_on():
+	return $Board/Spot10.visible or $Board/Spot9.visible or $Board/Spot8.visible or $Board/Spot7.visible or $Board/Spot6.visible or $Board/Spot5.visible or $Board/Spot4.visible or $Board/Spot3.visible or $Board/Spot2.visible or $Board/Spot1.visible
+
+func spell(card, row):
+	_hand_store.remove_card(card.ref())
+	
+	if card.data().get_text("name") == "Banane Glissante" and freeBanana > 0:
+		freeBanana -= 1
+	else:
+		if freeSpell < 1:
+			bobux -= card.data().get_value("mana")
+			UserStores.save_item("StatBobuxSpend",card.data().get_value("mana"))
+			usedBobux += card.data().get_value("mana")
+		else:
+			freeSpell -= 1
+		
+		
+	
+	var custom_data = []
+	custom_data.append(card.data().get_value("mana"))
+	custom_data.append(card.data().get_text("name"))
+	custom_data.append(card.data().get_category("rarity"))
+	custom_data.append(card.data().id)
+	
+	var card_normal = load("res://cards/normal/normal_card.tscn")
+	var card_normal_instance = card_normal.instance()
+	add_child(card_normal_instance)
+	card_normal_instance._update_data(card.data())
+
+	card_normal_instance.position.x = 108+(5*172)
+	card_normal_instance.position.y = 456-110
+	card_normal_instance.scale.x = 0.4
+	card_normal_instance.scale.y = 0.4
+	card_normal_instance.spell()
+	rpc("spellOther", custom_data)
+	
+	UserStores.save_item("StatSpellPlay",1)
+	
+	if bleach > 0:
+		bleach -= 1
+		if bleach == 0:
+			for carte in _hand_store.cards():
+				if carte.data().get_category("class") == "sort":
+					carte.data().set_value("mana", carte.data().get_value("mana")+2)
+					
+					carte.emit_signal("need")
+					carte.card._update_data(carte.data())
+	
+	if ccNn == true:
+		ccNn = false
+		return
+	
+	for i in returnCards("71 - Eddy-Malou"):
+		if get_data(i).get_value("timer") == 1:
+			rpc("hurtOtherOrbe", 1)
+			
+	
+	for i in returnCards("8 - Bananakat"):
+		
+		if not UserStores._get_items().has("SuccesAffaireFamille") and Global.sameIP == false:
+			var succesBanane = load("res://screens/menu/succes/AffaireFamille.png")
+			$Sprite.texture = succesBanane
+			UserStores.save_item("SuccesAffaireFamille",1)
+			$SuccesAnim.play("Slideup")
+			$succes.play()
+		
+		var freeSpace = []
+		if get_store(1).cards().size() == 0 and row != 1:
+			freeSpace.append(1)
+		if get_store(2).cards().size() == 0 and row != 2:
+			freeSpace.append(2)
+		if get_store(3).cards().size() == 0 and row != 3:
+			freeSpace.append(3)
+		if get_store(4).cards().size() == 0 and row != 4:
+			freeSpace.append(4)
+		if get_store(5).cards().size() == 0 and row != 5:
+			freeSpace.append(5)
+		
+		freeSpace.shuffle()
+		
+		if freeSpace.size() > 0:
+			placeCard(freeSpace[0], "8 - Bananakat")
+		
+	if card.data().get_text("name") == "Eau de Javel":
+		if bleach == 0:
+			for carte in _hand_store.cards():
+				if carte.data().get_category("class") == "sort":
+					carte.data().set_value("mana", carte.data().get_value("mana")-2)
+					
+					carte.emit_signal("need")
+					carte.card._update_data(carte.data())
+		bleach += 3
+	
+	if card.data().get_text("name") == "Hérisson rouge":
+		if get_store(row).cards().size() > 0:
+			var bobuxNumberCard = get_data(row).get_value("mana") + 1
+			get_data(row).set_value("hp", -10)
+			check_death()
+			placeCardBobux(row, bobuxNumberCard)
+		
+	if card.data().get_text("name") == "FISC":
+		rpc("fisc", 2)
+		if ennemie_has_card("58 - Harmony55"):
+			if not UserStores._get_items().has("SuccesFISC") and Global.sameIP == false:
+				var succesImage = load("res://screens/menu/succes/AriereFISC.png")
+				$Sprite.texture = succesImage
+				UserStores.save_item("SuccesFISC",1)
+				$SuccesAnim.play("Slideup")
+				$succes.play()
+		
+		
+	if card.data().get_text("name") == "Banane Glissante":
+		if get_store_ennemie(1).cards().size() == 0:
+			$Board/Spot1.visible = true
+		if get_store_ennemie(2).cards().size() == 0:
+			$Board/Spot2.visible = true
+		if get_store_ennemie(3).cards().size() == 0:
+			$Board/Spot3.visible = true
+		if get_store_ennemie(4).cards().size() == 0:
+			$Board/Spot4.visible = true
+		if get_store_ennemie(5).cards().size() == 0:
+			$Board/Spot5.visible = true
+		effect_click = "move"+str(row)
+		
+	if card.data().get_text("name") == "Jaxi":
+		if get_store(1).cards().size() == 0:
+			$Board/Spot6.visible = true
+		if get_store(2).cards().size() == 0:
+			$Board/Spot7.visible = true
+		if get_store(3).cards().size() == 0:
+			$Board/Spot8.visible = true
+		if get_store(4).cards().size() == 0:
+			$Board/Spot9.visible = true
+		if get_store(5).cards().size() == 0:
+			$Board/Spot10.visible = true
+		effect_click = "move"+str(row)
+		
+		draw()
+	
+	if card.data().get_text("name") == "Cucui Ganon":
+		if get_store(1).cards().size() == 0:
+			$Board/Spot6.visible = true
+		if get_store(2).cards().size() == 0:
+			$Board/Spot7.visible = true
+		if get_store(3).cards().size() == 0:
+			$Board/Spot8.visible = true
+		if get_store(4).cards().size() == 0:
+			$Board/Spot9.visible = true
+		if get_store(5).cards().size() == 0:
+			$Board/Spot10.visible = true
+		effect_click = "move"+str(row)+"a"
+	
+	if card.data().get_text("name") == "Prison":
+		effect_click = "mimir"
+		if _pile21_store.cards().size() > 0:
+			$Board/Spot1.visible = true
+		if _pile22_store.cards().size() > 0:
+			$Board/Spot2.visible = true
+		if _pile23_store.cards().size() > 0:
+			$Board/Spot3.visible = true
+		if _pile24_store.cards().size() > 0:
+			$Board/Spot4.visible = true
+		if _pile25_store.cards().size() > 0:
+			$Board/Spot5.visible = true
+	
+	if card.data().get_text("name") == "Poyo Pals":
+		var poyoPals = ["54 - Korbo", "55 - Kiibo", "56 - Kirb"]
+		var poyo1 = poyoPals[randi() % poyoPals.size()]
+		var poyo2 = poyoPals[randi() % poyoPals.size()]
+		var poyo3 = poyoPals[randi() % poyoPals.size()]
+		if row == 1:
+			var caca1 = placeCard(1, poyo1)
+			var caca2 = placeCard(2, poyo2)
+			if caca1:
+				card_placed(caca1, 1)
+			if caca2:
+				card_placed(caca2, 2)
+		elif row == 5:
+			var caca1 = placeCard(4, poyo1)
+			var caca2 = placeCard(5, poyo2)
+			if caca1:
+				card_placed(caca1, 4)
+			if caca2:
+				card_placed(caca2, 5)
+		else:
+			var caca1 = placeCard(row, poyo1)
+			var caca2 = placeCard(row+1, poyo2)
+			var caca3 = placeCard(row-1, poyo3)
+			if caca1:
+				card_placed(caca1, row)
+			if caca2:
+				card_placed(caca2, row+1)
+			if caca3:
+				card_placed(caca3, row-1)
+		reload()
+	
+	if card.data().get_text("name") == "Attaque DDOS":
+		rpc("invisiCards", 1)
+	
+	if card.data().get_text("name") == "Retraçage d'IP":
+		if row > 10:
+			row -= 20
+		else:
+			return
+		if get_store_ennemie(row).cards().size() > 0:
+			rpc("giveCardModifyRemote", get_data_ennemie(row).get_text("name"), 1, 0, 0, 1)
+			rpc("effectCardRemote", row, 0, 100)
+	
+	if card.data().get_text("name") == "Météorite de Fortnite":
+		if row > 10:
+			row -= 20
+		else:
+			return
+		if get_store_ennemie(row).cards().size() > 0:
+			if get_data_ennemie(row).get_value("attack") > 3:
+				rpc("effectCardRemote", row, 0, 1000)
+	
+	if card.data().get_text("name") == "Passe de Combat":
+		giveCardTypeMax("fortnite", 3, 5)
+	
+	if card.data().get_text("name") == "Coffre Cosmique":
+		giveCardRarityMin(2, 2)
+	
+	if card.data().get_text("name") == "Coffre":
+		giveCardClassMax("sort", 1, 3)
+		giveCardClassMax("character", 1, 3)
+	
+	if card.data().get_text("name") == "Pizza Time":
+		effectCard(row, -1, - 1)
+		bonusAttack(row)
+	
+	if card.data().get_text("name") == "OsJuan":
+		effectAllCard(1, 1)
+	
+	if card.data().get_text("name") == "Coffre au Trésor":
+		var db = CardEngine.db().get_database("main")
+		var q = Query.new()
+		var cards = q.from(["creature_type:poisson"]).execute(db)
+		var store = CardPile.new()
+		
+		var list = []
+		
+		var list2 = []
+		
+		for i in _pile3_store.cards():
+			list.append(i.data().id)
+			
+		
+		store.populate_all(db)
+		store.shuffle()
+		store.keep(1)
+		
+		for i in store.cards():
+			list2.append(i.data().id)
+		
+		list += list2
+		_pile3_store.populate(db, list)
+		
+
+		_pile3.set_store(_pile3_store)
+		
+		var carde := _pile3_store.get_last()
+		if carde != null:
+			if has_card("58 - Harmony55"):
+				for i in returnCards("58 - Harmony55"):
+					card.data().set_value("mana", card.data().get_value("mana")-1)
+			# warning-ignore:return_value_discarded
+			_pile3_store.move_card(carde.ref(), _hand_store)
+		
+	if card.data().get_text("name") == "nouvelle intro":
+		var size = _hand_store.cards().size()
+		var db = CardEngine.db().get_database("main")
+		var store = CardPile.new()
+		
+		var cards = []
+		for i in Gameplay.current_deck.cards():
+			cards.append(i.data().id)
+		
+		cards.shuffle()
+		
+		_hand_store.populate(db, cards)
+		
+		_hand_store.keep(size)
+		
+		_hand.set_store(_hand_store)
+		
+		var newHands = []
+		
+		for i in _hand_store.cards():
+			newHands.append(i._data)
+			
+		if arrays_have_same_content(newHands, startingHands):
+			if not UserStores._get_items().has("SuccesMemeIntro") and Global.sameIP == false:
+				var succesBaston = load("res://screens/menu/succes/MemeIntro.png")
+				$Sprite.texture = succesBaston
+				UserStores.save_item("SuccesMemeIntro",1)
+				$SuccesAnim.play("Slideup")
+				$succes.play()
+		
+	if card.data().get_text("name") == "!peche":
+		var db = CardEngine.db().get_database("main")
+		var q = Query.new()
+		var cards = q.from(["creature_type:poisson"]).execute(db)
+		var store = CardPile.new()
+		
+		var list = []
+		
+		var list2 = []
+		
+		for i in _pile3_store.cards():
+			list.append(i.data().id)
+			
+		
+		store.populate(db, cards)
+		store.shuffle()
+		store.keep(2)
+		
+		for i in store.cards():
+			list2.append(i.data().id)
+		
+		list += list2
+		_pile3_store.populate(db, list)
+		
+
+		_pile3.set_store(_pile3_store)
+		
+		var carde := _pile3_store.get_last()
+		if carde != null:
+			if has_card("58 - Harmony55"):
+				for i in returnCards("58 - Harmony55"):
+					card.data().set_value("mana", card.data().get_value("mana")-1)
+			# warning-ignore:return_value_discarded
+			_pile3_store.move_card(carde.ref(), _hand_store)
+			
+		carde = _pile3_store.get_last()
+		if carde != null:
+			if has_card("58 - Harmony55"):
+				for i in returnCards("58 - Harmony55"):
+					card.data().set_value("mana", card.data().get_value("mana")-1)
+			# warning-ignore:return_value_discarded
+			_pile3_store.move_card(carde.ref(), _hand_store)
+		
+	if card.data().get_text("name") == "Gilet Jaune":
+		cardDef(row, 1)
+		effectCard(row, 0, -2)
+		if get_data(row).get_text("name") == "21 - Xi Jinping":
+			if not UserStores._get_items().has("SuccesHongKong") and Global.sameIP == false:
+				var succesBaston = load("res://screens/menu/succes/ManifsHongKong.png")
+				$Sprite.texture = succesBaston
+				UserStores.save_item("SuccesHongKong",1)
+				$SuccesAnim.play("Slideup")
+				$succes.play()
+	if card.data().get_text("name") == "Vaccin":
+		if row < 20:
+			vaccined[row-1] += 1
+			effectCard(row, 1, -4)
+			if vaccined[row-1] == 2:
+				if not UserStores._get_items().has("SuccesPassArchive") and Global.sameIP == false:
+					var succesImage = load("res://screens/menu/succes/PassArchival.png")
+					$Sprite.texture = succesImage
+					UserStores.save_item("SuccesPassArchive",1)
+					$SuccesAnim.play("Slideup")
+					$succes.play()
+		else:
+			rpc("effectCardRemote", row-20, 1, -4)
+	if card.data().get_text("name") == "STOP":
+		var ligne = row
+		if ligne > 10:
+			ligne -= 20
+		giveMimir(ligne)
+		if ligne != 5:
+			giveMimir(ligne+1)
+		if ligne != 1:
+			giveMimir(ligne-1)
+#		giveMimir(1)
+#		giveMimir(2)
+#		giveMimir(3)
+#		giveMimir(4)
+#		giveMimir(5)
+#		if countEnnemieCards() == 5:
+#			if not UserStores._get_items().has("SuccesEmbouteillage") and Global.sameIP == false:
+#				var succesBaston = load("res://screens/menu/succes/Embouteillage.png")
+#				$Sprite.texture = succesBaston
+#				UserStores.save_item("SuccesEmbouteillage",1)
+#				$SuccesAnim.play("Slideup")
+#				$succes.play()
+	
+	if card.data().get_text("name") == "Random Chimp Event":
+		var db = CardEngine.db().get_database("main")
+		var q = Query.new()
+		var cards = q.from(["creature_type:monke"]).execute(db)
+		var store = CardPile.new()
+		
+		var list = []
+		
+		var list2 = []
+		
+		for i in _pile3_store.cards():
+			list.append(i.data().id)
+			
+		cards.shuffle()
+		
+		var number = _hand_store.cards().size()
+		
+		_hand_store.populate(db, cards)
+		
+		_hand_store.keep(number)
+		
+		_hand.set_store(_hand_store)
+		
+	if card.data().get_text("name") == "Slugterra Air Elemental Ghoul":
+		rpc("ghoul", row)
+
+
+func _on_Pile21_card_dropped(card: CardInstance, source: String, _on_card: CardInstance) -> void:
+	if $Board/NextTurn.disabled:
+		return
+	if card.data().get_text("name") == "Banane Glissante" and not get_data_ennemie(1):
+		return
+	if card.data().get_text("name") == "Jaxi":
+		return
+	if card.data().get_text("name") == "Cucui Ganon":
+		return
+	if card.data().get_text("name") == "Gilet Jaune":
+		return
+	if source == "pepene":
+		_hand_store.play_card(card.ref(), _pile21_store)
+	elif source == "hand" and bobux >= card.data().get_value("mana") and card.data().get_category("class") == "sort" and Global.canPlay:
+		spell(card, 21)
+	else:
+		return
+		
+		
+func connect_real():
+	if is_network_master():
+		real_turn += 1
+		Global.real_turn += 1
+		rpc("remoteRealTurn")
+
+remote func wOrba():
+	if doubleLife and has_card("4 - Funky Kong") and Global.sameIP == false:
+		if not UserStores._get_items().has("SuccesIncident6Mars") and Global.sameIP == false:
+			var succesBanane = load("res://screens/menu/succes/Incident6Mars.png")
+			$Sprite.texture = succesBanane
+			UserStores.save_item("SuccesIncident6Mars",1)
+			$SuccesAnim.play("Slideup")
+			$succes.play()
+			
+	if not UserStores._get_items().has("SuccesW") and Global.sameIP == false:
+		var succesBaston = load("res://screens/menu/succes/W.png")
+		$Sprite.texture = succesBaston
+		UserStores.save_item("SuccesW",1)
+		$SuccesAnim.play("Slideup")
+		$succes.play()
+	
+	if not UserStores._get_items().has("SuccesLaChance") and not UserStores._get_items().has("SuccesL") and Global.sameIP == false:
+		var succesBaston = load("res://screens/menu/succes/LaChance.png")
+		$Sprite.texture = succesBaston
+		UserStores.save_item("SuccesLaChance",1)
+		$SuccesAnim.play("Slideup")
+		$succes.play()
+		
+	if not UserStores._get_items().has("SuccesCeQuiTeTuePas") and Global.sameIP == false and Global.orbe > 30:
+		$Sprite.texture = load("res://screens/menu/succes/SuccesCeQuiTeTuePas.png")
+		UserStores.save_item("SuccesCeQuiTeTuePas",1)
+		$SuccesAnim.play("Slideup")
+		$succes.play()
+	
+	if not UserStores._get_items().has("SuccesPasTouche") and Global.sameIP == false and Global.orbe == 30:
+		$Sprite.texture = load("res://screens/menu/succes/PasTouche.png")
+		UserStores.save_item("SuccesPasTouche",1)
+		$SuccesAnim.play("Slideup")
+		$succes.play()
+	
+	if not UserStores._get_items().has("SuccesCongratulation") and Global.sameIP == false and onlySpell == true:
+		$Sprite.texture = load("res://screens/menu/succes/Congratulation.png")
+		UserStores.save_item("SuccesCongratulation",1)
+		$SuccesAnim.play("Slideup")
+		$succes.play()
+	
+	saveGame()
+	
+	$Board/Music.stream = endMusic
+	$Board/Music.play()
+	var endScreen = load("res://screens/board/EndMenu.tscn").instance()
+	add_child(endScreen)
+	endScreen.setHP(Global.orbe)
+	endScreen.setBobuxLeft(bobux)
+	endScreen.setCardDeadBobux(deadCardBobux)
+	endScreen.turnNumber(Global.play_turn)
+	endScreen.setCardKilled(cardKilled)
+	endScreen.setCardKilledBobux(cardKilledBobux)
+	endScreen.efficency((float(usedBobux)/float(totalBobux))*100)
+	var totalScore = 0
+	totalScore += Global.orbe*35
+	totalScore += cardKilled*50
+	totalScore += cardKilledBobux*25
+	totalScore -= deadCardBobux
+	totalScore += (usedBobux/totalBobux)*100
+	totalScore -= Global.play_turn*10
+	totalScore += 2000
+	endScreen.totalScore(totalScore)
+	endScreen.victory("true")
+	yield(get_tree().create_timer(1), "timeout")
+	if Network.server != null:
+		Network.server.close_connection()
+	if Network.client != null:
+		Network.client.close_connection()
+	for i in $Board.get_children():
+		if "res://cards/normal/normal_card.tscn" == str(i.get_filename()):
+			i.visible = false
+	
+master func wOrbaMaster():
+	if doubleLife and has_card("4 - Funky Kong"):
+		if not UserStores._get_items().has("SuccesIncident6Mars") and Global.sameIP == false:
+			var succesBanane = load("res://screens/menu/succes/Incident6Mars.png")
+			$Sprite.texture = succesBanane
+			UserStores.save_item("SuccesIncident6Mars",1)
+			$SuccesAnim.play("Slideup")
+			$succes.play()
+			
+	if not UserStores._get_items().has("SuccesW") and Global.sameIP == false:
+		var succesBaston = load("res://screens/menu/succes/W.png")
+		$Sprite.texture = succesBaston
+		UserStores.save_item("SuccesW",1)
+		$SuccesAnim.play("Slideup")
+		$succes.play()
+		
+	if not UserStores._get_items().has("SuccesCeQuiTeTuePas") and Global.sameIP == false and Global.orbe > 30:
+		$Sprite.texture = load("res://screens/menu/succes/SuccesCeQuiTeTuePas.png")
+		UserStores.save_item("SuccesCeQuiTeTuePas",1)
+		$SuccesAnim.play("Slideup")
+		$succes.play()
+		
+	if not UserStores._get_items().has("SuccesCongratulation") and Global.sameIP == false and onlySpell == true:
+		$Sprite.texture = load("res://screens/menu/succes/Congratulation.png")
+		UserStores.save_item("SuccesCongratulation",1)
+		$SuccesAnim.play("Slideup")
+		$succes.play()
+		
+	if not UserStores._get_items().has("SuccesPasSiMeta") and Global.sameIP == false and onlySpell == true:
+		$Sprite.texture = load("res://screens/menu/succes/PasSiMeta.png")
+		UserStores.save_item("SuccesCongratulation",1)
+		$SuccesAnim.play("Slideup")
+		$succes.play()
+		
+	saveGame()
+	
+	$Board/Music.stream = endMusic
+	$Board/Music.play()
+	var endScreen = load("res://screens/board/EndMenu.tscn").instance()
+	add_child(endScreen)
+	endScreen.setHP(Global.orbe)
+	endScreen.setBobuxLeft(bobux)
+	endScreen.setCardDeadBobux(deadCardBobux)
+	endScreen.turnNumber(Global.play_turn)
+	endScreen.setCardKilled(cardKilled)
+	endScreen.setCardKilledBobux(cardKilledBobux)
+	endScreen.efficency((float(usedBobux)/float(totalBobux))*100)
+	var totalScore = 0
+	totalScore += Global.orbe*35
+	totalScore += cardKilled*50
+	totalScore += cardKilledBobux*25
+	totalScore -= deadCardBobux
+	totalScore += (usedBobux/totalBobux)*100
+	totalScore -= Global.play_turn*10
+	totalScore += 2000
+	endScreen.totalScore(totalScore)
+	endScreen.victory("true")
+	yield(get_tree().create_timer(1), "timeout")
+	if Network.server != null:
+		Network.server.close_connection()
+	if Network.client != null:
+		Network.client.close_connection()
+	for i in $Board.get_children():
+		if "res://cards/normal/normal_card.tscn" == str(i.get_filename()):
+			i.visible = false
+		
+onready var endMusic = preload("res://audio/EndingScreen.ogg")
+		
+func saveGame():
+	reload()
+	var time = OS.get_datetime()
+	
+	var gameId = ""
+	
+	if UserStores._get_items().has("games"):
+		gameId += str(UserStores._get_items()["games"].size() + 1)
+	else:
+		gameId += "1"
+	
+	if time["day"] < 10:
+		gameId += "0"
+	gameId += str(time["day"])
+	
+	if time["month"] < 10:
+		gameId += "0"
+	gameId += str(time["month"])
+
+	gameId += str(time["year"])
+	
+	if Global.orbe < 0:
+		gameId += "1"
+	else:
+		gameId += "0"
+		
+	if abs(Global.orbe) < 10:
+		gameId += "0"
+	gameId += str(abs(Global.orbe))
+	
+	rpc("getOtherOrbe")
+	
+	orbeEnnemieHp = int($Board/HPEnnemie.value)
+	
+	if orbeEnnemieHp < 0:
+		gameId += "1"
+	else:
+		gameId += "0"
+		
+	if abs(orbeEnnemieHp) < 10:
+		gameId += "0"
+	gameId += str(abs(orbeEnnemieHp))
+	
+	gameId += $YourName.text
+	
+	gameId += "|"
+	
+	gameId += $EnnemieName.text
+	
+	gameId += "|"
+	
+	gameId += Global.orbeSelected
+	
+	gameId += "|"
+	
+	gameId += ennemieOrbe
+	
+	gameId += "|"
+	
+	if Global.skinSelected == "null":
+		gameId += " "
+	else:
+		gameId += Global.skinSelected
+	
+	gameId += "|"
+	
+	if ennemieSkin == "null":
+		gameId += " "
+	else:
+		gameId += ennemieSkin
+	
+	gameId += "|"
+	
+	UserStores.save_object("games",gameId)
+
+
+func equality():
+	$Board/Music.stream = load("res://audio/egalite.ogg")
+	$Board/Music.play()
+	saveGame()
+	
+	var endScreen = load("res://screens/board/EndMenu.tscn").instance()
+	add_child(endScreen)
+	endScreen.setHP(Global.orbe)
+	endScreen.setBobuxLeft(bobux)
+	endScreen.setCardDeadBobux(deadCardBobux)
+	endScreen.turnNumber(Global.play_turn)
+	endScreen.setCardKilled(cardKilled)
+	endScreen.setCardKilledBobux(cardKilledBobux)
+	endScreen.efficency((float(usedBobux)/float(totalBobux))*100)
+	var totalScore = 0
+	totalScore -= Global.orbe*35
+	totalScore += cardKilled*50
+	totalScore += cardKilledBobux*25
+	totalScore -= deadCardBobux
+	totalScore += (usedBobux/totalBobux)*110
+	totalScore += Global.play_turn*50
+	totalScore += 2500
+	endScreen.totalScore(totalScore)
+	endScreen.victory("egalite")
+	yield(get_tree().create_timer(1), "timeout")
+	if Network.server != null:
+		Network.server.close_connection()
+	if Network.client != null:
+		Network.client.close_connection()
+	for i in $Board.get_children():
+		if "res://cards/normal/normal_card.tscn" == str(i.get_filename()):
+			i.visible = false
+
+func cringe_orba():
+	
+	if not UserStores._get_items().has("SuccesL"):
+		var succesBaston = load("res://screens/menu/succes/L.png")
+		$Sprite.texture = succesBaston
+		UserStores.save_item("SuccesL",1)
+		$SuccesAnim.play("Slideup")
+		$succes.play()
+	
+	print(int($Board/HPEnnemie.value))
+	
+	if int($Board/HPEnnemie.value) < 1:
+		equality()
+		return
+	else:
+		rpc("wOrba")
+		
+	$Board/Music.stream = load("res://audio/Effect/lost.wav")
+	$Board/Music.play()
+#	if is_network_master():
+#		rpc_id(Global.other_id, "wOrba")
+#	else:
+#		rpc_id(1, "wOrbaMaster")
+	saveGame()
+#	var texture = preload("res://screens/board/Muerte.png")
+#	$TextureRect.texture = texture
+	var endScreen = load("res://screens/board/EndMenu.tscn").instance()
+	add_child(endScreen)
+	endScreen.setHP(Global.orbe)
+	endScreen.setBobuxLeft(bobux)
+	endScreen.setCardDeadBobux(deadCardBobux)
+	endScreen.turnNumber(Global.play_turn)
+	endScreen.setCardKilled(cardKilled)
+	endScreen.setCardKilledBobux(cardKilledBobux)
+	endScreen.efficency((float(usedBobux)/float(totalBobux))*100)
+	var totalScore = 0
+	totalScore += Global.orbe*20
+	totalScore += cardKilled*50
+	totalScore += cardKilledBobux*25
+	totalScore -= deadCardBobux
+	totalScore += (usedBobux/totalBobux)*100
+	totalScore += Global.play_turn*10
+	totalScore += 300
+	endScreen.totalScore(totalScore)
+	endScreen.victory("false")
+	
+	
+	yield(get_tree().create_timer(1), "timeout")
+	if Network.server != null:
+		Network.server.close_connection()
+	if Network.client != null:
+		Network.client.close_connection()
+	for i in $Board.get_children():
+		if "res://cards/normal/normal_card.tscn" == str(i.get_filename()):
+			i.visible = false
+			
+
+master func requin_lutinm(row):
+	if row == 1:
+		var carte = _pile1_store.cards()
+		if carte.size() > 0:
+			carte[0].data().set_value("hp", carte[0].data().get_value("hp")-2)
+		else:
+			hurtOrbe(2)
+	if row == 2:
+		var carte = _pile2_store.cards()
+		if carte.size() > 0:
+			carte[0].data().set_value("hp", carte[0].data().get_value("hp")-2)
+		else:
+			hurtOrbe(2)
+	if row == 3:
+		var carte = _pile4_store.cards()
+		if carte.size() > 0:
+			carte[0].data().set_value("hp", carte[0].data().get_value("hp")-2)
+		else:
+			hurtOrbe(2)
+	if row == 4:
+		var carte = _pile5_store.cards()
+		if carte.size() > 0:
+			carte[0].data().set_value("hp", carte[0].data().get_value("hp")-2)
+		else:
+			hurtOrbe(2)
+	if row == 5:
+		var carte = _pile6_store.cards()
+		if carte.size() > 0:
+			carte[0].data().set_value("hp", carte[0].data().get_value("hp")-2)
+		else:
+			hurtOrbe(2)
+	check_death()
+	reload()
+
+slave func requin_lutins(row):
+	if row == 1:
+		var carte = _pile1_store.cards()
+		if carte.size() > 0:
+			carte[0].data().set_value("hp", carte[0].data().get_value("hp")-2)
+		else:
+			hurtOrbe(2)
+	if row == 2:
+		var carte = _pile2_store.cards()
+		if carte.size() > 0:
+			carte[0].data().set_value("hp", carte[0].data().get_value("hp")-2)
+		else:
+			hurtOrbe(2)
+	if row == 3:
+		var carte = _pile4_store.cards()
+		if carte.size() > 0:
+			carte[0].data().set_value("hp", carte[0].data().get_value("hp")-2)
+		else:
+			hurtOrbe(2)
+	if row == 4:
+		var carte = _pile5_store.cards()
+		if carte.size() > 0:
+			carte[0].data().set_value("hp", carte[0].data().get_value("hp")-2)
+		else:
+			hurtOrbe(2)
+	if row == 5:
+		var carte = _pile6_store.cards()
+		if carte.size() > 0:
+			carte[0].data().set_value("hp", carte[0].data().get_value("hp")-2)
+		else:
+			hurtOrbe(2)
+	check_death()
+	reload()
+
+func countEnnemieCards():
+	var count = 0
+	for i in range(1,6):
+		if get_store_ennemie(i).cards().size() > 0:
+			count += 1
+	return count
+	
+func countCards():
+	var count = 0
+	for i in range(1,6):
+		if get_store(i).cards().size() > 0:
+			count += 1
+	return count
+
+remotesync func explosion(row):
+	effectAllCard(0,-2)
+
+remote func deathEnnemie(card, row):
+	var name = card
+	
+	if get_data(row) == null:
+		return
+	
+	if name == "32 - Juan" and get_data(row).get_text("name") == "38 - Poulet":
+		if not UserStores._get_items().has("SuccesJuanIncident") and Global.sameIP == false:
+			var succesBanane = load("res://screens/menu/succes/JuanIncident.png")
+			$Sprite.texture = succesBanane
+			UserStores.save_item("SuccesJuanIncident",1)
+			$SuccesAnim.play("Slideup")
+			$succes.play()
+	
+	if get_data(row).get_text("name") == "36 - Garfield":
+		if get_data(row).get_value("hp") > 0:
+			effectCard(row, 0, -2)
+		
+	if has_card("47 - Master Chief"):
+		effectCardRandom(1,1)
+	
+	if name == "33 - Dora":
+		effectAllCard(1, 0)
+
+	if ennemie_has_card("37 - Lego Batman"):
+		effectCard(row, 0, 3)
+		if get_store(row).cards().size() > 0:
+			rpc("giveJustice")
+		
+		
+	if returnCards("66 - Future Geno").has(row):
+		giveCard(card, 1)
+	 
+remote func giveJustice():
+	if not UserStores._get_items().has("SuccesLaJustice") and Global.sameIP == false:
+		$Sprite.texture = load("res://screens/menu/succes/LaJustice.png")
+		UserStores.save_item("SuccesLaJustice",1)
+		$SuccesAnim.play("Slideup")
+		$succes.play()
+	
+remote func killed(card, bobux):
+	cardKilled += 1
+	UserStores.save_item("StatCardKilled",1)
+	cardKilledBobux += bobux
+	
+func death(card, row):
+	var name = card.get_text("name")
+	var desc = card.get_text("desc")
+	
+	rpc("deathEnnemie",name,row)
+	
+	deadCardBobux += get_data(row).get_value("mana")
+	rpc("killed", name, card.get_value("mana"))
+	
+	vaccined[row-1] = 0
+	
+	if row == 1:
+		carte1 = null
+	if row == 2:
+		carte2 = null
+	if row == 3:
+		carte4 = null
+	if row == 4:
+		carte5 = null
+	if row == 5:
+		carte6 = null
+		
+	var place = ["6 - Mapendoboy", "14 - Kuikui Caillou Obèse","25 - Carpe Lame", "26 - Requin Lutin", "29 - Tropical Fish", "30 - Poisson Arabe", "32 - Juan", "38 - Poulet"]
+	
+	if ccNn == true and place.has(card.get_text("name")):
+		ccNn = false
+		return
+	if name == "117 - Chunky Kong":
+		rpc("giveCardTypeRemote", "monke", 1)
+		
+	if name == "58 - Harmony55":
+		effectAllCardHand(0, 0, 1)
+		
+	if name == "32 - Juan":
+		giveCard("OsJuan", 1)
+		
+	if name == "38 - Poulet":
+		draw()
+		 
+	if name == "30 - Poisson Globe":
+		var count = countEnnemieCards() + countCards()
+		card.set_text("name", "holla")
+		rpc("explosion", row)
+		if count >= countEnnemieCards() + countCards() + 4:
+			if not UserStores._get_items().has("SuccesBoom") and Global.sameIP == false:
+				$Sprite.texture = load("res://screens/menu/succes/Boom.png")
+				UserStores.save_item("SuccesBoom",1)
+				$SuccesAnim.play("Slideup")
+				$succes.play()
+		
+	if name == "29 - tropical_fish":
+		if desc == "Tué, revient dans la main en perdant 1 bobux, 1ATK et 1PV (jusqu'à ce qu'il en ai 0).":
+			var db = CardEngine.db().get_database("main")
+			var q = Query.new()
+			var cards = q.contains(["name:29 - tropical_fish"]).execute(db)
+			var store = CardPile.new()
+			
+			var list = []
+			
+			var list2 = []
+			
+			for i in _pile3_store.cards():
+				list.append(i.data().id)
+				
+			
+			store.populate(db, cards)
+			store.shuffle()
+			store.keep(1)
+			
+			for i in store.cards():
+				list2.append(i.data().id)
+			
+			list += list2
+			_pile3_store.populate(db, list)
+			
+
+			_pile3.set_store(_pile3_store)
+			
+			var carde := _pile3_store.get_last()
+			carde.data().set_value("hp", 3)
+			carde.data().set_value("attack", 3)
+			carde.data().set_value("mana", 3)
+			carde.data().set_text("desc","Tué, revient dans la main avec 2/2/2.")
+			if carde != null:
+				if has_card("58 - Harmony55"):
+					for i in returnCards("58 - Harmony55"):
+						card.data().set_value("mana", card.data().get_value("mana")-1)
+				# warning-ignore:return_value_discarded
+				_pile3_store.move_card(carde.ref(), _hand_store)
+
+		if desc == "Tué, revient dans la main avec 2/2/2.":
+			var db = CardEngine.db().get_database("main")
+			var q = Query.new()
+			var cards = q.contains(["name:29 - tropical_fish"]).execute(db)
+			var store = CardPile.new()
+			
+			var list = []
+			
+			var list2 = []
+			
+			for i in _pile3_store.cards():
+				list.append(i.data().id)
+				
+			
+			store.populate(db, cards)
+			store.shuffle()
+			store.keep(1)
+			
+			for i in store.cards():
+				list2.append(i.data().id)
+			
+			list += list2
+			_pile3_store.populate(db, list)
+			
+
+			_pile3.set_store(_pile3_store)
+			
+			var carde := _pile3_store.get_last()
+			carde.data().set_value("hp", 2)
+			carde.data().set_value("attack", 2)
+			carde.data().set_value("mana", 2)
+			carde.data().set_text("desc","Tué, revient dans la main avec 1/1/1.")
+			if carde != null:
+				if has_card("58 - Harmony55"):
+					for i in returnCards("58 - Harmony55"):
+						card.data().set_value("mana", card.data().get_value("mana")-1)
+				# warning-ignore:return_value_discarded
+				_pile3_store.move_card(carde.ref(), _hand_store)
+
+		if desc == "Tué, revient dans la main avec 1/1/1.":
+			var db = CardEngine.db().get_database("main")
+			var q = Query.new()
+			var cards = q.contains(["name:29 - tropical_fish"]).execute(db)
+			var store = CardPile.new()
+			
+			var list = []
+			
+			var list2 = []
+			
+			for i in _pile3_store.cards():
+				list.append(i.data().id)
+				
+			
+			store.populate(db, cards)
+			store.shuffle()
+			store.keep(1)
+			
+			for i in store.cards():
+				list2.append(i.data().id)
+			
+			list += list2
+			_pile3_store.populate(db, list)
+			
+
+			_pile3.set_store(_pile3_store)
+			
+			var carde := _pile3_store.get_last()
+			carde.data().set_value("hp", 1)
+			carde.data().set_value("attack", 1)
+			carde.data().set_value("mana", 1)
+			carde.data().set_text("desc","Aucune capacité.")
+			if carde != null:
+				if has_card("58 - Harmony55"):
+					for i in returnCards("58 - Harmony55"):
+						card.data().set_value("mana", card.data().get_value("mana")-1)
+				# warning-ignore:return_value_discarded
+				_pile3_store.move_card(carde.ref(), _hand_store)
+
+		
+	if name == "26 - Requin Lutin":
+		rpc("effectCardRemote", row, 0, 2)
+
+	if name == "25 - Carpe Lame":
+		death_carpe(row)
+
+	if name == "19 - Kuikui china":
+		card.set_text("name", "adeu")
+		effectAllCardBut(row, -1, -1)
+	
+	if name == "14 - Kuikui Caillou Obèse":
+		if row == 1:
+			if _pile2_store.cards().size() == 0:
+				var db = CardEngine.db().get_database("main")
+				var q = Query.new()
+				var cards = q.contains(["name:13 - Kuikui Caillou"]).execute(db)
+
+				var store = CardPile.new()
+				
+		#
+				store.populate(db, cards)
+				store.keep(1)
+				_pile2.set_store(store)
+				_pile2_store = _pile2.store()
+				_hand_store.play_card(_pile2_store.cards()[0].ref(), _pile2_store)
+				carte2 = _pile2_store.cards()[0]
+		if row == 2:
+			if _pile1_store.cards().size() == 0:
+
+				var db = CardEngine.db().get_database("main")
+				var q = Query.new()
+				var cards = q.contains(["name:13 - Kuikui Caillou"]).execute(db)
+
+				var store = CardPile.new()
+				
+		#
+				store.populate(db, cards)
+				store.keep(1)
+				_pile1.set_store(store)
+				_pile1_store = _pile1.store()
+				_hand_store.play_card(_pile1_store.cards()[0].ref(), _pile1_store)
+				carte1 = _pile1_store.cards()[0]
+			if _pile4_store.cards().size() == 0:
+				var db = CardEngine.db().get_database("main")
+				var q = Query.new()
+				var cards = q.contains(["name:13 - Kuikui Caillou"]).execute(db)
+
+				var store = CardPile.new()
+				
+		#
+				store.populate(db, cards)
+				store.keep(1)
+				_pile4.set_store(store)
+				_pile4_store = _pile4.store()
+				_hand_store.play_card(_pile4_store.cards()[0].ref(), _pile4_store)
+				carte4 = _pile4_store.cards()[0]
+		if row == 3:
+			if _pile2_store.cards().size() == 0:
+				var db = CardEngine.db().get_database("main")
+				var q = Query.new()
+				var cards = q.contains(["name:13 - Kuikui Caillou"]).execute(db)
+
+				var store = CardPile.new()
+				
+		#
+				store.populate(db, cards)
+				store.keep(1)
+				_pile2.set_store(store)
+				_pile2_store = _pile2.store()
+				_hand_store.play_card(_pile2_store.cards()[0].ref(), _pile2_store)
+				carte2 = _pile2_store.cards()[0]
+			if _pile5_store.cards().size() == 0:
+				var db = CardEngine.db().get_database("main")
+				var q = Query.new()
+				var cards = q.contains(["name:13 - Kuikui Caillou"]).execute(db)
+
+				var store = CardPile.new()
+				
+		#
+				store.populate(db, cards)
+				store.keep(1)
+				_pile5.set_store(store)
+				_pile5_store = _pile5.store()
+				_hand_store.play_card(_pile5_store.cards()[0].ref(), _pile5_store)
+				carte5 = _pile5_store.cards()[0]
+		if row == 4:
+			if _pile4_store.cards().size() == 0:
+				var db = CardEngine.db().get_database("main")
+				var q = Query.new()
+				var cards = q.contains(["name:13 - Kuikui Caillou"]).execute(db)
+
+				var store = CardPile.new()
+				
+		#
+				store.populate(db, cards)
+				store.keep(1)
+				_pile4.set_store(store)
+				_pile4_store = _pile4.store()
+				_hand_store.play_card(_pile4_store.cards()[0].ref(), _pile4_store)
+				carte4 = _pile4_store.cards()[0]
+			if _pile6_store.cards().size() == 0:
+				var db = CardEngine.db().get_database("main")
+				var q = Query.new()
+				var cards = q.contains(["name:13 - Kuikui Caillou"]).execute(db)
+
+				var store = CardPile.new()
+				
+		#
+				store.populate(db, cards)
+				store.keep(1)
+				_pile6.set_store(store)
+				_pile6_store = _pile6.store()
+				_hand_store.play_card(_pile6_store.cards()[0].ref(), _pile6_store)
+				carte6 = _pile6_store.cards()[0]
+		if row == 5:
+			if _pile5_store.cards().size() == 0:
+				var db = CardEngine.db().get_database("main")
+				var q = Query.new()
+				var cards = q.contains(["name:13 - Kuikui Caillou"]).execute(db)
+
+				var store = CardPile.new()
+				
+		#
+				store.populate(db, cards)
+				store.keep(1)
+				_pile5.set_store(store)
+				_pile5_store = _pile5.store()
+				_hand_store.play_card(_pile5_store.cards()[0].ref(), _pile5_store)
+				carte5 = _pile5_store.cards()[0]
+		if row != 5 and row != 1:
+			if get_store(row+1).cards().size() == 0 and get_store(row-1).cards().size() == 0:
+				if not UserStores._get_items().has("SuccesDivision") and Global.sameIP == false:
+					$Sprite.texture = load("res://screens/menu/succes/Division.png")
+					UserStores.save_item("SuccesDivision",1)
+					$SuccesAnim.play("Slideup")
+					$succes.play()
+	
+	
+	if name == "6 - Mapendoboy":
+		yield(get_tree().create_timer(0.5), "timeout")
+		
+		var db = CardEngine.db().get_database("main")
+		var q = Query.new()
+		var cards = q.contains(["name:3 - Kirbo"]).execute(db)
+		var store = CardPile.new()
+		
+		var list = []
+		
+		var list2 = []
+		
+		for i in _pile3_store.cards():
+			list.append(i.data().id)
+			
+		
+		store.populate(db, cards)
+		store.shuffle()
+		store.keep(1)
+		
+		for i in store.cards():
+			list2.append(i.data().id)
+		
+		list += list2
+		_pile3_store.populate(db, list)
+		
+
+		_pile3.set_store(_pile3_store)
+		
+		var carde := _pile3_store.get_last()
+		carde.data().set_value("hp",5)
+		carde.data().set_value("attack",5)
+		carde.data().set_value("mana",6)
+		if carde != null:
+			if has_card("58 - Harmony55"):
+				for i in returnCards("58 - Harmony55"):
+					card.data().set_value("mana", card.data().get_value("mana")-1)
+			# warning-ignore:return_value_discarded
+			_pile3_store.move_card(carde.ref(), _hand_store)
+			
+func get_data(index):
+	if index == 1 and get_store(1).cards().size() > 0:
+		return _pile1_store.cards()[0].data()
+	elif index == 2 and get_store(2).cards().size() > 0:
+		return _pile2_store.cards()[0].data()
+	elif index == 3 and get_store(3).cards().size() > 0:
+		return _pile4_store.cards()[0].data()
+	elif index == 4 and get_store(4).cards().size() > 0:
+		return _pile5_store.cards()[0].data()
+	elif index == 5 and get_store(5).cards().size() > 0:
+		return _pile6_store.cards()[0].data()
+	else:
+		return null
+
+func get_store(index):
+	if index == 1:
+		return _pile1_store
+	elif index == 2:
+		return _pile2_store
+	elif index == 3:
+		return _pile4_store
+	elif index == 4:
+		return _pile5_store
+	elif index == 5:
+		return _pile6_store
+	else:
+		return null
+	
+		
+func get_data_ennemie(index):
+	if index == 1 and get_store_ennemie(1).cards().size() > 0:
+		return get_store_ennemie(1).cards()[0].data()
+	elif index == 2 and get_store_ennemie(2).cards().size() > 0:
+		return get_store_ennemie(2).cards()[0].data()
+	elif index == 3 and get_store_ennemie(3).cards().size() > 0:
+		return get_store_ennemie(3).cards()[0].data()
+	elif index == 4 and get_store_ennemie(4).cards().size() > 0:
+		return get_store_ennemie(4).cards()[0].data()
+	elif index == 5 and get_store_ennemie(5).cards().size() > 0:
+		return get_store_ennemie(5).cards()[0].data()
+	else:
+		return null
+	
+		
+func get_store_ennemie(index):
+	if index == 1:
+		return _pile21_store
+	if index == 2:
+		return _pile22_store
+	if index == 3:
+		return _pile23_store
+	if index == 4:
+		return _pile24_store
+	if index == 5:
+		return _pile25_store
+		
+func set_pile_ennemie(index, set):
+	if index == 1:
+		_pile21.set_store(set)
+	if index == 2:
+		_pile22.set_store(set)
+	if index == 3:
+		_pile23.set_store(set)
+	if index == 4:
+		_pile24.set_store(set)
+	if index == 5:
+		_pile25 .set_store(set)
+		
+func set_pile_store_ennemie(index, set):
+	if index == 1:
+		_pile21_store = set
+	if index == 2:
+		_pile22_store = set
+	if index == 3:
+		_pile23_store = set
+	if index == 4:
+		_pile24_store = set
+	if index == 5:
+		_pile25_store = set
+		
+func set_pile_store(index, set):
+	if index == 1:
+		_pile1_store = set
+	if index == 2:
+		_pile2_store = set
+	if index == 3:
+		_pile4_store = set
+	if index == 4:
+		_pile5_store = set
+	if index == 5:
+		_pile6_store = set
+		
+func set_carte_variable(index, set):
+	if index == 1:
+		carte1 = set
+	if index == 2:
+		carte2 = set
+	if index == 3:
+		carte4 = set
+	if index == 4:
+		carte5 = set
+	if index == 5:
+		carte6 = set
+		
+func get_pile_ennemie(index):
+	if index == 1:
+		return _pile21
+	if index == 2:
+		return _pile22
+	if index == 3:
+		return _pile23
+	if index == 4:
+		return _pile24
+	if index == 5:
+		return _pile25
+		
+func get_pile(index):
+	if index == 1:
+		return _pile1
+	if index == 2:
+		return _pile2
+	if index == 3:
+		return _pile4
+	if index == 4:
+		return _pile5
+	if index == 5:
+		return _pile6
+		
+func spot_mimir(index):
+	return spots_mimir_ennemie[index-1]
+		
+func set_spot_mimir(index, set):
+	if index == 1:
+		spot1_mimir = set
+	if index == 2:
+		spot2_mimir = set
+	if index == 3:
+		spot3_mimir = set
+	if index == 4:
+		spot4_mimir = set
+	if index == 5:
+		spot5_mimir = set
+		
+func spot_mimir_own(index):
+	return spots_mimir[index-1]
+		
+func set_spot_mimir_own(index, set):
+	if index == 1:
+		spot1_mimir_own = set
+	if index == 2:
+		spot2_mimir_own = set
+	if index == 3:
+		spot3_mimir_own = set
+	if index == 4:
+		spot4_mimir_own = set
+	if index == 5:
+		spot5_mimir_own = set
+		
+func get_pile_ref(index):
+	if index == 1:
+		ref = $Board/Pile1
+	if index == 2:
+		ref = $Board/Pile2
+	if index == 3:
+		ref = $Board/Pile4
+	if index == 4:
+		ref = $Board/Pile5
+	if index == 5:
+		ref = $Board/Pile6
+	return ref
+	
+func get_pile_ref_ennemie(index):
+	if index == 1:
+		ref = $Board/Pile21
+	if index == 2:
+		ref = $Board/Pile22
+	if index == 3:
+		ref = $Board/Pile23
+	if index == 4:
+		ref = $Board/Pile24
+	if index == 5:
+		ref = $Board/Pile25
+	return ref
+		
+func attack_animation(index):
+	if index == 1:
+		var card_normal = load("res://cards/normal/normal_card.tscn")
+		var card_normal_instance = card_normal.instance()
+		add_child(card_normal_instance)
+		card_normal_instance._update_data(get_data(1))
+
+		card_normal_instance.position.x = 108
+		card_normal_instance.position.y = 456
+		card_normal_instance.scale.x = 0.354
+		card_normal_instance.scale.y = 0.354
+		card_normal_instance.attack()
+		yield(get_tree().create_timer(0.02), "timeout")
+		$Board/Pile1.get_node("DropArea/Cards").visible = false
+		yield(get_tree().create_timer(0.38), "timeout")
+		$Board/Pile1.get_node("DropArea/Cards").visible = true
+	if index == 2:
+		var card_normal = load("res://cards/normal/normal_card.tscn")
+		var card_normal_instance = card_normal.instance()
+		add_child(card_normal_instance)
+		card_normal_instance._update_data(get_data(2))
+
+		card_normal_instance.position.x = 108+((index-1)*172)
+		card_normal_instance.position.y = 456
+		card_normal_instance.scale.x = 0.354
+		card_normal_instance.scale.y = 0.354
+		card_normal_instance.attack()
+		yield(get_tree().create_timer(0.02), "timeout")
+		$Board/Pile2.get_node("DropArea/Cards").visible = false
+		yield(get_tree().create_timer(0.38), "timeout")
+		$Board/Pile2.get_node("DropArea/Cards").visible = true
+		
+	if index == 3:
+		var card_normal = load("res://cards/normal/normal_card.tscn")
+		var card_normal_instance = card_normal.instance()
+		add_child(card_normal_instance)
+		card_normal_instance._update_data(get_data(3))
+
+		card_normal_instance.position.x = 108+((index-1)*172)
+		card_normal_instance.position.y = 456
+		card_normal_instance.scale.x = 0.354
+		card_normal_instance.scale.y = 0.354
+		card_normal_instance.attack()
+		yield(get_tree().create_timer(0.02), "timeout")
+		$Board/Pile4.get_node("DropArea/Cards").visible = false
+		yield(get_tree().create_timer(0.38), "timeout")
+		$Board/Pile4.get_node("DropArea/Cards").visible = true
+		
+	if index == 4:
+		var card_normal = load("res://cards/normal/normal_card.tscn")
+		var card_normal_instance = card_normal.instance()
+		add_child(card_normal_instance)
+		card_normal_instance._update_data(get_data(4))
+
+		card_normal_instance.position.x = 108+((index-1)*172)
+		card_normal_instance.position.y = 456
+		card_normal_instance.scale.x = 0.354
+		card_normal_instance.scale.y = 0.354
+		card_normal_instance.attack()
+		yield(get_tree().create_timer(0.02), "timeout")
+		$Board/Pile5.get_node("DropArea/Cards").visible = false
+		yield(get_tree().create_timer(0.38), "timeout")
+		$Board/Pile5.get_node("DropArea/Cards").visible = true
+		
+	if index == 5:
+		var card_normal = load("res://cards/normal/normal_card.tscn")
+		var card_normal_instance = card_normal.instance()
+		add_child(card_normal_instance)
+		card_normal_instance._update_data(get_data(5))
+
+		card_normal_instance.position.x = 108+((index-1)*172)
+		card_normal_instance.position.y = 456
+		card_normal_instance.scale.x = 0.354
+		card_normal_instance.scale.y = 0.354
+		card_normal_instance.attack()
+		yield(get_tree().create_timer(0.02), "timeout")
+		$Board/Pile6.get_node("DropArea/Cards").visible = false
+		yield(get_tree().create_timer(0.38), "timeout")
+		$Board/Pile6.get_node("DropArea/Cards").visible = true
+		
+		
+	if index == 21:
+		$Board/Pile21.get_node("DropArea/Cards").visible = false
+		var card_normal = load("res://cards/normal/normal_card.tscn")
+		var card_normal_instance = card_normal.instance()
+		add_child(card_normal_instance)
+		card_normal_instance._update_data(get_data_ennemie(1))
+		card_normal_instance.position.x = 108
+		card_normal_instance.position.y = 456-231
+		card_normal_instance.scale.x = 0.354
+		card_normal_instance.scale.y = 0.354
+		card_normal_instance.attackd()
+		yield(get_tree().create_timer(0.02), "timeout")
+		if instance1 != null:
+			instance1.visible = false
+		yield(get_tree().create_timer(0.38), "timeout")
+		if instance1 != null:
+			instance1.visible = true
+		$Board/Pile21.get_node("DropArea/Cards").visible = true
+		
+	if index == 22:
+		$Board/Pile22.get_node("DropArea/Cards").visible = false
+		var card_normal = load("res://cards/normal/normal_card.tscn")
+		var card_normal_instance = card_normal.instance()
+		add_child(card_normal_instance)
+		card_normal_instance._update_data(get_data_ennemie(2))
+		card_normal_instance.position.x = 108+((2-1)*172)
+		card_normal_instance.position.y = 456-231
+		card_normal_instance.scale.x = 0.354
+		card_normal_instance.scale.y = 0.354
+		card_normal_instance.attackd()
+		yield(get_tree().create_timer(0.02), "timeout")
+		if instance2 != null:
+			instance2.visible = false
+		yield(get_tree().create_timer(0.38), "timeout")
+		if instance2 != null:
+			instance2.visible = true
+		$Board/Pile22.get_node("DropArea/Cards").visible = true
+		
+	if index == 23:
+		$Board/Pile23.get_node("DropArea/Cards").visible = false
+		var card_normal = load("res://cards/normal/normal_card.tscn")
+		var card_normal_instance = card_normal.instance()
+		add_child(card_normal_instance)
+		card_normal_instance._update_data(get_data_ennemie(3))
+		card_normal_instance.position.x = 108+((3-1)*172)
+		card_normal_instance.position.y = 456-231
+		card_normal_instance.scale.x = 0.354
+		card_normal_instance.scale.y = 0.354
+		card_normal_instance.attackd()
+		yield(get_tree().create_timer(0.02), "timeout")
+		if instance3 != null:
+			instance3.visible = false
+		yield(get_tree().create_timer(0.38), "timeout")
+		if instance3 != null:
+			instance3.visible = true
+		$Board/Pile23.get_node("DropArea/Cards").visible = true
+		
+	if index == 24:
+		$Board/Pile24.get_node("DropArea/Cards").visible = false
+		var card_normal = load("res://cards/normal/normal_card.tscn")
+		var card_normal_instance = card_normal.instance()
+		add_child(card_normal_instance)
+		card_normal_instance._update_data(get_data_ennemie(4))
+		card_normal_instance.position.x = 108+((4-1)*172)
+		card_normal_instance.position.y = 456-231
+		card_normal_instance.scale.x = 0.354
+		card_normal_instance.scale.y = 0.354
+		card_normal_instance.attackd()
+		yield(get_tree().create_timer(0.02), "timeout")
+		if instance4 != null:
+			instance4.visible = false
+		yield(get_tree().create_timer(0.38), "timeout")
+		if instance4 != null:
+			instance4.visible = true
+		$Board/Pile24.get_node("DropArea/Cards").visible = true
+		
+	if index == 25:
+		$Board/Pile25.get_node("DropArea/Cards").visible = false
+		var card_normal = load("res://cards/normal/normal_card.tscn")
+		var card_normal_instance = card_normal.instance()
+		add_child(card_normal_instance)
+		card_normal_instance._update_data(get_data_ennemie(5))
+		card_normal_instance.position.x = 108+((5-1)*172)
+		card_normal_instance.position.y = 456-231
+		card_normal_instance.scale.x = 0.354
+		card_normal_instance.scale.y = 0.354
+		card_normal_instance.attackd()
+		yield(get_tree().create_timer(0.02), "timeout")
+		if instance5 != null:
+			instance5.visible = false
+		yield(get_tree().create_timer(0.38), "timeout")
+		if instance5 != null:
+			instance5.visible = true
+		$Board/Pile25.get_node("DropArea/Cards").visible = true
+		
+
+remote func giveSuccesOmbre():
+	if not UserStores._get_items().has("SuccesOmbre") and Global.sameIP == false:
+		var succesBaston = load("res://screens/menu/succes/RapideQueSonOmbre.png")
+		$Sprite.texture = succesBaston
+		UserStores.save_item("SuccesOmbre",1)
+		$SuccesAnim.play("Slideup")
+		$succes.play()
+
+func ouille(row, damage, type):
+	var data = get_data(row)
+	var nom = data.get_text("name")
+	var hp = data.get_value("hp")
+	if damage > 0:
+		if nom == "41 - Zig" and hp > damage:
+			giveCard("41 - Zig", 1)
+			effectCard(row, 0, 1000)
+		if nom == "72 - Arthuro":
+			giveCardTypeMax("poisson", 1, 6)
+		if hp == 1 and ennemie_has_card("63 - Herokin"):
+			effectCard(row, 0, 1000)
+
+func take_damage(row, damage, type = "physique"):
+	if row > 5 or row < 1:
+		return
+	
+	var data = get_data(row)
+	
+	if has_card("77 - Papa Cerdito") and data.get_category("creature_type") == "pepapig":
+		take_damage(returnCards("77 - Papa Cerdito")[0], damage, type)
+		return
+	
+	if data:
+		if type == "bouliste":
+			hurtOrbe(damage)
+		if data.has_value("def"):
+			if type != "magic":
+				var def = data.get_value("def")
+				if def:
+					if def > damage:
+						pass
+					else:
+						if type == "karate":
+							ouille(row, damage - def + 2, type)
+							effectCard(row, 0, damage - def + 2)
+						else:
+							ouille(row, damage - def, type)
+							effectCard(row, 0, damage - def)
+				else:
+					ouille(row, damage, type)
+					effectCard(row, 0, damage)
+			else:
+				effectCard(row, 0, damage)
+		else:
+			ouille(row, damage, type)
+			effectCard(row, 0, damage)
+	else:
+		if type != "noharam":
+			if type == "chob":
+				hurtOrbe(2)
+			hurtOrbe(damage)
+	
+	if data:
+		if data.get_value("hp") == 1 and data.get_text("name") == "69 - Maliki":
+			effectCard(row, -2, -2)
+		
+
+remote func deal_damage(row, damage, type = "physique"):
+	take_damage(row, damage, type)
+
+remotesync func attack_row(i, bonus):
+	if get_store(i).cards().size() > 0:
+		if get_data(i).get_text("name") == "75 - Winnie l'ourson":
+			effectCard(i, 0, -1)
+		if get_data(i).get_text("name") == "61 - BleachFox":
+			giveCardClassMax("sort", 1, 13)
+	
+	if not spot_mimir_own(i):
+		if get_store(i).cards().size() > 0:
+			var data = get_data(i)
+			var nom = data.get_text("name")
+			var attack = data.get_value("attack")
+			if nom == "116 - Lanky Kong":
+				rpc("deal_damage", i+1, attack)
+				rpc("deal_damage", i-1, attack)
+				if ennemie_has_card("63 - Herokin"):
+					if get_data_ennemie(i+1):
+						take_damage(i, 1)
+					if get_data_ennemie(i-1):
+						take_damage(i, 1)
+
+			elif nom == "31 - Requin Cerbère" and not bonus:
+				rpc("deal_damage", i, attack)
+				if ennemie_has_card("63 - Herokin"):
+					if get_data_ennemie(i):
+						take_damage(i, 1)
+				rpc("deal_damage", i, attack)
+				if ennemie_has_card("63 - Herokin"):
+					if get_data_ennemie(i):
+						take_damage(i, 1)
+				rpc("deal_damage", i, attack)
+				if ennemie_has_card("63 - Herokin"):
+					if get_data_ennemie(i):
+						take_damage(i, 1)
+			elif nom == "50 - Neymar":
+				var randomRow = randi()%5+1
+				rpc("deal_damage", randomRow, attack)
+				if ennemie_has_card("63 - Herokin"):
+					if get_data_ennemie(randomRow):
+						take_damage(i, 1)
+			elif nom == "16 - Dekeskui Cowboy":
+				for k in range(1,6):
+					if k != i:
+						rpc("deal_damage", k, attack, "noharam")
+						if ennemie_has_card("63 - Herokin"):
+							if get_data_ennemie(k):
+								take_damage(i, 1)
+				
+				rpc("deal_damage", i, attack)
+				if ennemie_has_card("63 - Herokin"):
+					if get_data_ennemie(i):
+						take_damage(i, 1)
+
+			elif nom == "35 - Bouliste":
+				if ennemie_has_card("63 - Herokin"):
+					if get_data_ennemie(i):
+						take_damage(i, 1)
+				rpc("deal_damage", i, attack, "bouliste")
+
+			elif nom == "118 - Karate Kong":
+				if ennemie_has_card("63 - Herokin"):
+					if get_data_ennemie(i):
+						take_damage(i, 1)
+				rpc("deal_damage", i, attack, "karate")
+			elif nom == "18 - Kuikui cochon":
+				if ennemie_has_card("63 - Herokin"):
+					if get_data_ennemie(i):
+						take_damage(i, 1)
+				rpc("deal_damage", i, attack, "noharam")
+			elif nom == "62 - Chob":
+				if ennemie_has_card("63 - Herokin"):
+					if get_data_ennemie(i):
+						take_damage(i, 1)
+				rpc("deal_damage", i, attack, "chob")
+			else:
+				if ennemie_has_card("63 - Herokin"):
+					if get_data_ennemie(i):
+						take_damage(i, 1)
+				rpc("deal_damage", i, attack)
+	
+	if i == 5:
+		for k in range(0,5):
+			if spots_mimir[k]:
+				spots_mimir[k].queue_free()
+				spots_mimir[k] = null
+			if spots_mimir_ennemie[k]:
+				spots_mimir_ennemie[k].queue_free()
+				spots_mimir_ennemie[k] = null
+				
+	if get_data(i):
+		if get_data(i).get_text("name") == "49 - B.R.U.T.E.":
+			if bruteInvincible:
+				giveMimir(i)
+				getMimir(i)
+	
+	return
+	if 1 == 1:
+		if get_data_ennemie(i).get_text("name") == "49 - B.R.U.T.E.":
+			if bruteInvincible:
+				giveMimir(i)
+
+	var lanky_atk = calc_lanky(i)
+	if get_store(i).cards().size() > 0:
+		if lanky_atk > 0:
+			if get_data(i).has_value("def"):
+				if get_data(i).get_value("def") > lanky_atk:
+					pass
+				else:
+					if get_data(i).get_text("name") == "41 - Zig":
+						if lanky_atk >= get_data(i).get_value("hp"):
+							pass
+						else:
+							giveCard("41 - Zig", 1)
+							effectCard(i, 0, 1000)
+					get_data(i).set_value("hp", get_data(i).get_value("hp")+get_data(i).get_value("def")-lanky_atk)
+			else:
+				get_data(i).set_value("hp", get_data(i).get_value("hp")-lanky_atk)
+				if get_data(i).get_text("name") == "41 - Zig":
+					if lanky_atk >= get_data(i).get_value("hp"):
+						pass
+					else:
+						giveCard("41 - Zig", 1)
+						effectCard(i, 0, 1000)
+	else:
+		hurtOrbe(lanky_atk)
+				
+	if get_store(i).cards().size() > 0:
+		if get_data(i).get_text("name") == "75 - Winnie l'ourson":
+			effectCard(i, 0, -1)
+		if get_data(i).get_text("name") == "61 - BleachFox":
+			giveCardClassMax("sort", 1, 13)
+		if get_data(i).get_text("name") == "49 - B.R.U.T.E.":
+			if bruteInvincible:
+				giveMimir(i)
+				getMimir(i)
+		if cowboy_atk > 0:
+			if get_data(i).has_value("def"):
+				if get_data(i).get_value("def") > cowboy_atk:
+					pass
+				else:
+					if get_data(i).get_text("name") == "41 - Zig":
+						if cowboy_atk >= get_data(i).get_value("hp"):
+							pass
+						else:
+							giveCard("41 - Zig", 1)
+							effectCard(i, 0, 1000)
+					get_data(i).set_value("hp", get_data(i).get_value("hp")+get_data(i).get_value("def")-cowboy_atk)
+			else:
+				get_data(i).set_value("hp", get_data(i).get_value("hp")-cowboy_atk)
+				if get_data(i).get_text("name") == "41 - Zig":
+					if cowboy_atk >= get_data(i).get_value("hp"):
+						pass
+					else:
+						giveCard("41 - Zig", 1)
+						effectCard(i, 0, 1000)
+			if get_data(i):
+				if get_data(i).get_value("hp") < 0:
+					rpc("giveSuccesOmbre")
+
+
+	if get_store_ennemie(i).cards().size() > 0 and not spot_mimir(i) and get_data_ennemie(i).get_text("name") != "50 - Neymar" and get_data_ennemie(i).get_text("name") != "116 - Lanky Kong":
+		if get_data_ennemie(i).get_text("name") == "35 - Bouliste":
+			hurtOrbe(get_data_ennemie(i).get_value("attack"))
+		if get_store(i).cards().size() > 0 and get_data_ennemie(i).get_text("name") != "16 - Dekeskui Cowboy":
+			#Attaque requin cerbère
+			if get_data_ennemie(i).get_text("name") == "31 - Requin Cerbère":
+				if get_data(i) == null:
+					hurtOrbe(get_data_ennemie(i).get_value("attack"))
+				else:
+					if get_data(i).has_value("def"):
+						effectCard(i, 0, get_data_ennemie(i).get_value("attack") + get_data(i).get_value("def"))
+					else:
+						effectCard(i, 0, get_data_ennemie(i).get_value("attack"))
+				if get_data(i) == null:
+					hurtOrbe(get_data_ennemie(i).get_value("attack"))
+				else:
+					if get_data(i).has_value("def"):
+						get_data(i).set_value("hp", get_data(i).get_value("hp") - get_data_ennemie(i).get_value("attack") + get_data(i).get_value("def"))
+					else:
+						get_data(i).set_value("hp", get_data(i).get_value("hp") - get_data_ennemie(i).get_value("attack"))
+					
+					
+			if get_data(i) != null:
+				if get_data(i).get_text("name") == "72 - Arthuro":
+					giveCardTypeMax("poisson", 1, 6)
+				if get_data(i).get_text("name") == "41 - Zig":
+					if get_data_ennemie(i).get_value("attack") >= get_data(i).get_value("hp"):
+						pass
+					else:
+						giveCard("41 - Zig", 1)
+						effectCard(i, 0, 1000)
+				
+			#Attaque normal
+			if get_data(i) == null:
+				if get_data_ennemie(i).get_text("name") != "35 - Bouliste":
+
+					hurtOrbe(get_data_ennemie(i).get_value("attack"))
+					
+			else:
+				if get_data(i).has_value("def"):
+					if get_data_ennemie(i).get_text("name") == "118 - Karate Kong":
+						effectCard(i, 0, 2)
+					if get_data(i).get_value("def") > get_data_ennemie(i).get_value("attack"):
+						pass
+					else:
+						if has_card("77 - Papa Cerdito") and get_data(i).get_category("creature_type") == "pepapig":
+							effectCard(returnCards("77 - Papa Cerdito")[0], 0, get_data(i).get_value("def")-get_data_ennemie(i).get_value("attack"))
+						else:
+							get_data(i).set_value("hp", get_data(i).get_value("hp")+get_data(i).get_value("def")-get_data_ennemie(i).get_value("attack"))
+				else:
+					if has_card("77 - Papa Cerdito") and get_data(i).get_category("creature_type") == "pepapig":
+						effectCard(returnCards("77 - Papa Cerdito")[0], 0, get_data_ennemie(i).get_value("attack"))
+					else:
+						get_data(i).set_value("hp", get_data(i).get_value("hp")-get_data_ennemie(i).get_value("attack"))
+			
+#			for k in returnCardsEnnemie("16 - Dekeskui Cowboy"):
+#				effectCard(i, 0, get_data_ennemie(k).get_value("attack"))
+			
+			if has_card("63 - Herokin"):
+				rpc("effectCardRemote", i, 0, 1)
+				
+			
+			
+			if get_store(i).cards().size() > 0:
+				if get_data(i).get_text("name") == "59 - AO":
+					rpc("effectCardRemote", i, 0, int(get_data_ennemie(i).get_value("attack")/2)+1)
+			
+		elif get_data_ennemie(i).get_text("name") != "18 - Kuikui cochon":
+			if get_data_ennemie(i).get_text("name") == "62 - Chob":
+				hurtOrbe(2)
+			if get_data_ennemie(i).get_text("name") == "31 - Requin Cerbère":
+				hurtOrbe(get_data_ennemie(i).get_value("attack"))
+				hurtOrbe(get_data_ennemie(i).get_value("attack"))
+			if get_data_ennemie(i).get_text("name") != "35 - Bouliste":
+				hurtOrbe(get_data_ennemie(i).get_value("attack"))
+#	else:
+#		if spots_mimir[i-1]:
+#			spots_mimir[i-1].queue_free()
+#			spots_mimir[i-1] = null
+#		if spots_mimir_ennemie[i-1]:
+#			spots_mimir_ennemie[i-1].queue_free()
+#			spots_mimir_ennemie[i-1] = null
+	
+	if i == 5:
+		for k in range(0,5):
+			if spots_mimir[k]:
+				spots_mimir[k].queue_free()
+				spots_mimir[k] = null
+			if spots_mimir_ennemie[k]:
+				spots_mimir_ennemie[k].queue_free()
+				spots_mimir_ennemie[k] = null
+		
+	if get_store(i).cards().size() > 0:
+		if get_data(i).get_text("name") == "69 - Maliki":
+			if get_data(i).get_value("hp") == 1:
+				effectCard(i, -2, -2)
+				
+		if get_data(i).get_value("hp") == 1:
+			if ennemie_has_card("63 - Herokin"):
+				get_data(i).set_value("hp", 0)
+	
+			
+#	if get_store_ennemie(i).cards().size() == 0:
+#		set_pile_store_ennemie(i, CardPile.new())
+#		set_pile_ennemie(i, CardPile.new())
+
+		
+func ennemieDeathAnimation(index):
+	if get_store_ennemie(index).cards().size() > 0:
+		if index == 1:
+			var card_normal = load("res://cards/normal/normal_card.tscn")
+			var card_normal_instance = card_normal.instance()
+			add_child(card_normal_instance)
+			card_normal_instance._update_data(get_data_ennemie(1))
+
+			card_normal_instance.position.x = 108
+			card_normal_instance.position.y = 456-231
+			card_normal_instance.scale.x = 0.354
+			card_normal_instance.scale.y = 0.354
+			card_normal_instance.death()
+			yield(get_tree().create_timer(1), "timeout")
+			
+		if index == 2:
+			var card_normal = load("res://cards/normal/normal_card.tscn")
+			var card_normal_instance = card_normal.instance()
+			add_child(card_normal_instance)
+			card_normal_instance._update_data(get_data_ennemie(2))
+
+			card_normal_instance.position.x = 108+((index-1)*172)
+			card_normal_instance.position.y = 456-231
+			card_normal_instance.scale.x = 0.354
+			card_normal_instance.scale.y = 0.354
+			card_normal_instance.death()
+			yield(get_tree().create_timer(1), "timeout")
+			
+		if index == 3:
+			var card_normal = load("res://cards/normal/normal_card.tscn")
+			var card_normal_instance = card_normal.instance()
+			add_child(card_normal_instance)
+			card_normal_instance._update_data(get_data_ennemie(3))
+
+			card_normal_instance.position.x = 108+((index-1)*172)
+			card_normal_instance.position.y = 456-231
+			card_normal_instance.scale.x = 0.354
+			card_normal_instance.scale.y = 0.354
+			card_normal_instance.death()
+			yield(get_tree().create_timer(1), "timeout")
+			
+		if index == 4:
+			var card_normal = load("res://cards/normal/normal_card.tscn")
+			var card_normal_instance = card_normal.instance()
+			add_child(card_normal_instance)
+			card_normal_instance._update_data(get_data_ennemie(4))
+
+			card_normal_instance.position.x = 108+((index-1)*172)
+			card_normal_instance.position.y = 456-231
+			card_normal_instance.scale.x = 0.354
+			card_normal_instance.scale.y = 0.354
+			card_normal_instance.death()
+			yield(get_tree().create_timer(1), "timeout")
+			
+		if index == 5:
+			var card_normal = load("res://cards/normal/normal_card.tscn")
+			var card_normal_instance = card_normal.instance()
+			add_child(card_normal_instance)
+			card_normal_instance._update_data(get_data_ennemie(5))
+			card_normal_instance.position.x = 108+((index-1)*172)
+			card_normal_instance.position.y = 456-231
+			card_normal_instance.scale.x = 0.354
+			card_normal_instance.scale.y = 0.354
+			card_normal_instance.death()
+			yield(get_tree().create_timer(1), "timeout")
+			
+		set_pile_store_ennemie(index, CardPile.new())
+		get_pile_ennemie(index).set_store(get_store_ennemie(index))
+
+func nul():
+	yield(get_tree().create_timer(1.0), "timeout")
+	need_hurt = false
+
+remotesync func attack():
+	$Board/NextTurn.disabled = true
+	is_animation = true
+	
+	check_juan()
+	
+	reload()
+	
+	
+	if bruteInvincible:
+		bruteInvincible = false
+	else:
+		bruteInvincible = true
+
+#	for i in returnCards("116 - Lanky Kong"):
+#		if not spot_mimir(i):
+#			if i < 5:
+#				if get_store_ennemie(i+1).cards().size() > 0:
+#					rpc("effectCardRemote", i+1, 0, get_data(i).get_value("attack"))
+#				else:
+#					rpc("hurtOtherOrbe", get_data(i).get_value("attack"))
+#			if i > 1:
+#				if get_store_ennemie(i-1).cards().size() > 0:
+#					rpc("effectCardRemote", i-1, 0, get_data(i).get_value("attack"))
+#				else:
+#					rpc("hurtOtherOrbe", get_data(i).get_value("attack"))
+			
+	for i in returnCards("65 - Future Rosalina"):
+		if get_store_ennemie(i).cards().size() > 0:
+			rpc("effectCardRemote", i, 0, 1)
+		else:
+			rpc("hurtOtherOrbe", 1)
+			
+	check_death()
+	for card in getCards():
+		if typeof(card) == TYPE_INT:
+			rpc("placeCardRemote", card, 0, 0, 0, "", "", 0)
+	
+#	for i in range(1,6):
+#		if get_store_ennemie(i).cards().size() > 0:
+#			if get_data_ennemie(i).get_text("name") == "16 - Dekeskui Cowboy":
+#				effectAllCardNoReload(0, get_data_ennemie(i).get_value("attack")*-1)
+	
+	yield(get_tree().create_timer(0.1), "timeout")
+	
+	yield(get_tree().create_timer(0.1), "timeout")
+	
+	for i in range(1,6):
+		var ennemie_card = false
+		if get_store_ennemie(i).cards().size() > 0 and not spot_mimir(i):
+			if not(get_store(i).cards().size() == 0 and get_data_ennemie(i).get_text("name") == "18 - Kuikui cochon" and invisibleCards > 0):
+				attack_animation(i+20)
+			ennemie_card = true
+		
+			yield(get_tree().create_timer(1), "timeout")
+			need_hurt = false
+		
+		if get_store(i).cards().size() > 0:
+			if not(get_store_ennemie(i).cards().size() == 0 and get_data(i).get_text("name") == "18 - Kuikui cochon"):
+				attack_animation(i)
+		
+		if get_store(i).cards().size() > 0:
+			yield(get_tree().create_timer(0.4), "timeout")
+		
+		
+		if get_store_ennemie(i).cards().size() > 0 and ennemie_card == true:
+			if get_store_ennemie(i).cards()[0].data().get_value("hp") < 1:
+				ennemieDeathAnimation(i)
+	
+	for i in returnCards("78 - Homero Simpson"):
+		if get_store(i).cards().size() > 0: 
+			if get_data(i).get_text("name") == "78 - Homero Simpson":
+				var freeSpace = []
+				if get_store(1).cards().size() == 0 and i != 1:
+					freeSpace.append(1)
+				if get_store(2).cards().size() == 0 and i != 2:
+					freeSpace.append(2)
+				if get_store(3).cards().size() == 0 and i != 3:
+					freeSpace.append(3)
+				if get_store(4).cards().size() == 0 and i != 4:
+					freeSpace.append(4)
+				if get_store(5).cards().size() == 0 and i != 5:
+					freeSpace.append(5)
+				
+				freeSpace.shuffle()
+				
+				if freeSpace.size() > 0:
+					moveCard(i, freeSpace[0])
+	
+	
+	check_death()
+	for card in getCards():
+		if typeof(card) == TYPE_INT:
+			rpc("placeCardRemote", card, 0, 0, 0, "", "", 0)
+	
+	reload()
+	
+	turnPass()
+	
+#	check_death()
+	need_hurt = false
+	
+	is_animation = false
+	
+	if is_network_master():
+		if play_1(Global.real_turn):
+			$Board/NextTurn.disabled = false
+	else:
+		if play_2(Global.real_turn):
+			$Board/NextTurn.disabled = false
+			
+	if Global.orbe < 1 and dead == false:
+		dead = true
+		cringe_orba()
+		
+	
+
+func turnPass():
+	for i in range(1,6):
+		if get_store(i).cards().size() > 0:
+			if get_data(i).get_value("tempHp") > 0 or get_data(i).get_value("tempAtk") > 0 or get_data(i).get_value("tempDef") > 0:
+				effectCard(i, get_data(i).get_value("tempAtk"), get_data(i).get_value("tempHp"))
+				cardDef(i, -1*get_data(i).get_value("tempDef"))
+				get_data(i).set_value("tempHp", 0)
+				get_data(i).set_value("tempDef", 0)
+				get_data(i).set_value("tempAtk", 0)
+				check_death()
+				reload()
+
+
+func check_deathWA():
+	for i in range(1,6):
+		if get_store(i).cards().size() > 0:
+			if get_data(i).get_value("hp") < 1:
+				death(get_data(i).data(), i)
+				get_store(i).set_value("attack", 0)
+
+func check_death():
+	if _pile1_store.cards().size() > 0:
+		var carte = _pile1_store.cards()[0]
+		if carte.data().get_value("hp") < 1:
+			death(carte.data(), 1)
+			
+			var card_normal = load("res://cards/normal/normal_card.tscn")
+			var card_normal_instance = card_normal.instance()
+			if _pile1_store.cards().size() > 0:
+				add_child(card_normal_instance)
+				card_normal_instance._update_data(get_data(1))
+				carte.card.queue_free()
+				card_normal_instance.position.x = 108
+				card_normal_instance.position.y = 456
+				card_normal_instance.scale.x = 0.354
+				card_normal_instance.scale.y = 0.354
+				card_normal_instance.death()
+				
+				_pile1_store = CardPile.new()
+				_pile1.set_store(_pile1_store)
+			else:
+				return
+	if _pile2_store.cards().size() > 0:
+		var carte = _pile2_store.cards()[0]
+		if carte.data().get_value("hp") < 1:
+			death(carte.data(), 2)
+			
+			var card_normal = load("res://cards/normal/normal_card.tscn")
+			var card_normal_instance = card_normal.instance()
+			if _pile2_store.cards().size() > 0:
+				add_child(card_normal_instance)
+				card_normal_instance._update_data(_pile2_store.cards()[0].data())
+				card_normal_instance.position.x = 280
+				card_normal_instance.position.y = 456
+				card_normal_instance.scale.x = 0.354
+				card_normal_instance.scale.y = 0.354
+				carte.card.queue_free()
+				card_normal_instance.death()
+				
+				_pile2_store = CardPile.new()
+				_pile2.set_store(_pile2_store)
+			else:
+				return
+	if _pile4_store.cards().size() > 0:
+		var carte = _pile4_store.cards()[0]
+		if carte.data().get_value("hp") < 1:
+			death(carte.data(), 3)
+			
+			var card_normal = load("res://cards/normal/normal_card.tscn")
+			var card_normal_instance = card_normal.instance()
+			if _pile4_store.cards().size() > 0:
+				add_child(card_normal_instance)
+				card_normal_instance._update_data(_pile4_store.cards()[0].data())
+				card_normal_instance.position.x = 452
+				card_normal_instance.position.y = 456
+				card_normal_instance.scale.x = 0.354
+				card_normal_instance.scale.y = 0.354
+				carte.card.queue_free()
+				card_normal_instance.death()
+				
+				_pile4_store = CardPile.new()
+				_pile4.set_store(_pile4_store)
+			else:
+				return
+	if _pile5_store.cards().size() > 0:
+		var carte = _pile5_store.cards()[0]
+		if carte.data().get_value("hp") < 1:
+			death(carte.data(), 4)
+			
+			var card_normal = load("res://cards/normal/normal_card.tscn")
+			var card_normal_instance = card_normal.instance()
+			if _pile5_store.cards().size() > 0:
+				add_child(card_normal_instance)
+				card_normal_instance._update_data(_pile5_store.cards()[0].data())
+				card_normal_instance.position.x = 624
+				card_normal_instance.position.y = 456
+				card_normal_instance.scale.x = 0.354
+				card_normal_instance.scale.y = 0.354
+				carte.card.queue_free()
+				card_normal_instance.death()
+				
+				_pile5_store = CardPile.new()
+				_pile5.set_store(_pile5_store)
+			else:
+				return
+	if _pile6_store.cards().size() > 0:
+		var carte = _pile6_store.cards()[0]
+		if carte.data().get_value("hp") < 1:
+			death(carte.data(), 5)
+			
+			var card_normal = load("res://cards/normal/normal_card.tscn")
+			var card_normal_instance = card_normal.instance()
+			if _pile6_store.cards().size() > 0:
+				add_child(card_normal_instance)
+				card_normal_instance._update_data(_pile6_store.cards()[0].data())
+				card_normal_instance.position.x = 796
+				card_normal_instance.position.y = 456
+				card_normal_instance.scale.x = 0.354
+				card_normal_instance.scale.y = 0.354
+				carte.card.queue_free()
+				card_normal_instance.death()
+				
+				_pile6_store = CardPile.new()
+				_pile6.set_store(_pile6_store)
+			else:
+				return
+	yield(get_tree().create_timer(2), "timeout")
+	check_juan()
+
+func calc_cowboy():
+	var kuikui_attack = 0
+	for i in range(1,6):
+		if get_store_ennemie(i).cards().size() > 0:
+			if get_data_ennemie(i).get_text("name") == "16 - Dekeskui Cowboy":
+				if not spot_mimir(i):
+					kuikui_attack += get_data_ennemie(i).get_value("attack")
+	cowboy_atk = kuikui_attack
+	return kuikui_attack
+
+func calc_lanky(row):
+	var lanky_attack = 0
+	if row != 5:
+		if get_store_ennemie(row+1).cards().size() > 0:
+			if not spots_mimir_ennemie[row]:
+				if get_data_ennemie(row+1).get_text("name") == "116 - Lanky Kong":
+					lanky_attack += get_data_ennemie(row+1).get_value("attack")
+	if row != 1:
+		if not spots_mimir_ennemie[row-2]:
+			if get_store_ennemie(row-1).cards().size() > 0:
+				if get_data_ennemie(row-1).get_text("name") == "116 - Lanky Kong":
+					lanky_attack += get_data_ennemie(row-1).get_value("attack")
+	return lanky_attack
+
+func particle(index, atk, hp):
+	if hp < 0 and atk == 0:
+		var particle = load("res://screens/board/Particle/HPParticle.tscn")
+		var particle_instance = particle.instance()
+		add_child(particle_instance)
+
+		particle_instance.position.x = 108+((index-1)*172)
+		particle_instance.position.y = 456#-231
+		particle_instance.scale.x = 0.354
+		particle_instance.scale.y = 0.354
+		yield(get_tree().create_timer(3), "timeout")
+		particle_instance.emitting = false
+		yield(get_tree().create_timer(2), "timeout")
+		particle_instance.queue_free()
+	if atk < 0 and hp == 0:
+		var particle = load("res://screens/board/Particle/AtkParticle.tscn")
+		var particle_instance = particle.instance()
+		add_child(particle_instance)
+
+		particle_instance.position.x = 108+((index-1)*172)
+		particle_instance.position.y = 456#-231
+		particle_instance.scale.x = 0.354
+		particle_instance.scale.y = 0.354
+		yield(get_tree().create_timer(3), "timeout")
+		particle_instance.emitting = false
+		yield(get_tree().create_timer(2), "timeout")
+		particle_instance.queue_free()
+	if atk < 0 and hp < 0:
+		var particle2 = load("res://screens/board/Particle/HPParticle.tscn")
+		var particle_instance2 = particle2.instance()
+		add_child(particle_instance2)
+		var particle = load("res://screens/board/Particle/AtkParticle.tscn")
+		var particle_instance = particle.instance()
+		add_child(particle_instance)
+
+		particle_instance.position.x = 108+((index-1)*172)
+		particle_instance.position.y = 456#-231
+		particle_instance.scale.x = 0.354
+		particle_instance.scale.y = 0.354
+		particle_instance2.position.x = 108+((index-1)*172)
+		particle_instance2.position.y = 456#-231
+		particle_instance2.scale.x = 0.354
+		particle_instance2.scale.y = 0.354
+		yield(get_tree().create_timer(3), "timeout")
+		particle_instance.emitting = false
+		particle_instance2.emitting = false
+		yield(get_tree().create_timer(2), "timeout")
+		particle_instance.queue_free()
+		particle_instance2.queue_free()
+
+
+
+
+func placeCard(row, name):
+	if get_store(row).cards().size() == 0:
+		var db = CardEngine.db().get_database("main")
+		var q = Query.new()
+		var cards = q.contains(["name:"+name]).execute(db)
+
+		var store = CardPile.new()
+		
+		store.populate(db, cards)
+		store.keep(1)
+		get_pile(row).set_store(store)
+		set_pile_store(row, get_pile(row).store())
+		_hand_store.play_card(get_store(row).cards()[0].ref(), get_pile(row))
+		set_carte_variable(row, get_store(row).cards()[0])
+		return get_store(row).cards()[0]
+	return null
+		
+func placeCardBobux(row, bobux):
+	if get_store(row).cards().size() == 0:
+		var db = CardEngine.db().get_database("main")
+		var q = Query.new()
+		var querry = q.where(["mana = "+str(bobux)]).from(["class:character"])
+		var cards = querry.execute(db)
+
+		var store = CardPile.new()
+		
+		
+#		if bobux == 1:
+#			cards.remove(5)
+#			cards.remove(4)
+#			cards.remove(3)
+#		elif bobux == 2:
+#			pass
+		
+		cards.shuffle()
+		
+		store.populate(db, cards)
+		store.keep(1)
+		get_pile(row).set_store(store)
+		set_pile_store(row, get_pile(row).store())
+		_hand_store.play_card(get_store(row).cards()[0].ref(), get_pile(row))
+		set_carte_variable(row, get_store(row).cards()[0])
+
+remote func effectAllCardRemote(atk, hp):
+	effectAllCard(atk, hp)
+	
+remote func ccNn():
+	ccNn = true
+
+remote func effectCardRemote(index, atk, hp):
+	effectCard(index, atk, hp)
+	
+func changeDescCard(index, newDesc):
+	for i in range(1,6):
+		if get_store(i).cards().size() > 0:
+			if i == index:
+				get_data(i).set_text("desc", newDesc)
+	reload()
+	check_death()
+
+func effectCard(index, atk, hp, def = 0):
+	if get_store(index).cards().size() > 0:
+		if get_data(index).get_text("name") == "31 - Requin Cerbère" and atk < 0:
+			return
+		get_data(index).set_value("hp", get_data(index).get_value("hp")-hp)
+		get_data(index).set_value("attack", get_data(index).get_value("attack")-atk)
+		particle(index, atk, hp)
+		if atk <= 0 and hp <= 0:
+			if get_data(index).get_text("name") != "115 - Ninja Kong":
+				for i in returnCards("115 - Ninja Kong"):
+					get_data(i).set_value("hp", get_data(i).get_value("hp")+1)
+					get_data(i).set_value("attack", get_data(i).get_value("attack")+1)
+					particle(i, atk, hp)
+		if atk <= 0 or hp <= 0 or def <= 0:
+			if get_data(index).get_text("name") == "81 - Peppa Pig":
+				var freeSpace = []
+				if get_store(1).cards().size() != 0 and index != 1:
+					if get_data(1).get_text("name") != "81 - Peppa Pig":
+						freeSpace.append(1)
+				if get_store(2).cards().size() != 0 and index != 2:
+					if get_data(2).get_text("name") != "81 - Peppa Pig":
+						freeSpace.append(2)
+				if get_store(3).cards().size() != 0 and index != 3:
+					if get_data(3).get_text("name") != "81 - Peppa Pig":
+						freeSpace.append(3)
+				if get_store(4).cards().size() != 0 and index != 4:
+					if get_data(4).get_text("name") != "81 - Peppa Pig":
+						freeSpace.append(4)
+				if get_store(5).cards().size() != 0 and index != 5:
+					if get_data(5).get_text("name") != "81 - Peppa Pig":
+						freeSpace.append(5)
+				
+				if freeSpace.size() > 0:
+					freeSpace.shuffle()
+					if hp < 0 or atk < 0:
+						effectCard(freeSpace[0], atk, hp)
+					if def < 0:
+						cardDef(freeSpace[0], def)
+		
+	reload()
+	check_death()
+	
+	
+func tempStat(index, atk, hp, def):
+	if get_store(index).cards().size() > 0:
+		get_data(index).set_value("tempHp", get_data(index).get_value("tempHp")+hp)
+		get_data(index).set_value("tempAtk", get_data(index).get_value("tempAtk")+atk)
+		get_data(index).set_value("tempDef", get_data(index).get_value("tempDef")+def)
+	reload()
+	check_death()
+
+func effectCardVar(card, atk, hp):
+	card.data().set_value("hp", card.data().get_value("hp")+hp)
+	card.data().set_value("attack", card.data().get_value("attack")+atk)
+	reload()
+	check_death()
+	
+func cardDef(index, def):
+	if get_store(index).cards().size() > 0:
+		if get_data(index).has_value("def"):
+			get_data(index).set_value("def", get_data(index).get_value("def") + def)
+		else:
+			get_data(index).add_value("def", def)
+	reload()
+	
+func effectCardRandom(atk, hp):
+	atk *= -1
+	hp *= -1
+	var cards = []
+	for i in range(1,6):
+		if get_store(i).cards().size() > 0:
+			cards.append(i)
+	effectCard(cards[randi() % cards.size()], atk, hp)
+	
+func effectAllCardHand(atk, hp, bobux):
+	for carte in _hand_store.cards():	 	
+		carte.data().set_value("mana", carte.data().get_value("mana")+bobux)
+		if carte.data().get_category("class") == "character":
+			carte.data().set_value("hp", carte.data().get_value("hp")+hp)
+			carte.data().set_value("attack", carte.data().get_value("attack")+atk)
+		carte.emit_signal("need")
+		carte.card._update_data(carte.data())
+	
+func effectAllCard(atk, hp):
+	atk *= -1
+	hp *= -1
+	for i in range(1,6):
+		effectCard(i, atk, hp)
+		
+	reload()
+	check_death()
+	
+func effectAllCardNoReload(atk, hp):
+	atk *= -1
+	hp *= -1
+	for i in range(1,6):
+		effectCard(i, atk, hp)
+
+remote func giveReaction():
+	if not UserStores._get_items().has("SuccesReaction") and Global.sameIP == false:
+		var succesBanane = load("res://screens/menu/succes/Reaction.png")
+		$Sprite.texture = succesBanane
+		UserStores.save_item("SuccesReaction",1)
+		$SuccesAnim.play("Slideup")
+		$succes.play()
+
+func effectAllCardBut(row, atk, hp):
+	atk *= -1
+	hp *= -1
+	for i in range(1,6):
+		if get_store(i).cards().size() > 0 and i != row:
+			effectCard(i, atk, hp)
+			if not get_data(i):
+				rpc("giveReaction")
+			
+			
+	reload()
+	check_death()
+	
+func effectCardEnnemie(index, atk, hp):
+	for i in range(1,6):
+		if get_store_ennemie(i).cards().size() > 0:
+			if i != index:
+				get_data_ennemie(i).set_value("hp", get_data_ennemie(i).get_value("hp")+hp)
+				get_data_ennemie(i).set_value("attack", get_data_ennemie(i).get_value("attack")+atk)
+				particle(i, atk, hp)
+	reload()
+	check_death()
+
+func tex_heal(place):
+	effectAllCardBut(place, 0, 2)
+	Global.orbe += 2
+
+func getCards():
+	var cards = []
+	for i in range(1,6):
+		if get_store(i).cards().size() > 0:
+			cards.append(get_store(i).cards()[0].data().get_text("name"))
+		else:
+			cards.append(i)
+	return cards
+
+var card_numbers = 0
+
+func play_1(n):
+	var a = 4
+	var b = 5
+	
+	if n == 1:
+		return true
+	
+	while a <= n:
+		if a == n or b == n:
+			return true
+		a += 4
+		b += 4
+		
+	return false
+		
+func play_2(n):
+	if (n - 2) % 4 == 0 or (n - 3) % 4 == 0:
+		return true
+	else:
+		return false
+		
+func bobux_turn(num):
+	if bobux_turn.has(num):
+		return false
+	return num % 2 != 0
+
+func combat_turn(num):
+	return num % 2 == 0
+
+
+remotesync func remoteRealTurn():
+	reload()
+	Global.real_turn += 1
+	
+	if $Board/HPEnnemie.value*2 > $Board/TextureProgress.value:
+		doubleLife = true
+	else:
+		doubleLife = false
+	cowboy_atk = calc_cowboy()
+	for card in getCards():
+		if typeof(card) == TYPE_INT:
+			rpc("placeCardRemote", card, 0, 0, 0, "", "", 0)
+	if is_network_master():
+		if play_1(Global.real_turn):
+#			play_1.erase(Global.real_turn)
+			$Board/NextTurn.disabled = false
+			card_number = get_store(1).cards().size() + get_store(2).cards().size() + get_store(3).cards().size() + get_store(4).cards().size() + get_store(5).cards().size()
+			OS.request_attention()
+			rpc("invisiCards", -1)
+			$Board/horn.play()
+			can_pick = true
+			if buffKratos > 0:
+				effectAllCard(-1*buffKratos,0)
+				buffKratos = 0
+		if play_2(Global.real_turn):
+			$Board/NextTurn.disabled = true
+	else:
+		if play_2(Global.real_turn):
+			OS.request_attention()
+			rpc("invisiCards", -1)
+			$Board/horn.play()
+#			play_2.erase(int(Global.real_turn))
+			can_pick = true
+			$Board/NextTurn.disabled = false
+			card_number = get_store(1).cards().size() + get_store(2).cards().size() + get_store(3).cards().size() + get_store(4).cards().size() + get_store(5).cards().size()
+		if play_1(Global.real_turn):
+			$Board/NextTurn.disabled = true
+	if $Board/HPEnnemie.value*2 > $Board/TextureProgress.value:
+		doubleLife = true
+	else:
+		doubleLife = false
+
+	
+remotesync func bothAttack():
+	attack()
+	
+
+func _on_NextTurn_pressed():
+	$Board/click.play()
+	
+	if is_spot_on():
+		return
+	
+	if Global.canPlay == false:
+		return
+	
+	$Board/FakeCard.visible = false
+	
+	if bananakat_placed == 1:
+		if 5 == get_store(1).cards().size() + get_store(2).cards().size() + get_store(3).cards().size() + get_store(4).cards().size() + get_store(5).cards().size():
+			if get_data(1).get_text("name") == "8 - Bananakat" and get_data(2).get_text("name") == "8 - Bananakat" and get_data(3).get_text("name") == "8 - Bananakat" and get_data(4).get_text("name") == "8 - Bananakat" and get_data(5).get_text("name") == "8 - Bananakat":
+				if not UserStores._get_items().has("SuccesProliferation") and Global.sameIP == false:
+					$Sprite.texture = load("res://screens/menu/succes/Proliferation.png")
+					UserStores.save_item("SuccesProliferation",1)
+					$SuccesAnim.play("Slideup")
+					$succes.play()
+	
+	if card_number == 0 and 5 == get_store(1).cards().size() + get_store(2).cards().size() + get_store(3).cards().size() + get_store(4).cards().size() + get_store(5).cards().size():
+		if not UserStores._get_items().has("SuccesCastor") and Global.sameIP == false:
+			$Sprite.texture = load("res://screens/menu/succes/Castor.png")
+			UserStores.save_item("SuccesCastor",1)
+			$SuccesAnim.play("Slideup")
+			$succes.play()
+	
+	real_turn += 1
+	rpc("remoteRealTurn")
+	if combat_turn(Global.real_turn-1):
+		rpc("attack")
+		yield(get_tree().create_timer(0.18), "timeout")
+		for i in range(1,6):
+			rpc("attack_row", i, false)
+			yield(get_tree().create_timer(0.1), "timeout")
+			if get_store(i).cards().size() > 0: 
+				if get_data(i).get_text("name") == "9 - Arab":
+					effectCard(i, -1, 0)
+					if get_data(i):
+						if get_data(i).get_value("attack") > 2:
+							if not UserStores._get_items().has("SuccesRentable") and Global.sameIP == false:
+								$Sprite.texture = load("res://screens/menu/succes/Rentable.png")
+								UserStores.save_item("SuccesRentable",1)
+								$SuccesAnim.play("Slideup")
+								$succes.play()
+					
+			if get_store_ennemie(i).cards().size() > 0:
+				if get_data_ennemie(i).get_text("name") == "9 - Arab":
+					rpc("effectCardRemote", i, -1, 0)
+			
+
+
+
+
+
+func _on_Spot1_pressed():
+	pressedEnnemie(1)
+	$Board/Spot1.visible = false
+	$Board/Spot2.visible = false
+	$Board/Spot3.visible = false
+	$Board/Spot4.visible = false
+	$Board/Spot5.visible = false
+	if effect_click == "hurt":
+		rpc("effectCardRemote", 1, 0, 1)
+	if effect_click == "mimir":
+		giveMimir(1)
+	if effect_click == "copy":
+		effect_card.data().set_value("attack", _pile21_store.cards()[0].data().get_value("attack"))
+		effect_card.data().set_value("hp", _pile21_store.cards()[0].data().get_value("hp"))
+	reload()
+
+
+func _on_Spot2_pressed():
+	pressedEnnemie(2)
+	$Board/Spot1.visible = false
+	$Board/Spot2.visible = false
+	$Board/Spot3.visible = false
+	$Board/Spot4.visible = false
+	$Board/Spot5.visible = false
+	if effect_click == "hurt":
+		rpc("effectCardRemote", 2, 0, 1)
+	if effect_click == "mimir":
+		giveMimir(2)
+	if effect_click == "copy":
+		effect_card.data().set_value("attack", _pile22_store.cards()[0].data().get_value("attack"))
+		effect_card.data().set_value("hp", _pile22_store.cards()[0].data().get_value("hp"))
+	reload()
+
+
+func _on_Spot3_pressed():
+	pressedEnnemie(3)
+	$Board/Spot1.visible = false
+	$Board/Spot2.visible = false
+	$Board/Spot3.visible = false
+	$Board/Spot4.visible = false
+	$Board/Spot5.visible = false
+	if effect_click == "hurt":
+		rpc("effectCardRemote", 3, 0, 1)
+	if effect_click == "mimir":
+		giveMimir(3)
+	if effect_click == "copy":
+		effect_card.data().set_value("attack", _pile23_store.cards()[0].data().get_value("attack"))
+		effect_card.data().set_value("hp", _pile23_store.cards()[0].data().get_value("hp"))
+	reload()
+
+
+func _on_Spot4_pressed():
+	pressedEnnemie(4)
+	$Board/Spot1.visible = false
+	$Board/Spot2.visible = false
+	$Board/Spot3.visible = false
+	$Board/Spot4.visible = false
+	$Board/Spot5.visible = false
+	if effect_click == "hurt":
+		rpc("effectCardRemote", 4, 0, 1)
+	if effect_click == "mimir":
+		giveMimir(4)
+	if effect_click == "copy":
+		effect_card.data().set_value("attack", _pile24_store.cards()[0].data().get_value("attack"))
+		effect_card.data().set_value("hp", _pile24_store.cards()[0].data().get_value("hp"))
+	reload()
+
+func _on_Spot5_pressed():
+	pressedEnnemie(5)
+	$Board/Spot1.visible = false
+	$Board/Spot2.visible = false
+	$Board/Spot3.visible = false
+	$Board/Spot4.visible = false
+	$Board/Spot5.visible = false
+	if effect_click == "hurt":
+		rpc("effectCardRemote", 5, 0, 1)
+	if effect_click == "mimir":
+		giveMimir(5)
+	if effect_click == "copy":
+		effect_card.data().set_value("attack", _pile25_store.cards()[0].data().get_value("attack"))
+		effect_card.data().set_value("hp", _pile25_store.cards()[0].data().get_value("hp"))
+	reload()
+
+func getMimir(row):
+	if not spots_mimir[row-1]:
+		var particle = load("res://screens/board/Particle/SleepParticle.tscn")
+		var particle_instance = particle.instance()
+		add_child(particle_instance)
+		
+		particle_instance.position.x = 108+((row-1)*172)
+		particle_instance.position.y = 456
+		particle_instance.scale.x = 0.354
+		particle_instance.scale.y = 0.354
+		
+		spots_mimir[row-1] = particle_instance
+		
+		rpc("otherGotMimir", row)
+
+remote func otherGotMimir(row):
+	if not spots_mimir_ennemie[row-1]:
+		var particle = load("res://screens/board/Particle/SleepParticle.tscn")
+		var particle_instance = particle.instance()
+		add_child(particle_instance)
+		
+		particle_instance.position.x = 108+((row-1)*172)
+		particle_instance.position.y = 231#456
+		particle_instance.scale.x = 0.354
+		particle_instance.scale.y = 0.354
+		
+		spots_mimir_ennemie[row-1] = particle_instance
+
+remote func remoteGetMimir(row):
+	getMimir(row)
+
+func giveMimir(row):
+	rpc("remoteGetMimir", row)
+
+remote func mimirOther(index, set):
+	set_spot_mimir_own(index, set)
+	if set == true:
+		var particle = load("res://screens/board/Particle/SleepParticle.tscn")
+		var particle_instance = particle.instance()
+		particle_instance.name  = "sleep"+str(index)
+		add_child(particle_instance)
+
+		particle_instance.position.x = 108+((index-1)*172)
+		particle_instance.position.y = 456#-231
+		particle_instance.scale.x = 0.354
+		particle_instance.scale.y = 0.354
+	else:
+		for child in self.get_children():
+			if child.name == "sleep"+str(index):
+				yield(get_tree().create_timer(3), "timeout")
+				child.emitting = false
+				yield(get_tree().create_timer(2), "timeout")
+				child.queue_free()
+
+func _on_Pile22_card_dropped(card, source, on_card):
+	if $Board/NextTurn.disabled:
+		return
+	if card.data().get_text("name") == "Banane Glissante" and not get_data_ennemie(2):
+		return
+	if card.data().get_text("name") == "Jaxi":
+		return
+	if card.data().get_text("name") == "Cucui Ganon":
+		return
+	if card.data().get_text("name") == "Gilet Jaune":
+		return
+	if source == "hand" and Global.canPlay and bobux >= card.data().get_value("mana") and card.data().get_category("class") == "sort":
+		spell(card, 22)
+	else:
+		return
+
+
+func _on_Pile23_card_dropped(card, source, on_card):
+	if $Board/NextTurn.disabled:
+		return
+	if card.data().get_text("name") == "Banane Glissante" and not get_data_ennemie(3):
+		return
+	if card.data().get_text("name") == "Jaxi":
+		return
+	if card.data().get_text("name") == "Cucui Ganon":
+		return
+	if card.data().get_text("name") == "Gilet Jaune":
+		return
+	if source == "hand" and Global.canPlay and bobux >= card.data().get_value("mana") and card.data().get_category("class") == "sort":
+		spell(card, 23)
+	else:
+		return
+
+
+func _on_Pile24_card_dropped(card, source, on_card):
+	if $Board/NextTurn.disabled:
+		return
+	if card.data().get_text("name") == "Banane Glissante" and not get_data_ennemie(4):
+		return
+	if card.data().get_text("name") == "Jaxi":
+		return
+	if card.data().get_text("name") == "Cucui Ganon":
+		return
+	if card.data().get_text("name") == "Gilet Jaune":
+		return
+	if source == "hand" and Global.canPlay and bobux >= card.data().get_value("mana") and card.data().get_category("class") == "sort":
+		spell(card, 24)
+	else:
+		return
+
+
+func _on_Pile25_card_dropped(card, source, on_card):
+	if $Board/NextTurn.disabled:
+		return
+	if card.data().get_text("name") == "Banane Glissante" and not get_data_ennemie(5):
+		return
+	if card.data().get_text("name") == "Jaxi":
+		return
+	if card.data().get_text("name") == "Cucui Ganon":
+		return
+	if card.data().get_text("name") == "Gilet Jaune":
+		return
+	if source == "hand" and Global.canPlay and bobux >= card.data().get_value("mana") and card.data().get_category("class") == "sort":
+		print(Global.canPlay)
+		spell(card, 25)
+	else:
+		return
+
+
+func _on_Spot6_pressed():
+	pressedAllied(1)
+
+
+func _on_Spot7_pressed():
+	pressedAllied(2)
+
+
+func _on_Spot8_pressed():
+	pressedAllied(3)
+
+
+func _on_Spot9_pressed():
+	pressedAllied(4)
+
+
+func _on_Spot10_pressed():
+	pressedAllied(5)
+	
+remote func moveOther(effet, row):
+	moveCard(effet, row)
+	
+func pressedEnnemie(row):
+	if "move" in effect_click:
+		rpc("moveOther",int(effect_click[5]), row )
+
+var effect_base = 0
+
+func pressedAllied(row):
+	$Board/Spot6.visible = false
+	$Board/Spot7.visible = false
+	$Board/Spot8.visible = false
+	$Board/Spot9.visible = false
+	$Board/Spot10.visible = false
+	if effect_click == "kvikant":
+		effect_card.data().set_text("name", get_data(row).get_text("name"))
+		card_placed(effect_card, effect_base)
+	if effect_click == "cerdita":
+		cardDef(row, 2)
+		tempStat(row, 0, 0, 2)
+	if effect_click == "megamind":
+		effectCard(row, -2, -2)
+	if "move" in effect_click:
+		moveCard(int(effect_click[4]), row)
+		if effect_click.length() == 6:
+			if effect_click[5] == "a":
+				yield(get_tree().create_timer(2), "timeout")
+				attack_animation(row)
+				bonusAttack(row)
+			
+func deco():
+	$Board/Deco.visible = true
+	$Board/HPEnnemie.visible = false
+	$Board/OrbeContainerEnnemie.visible = false
+	$Board/HPEnnemie.visible = false
+#	Global.canPlay = false
+
+var ennemieOrbe
+var ennemieSkin
+
+remote func setupEnnemie(pseudo, skin, orbe, arena):
+	ennemieOrbe = orbe
+	ennemieSkin = skin
+	$Board/SkinOrbeEnnemie.visible = true
+	$Board/OrbeEnnemie.visible = true
+	$EnnemieIcon/SkinOrbe.visible = true
+	$EnnemieIcon/Orbe.visible = true
+	if skin == "null":
+		$Board/SkinOrbeEnnemie.visible = false
+		$EnnemieIcon/SkinOrbe.visible = false
+	elif skin == "Haut de forme":
+		$Board/SkinOrbeEnnemie.texture = HautForme
+		$EnnemieIcon/SkinOrbe.texture = HautForme
+	elif skin == "Nerd":
+		$Board/SkinOrbeEnnemie.texture = NerdSkin
+		$EnnemieIcon/SkinOrbe.texture = NerdSkin
+	elif skin == "Fez":
+		$Board/SkinOrbeEnnemie.texture = FezSkin
+		$EnnemieIcon/SkinOrbe.texture = FezSkin
+	elif skin == "Sherlock Horbes":
+		$Board/SkinOrbeEnnemie.texture = PipeSkin
+		$EnnemieIcon/SkinOrbe.texture = PipeSkin
+	elif skin == "Lunettes stylé":
+		$Board/SkinOrbeEnnemie.texture = LunetteSkin
+		$EnnemieIcon/SkinOrbe.texture = LunetteSkin
+	elif skin == "Chaussures drip":
+		$Board/SkinOrbeEnnemie.texture = DripShoeSkin
+		$EnnemieIcon/SkinOrbe.texture = DripShoeSkin
+	elif skin == "Tuba":
+		$Board/SkinOrbeEnnemie.texture = TubaSkin
+		$EnnemieIcon/SkinOrbe.texture = TubaSkin
+	else:
+		for i in Global.dataBaseCosmetics:
+			if i.get_text("name") == ennemieSkin:
+				$Board/SkinOrbeEnnemie.texture = load(i.get_text("texture_casier"))
+				$EnnemieIcon/SkinOrbe.texture = load(i.get_text("texture_casier"))
+
+	if orbe  == "Orbe Bleue":
+		$Board/OrbeEnnemie.texture = OrbeBleue
+		$EnnemieIcon/Orbe.texture = OrbeBleue
+	elif orbe == "Orbe Jaune":
+		$Board/OrbeEnnemie.texture = OrbeJaune
+		$EnnemieIcon/Orbe.texture = OrbeJaune
+	elif orbe == "Orbe Orange":
+		$Board/OrbeEnnemie.texture = OrbeOrange
+		$EnnemieIcon/Orbe.texture = OrbeOrange
+	elif orbe == "Orbe Rouge":
+		$Board/OrbeEnnemie.texture = OrbeRouge
+		$EnnemieIcon/Orbe.texture = OrbeRouge
+	elif orbe == "Orbe Verte":
+		$Board/OrbeEnnemie.texture = OrbeVerte
+		$EnnemieIcon/Orbe.texture = OrbeVerte
+	elif orbe == "Orbe Française":
+		$Board/OrbeEnnemie.texture = OrbeFrance
+		$EnnemieIcon/Orbe.texture = OrbeFrance
+	elif orbe == "Orbe dynamique":
+		$Board/OrbeEnnemie.texture = OrbeVerte
+		$EnnemieIcon/Orbe.texture = OrbeVerte
+		ennemieDynamique = true
+	elif orbe == "Noix de coco":
+		$Board/OrbeEnnemie.texture = OrbeCoco
+		$EnnemieIcon/Orbe.texture = OrbeCoco
+	elif orbe == "Orbama":
+		$EnnemieIcon/Obamasphere.visible = true
+		$EnnemieIcon/Orbe.visible = false
+		$Board/OrbeEnnemie.visible = false
+		$Board/Obamasphere2.visible = true
+	elif orbe == "Orbe Comédie et Tragédie":
+		$Board/OrbeEnnemie.texture = load("res://screens/board/orbe_masque_content.png")
+		$EnnemieIcon/Orbe.texture = load("res://screens/board/orbe_masque_content.png")
+		ennemieComedie = true
+	else:
+		for i in Global.dataBaseCosmetics:
+			if i.get_text("name") == orbe:
+				$Board/OrbeEnnemie.texture = load(i.get_text("texture_casier"))
+				$EnnemieIcon/Orbe.texture = load(i.get_text("texture_casier"))
+	
+	for i in Global.dataBaseCosmetics:
+		if i.get_text("name") == arena:
+			$coeur/EnnemieArena.texture = load(i.get_text("texture_casier"))
+		
+	$Board/PseudoEnnemie.text = pseudo
+	$EnnemieName.text = pseudo
+	changeRich("Joue contre "+pseudo, "PV de l'orbe : 30")
+	$YourName.text = $Network_setup/Multiplayer_configur/userName.text
+	$Network_setup/Multiplayer_configur/userName.visible = false
+	$YouIcon/Text.visible = false
+	
+func co():
+	$Board/Deco.visible = false
+	$Board/HPEnnemie.visible = true
+	$Board/OrbeContainerEnnemie.visible = true
+	$Board/OrbeHPEnnemie.visible = true
+	Global.canPlay = true
+	rpc("setupEnnemie", $Board/Pseudo.text, Global.skinSelected, Global.orbeSelected, Global.arenaSelected)
+	rpc("setIP",ipAdressed)
+	
+remote func setIP(ip):
+	if ip == ipAdressed:
+		rpc("defineSameIP", true)
+	else:
+		rpc("defineSameIP", false)
+		
+remote func defineSameIP(argument):
+	Global.sameIP = argument
+	Global.sameIP = false
+	
+func nextTurn(boolean):
+	$Board/NextTurn.disabled = !boolean
+
+func _on_userName_text_changed(new_text):
+	if "|" in new_text:
+		new_text = new_text.replace("|", "")
+	$Board/Pseudo.text = new_text
+	$Network_setup/Multiplayer_configur/userName.text = new_text
+	$Network_setup/Multiplayer_configur/userName.set_cursor_position(new_text.length())
+	
+
+
+func _on_Cheat_pressed():
+	if $CheatMenu/Multiplayer_configur.visible:
+		$CheatMenu/Multiplayer_configur.visible = false
+	else:
+		$CheatMenu/Multiplayer_configur.visible = true
+
+remote func giveInfo(type):
+	if type == 0:
+		rpc("receiveInfo", JSON.print(UserStores._get_cards()))
+	elif type == 1:
+		rpc("receiveInfo", JSON.print(UserStores._get_items()))
+		
+remote func setInfo(type, info):
+	if type == 0:
+		UserStores.setCard(info)
+	elif type == 1:
+		UserStores.setObject(info)
+
+remote func receiveInfo(info):
+	$CheatMenu/Multiplayer_configur/result.text = str(info)
+
+func _on_get_pressed():
+	if $CheatMenu/Multiplayer_configur/OptionButton2.selected == 0:
+		rpc("giveInfo", $CheatMenu/Multiplayer_configur/OptionButton.selected)
+	elif $CheatMenu/Multiplayer_configur/OptionButton2.selected == 1:
+		rpc("setInfo", $CheatMenu/Multiplayer_configur/OptionButton.selected ,$CheatMenu/Multiplayer_configur/result.text)
+	elif $CheatMenu/Multiplayer_configur/OptionButton2.selected == 3:
+		rpc("hurtOtherOrbe", int($CheatMenu/Multiplayer_configur/result.text))
+	elif $CheatMenu/Multiplayer_configur/OptionButton2.selected == 4:
+		giveCard($CheatMenu/Multiplayer_configur/result.text,1)
+	elif $CheatMenu/Multiplayer_configur/OptionButton2.selected == 5:
+		bobux = int($CheatMenu/Multiplayer_configur/result.text)
+	elif $CheatMenu/Multiplayer_configur/OptionButton2.selected == 6:
+		reload()
+		rpc("reloadRemote")
+		print("cc")
+	
+
+
+func _on_Button_pressed():
+	if $ColorRect.visible:
+		$ColorRect.visible = false
+		$Control.visible = false
+	else:
+		$ColorRect.visible = true
+		$Control.visible = true
+
+var selectedCard
+
+func _on_Hand_card_clicked(card):
+	selectedCard = CardInstance.new(card.don)
+	selectedCard.card = card
+#	print(selectedCard.data().get_text("name"))
+
+
+func _on_Hand_mouse_exited():
+	pass
+
+
+func _on_Hand_focus_exited():
+	pass
+
+
+func _on_Pile6_card_clicked(card):
+	pass
+
+
+
+
+func _on_Pile6_gui_input(event):
+	if event is InputEventMouseButton:
+		pass
+
+
+func _on_Pile_gui_input(event, extra_arg_0):
+	if event is InputEventMouseButton:
+		if selectedCard != null:
+			pass
+#			if selectedCard.data().get_category("class") == "sort":
+#				_hand_store.remove_card(selectedCard.ref())
+#				_on_Pile1_card_dropped(selectedCard, "hand", selectedCard)
+#				_hand_store.remove_card(selectedCard.ref())
+#				for i in _hand_store.cards():
+#					if i.ref() == selectedCard.ref():
+#						_hand_store.remove_card(selectedCard.ref())
+
+onready var RedOwner = preload("res://screens/board/RedOwner.png")
+onready var RedSlave = preload("res://screens/board/RedSlave.png")
+
+onready var GreenOwner = preload("res://screens/board/GreenOwner.png")
+onready var GreenSlave = preload("res://screens/board/GreenSlave.png")
+
+sync func startGame():
+	$Board.visible = true
+	$Network_setup.visible = false
+	$EnnemieIcon.visible = false
+	$YouIcon.visible = false
+	$Bande.visible = false
+	$coeur.visible = false
+	$EnnemieName.visible = false
+	$YourName.visible = false
+	$MenuButton.visible = false
+	if not UserStores._get_items().has("SuccesBaston") and Global.sameIP == false:
+		var succesBaston = load("res://screens/menu/succes/Baston.png")
+		$Sprite.texture = succesBaston
+		UserStores.save_item("SuccesBaston",1)
+		$SuccesAnim.play("Slideup")
+		$succes.play()
+
+remote func setOtherOrbe(orbe):
+	$Board/HPEnnemie.value = orbe
+
+remote func getOtherOrbe():
+	rpc("setOtherOrbe", Global.orbe)
+	
+remote func bandeOther():
+	$Board/NameYou.texture = GreenSlave
+	$Board/NameEnnemie.texture = RedOwner
+
+func _on_launch_game_pressed():
+	if $Network_setup.player_number != 2:
+		return
+	rpc("startGame")
+	rpc("bandeOther")
+	$Board/NameYou.texture = GreenOwner
+	$Board/NameEnnemie.texture = RedSlave
+
+
+func _on_NextTurn_mouse_entered():
+	$Board/NextTurn/AnimationPlayer.play("Hover")
+
+
+func _on_NextTurn_mouse_exited():
+	$Board/NextTurn/AnimationPlayer.play_backwards("Hover")
+
+
+#func _on_MenuButton_mouse_entered():
+#	$MenuButton/AnimationPlayer.play("Hover")
+#
+#
+#func _on_MenuButton_mouse_exited():
+#	$MenuButton/AnimationPlayer.play_backwards("Hover")
+
+
+func _on_DrawBtn_mouse_entered():
+	$Board/DrawBtn/AnimationPlayer.play("Hover")
+
+
+func _on_DrawBtn_mouse_exited():
+	$Board/DrawBtn/AnimationPlayer.play_backwards("Hover")
+
+var freeSpell = 0
+var freeBanana = 0
+
+func _on_Choix1_pressed(argument):
+	$Choix1.visible = false
+	$Choix2.visible = false
+	$Board/Darken.visible = false
+	$Board.move_child(get_pile_ref(currentChoice.x), 0)
+	if currentChoice.y == 1:
+		if argument == 1:
+			get_data(currentChoice.x).set_value("timer", 1)
+		if argument == 2:
+			freeSpell += 1
+	if currentChoice.y == 2:
+		if argument == 1:
+			giveCard("Banane Glissante", 1)
+		if argument == 2:
+			freeBanana += 1
+	
+	if currentChoice.y == 3:
+		if argument == 1:
+			effectAllCardBut(currentChoice.x, 1, 1)
+		if argument == 2:
+			effectAllCardsEnnemie(-1, -1)

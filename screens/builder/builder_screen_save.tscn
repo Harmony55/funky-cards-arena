@@ -1,0 +1,883 @@
+[gd_scene load_steps=60 format=2]
+
+[ext_resource path="res://screens/builder/builder_screen.gd" type="Script" id=1]
+[ext_resource path="res://screens/builder/ccbb.png" type="Texture" id=2]
+[ext_resource path="res://fonts/ArchivoNarrow-Bold.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://containers/card_list/card_list.tscn" type="PackedScene" id=4]
+[ext_resource path="res://widgets/small_button/small_button.tscn" type="PackedScene" id=5]
+[ext_resource path="res://audio/deck.ogg" type="AudioStream" id=6]
+[ext_resource path="res://addons/cardengine/core/drop_area.gd" type="Script" id=7]
+[ext_resource path="res://audio/Effect/click-sound.wav" type="AudioStream" id=8]
+[ext_resource path="res://audio/Effect/accept-deck.wav" type="AudioStream" id=9]
+[ext_resource path="res://screens/menu/background.png" type="Texture" id=10]
+[ext_resource path="res://screens/menu/Ribanbelle.gd" type="Script" id=11]
+[ext_resource path="res://screens/menu/Ribanbelle.png" type="Texture" id=12]
+[ext_resource path="res://screens/builder/ccbb2.png" type="Texture" id=13]
+[ext_resource path="res://screens/builder/mewa.png" type="Texture" id=14]
+[ext_resource path="res://fonts/SuperMario.ttf" type="DynamicFontData" id=15]
+[ext_resource path="res://screens/builder/blan.png" type="Texture" id=16]
+[ext_resource path="res://screens/builder/omg.png" type="Texture" id=17]
+[ext_resource path="res://screens/builder/tre_bet_toi_aitre.png" type="Texture" id=18]
+[ext_resource path="res://screens/builder/c_kan_t_bet_ca_mdr.png" type="Texture" id=19]
+[ext_resource path="res://audio/Effect/hover1.wav" type="AudioStream" id=20]
+[ext_resource path="res://screens/builder/boxEmpty.png" type="Texture" id=21]
+[ext_resource path="res://screens/builder/button/JouerBase.png" type="Texture" id=22]
+[ext_resource path="res://screens/builder/button/JouerHover.png" type="Texture" id=23]
+[ext_resource path="res://screens/builder/button/JouerOff.png" type="Texture" id=24]
+[ext_resource path="res://screens/builder/button/JouerPress.png" type="Texture" id=25]
+[ext_resource path="res://screens/builder/textBox.png" type="Texture" id=26]
+[ext_resource path="res://screens/builder/button/ButtonOff.png" type="Texture" id=27]
+[ext_resource path="res://screens/builder/button/ButtonPress.png" type="Texture" id=28]
+[ext_resource path="res://screens/builder/button/ButtonHover.png" type="Texture" id=29]
+[ext_resource path="res://screens/builder/button/ButtonBase.png" type="Texture" id=30]
+[ext_resource path="res://screens/builder/button/CasierBase.png" type="Texture" id=31]
+[ext_resource path="res://screens/menu/succes/DeckEnfer.png" type="Texture" id=32]
+[ext_resource path="res://screens/builder/button/CasierHover.png" type="Texture" id=33]
+[ext_resource path="res://screens/builder/button/MagasinBase.png" type="Texture" id=34]
+[ext_resource path="res://screens/builder/button/MagasinHover.png" type="Texture" id=35]
+[ext_resource path="res://audio/Effect/succes.wav" type="AudioStream" id=36]
+
+[sub_resource type="Shader" id=4]
+code = "shader_type canvas_item;
+uniform float scroll_speed;
+void fragment() {
+	vec2 shifteduv = UV;
+	shifteduv.x += TIME * scroll_speed;
+	vec4 col = texture(TEXTURE,shifteduv);
+	COLOR = col;
+}"
+
+[sub_resource type="ShaderMaterial" id=5]
+shader = SubResource( 4 )
+shader_param/scroll_speed = null
+
+[sub_resource type="Shader" id=3]
+code = "shader_type canvas_item;
+uniform float scroll_speed;
+void fragment() {
+	vec2 shifteduv = UV;
+	shifteduv.x += TIME * -0.02;
+	vec4 col = texture(TEXTURE,shifteduv);
+	COLOR = col;
+}"
+
+[sub_resource type="ShaderMaterial" id=6]
+shader = SubResource( 3 )
+shader_param/scroll_speed = null
+
+[sub_resource type="DynamicFont" id=1]
+size = 20
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 31
+outline_size = 3
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 15 )
+
+[sub_resource type="StyleBoxFlat" id=9]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="DynamicFont" id=21]
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 15 )
+
+[sub_resource type="StyleBoxFlat" id=18]
+bg_color = Color( 0.694118, 0.0313726, 0.654902, 1 )
+
+[sub_resource type="StyleBoxFlat" id=19]
+bg_color = Color( 0.988235, 1, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=20]
+bg_color = Color( 0.988235, 1, 0, 1 )
+
+[sub_resource type="DynamicFont" id=16]
+size = 22
+font_data = ExtResource( 15 )
+
+[sub_resource type="StyleBoxFlat" id=17]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="DynamicFont" id=15]
+size = 24
+font_data = ExtResource( 15 )
+
+[sub_resource type="DynamicFont" id=14]
+size = 24
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 15 )
+
+[sub_resource type="Shader" id=10]
+code = "shader_type canvas_item;
+
+// Ranges from 0 to 1 over the course of the transition.
+// We use this to actually animate the shader.
+uniform float progress : hint_range(0, 1);
+
+// Size of each diamond, in pixels.
+uniform float diamondPixelSize = 10f;
+
+void fragment() {
+	float xFraction = fract(FRAGCOORD.x / diamondPixelSize);
+	float yFraction = fract(FRAGCOORD.y / diamondPixelSize);
+	float xDistance = abs(xFraction - 0.5);
+	float yDistance = abs(yFraction - 0.5);
+	if (xDistance + yDistance + UV.x + UV.y > progress * 4f) {
+		discard;
+	}
+}"
+
+[sub_resource type="ShaderMaterial" id=11]
+shader = SubResource( 10 )
+
+[sub_resource type="Animation" id=12]
+resource_name = "FadeIn"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:material:shader_param/progress")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 1.0, 0.0 ]
+}
+
+[sub_resource type="Animation" id=13]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:material:shader_param/progress")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 1.0 ]
+}
+
+[sub_resource type="DynamicFont" id=22]
+size = 46
+outline_size = 3
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 15 )
+
+[sub_resource type="Animation" id=23]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 991, 794 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=24]
+resource_name = "Slideup"
+length = 2.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 1.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 991, 794 ), Vector2( 991, 610 ), Vector2( 991, 610 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1.8, 2.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[node name="BuilderScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -1.0
+margin_top = -1.0
+margin_right = -1.0
+margin_bottom = -1.0
+rect_pivot_offset = Vector2( 39, -81 )
+script = ExtResource( 1 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1264.0
+margin_bottom = 719.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 1.0
+texture = ExtResource( 2 )
+expand = true
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Ribanbelle2" type="TextureRect" parent="."]
+material = SubResource( 5 )
+margin_left = -888.266
+margin_top = -86.5846
+margin_right = 6768.73
+margin_bottom = 466.415
+rect_rotation = -2.45116
+rect_scale = Vector2( 0.5, 0.5 )
+rect_pivot_offset = Vector2( 1365.82, 339.918 )
+texture = ExtResource( 12 )
+stretch_mode = 2
+script = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Ribanbelle4" type="TextureRect" parent="."]
+material = SubResource( 6 )
+margin_left = -693.536
+margin_top = 189.415
+margin_right = 6963.46
+margin_bottom = 742.415
+rect_rotation = -2.45116
+rect_scale = Vector2( 0.5, 0.5 )
+rect_pivot_offset = Vector2( 1365.82, 339.918 )
+texture = ExtResource( 12 )
+stretch_mode = 2
+script = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+scroll_speed = -0.1
+
+[node name="Bande" type="Sprite" parent="."]
+position = Vector2( 1, 1 )
+scale = Vector2( 0.666667, 0.666667 )
+texture = ExtResource( 10 )
+centered = false
+
+[node name="DeckBg" type="TextureRect" parent="."]
+margin_left = 1024.0
+margin_top = 87.0
+margin_right = 1264.0
+margin_bottom = 637.0
+rect_min_size = Vector2( 240, 0 )
+texture = ExtResource( 13 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GestionDeck" type="Sprite" parent="."]
+position = Vector2( -1, 0 )
+scale = Vector2( 0.666667, 0.666667 )
+texture = ExtResource( 14 )
+centered = false
+
+[node name="Search" type="Sprite" parent="."]
+position = Vector2( -1, 0 )
+scale = Vector2( 0.666667, 0.666667 )
+texture = ExtResource( 17 )
+centered = false
+
+[node name="TitleBg" type="ColorRect" parent="."]
+visible = false
+anchor_right = 1.0
+margin_left = 15.0
+margin_top = 64.0
+margin_right = -25.0
+margin_bottom = 124.0
+rect_min_size = Vector2( 0, 60 )
+color = Color( 0, 0, 0, 0.784314 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TitleLayout" type="HBoxContainer" parent="TitleBg"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 5.0
+margin_top = 5.0
+margin_right = -5.0
+margin_bottom = -5.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="TitleBg/TitleLayout"]
+margin_right = 61.0
+margin_bottom = 51.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "Gestion
+Deck"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Separator" type="Control" parent="TitleBg/TitleLayout"]
+margin_left = 65.0
+margin_right = 85.0
+margin_bottom = 52.0
+rect_min_size = Vector2( 20, 0 )
+
+[node name="CategoriesLayout" type="VBoxContainer" parent="TitleBg/TitleLayout"]
+margin_left = 89.0
+margin_right = 347.0
+margin_bottom = 52.0
+
+[node name="ClassLayout" type="HBoxContainer" parent="TitleBg/TitleLayout/CategoriesLayout"]
+margin_right = 258.0
+margin_bottom = 20.0
+
+[node name="ClassLbl" type="Label" parent="TitleBg/TitleLayout/CategoriesLayout/ClassLayout"]
+margin_top = 3.0
+margin_right = 94.0
+margin_bottom = 17.0
+text = "Filtrer par type"
+
+[node name="Class" type="OptionButton" parent="TitleBg/TitleLayout/CategoriesLayout/ClassLayout"]
+margin_left = 98.0
+margin_right = 248.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 150, 0 )
+
+[node name="RarityLayout" type="HBoxContainer" parent="TitleBg/TitleLayout/CategoriesLayout"]
+margin_top = 24.0
+margin_right = 258.0
+margin_bottom = 48.0
+
+[node name="RarityLbl" type="Label" parent="TitleBg/TitleLayout/CategoriesLayout/RarityLayout"]
+margin_right = 104.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 0, 24 )
+text = "Filtrer par rareté"
+valign = 1
+
+[node name="Rarity" type="OptionButton" parent="TitleBg/TitleLayout/CategoriesLayout/RarityLayout"]
+margin_left = 108.0
+margin_right = 258.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 150, 0 )
+
+[node name="ValuesLayout" type="VBoxContainer" parent="TitleBg/TitleLayout"]
+margin_left = 351.0
+margin_right = 501.0
+margin_bottom = 52.0
+
+[node name="Values" type="OptionButton" parent="TitleBg/TitleLayout/ValuesLayout"]
+margin_right = 150.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 150, 0 )
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ComparisionLayout" type="HBoxContainer" parent="TitleBg/TitleLayout/ValuesLayout"]
+margin_top = 24.0
+margin_right = 150.0
+margin_bottom = 48.0
+
+[node name="ComparisonOperator" type="OptionButton" parent="TitleBg/TitleLayout/ValuesLayout/ComparisionLayout"]
+margin_right = 72.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+text = "="
+clip_text = true
+items = [ "=", null, false, 0, null, ">", null, false, 1, null, ">=", null, false, 2, null, "<", null, false, 3, null, "<=", null, false, 4, null ]
+selected = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ComparisonValue" type="SpinBox" parent="TitleBg/TitleLayout/ValuesLayout/ComparisionLayout"]
+margin_left = 76.0
+margin_right = 150.0
+margin_bottom = 24.0
+min_value = -1000.0
+max_value = 1000.0
+allow_greater = true
+allow_lesser = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SortLayout" type="GridContainer" parent="TitleBg/TitleLayout"]
+margin_left = 505.0
+margin_right = 746.0
+margin_bottom = 52.0
+columns = 2
+
+[node name="RaritySort" type="CheckBox" parent="TitleBg/TitleLayout/SortLayout"]
+margin_right = 118.0
+margin_bottom = 24.0
+text = "Trie par rareté"
+
+[node name="ManaSort" type="CheckBox" parent="TitleBg/TitleLayout/SortLayout"]
+margin_left = 122.0
+margin_right = 241.0
+margin_bottom = 24.0
+text = "Trie par bobux"
+
+[node name="NameSort" type="CheckBox" parent="TitleBg/TitleLayout/SortLayout"]
+margin_top = 28.0
+margin_right = 118.0
+margin_bottom = 52.0
+text = "Trie par nom"
+
+[node name="Spacer" type="Control" parent="TitleBg/TitleLayout"]
+margin_left = 750.0
+margin_right = 1230.0
+margin_bottom = 52.0
+size_flags_horizontal = 3
+
+[node name="TextsLayout" type="VBoxContainer" parent="."]
+margin_left = 406.0
+margin_top = 21.0
+margin_right = 618.0
+margin_bottom = 53.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Texts" type="OptionButton" parent="TextsLayout"]
+visible = false
+margin_right = 212.0
+margin_bottom = 26.0
+rect_min_size = Vector2( 150, 0 )
+icon = ExtResource( 16 )
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Contains" type="LineEdit" parent="TextsLayout"]
+margin_right = 212.0
+margin_bottom = 32.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 7 )
+custom_styles/focus = SubResource( 9 )
+custom_styles/normal = SubResource( 8 )
+context_menu_enabled = false
+selecting_enabled = false
+placeholder_text = "RECHERCHE"
+placeholder_alpha = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BackBtn" parent="." instance=ExtResource( 5 )]
+margin_left = 1057.0
+margin_top = 7.0
+margin_right = 1257.0
+margin_bottom = 58.0
+rect_min_size = Vector2( 200, 0 )
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+margin_left = 1030.0
+margin_top = 143.0
+margin_right = 1252.0
+margin_bottom = 176.0
+texture = ExtResource( 26 )
+expand = true
+stretch_mode = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BuilderLayout" type="HBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 20.0
+margin_top = 100.0
+margin_right = -20.0
+margin_bottom = -104.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LibraryBg" type="TextureRect" parent="BuilderLayout"]
+margin_right = 996.0
+margin_bottom = 550.0
+rect_min_size = Vector2( 0, 60 )
+size_flags_horizontal = 3
+texture = ExtResource( 2 )
+
+[node name="LibraryScroll" type="ScrollContainer" parent="BuilderLayout/LibraryBg"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 19.0
+margin_top = 44.0
+margin_right = -11.0
+margin_bottom = -49.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LibraryContainer" parent="BuilderLayout/LibraryBg/LibraryScroll" instance=ExtResource( 4 )]
+margin_right = 966.0
+margin_bottom = 457.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+in_anchor = NodePath("../../InAnchor")
+out_anchor = NodePath("../../OutAnchor")
+
+[node name="InAnchor" type="Control" parent="BuilderLayout/LibraryBg"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+rect_rotation = 90.0
+rect_scale = Vector2( 1e-05, 1e-05 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OutAnchor" type="Control" parent="BuilderLayout/LibraryBg"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+rect_rotation = 90.0
+rect_scale = Vector2( 1e-05, 1e-05 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DeckBg" type="TextureRect" parent="BuilderLayout"]
+margin_left = 1000.0
+margin_right = 1240.0
+margin_bottom = 550.0
+rect_min_size = Vector2( 240, 0 )
+
+[node name="CardDrop" type="Control" parent="BuilderLayout/DeckBg"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 1.0
+margin_top = 11.0
+margin_right = 1.0
+margin_bottom = 11.0
+mouse_filter = 1
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DeckLayout" type="VBoxContainer" parent="BuilderLayout/DeckBg/CardDrop"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = -10.0
+margin_bottom = -70.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DeckSelect" type="OptionButton" parent="BuilderLayout/DeckBg/CardDrop/DeckLayout"]
+margin_right = 622.0
+margin_bottom = 17.0
+hint_tooltip = "ya Allah"
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 21 )
+custom_styles/hover = SubResource( 18 )
+custom_styles/pressed = SubResource( 19 )
+custom_styles/normal = SubResource( 20 )
+text = "ccc"
+
+[node name="TextureRect2" type="TextureRect" parent="BuilderLayout/DeckBg/CardDrop/DeckLayout"]
+margin_top = 21.0
+margin_right = 622.0
+margin_bottom = 21.0
+
+[node name="DeckSaveLayout" type="HBoxContainer" parent="BuilderLayout/DeckBg/CardDrop/DeckLayout"]
+margin_top = 25.0
+margin_right = 622.0
+margin_bottom = 48.0
+
+[node name="DeckName" type="LineEdit" parent="BuilderLayout/DeckBg/CardDrop/DeckLayout/DeckSaveLayout"]
+margin_right = 618.0
+margin_bottom = 23.0
+size_flags_horizontal = 3
+size_flags_vertical = 2
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 16 )
+custom_styles/normal = SubResource( 17 )
+placeholder_text = "Nom du deck"
+
+[node name="TextureRect" type="TextureRect" parent="BuilderLayout/DeckBg/CardDrop/DeckLayout/DeckSaveLayout"]
+margin_left = 622.0
+margin_right = 622.0
+margin_bottom = 23.0
+expand = true
+
+[node name="TextureRect" type="TextureRect" parent="BuilderLayout/DeckBg/CardDrop/DeckLayout"]
+margin_top = 52.0
+margin_right = 622.0
+margin_bottom = 52.0
+
+[node name="TextureRect3" type="TextureRect" parent="BuilderLayout/DeckBg/CardDrop/DeckLayout"]
+margin_top = 56.0
+margin_right = 622.0
+margin_bottom = 56.0
+
+[node name="TextureRect4" type="TextureRect" parent="BuilderLayout/DeckBg/CardDrop/DeckLayout"]
+margin_top = 60.0
+margin_right = 622.0
+margin_bottom = 60.0
+
+[node name="DeckScroll" type="ScrollContainer" parent="BuilderLayout/DeckBg/CardDrop/DeckLayout"]
+margin_top = 64.0
+margin_right = 622.0
+margin_bottom = 385.0
+mouse_filter = 1
+size_flags_vertical = 3
+
+[node name="DeckList" type="VBoxContainer" parent="BuilderLayout/DeckBg/CardDrop/DeckLayout/DeckScroll"]
+margin_right = 622.0
+margin_bottom = 321.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="UseBtn" type="TextureButton" parent="BuilderLayout/DeckBg/CardDrop/DeckLayout"]
+margin_top = 389.0
+margin_right = 622.0
+margin_bottom = 470.0
+disabled = true
+texture_normal = ExtResource( 22 )
+texture_pressed = ExtResource( 25 )
+texture_hover = ExtResource( 23 )
+texture_disabled = ExtResource( 24 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Nombre" type="Label" parent="BuilderLayout/DeckBg/CardDrop/DeckLayout/UseBtn"]
+margin_left = 172.0
+margin_top = 6.0
+margin_right = 212.0
+margin_bottom = 31.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 15 )
+text = "(32)"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+volume_db = -14.0
+autoplay = true
+
+[node name="click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+
+[node name="accept" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
+
+[node name="hover" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 20 )
+volume_db = -10.0
+
+[node name="SaveBtn" type="TextureButton" parent="."]
+margin_left = 1208.0
+margin_top = 144.0
+margin_right = 1251.0
+margin_bottom = 171.0
+disabled = true
+texture_normal = ExtResource( 30 )
+texture_pressed = ExtResource( 28 )
+texture_hover = ExtResource( 29 )
+texture_disabled = ExtResource( 27 )
+expand = true
+stretch_mode = 4
+
+[node name="TextureButton" type="TextureButton" parent="."]
+margin_left = 44.0
+margin_top = 637.0
+margin_right = 198.0
+margin_bottom = 701.0
+texture_normal = ExtResource( 18 )
+texture_hover = ExtResource( 19 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="TextureButton" parent="."]
+visible = false
+margin_left = 984.0
+margin_top = 625.0
+margin_right = 1112.0
+margin_bottom = 719.0
+texture_normal = ExtResource( 31 )
+texture_hover = ExtResource( 33 )
+expand = true
+stretch_mode = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button2" type="TextureButton" parent="."]
+visible = false
+margin_left = 1119.0
+margin_top = 624.0
+margin_right = 1259.0
+margin_bottom = 728.0
+texture_normal = ExtResource( 34 )
+texture_hover = ExtResource( 35 )
+expand = true
+stretch_mode = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BobuxButton" type="TextureButton" parent="."]
+margin_left = 638.0
+margin_top = 20.0
+margin_right = 669.0
+margin_bottom = 50.0
+texture_normal = ExtResource( 21 )
+expand = true
+stretch_mode = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RareButton" type="TextureButton" parent="."]
+margin_left = 850.0
+margin_top = 20.0
+margin_right = 881.0
+margin_bottom = 50.0
+texture_normal = ExtResource( 21 )
+expand = true
+stretch_mode = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BobuxLabel" type="Label" parent="."]
+margin_left = 673.0
+margin_top = 22.0
+margin_right = 841.0
+margin_bottom = 49.0
+custom_fonts/font = SubResource( 14 )
+text = "Trier par Bobux"
+
+[node name="RareLabel" type="Label" parent="."]
+margin_left = 884.0
+margin_top = 22.0
+margin_right = 1058.0
+margin_bottom = 49.0
+custom_fonts/font = SubResource( 14 )
+text = "Trier par Rareté"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="ColorRect" parent="."]
+visible = false
+material = SubResource( 11 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="TextureRect"]
+anims/FadeIn = SubResource( 12 )
+anims/RESET = SubResource( 13 )
+
+[node name="Empty" type="Label" parent="."]
+visible = false
+margin_left = 24.0
+margin_top = 161.0
+margin_right = 1050.0
+margin_bottom = 210.0
+custom_fonts/font = SubResource( 22 )
+text = "ça a l'air vide ici, va voir ce qu'il y a dans ton casier"
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 991, 794 )
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 32 )
+
+[node name="SuccesAnim" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 23 )
+anims/Slideup = SubResource( 24 )
+
+[node name="succes" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 36 )
+volume_db = -5.0
+bus = "Effect"
+
+[connection signal="item_selected" from="TitleBg/TitleLayout/CategoriesLayout/ClassLayout/Class" to="." method="_on_Class_item_selected"]
+[connection signal="toggled" from="TitleBg/TitleLayout/CategoriesLayout/ClassLayout/Class" to="." method="_on_Class_toggled"]
+[connection signal="item_selected" from="TitleBg/TitleLayout/CategoriesLayout/RarityLayout/Rarity" to="." method="_on_Rarity_item_selected"]
+[connection signal="toggled" from="TitleBg/TitleLayout/CategoriesLayout/RarityLayout/Rarity" to="." method="_on_Rarity_toggled"]
+[connection signal="item_selected" from="TitleBg/TitleLayout/ValuesLayout/Values" to="." method="_on_Values_item_selected"]
+[connection signal="toggled" from="TitleBg/TitleLayout/ValuesLayout/Values" to="." method="_on_Values_toggled"]
+[connection signal="item_selected" from="TitleBg/TitleLayout/ValuesLayout/ComparisionLayout/ComparisonOperator" to="." method="_on_ComparisonOperator_item_selected"]
+[connection signal="pressed" from="TitleBg/TitleLayout/ValuesLayout/ComparisionLayout/ComparisonOperator" to="." method="_on_ComparisonOperator_pressed"]
+[connection signal="toggled" from="TitleBg/TitleLayout/ValuesLayout/ComparisionLayout/ComparisonOperator" to="." method="_on_ComparisonOperator_toggled"]
+[connection signal="value_changed" from="TitleBg/TitleLayout/ValuesLayout/ComparisionLayout/ComparisonValue" to="." method="_on_ComparisonValue_value_changed"]
+[connection signal="toggled" from="TitleBg/TitleLayout/SortLayout/RaritySort" to="." method="_on_RaritySort_toggled"]
+[connection signal="toggled" from="TitleBg/TitleLayout/SortLayout/ManaSort" to="." method="_on_ManaSort_toggled"]
+[connection signal="toggled" from="TitleBg/TitleLayout/SortLayout/NameSort" to="." method="_on_NameSort_toggled"]
+[connection signal="item_selected" from="TextsLayout/Texts" to="." method="_on_Texts_item_selected"]
+[connection signal="toggled" from="TextsLayout/Texts" to="." method="_on_Texts_toggled"]
+[connection signal="text_changed" from="TextsLayout/Contains" to="." method="_on_Contains_text_changed"]
+[connection signal="pressed" from="BackBtn" to="." method="_on_BackBtn_pressed"]
+[connection signal="resized" from="BuilderLayout/LibraryBg/LibraryScroll" to="." method="_on_LibraryScroll_resized"]
+[connection signal="card_clicked" from="BuilderLayout/LibraryBg/LibraryScroll/LibraryContainer" to="." method="_on_LibraryContainer_card_clicked"]
+[connection signal="dropped" from="BuilderLayout/DeckBg/CardDrop" to="." method="_on_CardDrop_dropped"]
+[connection signal="item_selected" from="BuilderLayout/DeckBg/CardDrop/DeckLayout/DeckSelect" to="." method="_on_DeckSelect_item_selected"]
+[connection signal="toggled" from="BuilderLayout/DeckBg/CardDrop/DeckLayout/DeckSelect" to="." method="_on_DeckSelect_toggled"]
+[connection signal="text_changed" from="BuilderLayout/DeckBg/CardDrop/DeckLayout/DeckSaveLayout/DeckName" to="." method="_on_DeckName_text_changed"]
+[connection signal="pressed" from="BuilderLayout/DeckBg/CardDrop/DeckLayout/UseBtn" to="." method="_on_UseBtn_pressed"]
+[connection signal="pressed" from="SaveBtn" to="." method="_on_SaveBtn_pressed"]
+[connection signal="pressed" from="TextureButton" to="." method="_on_TextureButton_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_Button2_pressed"]
+[connection signal="pressed" from="BobuxButton" to="." method="_on_BobuxButton_pressed"]
+[connection signal="pressed" from="RareButton" to="." method="_on_RareButton_pressed"]

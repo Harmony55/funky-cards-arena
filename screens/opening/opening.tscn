@@ -1,0 +1,2271 @@
+[gd_scene load_steps=127 format=2]
+
+[ext_resource path="res://fonts/ArchivoNarrow-Bold.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://fonts/SuperMario.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://screens/opening/opening.gd" type="Script" id=3]
+[ext_resource path="res://screens/casier/FunkyPack.png" type="Texture" id=4]
+[ext_resource path="res://screens/opening/ScreenBack.gd" type="Script" id=5]
+[ext_resource path="res://audio/Effect/click-sound.wav" type="AudioStream" id=6]
+[ext_resource path="res://audio/Effect/hover1.wav" type="AudioStream" id=7]
+[ext_resource path="res://screens/board/Arena/arene_andorralavella.png" type="Texture" id=8]
+[ext_resource path="res://screens/builder/blan.png" type="Texture" id=9]
+[ext_resource path="res://cards/normal/normal_card.tscn" type="PackedScene" id=10]
+[ext_resource path="res://audio/Effect/accept-deck.wav" type="AudioStream" id=11]
+[ext_resource path="res://audio/Effect/swip.wav" type="AudioStream" id=12]
+[ext_resource path="res://screens/opening/CarteRestante.png" type="Texture" id=13]
+[ext_resource path="res://audio/Effect/rareSound.wav" type="AudioStream" id=14]
+[ext_resource path="res://screens/opening/indicator.png" type="Texture" id=15]
+[ext_resource path="res://screens/menu/succes/PackOpening.png" type="Texture" id=16]
+[ext_resource path="res://audio/Effect/succes.wav" type="AudioStream" id=17]
+[ext_resource path="res://screens/opening/FunkyPackSized.png" type="Texture" id=18]
+[ext_resource path="res://audio/Effect/divin_sound.wav" type="AudioStream" id=19]
+[ext_resource path="res://audio/Effect/tres_rare.wav" type="AudioStream" id=20]
+[ext_resource path="res://audio/Effect/rare.wav" type="AudioStream" id=21]
+[ext_resource path="res://screens/casier/obamium/frame_35_delay-0.03s.png" type="Texture" id=22]
+[ext_resource path="res://screens/casier/obamium/frame_40_delay-0.03s.png" type="Texture" id=23]
+[ext_resource path="res://screens/casier/obamium/frame_27_delay-0.03s.png" type="Texture" id=24]
+[ext_resource path="res://screens/casier/obamium/frame_10_delay-0.03s.png" type="Texture" id=25]
+[ext_resource path="res://screens/casier/obamium/frame_43_delay-0.03s.png" type="Texture" id=26]
+[ext_resource path="res://screens/casier/obamium/frame_38_delay-0.03s.png" type="Texture" id=27]
+[ext_resource path="res://screens/casier/obamium/frame_11_delay-0.03s.png" type="Texture" id=28]
+[ext_resource path="res://screens/casier/obamium/frame_03_delay-0.03s.png" type="Texture" id=29]
+[ext_resource path="res://screens/casier/obamium/frame_20_delay-0.03s.png" type="Texture" id=30]
+[ext_resource path="res://screens/casier/obamium/frame_17_delay-0.03s.png" type="Texture" id=31]
+[ext_resource path="res://screens/casier/obamium/frame_21_delay-0.03s.png" type="Texture" id=32]
+[ext_resource path="res://screens/casier/obamium/frame_16_delay-0.03s.png" type="Texture" id=33]
+[ext_resource path="res://screens/casier/obamium/frame_24_delay-0.03s.png" type="Texture" id=34]
+[ext_resource path="res://screens/casier/obamium/frame_45_delay-0.03s.png" type="Texture" id=35]
+[ext_resource path="res://screens/casier/obamium/frame_18_delay-0.03s.png" type="Texture" id=36]
+[ext_resource path="res://screens/casier/obamium/frame_47_delay-0.03s.png" type="Texture" id=37]
+[ext_resource path="res://screens/casier/obamium/frame_05_delay-0.03s.png" type="Texture" id=38]
+[ext_resource path="res://screens/casier/obamium/frame_19_delay-0.03s.png" type="Texture" id=39]
+[ext_resource path="res://screens/casier/obamium/frame_23_delay-0.03s.png" type="Texture" id=40]
+[ext_resource path="res://screens/casier/obamium/frame_22_delay-0.03s.png" type="Texture" id=41]
+[ext_resource path="res://screens/casier/obamium/frame_46_delay-0.03s.png" type="Texture" id=42]
+[ext_resource path="res://screens/casier/obamium/frame_14_delay-0.03s.png" type="Texture" id=43]
+[ext_resource path="res://screens/casier/obamium/frame_26_delay-0.03s.png" type="Texture" id=44]
+[ext_resource path="res://screens/casier/obamium/frame_08_delay-0.03s.png" type="Texture" id=45]
+[ext_resource path="res://screens/casier/obamium/frame_25_delay-0.03s.png" type="Texture" id=46]
+[ext_resource path="res://screens/casier/obamium/frame_32_delay-0.03s.png" type="Texture" id=47]
+[ext_resource path="res://screens/casier/obamium/frame_49_delay-0.03s.png" type="Texture" id=48]
+[ext_resource path="res://screens/casier/obamium/frame_00_delay-0.03s.png" type="Texture" id=49]
+[ext_resource path="res://screens/casier/obamium/frame_09_delay-0.03s.png" type="Texture" id=50]
+[ext_resource path="res://screens/casier/obamium/frame_04_delay-0.03s.png" type="Texture" id=51]
+[ext_resource path="res://screens/casier/obamium/frame_02_delay-0.03s.png" type="Texture" id=52]
+[ext_resource path="res://screens/casier/obamium/frame_31_delay-0.03s.png" type="Texture" id=53]
+[ext_resource path="res://screens/casier/obamium/frame_34_delay-0.03s.png" type="Texture" id=54]
+[ext_resource path="res://screens/casier/obamium/frame_33_delay-0.03s.png" type="Texture" id=55]
+[ext_resource path="res://screens/casier/obamium/frame_29_delay-0.03s.png" type="Texture" id=56]
+[ext_resource path="res://screens/casier/obamium/frame_48_delay-0.03s.png" type="Texture" id=57]
+[ext_resource path="res://screens/casier/obamium/frame_13_delay-0.03s.png" type="Texture" id=58]
+[ext_resource path="res://screens/casier/obamium/frame_07_delay-0.03s.png" type="Texture" id=59]
+[ext_resource path="res://screens/casier/obamium/frame_41_delay-0.03s.png" type="Texture" id=60]
+[ext_resource path="res://screens/casier/obamium/frame_12_delay-0.03s.png" type="Texture" id=61]
+[ext_resource path="res://screens/casier/obamium/frame_15_delay-0.03s.png" type="Texture" id=62]
+[ext_resource path="res://screens/casier/obamium/frame_28_delay-0.03s.png" type="Texture" id=63]
+[ext_resource path="res://screens/casier/obamium/frame_06_delay-0.03s.png" type="Texture" id=64]
+[ext_resource path="res://screens/casier/obamium/frame_37_delay-0.03s.png" type="Texture" id=65]
+[ext_resource path="res://screens/casier/obamium/frame_39_delay-0.03s.png" type="Texture" id=66]
+[ext_resource path="res://screens/casier/obamium/frame_30_delay-0.03s.png" type="Texture" id=67]
+[ext_resource path="res://screens/casier/obamium/frame_44_delay-0.03s.png" type="Texture" id=68]
+[ext_resource path="res://screens/casier/obamium/frame_42_delay-0.03s.png" type="Texture" id=69]
+[ext_resource path="res://screens/casier/obamium/frame_01_delay-0.03s.png" type="Texture" id=70]
+[ext_resource path="res://screens/casier/obamium/frame_36_delay-0.03s.png" type="Texture" id=71]
+
+[sub_resource type="DynamicFont" id=16]
+size = 36
+font_data = ExtResource( 2 )
+
+[sub_resource type="Shader" id=59]
+code = "shader_type canvas_item;
+render_mode unshaded;
+
+uniform int iterations = 20;
+uniform float formuparam = 1.00;
+
+uniform int volsteps = 20;
+uniform float stepsize = 0.1;
+
+uniform float zoom = 0.800;
+uniform float tile = 0.5;
+uniform float speed = 0.001;
+
+uniform float brightness = 0.002;
+uniform float darkmatter = 0.100;
+uniform float distfading = 0.650;
+uniform float saturation = 0.750;
+
+float SCurve (float value) {
+
+    if (value < 0.5)
+    {
+        return value * value * value * value * value * 16.0; 
+    }
+    
+    value -= 1.0;
+    
+    return value * value * value * value * value * 16.0 + 1.0;
+}
+
+void fragment()
+{
+	vec2 iResolution = 1.0 / SCREEN_PIXEL_SIZE;
+	//get coords and direction
+	vec2 uv=FRAGCOORD.xy/iResolution.xy;
+	uv.y*=iResolution.y/iResolution.x;
+	vec3 dir=vec3(uv*zoom,1.);
+	float time=TIME*speed;
+
+	vec3 from=vec3(1.0,0.5,0.5);
+	from-=vec3(0.0,time,0.0);
+	
+	//volumetric rendering
+	float s=0.1,fade=1.;
+	vec3 v=vec3(0.);
+	for (int r=0; r<volsteps; r++) {
+		lowp vec3 p=from+s*dir*0.5;
+		p = abs(vec3(tile)-mod(p,vec3(tile*2.))); // tiling fold
+		lowp float pa,a=pa=0.;
+		for (int i=0; i<iterations; i++) { 
+			p=abs(p)/dot(p,p)-formuparam; // the magic formula
+			a+=abs(length(p)-pa); // absolute sum of average change
+			pa=length(p);
+		}
+		lowp float dm=max(0.,darkmatter-a*a*.001); //dark matter
+		a = pow(a, 2.3); // add contrast
+		if (r>6) fade*=1.-dm; // dark matter, don't render near
+		v+=fade;
+		v+=vec3(s,s*s,s*s*s*s)*a*brightness*fade; // coloring based on distance
+		fade*=distfading; // distance fading
+		s+=stepsize;
+	}
+    
+	v=mix(vec3(length(v)),v,saturation); //color adjust
+    
+    vec4 C = vec4(v*.01,1.);
+    
+     	C.r = pow(C.r, 0.35); 
+ 	 	C.g = pow(C.g, 0.36); 
+ 	 	C.b = pow(C.b, 0.38); 
+ 	
+    vec4 L = C;   	
+    
+    COLOR.r = mix(L.r, SCurve(C.r), 0.7); 
+    COLOR.g = mix(L.g, SCurve(C.g), 1.0); 
+    COLOR.b = mix(L.b, SCurve(C.b), 0.2);     	
+	
+}"
+
+[sub_resource type="ShaderMaterial" id=58]
+shader = SubResource( 59 )
+shader_param/iterations = 20
+shader_param/formuparam = 1.0
+shader_param/volsteps = 20
+shader_param/stepsize = 0.1
+shader_param/zoom = 0.8
+shader_param/tile = 0.5
+shader_param/speed = 0.001
+shader_param/brightness = 0.1
+shader_param/darkmatter = 0.1
+shader_param/distfading = 0.65
+shader_param/saturation = 0.75
+
+[sub_resource type="Shader" id=17]
+code = "/*
+Shader from Godot Shaders - the free shader library.
+godotshaders.com/shader/god-rays
+
+Feel free to use, improve and change this shader according to your needs
+and consider sharing the modified result on godotshaders.com.
+*/
+
+shader_type canvas_item;
+
+uniform float angle = -0.3;
+uniform float position = -0.2;
+uniform float spread : hint_range(0.0, 1.0) = 0.5;
+uniform float cutoff : hint_range(-1.0, 1.0) = 0.1;
+uniform float falloff : hint_range(0.0, 1.0) = 0.2;
+uniform float edge_fade : hint_range(0.0, 1.0) = 0.15;
+
+uniform float speed = 1.0;
+uniform float ray1_density = 8.0;
+uniform float ray2_density = 30.0;
+uniform float ray2_intensity : hint_range(0.0, 1.0) = 0.3;
+
+uniform vec4 color : hint_color = vec4(1.0, 0.9, 0.65, 0.8);
+
+uniform bool hdr = false;
+uniform float seed = 5.0;
+
+// Random and noise functions from Book of Shader's chapter on Noise.
+float random(vec2 _uv) {
+    return fract(sin(dot(_uv.xy,
+                         vec2(12.9898, 78.233))) *
+        43758.5453123);
+}
+
+float noise (in vec2 uv) {
+    vec2 i = floor(uv);
+    vec2 f = fract(uv);
+
+    // Four corners in 2D of a tile
+    float a = random(i);
+    float b = random(i + vec2(1.0, 0.0));
+    float c = random(i + vec2(0.0, 1.0));
+    float d = random(i + vec2(1.0, 1.0));
+
+
+    // Smooth Interpolation
+
+    // Cubic Hermine Curve. Same as SmoothStep()
+    vec2 u = f * f * (3.0-2.0 * f);
+
+    // Mix 4 coorners percentages
+    return mix(a, b, u.x) +
+            (c - a)* u.y * (1.0 - u.x) +
+            (d - b) * u.x * u.y;
+}
+
+mat2 rotate(float _angle){
+    return mat2(vec2(cos(_angle), -sin(_angle)),
+                vec2(sin(_angle), cos(_angle)));
+}
+
+vec4 screen(vec4 base, vec4 blend){
+	return 1.0 - (1.0 - base) * (1.0 - blend);
+}
+
+void fragment()
+{
+	
+	// Rotate, skew and move the UVs
+	vec2 transformed_uv = ( rotate(angle) * (UV - position) )  / ( (UV.y + spread) - (UV.y * spread) );
+	
+	// Animate the ray according the the new transformed UVs
+	vec2 ray1 = vec2(transformed_uv.x * ray1_density + sin(TIME * 0.1 * speed) * (ray1_density * 0.2) + seed, 1.0);
+	vec2 ray2 = vec2(transformed_uv.x * ray2_density + sin(TIME * 0.2 * speed) * (ray1_density * 0.2) + seed, 1.0);
+	
+	// Cut off the ray's edges
+	float cut = step(cutoff, transformed_uv.x) * step(cutoff, 1.0 - transformed_uv.x);
+	ray1 *= cut;
+	ray2 *= cut;
+	
+	// Apply the noise pattern (i.e. create the rays)
+	float rays;
+	
+	if (hdr){
+		// This is not really HDR, but check this to not clamp the two merged rays making 
+		// their values go over 1.0. Can make for some nice effect
+		rays = noise(ray1) + (noise(ray2) * ray2_intensity);
+	}
+	else{
+		 rays = clamp(noise(ray1) + (noise(ray2) * ray2_intensity), 0., 1.);
+	}
+	
+	// Fade out edges
+	rays *= smoothstep(0.0, falloff, (1.0 - UV.y)); // Bottom
+	rays *= smoothstep(0.0 + cutoff, edge_fade + cutoff, transformed_uv.x); // Left
+	rays *= smoothstep(0.0 + cutoff, edge_fade + cutoff, 1.0 - transformed_uv.x); // Right
+	
+	// Color to the rays
+	vec3 shine = vec3(rays) * color.rgb;
+
+	// Try different blending modes for a nicer effect. \"Screen\" is included in the code,
+	// but take a look at https://godotshaders.com/snippet/blending-modes/ for more.
+	// With \"Screen\" blend mode:
+	shine = screen(texture(SCREEN_TEXTURE, SCREEN_UV), vec4(color)).rgb;
+	
+	COLOR = vec4(shine, rays * color.a);
+}"
+
+[sub_resource type="ShaderMaterial" id=18]
+shader = SubResource( 17 )
+shader_param/angle = -0.3
+shader_param/position = -0.2
+shader_param/spread = 0.5
+shader_param/cutoff = 0.1
+shader_param/falloff = 0.2
+shader_param/edge_fade = 0.15
+shader_param/speed = 1.0
+shader_param/ray1_density = 8.0
+shader_param/ray2_density = 30.0
+shader_param/ray2_intensity = 1.0
+shader_param/color = Color( 1, 0.9, 0.65, 0.8 )
+shader_param/hdr = false
+shader_param/seed = 5.0
+
+[sub_resource type="Animation" id=19]
+resource_name = "Line change"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:material:shader_param/sample_radius")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.3, 1.0, 0.3 ]
+}
+
+[sub_resource type="Animation" id=20]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:material:shader_param/inverse_speed")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:material:shader_param/sample_radius")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+
+[sub_resource type="DynamicFont" id=54]
+size = 50
+use_filter = true
+font_data = ExtResource( 2 )
+
+[sub_resource type="Animation" id=55]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Node2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 700 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Cache:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 204, 171 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Cache:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 204, 171 ) ]
+}
+
+[sub_resource type="Animation" id=56]
+resource_name = "goUp"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Node2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 700 ), Vector2( 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Cache:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 204, 871 ), Vector2( 204, 171 ) ]
+}
+
+[sub_resource type="Shader" id=24]
+code = "/*
+Shader from Godot Shaders - the free shader library.
+godotshaders.com/shader/teleport-effect
+
+This shader is under CC0 license. Feel free to use, improve and 
+change this shader according to your needs and consider sharing 
+the modified result on godotshaders.com.
+*/
+
+shader_type canvas_item;
+
+uniform float progress : hint_range(0.0, 1.0);
+uniform float noise_desnity = 60;
+uniform float beam_size : hint_range(0, 0.15);
+uniform vec4 color : hint_color = vec4(0.0, 1.02, 1.2, 1.0);
+
+// We are generating our own noise here. You could experiment with the 
+// built in SimplexNoise or your own noise texture for other effects.
+vec2 random(vec2 uv){
+    uv = vec2( dot(uv, vec2(127.1,311.7) ),
+               dot(uv, vec2(269.5,183.3) ) );
+    return -1.0 + 2.0 * fract(sin(uv) * 43758.5453123);
+}
+
+float noise(vec2 uv) {
+    vec2 uv_index = floor(uv);
+    vec2 uv_fract = fract(uv);
+
+    vec2 blur = smoothstep(0.0, 1.0, uv_fract);
+
+    return mix( mix( dot( random(uv_index + vec2(0.0,0.0) ), uv_fract - vec2(0.0,0.0) ),
+                     dot( random(uv_index + vec2(1.0,0.0) ), uv_fract - vec2(1.0,0.0) ), blur.x),
+                mix( dot( random(uv_index + vec2(0.0,1.0) ), uv_fract - vec2(0.0,1.0) ),
+                     dot( random(uv_index + vec2(1.0,1.0) ), uv_fract - vec2(1.0,1.0) ), blur.x), blur.y) * 0.5 + 0.5;
+}
+
+void fragment()
+{
+	vec4 tex = texture(TEXTURE, UV);
+	
+	float noise = noise(UV * noise_desnity) * UV.y;
+	
+	float d1 = step(progress, noise);
+	float d2 = step(progress - beam_size, noise);
+	
+	vec3 beam = vec3(d2 - d1) * color.rgb;
+	
+	tex.rgb += beam;
+	tex.a *= d2;
+	
+	COLOR = tex;
+}"
+
+[sub_resource type="ShaderMaterial" id=25]
+shader = SubResource( 24 )
+shader_param/progress = 0.0
+shader_param/noise_desnity = 60.0
+shader_param/beam_size = null
+shader_param/color = Color( 0, 1.02, 1.2, 1 )
+
+[sub_resource type="Animation" id=23]
+resource_name = "Disolve"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:material:shader_param/progress")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+
+[sub_resource type="Animation" id=21]
+resource_name = "Mount"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 378, 1000 ), Vector2( 378, 350 ) ]
+}
+
+[sub_resource type="Animation" id=22]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 378, 1000 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:material:shader_param/progress")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+
+[sub_resource type="DynamicFont" id=1]
+size = 20
+font_data = ExtResource( 1 )
+
+[sub_resource type="Shader" id=10]
+code = "shader_type canvas_item;
+
+// Ranges from 0 to 1 over the course of the transition.
+// We use this to actually animate the shader.
+uniform float progress : hint_range(0, 1);
+
+// Size of each diamond, in pixels.
+uniform float diamondPixelSize = 10f;
+
+void fragment() {
+	float xFraction = fract(FRAGCOORD.x / diamondPixelSize);
+	float yFraction = fract(FRAGCOORD.y / diamondPixelSize);
+	float xDistance = abs(xFraction - 0.5);
+	float yDistance = abs(yFraction - 0.5);
+	if (xDistance + yDistance + UV.x + UV.y > progress * 4f) {
+		discard;
+	}
+}"
+
+[sub_resource type="ShaderMaterial" id=11]
+shader = SubResource( 10 )
+
+[sub_resource type="Animation" id=12]
+resource_name = "FadeIn"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:material:shader_param/progress")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 1.0, 0.0 ]
+}
+
+[sub_resource type="Animation" id=13]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:material:shader_param/progress")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 1.0 ]
+}
+
+[sub_resource type="DynamicFont" id=62]
+size = 60
+outline_size = 3
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
+
+[sub_resource type="SpriteFrames" id=94]
+animations = [ {
+"frames": [ ExtResource( 49 ), ExtResource( 70 ), ExtResource( 52 ), ExtResource( 29 ), ExtResource( 51 ), ExtResource( 38 ), ExtResource( 64 ), ExtResource( 59 ), ExtResource( 45 ), ExtResource( 50 ), ExtResource( 25 ), ExtResource( 28 ), ExtResource( 61 ), ExtResource( 58 ), ExtResource( 43 ), ExtResource( 62 ), ExtResource( 33 ), ExtResource( 31 ), ExtResource( 36 ), ExtResource( 39 ), ExtResource( 30 ), ExtResource( 32 ), ExtResource( 41 ), ExtResource( 40 ), ExtResource( 34 ), ExtResource( 46 ), ExtResource( 44 ), ExtResource( 24 ), ExtResource( 63 ), ExtResource( 56 ), ExtResource( 67 ), ExtResource( 53 ), ExtResource( 47 ), ExtResource( 55 ), ExtResource( 54 ), ExtResource( 22 ), ExtResource( 71 ), ExtResource( 65 ), ExtResource( 27 ), ExtResource( 66 ), ExtResource( 23 ), ExtResource( 60 ), ExtResource( 69 ), ExtResource( 26 ), ExtResource( 68 ), ExtResource( 35 ), ExtResource( 42 ), ExtResource( 37 ), ExtResource( 57 ), ExtResource( 48 ) ],
+"loop": true,
+"name": "default",
+"speed": 24.0
+} ]
+
+[sub_resource type="Animation" id=63]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 991, 794 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=64]
+resource_name = "Slideup"
+length = 2.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 1.8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 991, 794 ), Vector2( 991, 610 ), Vector2( 991, 610 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1.8, 2.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=65]
+resource_name = "GoRight"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/path = NodePath("Node2D/NormalCard10:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.25 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 331, 351 ), Vector2( 1000, 351 ) ]
+}
+
+[sub_resource type="Animation" id=66]
+resource_name = "Nouvelle animation"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Node2D/NormalCard3:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 331, 351 ), Vector2( 1000, 351 ) ]
+}
+
+[sub_resource type="Animation" id=67]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Node2D/NormalCard1:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 331, 351 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Node2D/NormalCard2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 331, 351 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Node2D/NormalCard3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 331, 351 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Node2D/NormalCard4:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 331, 351 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Node2D/NormalCard5:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 331, 351 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Node2D/NormalCard7:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 331, 351 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Node2D/NormalCard8:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 331, 351 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Node2D/NormalCard9:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 331, 351 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Node2D/NormalCard10:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 331, 351 ) ]
+}
+
+[sub_resource type="Shader" id=60]
+code = "/*
+Shader from Godot Shaders - the free shader library.
+godotshaders.com/shader/god-rays
+
+Feel free to use, improve and change this shader according to your needs
+and consider sharing the modified result on godotshaders.com.
+*/
+
+shader_type canvas_item;
+
+uniform float angle = -0.3;
+uniform float position = -0.2;
+uniform float spread : hint_range(0.0, 1.0) = 0.5;
+uniform float cutoff : hint_range(-1.0, 1.0) = 0.1;
+uniform float falloff : hint_range(0.0, 1.0) = 0.2;
+uniform float edge_fade : hint_range(0.0, 1.0) = 0.15;
+
+uniform float speed = 1.0;
+uniform float ray1_density = 8.0;
+uniform float ray2_density = 30.0;
+uniform float ray2_intensity : hint_range(0.0, 1.0) = 0.3;
+
+uniform vec4 color : hint_color = vec4(1.0, 0.9, 0.65, 0.8);
+
+uniform bool hdr = false;
+uniform float seed = 5.0;
+
+// Random and noise functions from Book of Shader's chapter on Noise.
+float random(vec2 _uv) {
+    return fract(sin(dot(_uv.xy,
+                         vec2(12.9898, 78.233))) *
+        43758.5453123);
+}
+
+float noise (in vec2 uv) {
+    vec2 i = floor(uv);
+    vec2 f = fract(uv);
+
+    // Four corners in 2D of a tile
+    float a = random(i);
+    float b = random(i + vec2(1.0, 0.0));
+    float c = random(i + vec2(0.0, 1.0));
+    float d = random(i + vec2(1.0, 1.0));
+
+
+    // Smooth Interpolation
+
+    // Cubic Hermine Curve. Same as SmoothStep()
+    vec2 u = f * f * (3.0-2.0 * f);
+
+    // Mix 4 coorners percentages
+    return mix(a, b, u.x) +
+            (c - a)* u.y * (1.0 - u.x) +
+            (d - b) * u.x * u.y;
+}
+
+mat2 rotate(float _angle){
+    return mat2(vec2(cos(_angle), -sin(_angle)),
+                vec2(sin(_angle), cos(_angle)));
+}
+
+vec4 screen(vec4 base, vec4 blend){
+	return 1.0 - (1.0 - base) * (1.0 - blend);
+}
+
+void fragment()
+{
+	
+	// Rotate, skew and move the UVs
+	vec2 transformed_uv = ( rotate(angle) * (UV - position) )  / ( (UV.y + spread) - (UV.y * spread) );
+	
+	// Animate the ray according the the new transformed UVs
+	vec2 ray1 = vec2(transformed_uv.x * ray1_density + sin(TIME * 0.1 * speed) * (ray1_density * 0.2) + seed, 1.0);
+	vec2 ray2 = vec2(transformed_uv.x * ray2_density + sin(TIME * 0.2 * speed) * (ray1_density * 0.2) + seed, 1.0);
+	
+	// Cut off the ray's edges
+	float cut = step(cutoff, transformed_uv.x) * step(cutoff, 1.0 - transformed_uv.x);
+	ray1 *= cut;
+	ray2 *= cut;
+	
+	// Apply the noise pattern (i.e. create the rays)
+	float rays;
+	
+	if (hdr){
+		// This is not really HDR, but check this to not clamp the two merged rays making 
+		// their values go over 1.0. Can make for some nice effect
+		rays = noise(ray1) + (noise(ray2) * ray2_intensity);
+	}
+	else{
+		 rays = clamp(noise(ray1) + (noise(ray2) * ray2_intensity), 0., 1.);
+	}
+	
+	// Fade out edges
+	rays *= smoothstep(0.0, falloff, (1.0 - UV.y)); // Bottom
+	rays *= smoothstep(0.0 + cutoff, edge_fade + cutoff, transformed_uv.x); // Left
+	rays *= smoothstep(0.0 + cutoff, edge_fade + cutoff, 1.0 - transformed_uv.x); // Right
+	
+	// Color to the rays
+	vec3 shine = vec3(rays) * color.rgb;
+
+	// Try different blending modes for a nicer effect. \"Screen\" is included in the code,
+	// but take a look at https://godotshaders.com/snippet/blending-modes/ for more.
+	// With \"Screen\" blend mode:
+	shine = screen(texture(SCREEN_TEXTURE, SCREEN_UV), vec4(color)).rgb;
+	
+	COLOR = vec4(shine, rays * color.a);
+}"
+
+[sub_resource type="ShaderMaterial" id=61]
+shader = SubResource( 60 )
+shader_param/angle = -0.3
+shader_param/position = -0.2
+shader_param/spread = 0.5
+shader_param/cutoff = 0.1
+shader_param/falloff = 0.2
+shader_param/edge_fade = 0.15
+shader_param/speed = 1.0
+shader_param/ray1_density = 8.0
+shader_param/ray2_density = 30.0
+shader_param/ray2_intensity = 0.6
+shader_param/color = Color( 1, 0.9, 0.65, 0.8 )
+shader_param/hdr = false
+shader_param/seed = 5.0
+
+[sub_resource type="Animation" id=68]
+resource_name = "GoRight"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/path = NodePath("Node2D/NormalCard9:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.25 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 331, 351 ), Vector2( 1000, 351 ) ]
+}
+
+[sub_resource type="Animation" id=69]
+resource_name = "Nouvelle animation"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Node2D/NormalCard3:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 331, 351 ), Vector2( 1000, 351 ) ]
+}
+
+[sub_resource type="Animation" id=70]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Node2D/NormalCard1:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 331, 351 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Node2D/NormalCard2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 331, 351 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Node2D/NormalCard3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 331, 351 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Node2D/NormalCard4:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 331, 351 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Node2D/NormalCard5:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 331, 351 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Node2D/NormalCard7:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 331, 351 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Node2D/NormalCard8:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 331, 351 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Node2D/NormalCard9:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 331, 351 ) ]
+}
+
+[sub_resource type="Animation" id=71]
+resource_name = "GoRight"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/path = NodePath("Node2D/NormalCard8:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.25 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 331, 351 ), Vector2( 1000, 351 ) ]
+}
+
+[sub_resource type="Animation" id=72]
+resource_name = "Nouvelle animation"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Node2D/NormalCard3:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 331, 351 ), Vector2( 1000, 351 ) ]
+}
+
+[sub_resource type="Animation" id=73]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Node2D/NormalCard1:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 331, 351 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Node2D/NormalCard2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 331, 351 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Node2D/NormalCard3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 331, 351 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Node2D/NormalCard4:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 331, 351 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Node2D/NormalCard5:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 331, 351 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Node2D/NormalCard7:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 331, 351 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Node2D/NormalCard8:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 331, 351 ) ]
+}
+
+[sub_resource type="Animation" id=74]
+resource_name = "GoRight"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/path = NodePath("Node2D/NormalCard7:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.25 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 331, 351 ), Vector2( 1000, 351 ) ]
+}
+
+[sub_resource type="Animation" id=75]
+resource_name = "Nouvelle animation"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Node2D/NormalCard3:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 331, 351 ), Vector2( 1000, 351 ) ]
+}
+
+[sub_resource type="Animation" id=76]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Node2D/NormalCard1:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 331, 351 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Node2D/NormalCard2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 331, 351 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Node2D/NormalCard3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 331, 351 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Node2D/NormalCard4:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 331, 351 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Node2D/NormalCard5:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 331, 351 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Node2D/NormalCard7:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 331, 351 ) ]
+}
+
+[sub_resource type="Animation" id=77]
+resource_name = "GoRight"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/path = NodePath("Node2D/NormalCard6:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.25 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 331, 351 ), Vector2( 1000, 351 ) ]
+}
+
+[sub_resource type="Animation" id=78]
+resource_name = "Nouvelle animation"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Node2D/NormalCard3:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 331, 351 ), Vector2( 1000, 351 ) ]
+}
+
+[sub_resource type="Animation" id=79]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Node2D/NormalCard1:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 331, 351 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Node2D/NormalCard2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 331, 351 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Node2D/NormalCard3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 331, 351 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Node2D/NormalCard4:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 331, 351 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Node2D/NormalCard5:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 331, 351 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Node2D/NormalCard7:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 331, 351 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Node2D/NormalCard6:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 331, 351 ) ]
+}
+
+[sub_resource type="Animation" id=80]
+resource_name = "GoRight"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/path = NodePath("Node2D/NormalCard5:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.25 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 331, 351 ), Vector2( 1000, 351 ) ]
+}
+
+[sub_resource type="Animation" id=81]
+resource_name = "Nouvelle animation"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Node2D/NormalCard3:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 331, 351 ), Vector2( 1000, 351 ) ]
+}
+
+[sub_resource type="Animation" id=82]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Node2D/NormalCard1:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 331, 351 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Node2D/NormalCard2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 331, 351 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Node2D/NormalCard3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 331, 351 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Node2D/NormalCard4:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 331, 351 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Node2D/NormalCard5:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 331, 351 ) ]
+}
+
+[sub_resource type="Animation" id=83]
+resource_name = "GoRight"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/path = NodePath("Node2D/NormalCard4:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.25 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 331, 351 ), Vector2( 1000, 351 ) ]
+}
+
+[sub_resource type="Animation" id=84]
+resource_name = "Nouvelle animation"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Node2D/NormalCard3:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 331, 351 ), Vector2( 1000, 351 ) ]
+}
+
+[sub_resource type="Animation" id=85]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Node2D/NormalCard1:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 331, 351 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Node2D/NormalCard2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 331, 351 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Node2D/NormalCard3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 331, 351 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Node2D/NormalCard4:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 331, 351 ) ]
+}
+
+[sub_resource type="Animation" id=86]
+resource_name = "GoRight"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/path = NodePath("Node2D/NormalCard3:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.25 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 331, 351 ), Vector2( 1000, 351 ) ]
+}
+
+[sub_resource type="Animation" id=87]
+resource_name = "Nouvelle animation"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Node2D/NormalCard3:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 331, 351 ), Vector2( 1000, 351 ) ]
+}
+
+[sub_resource type="Animation" id=88]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Node2D/NormalCard1:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 331, 351 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Node2D/NormalCard2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 331, 351 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Node2D/NormalCard3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 331, 351 ) ]
+}
+
+[sub_resource type="Animation" id=89]
+resource_name = "GoRight"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/path = NodePath("Node2D/NormalCard2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.25 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 331, 351 ), Vector2( 1000, 351 ) ]
+}
+
+[sub_resource type="Animation" id=90]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Node2D/NormalCard1:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 331, 351 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Node2D/NormalCard2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 331, 351 ) ]
+}
+
+[sub_resource type="Animation" id=91]
+resource_name = "GoRight"
+length = 0.25
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("Node2D/NormalCard1:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.25 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 331, 351 ), Vector2( 1000, 351 ) ]
+}
+
+[sub_resource type="Animation" id=92]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Node2D/NormalCard1:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 331, 351 ) ]
+}
+
+[sub_resource type="Animation" id=93]
+resource_name = "GoRight"
+
+[node name="OpeningScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+visible = false
+margin_left = 1.0
+margin_top = -1.0
+margin_right = 1280.0
+margin_bottom = 720.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ColorRect2"]
+margin_left = 14.0
+margin_top = 23.0
+margin_right = 624.0
+margin_bottom = 160.0
+custom_fonts/font = SubResource( 16 )
+text = "Trier par : Twitch  Hongrie  Naruto"
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Indicator" type="TextureRect" parent="."]
+material = SubResource( 58 )
+margin_right = 1280.0
+margin_bottom = 720.0
+texture = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource( 18 )
+margin_left = -9.0
+margin_top = -838.0
+margin_right = 636.0
+margin_bottom = -94.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ColorRect"]
+"anims/Line change" = SubResource( 19 )
+anims/RESET = SubResource( 20 )
+
+[node name="categories" type="Control" parent="."]
+margin_left = 13.0
+margin_top = 122.0
+margin_right = 197.0
+margin_bottom = 600.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DeckDessous" type="Sprite" parent="."]
+position = Vector2( 331.5, 592 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 13 )
+
+[node name="cardLeft" type="Label" parent="."]
+margin_left = 154.0
+margin_top = 566.0
+margin_right = 603.0
+margin_bottom = 621.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 54 )
+text = "10 cartes restantes"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 55 )
+anims/goUp = SubResource( 56 )
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2( 0, 700 )
+
+[node name="FunkyPack" type="TextureButton" parent="."]
+visible = false
+material = SubResource( 25 )
+margin_left = 159.0
+margin_top = 146.0
+margin_right = 582.0
+margin_bottom = 554.0
+texture_normal = ExtResource( 4 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FunkyPack" type="AnimationPlayer" parent="FunkyPack"]
+anims/Disolve = SubResource( 23 )
+anims/Mount = SubResource( 21 )
+anims/RESET = SubResource( 22 )
+
+[node name="TitleBg" type="ColorRect" parent="."]
+visible = false
+anchor_right = 1.0
+margin_left = 20.0
+margin_top = 20.0
+margin_right = -20.0
+rect_min_size = Vector2( 0, 60 )
+color = Color( 0, 0, 0, 0.784314 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TitleLayout" type="HBoxContainer" parent="TitleBg"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 5.0
+margin_top = 5.0
+margin_right = -5.0
+margin_bottom = -5.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="TitleBg/TitleLayout"]
+margin_right = 61.0
+margin_bottom = 51.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "Gestion
+Deck"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Separator" type="Control" parent="TitleBg/TitleLayout"]
+margin_left = 65.0
+margin_right = 85.0
+margin_bottom = 51.0
+rect_min_size = Vector2( 20, 0 )
+
+[node name="CategoriesLayout" type="VBoxContainer" parent="TitleBg/TitleLayout"]
+margin_left = 89.0
+margin_right = 347.0
+margin_bottom = 51.0
+
+[node name="ClassLayout" type="HBoxContainer" parent="TitleBg/TitleLayout/CategoriesLayout"]
+margin_right = 258.0
+margin_bottom = 20.0
+
+[node name="ClassLbl" type="Label" parent="TitleBg/TitleLayout/CategoriesLayout/ClassLayout"]
+margin_top = 3.0
+margin_right = 94.0
+margin_bottom = 17.0
+text = "Filtrer par type"
+
+[node name="Class" type="OptionButton" parent="TitleBg/TitleLayout/CategoriesLayout/ClassLayout"]
+margin_left = 98.0
+margin_right = 248.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 150, 0 )
+
+[node name="RarityLayout" type="HBoxContainer" parent="TitleBg/TitleLayout/CategoriesLayout"]
+margin_top = 24.0
+margin_right = 258.0
+margin_bottom = 48.0
+
+[node name="RarityLbl" type="Label" parent="TitleBg/TitleLayout/CategoriesLayout/RarityLayout"]
+margin_right = 104.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 0, 24 )
+text = "Filtrer par rareté"
+valign = 1
+
+[node name="Rarity" type="OptionButton" parent="TitleBg/TitleLayout/CategoriesLayout/RarityLayout"]
+margin_left = 108.0
+margin_right = 258.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 150, 0 )
+
+[node name="ValuesLayout" type="VBoxContainer" parent="TitleBg/TitleLayout"]
+margin_left = 351.0
+margin_right = 501.0
+margin_bottom = 51.0
+
+[node name="Values" type="OptionButton" parent="TitleBg/TitleLayout/ValuesLayout"]
+margin_right = 150.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 150, 0 )
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ComparisionLayout" type="HBoxContainer" parent="TitleBg/TitleLayout/ValuesLayout"]
+margin_top = 24.0
+margin_right = 150.0
+margin_bottom = 48.0
+
+[node name="ComparisonOperator" type="OptionButton" parent="TitleBg/TitleLayout/ValuesLayout/ComparisionLayout"]
+margin_right = 72.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+text = "="
+clip_text = true
+items = [ "=", null, false, 0, null, ">", null, false, 1, null, ">=", null, false, 2, null, "<", null, false, 3, null, "<=", null, false, 4, null ]
+selected = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ComparisonValue" type="SpinBox" parent="TitleBg/TitleLayout/ValuesLayout/ComparisionLayout"]
+margin_left = 76.0
+margin_right = 150.0
+margin_bottom = 24.0
+min_value = -1000.0
+max_value = 1000.0
+allow_greater = true
+allow_lesser = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SortLayout" type="GridContainer" parent="TitleBg/TitleLayout"]
+visible = false
+margin_left = 659.0
+margin_right = 900.0
+margin_bottom = 52.0
+columns = 2
+
+[node name="RaritySort" type="CheckBox" parent="TitleBg/TitleLayout/SortLayout"]
+margin_right = 118.0
+margin_bottom = 24.0
+text = "Trie par rareté"
+
+[node name="ManaSort" type="CheckBox" parent="TitleBg/TitleLayout/SortLayout"]
+margin_left = 122.0
+margin_right = 241.0
+margin_bottom = 24.0
+text = "Trie par bobux"
+
+[node name="NameSort" type="CheckBox" parent="TitleBg/TitleLayout/SortLayout"]
+margin_top = 28.0
+margin_right = 118.0
+margin_bottom = 52.0
+text = "Trie par nom"
+
+[node name="Spacer" type="Control" parent="TitleBg/TitleLayout"]
+margin_left = 505.0
+margin_right = 1230.0
+margin_bottom = 51.0
+size_flags_horizontal = 3
+
+[node name="TextsLayout" type="VBoxContainer" parent="."]
+margin_left = 406.0
+margin_top = 21.0
+margin_right = 618.0
+margin_bottom = 53.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Texts" type="OptionButton" parent="TextsLayout"]
+visible = false
+margin_right = 212.0
+margin_bottom = 26.0
+rect_min_size = Vector2( 150, 0 )
+icon = ExtResource( 9 )
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+bus = "Effect"
+
+[node name="accept" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 11 )
+bus = "Effect"
+
+[node name="hover" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+volume_db = -10.0
+bus = "Effect"
+
+[node name="swip" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 12 )
+volume_db = -10.0
+bus = "Effect"
+
+[node name="atypique" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 14 )
+volume_db = -5.0
+bus = "Effect"
+
+[node name="rare" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 21 )
+volume_db = -10.0
+bus = "Effect"
+
+[node name="tres_rare" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 20 )
+volume_db = -5.0
+bus = "Effect"
+
+[node name="divin" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 19 )
+volume_db = 5.0
+bus = "Effect"
+
+[node name="succes" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 17 )
+volume_db = -5.0
+bus = "Effect"
+
+[node name="TextureRect" type="ColorRect" parent="."]
+visible = false
+material = SubResource( 11 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="TextureRect"]
+anims/FadeIn = SubResource( 12 )
+anims/RESET = SubResource( 13 )
+
+[node name="ScreenBack" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 5 )
+
+[node name="Button" type="Button" parent="."]
+anchor_left = 0.03
+anchor_top = 0.024
+anchor_right = 0.154
+anchor_bottom = 0.061
+margin_left = -0.400002
+margin_top = -0.280001
+margin_right = -66.12
+margin_bottom = 0.079998
+text = "Triche, toute les cartes"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="Label" parent="."]
+visible = false
+margin_left = 50.0
+margin_top = -25.0
+margin_right = 1159.0
+margin_bottom = 694.0
+custom_fonts/font = SubResource( 62 )
+text = "1x Daurade
+1x Kuikui Cochon Ghoul elemental
+1x Maes Oscar Yves Allah 7 Kirbo 6 (doublon)
+1x Bananakat
+1x e ué
+1x TeXXit
+1x FISC
+1x Harmony55
+1x Kirbo
+1x Arab"
+valign = 1
+
+[node name="Doublons" type="Label" parent="."]
+visible = false
+margin_left = 12.0
+margin_top = 641.0
+margin_right = 1140.0
+margin_bottom = 701.0
+rect_pivot_offset = Vector2( -293, -337 )
+custom_fonts/font = SubResource( 62 )
+text = "Vous avez été remboursée à hauteur de 1000"
+valign = 1
+
+[node name="Obamium" type="AnimatedSprite" parent="Doublons"]
+position = Vector2( 1136, 31 )
+scale = Vector2( 0.15, 0.15 )
+frames = SubResource( 94 )
+playing = true
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 991, 794 )
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 16 )
+
+[node name="SuccesAnim" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 63 )
+anims/Slideup = SubResource( 64 )
+
+[node name="Node2D2" type="Node2D" parent="."]
+position = Vector2( 0, 700 )
+
+[node name="NormalCard10" parent="Node2D2" instance=ExtResource( 10 )]
+position = Vector2( 331, 351 )
+scale = Vector2( 0.6, 0.6 )
+
+[node name="CardAnimation" type="AnimationPlayer" parent="Node2D2/NormalCard10"]
+root_node = NodePath("../..")
+anims/GoRight = SubResource( 65 )
+"anims/Nouvelle animation" = SubResource( 66 )
+anims/RESET = SubResource( 67 )
+
+[node name="AllahLight" type="TextureRect" parent="Node2D2/NormalCard10"]
+visible = false
+material = SubResource( 61 )
+margin_left = -463.0
+margin_top = -833.0
+margin_right = 352.0
+margin_bottom = 338.0
+texture = ExtResource( 15 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NormalCard9" parent="Node2D2" instance=ExtResource( 10 )]
+position = Vector2( 331, 351 )
+scale = Vector2( 0.6, 0.6 )
+
+[node name="CardAnimation" type="AnimationPlayer" parent="Node2D2/NormalCard9"]
+root_node = NodePath("../..")
+anims/GoRight = SubResource( 68 )
+"anims/Nouvelle animation" = SubResource( 69 )
+anims/RESET = SubResource( 70 )
+
+[node name="NormalCard8" parent="Node2D2" instance=ExtResource( 10 )]
+position = Vector2( 331, 351 )
+scale = Vector2( 0.6, 0.6 )
+
+[node name="CardAnimation" type="AnimationPlayer" parent="Node2D2/NormalCard8"]
+root_node = NodePath("../..")
+anims/GoRight = SubResource( 71 )
+"anims/Nouvelle animation" = SubResource( 72 )
+anims/RESET = SubResource( 73 )
+
+[node name="NormalCard7" parent="Node2D2" instance=ExtResource( 10 )]
+position = Vector2( 331, 351 )
+scale = Vector2( 0.6, 0.6 )
+
+[node name="CardAnimation" type="AnimationPlayer" parent="Node2D2/NormalCard7"]
+root_node = NodePath("../..")
+anims/GoRight = SubResource( 74 )
+"anims/Nouvelle animation" = SubResource( 75 )
+anims/RESET = SubResource( 76 )
+
+[node name="NormalCard6" parent="Node2D2" instance=ExtResource( 10 )]
+position = Vector2( 331, 351 )
+scale = Vector2( 0.6, 0.6 )
+
+[node name="CardAnimation" type="AnimationPlayer" parent="Node2D2/NormalCard6"]
+root_node = NodePath("../..")
+anims/GoRight = SubResource( 77 )
+"anims/Nouvelle animation" = SubResource( 78 )
+anims/RESET = SubResource( 79 )
+
+[node name="NormalCard5" parent="Node2D2" instance=ExtResource( 10 )]
+position = Vector2( 331, 351 )
+scale = Vector2( 0.6, 0.6 )
+
+[node name="CardAnimation" type="AnimationPlayer" parent="Node2D2/NormalCard5"]
+root_node = NodePath("../..")
+anims/GoRight = SubResource( 80 )
+"anims/Nouvelle animation" = SubResource( 81 )
+anims/RESET = SubResource( 82 )
+
+[node name="NormalCard4" parent="Node2D2" instance=ExtResource( 10 )]
+position = Vector2( 331, 351 )
+scale = Vector2( 0.6, 0.6 )
+
+[node name="CardAnimation" type="AnimationPlayer" parent="Node2D2/NormalCard4"]
+root_node = NodePath("../..")
+anims/GoRight = SubResource( 83 )
+"anims/Nouvelle animation" = SubResource( 84 )
+anims/RESET = SubResource( 85 )
+
+[node name="NormalCard3" parent="Node2D2" instance=ExtResource( 10 )]
+position = Vector2( 331, 351 )
+scale = Vector2( 0.6, 0.6 )
+
+[node name="CardAnimation" type="AnimationPlayer" parent="Node2D2/NormalCard3"]
+root_node = NodePath("../..")
+anims/GoRight = SubResource( 86 )
+"anims/Nouvelle animation" = SubResource( 87 )
+anims/RESET = SubResource( 88 )
+
+[node name="NormalCard2" parent="Node2D2" instance=ExtResource( 10 )]
+position = Vector2( 331, 351 )
+scale = Vector2( 0.6, 0.6 )
+
+[node name="CardAnimation" type="AnimationPlayer" parent="Node2D2/NormalCard2"]
+root_node = NodePath("../..")
+anims/GoRight = SubResource( 89 )
+anims/RESET = SubResource( 90 )
+
+[node name="AllahLight" type="TextureRect" parent="Node2D2/NormalCard2"]
+visible = false
+material = SubResource( 61 )
+margin_left = -463.0
+margin_top = -833.0
+margin_right = 352.0
+margin_bottom = 338.0
+texture = ExtResource( 15 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NormalCard1" parent="Node2D2" instance=ExtResource( 10 )]
+position = Vector2( 331, 351 )
+scale = Vector2( 0.6, 0.6 )
+
+[node name="CardAnimation" type="AnimationPlayer" parent="Node2D2/NormalCard1"]
+root_node = NodePath("../..")
+anims/GoRight = SubResource( 91 )
+anims/RESET = SubResource( 92 )
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
+anims/GoRight = SubResource( 93 )
+
+[node name="Cache" type="TextureRect" parent="."]
+margin_left = 204.0
+margin_top = 171.0
+margin_right = 624.0
+margin_bottom = 771.0
+rect_scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 18 )
+expand = true
+stretch_mode = 5
+
+[connection signal="pressed" from="FunkyPack" to="." method="_on_FunkyPack_pressed"]
+[connection signal="item_selected" from="TitleBg/TitleLayout/CategoriesLayout/ClassLayout/Class" to="." method="_on_Class_item_selected"]
+[connection signal="toggled" from="TitleBg/TitleLayout/CategoriesLayout/ClassLayout/Class" to="." method="_on_Class_toggled"]
+[connection signal="item_selected" from="TitleBg/TitleLayout/CategoriesLayout/RarityLayout/Rarity" to="." method="_on_Rarity_item_selected"]
+[connection signal="toggled" from="TitleBg/TitleLayout/CategoriesLayout/RarityLayout/Rarity" to="." method="_on_Rarity_toggled"]
+[connection signal="item_selected" from="TitleBg/TitleLayout/ValuesLayout/Values" to="." method="_on_Values_item_selected"]
+[connection signal="toggled" from="TitleBg/TitleLayout/ValuesLayout/Values" to="." method="_on_Values_toggled"]
+[connection signal="item_selected" from="TitleBg/TitleLayout/ValuesLayout/ComparisionLayout/ComparisonOperator" to="." method="_on_ComparisonOperator_item_selected"]
+[connection signal="pressed" from="TitleBg/TitleLayout/ValuesLayout/ComparisionLayout/ComparisonOperator" to="." method="_on_ComparisonOperator_pressed"]
+[connection signal="toggled" from="TitleBg/TitleLayout/ValuesLayout/ComparisionLayout/ComparisonOperator" to="." method="_on_ComparisonOperator_toggled"]
+[connection signal="value_changed" from="TitleBg/TitleLayout/ValuesLayout/ComparisionLayout/ComparisonValue" to="." method="_on_ComparisonValue_value_changed"]
+[connection signal="toggled" from="TitleBg/TitleLayout/SortLayout/RaritySort" to="." method="_on_RaritySort_toggled"]
+[connection signal="toggled" from="TitleBg/TitleLayout/SortLayout/ManaSort" to="." method="_on_ManaSort_toggled"]
+[connection signal="toggled" from="TitleBg/TitleLayout/SortLayout/NameSort" to="." method="_on_NameSort_toggled"]
+[connection signal="item_selected" from="TextsLayout/Texts" to="." method="_on_Texts_item_selected"]
+[connection signal="toggled" from="TextsLayout/Texts" to="." method="_on_Texts_toggled"]
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

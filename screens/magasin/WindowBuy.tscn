@@ -1,0 +1,276 @@
+[gd_scene load_steps=91 format=2]
+
+[ext_resource path="res://screens/magasin/BackGroundMagasin.png" type="Texture" id=1]
+[ext_resource path="res://fonts/SuperMario.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://screens/casier/obamium/frame_27_delay-0.03s.png" type="Texture" id=3]
+[ext_resource path="res://screens/casier/obamium/frame_25_delay-0.03s.png" type="Texture" id=4]
+[ext_resource path="res://screens/casier/obamium/frame_28_delay-0.03s.png" type="Texture" id=5]
+[ext_resource path="res://screens/casier/obamium/frame_30_delay-0.03s.png" type="Texture" id=6]
+[ext_resource path="res://screens/casier/obamium/frame_31_delay-0.03s.png" type="Texture" id=7]
+[ext_resource path="res://screens/casier/obamium/frame_20_delay-0.03s.png" type="Texture" id=8]
+[ext_resource path="res://screens/casier/obamium/frame_29_delay-0.03s.png" type="Texture" id=9]
+[ext_resource path="res://screens/casier/obamium/frame_26_delay-0.03s.png" type="Texture" id=10]
+[ext_resource path="res://screens/casier/obamium/frame_17_delay-0.03s.png" type="Texture" id=11]
+[ext_resource path="res://screens/casier/obamium/frame_43_delay-0.03s.png" type="Texture" id=12]
+[ext_resource path="res://screens/casier/obamium/frame_32_delay-0.03s.png" type="Texture" id=13]
+[ext_resource path="res://screens/casier/obamium/frame_33_delay-0.03s.png" type="Texture" id=14]
+[ext_resource path="res://screens/casier/obamium/frame_24_delay-0.03s.png" type="Texture" id=15]
+[ext_resource path="res://screens/casier/obamium/frame_16_delay-0.03s.png" type="Texture" id=16]
+[ext_resource path="res://screens/casier/obamium/frame_02_delay-0.03s.png" type="Texture" id=17]
+[ext_resource path="res://screens/casier/obamium/frame_04_delay-0.03s.png" type="Texture" id=18]
+[ext_resource path="res://screens/casier/obamium/frame_37_delay-0.03s.png" type="Texture" id=19]
+[ext_resource path="res://screens/casier/obamium/frame_36_delay-0.03s.png" type="Texture" id=20]
+[ext_resource path="res://screens/casier/obamium/frame_38_delay-0.03s.png" type="Texture" id=21]
+[ext_resource path="res://screens/casier/obamium/frame_21_delay-0.03s.png" type="Texture" id=22]
+[ext_resource path="res://screens/casier/obamium/frame_45_delay-0.03s.png" type="Texture" id=23]
+[ext_resource path="res://screens/casier/obamium/frame_00_delay-0.03s.png" type="Texture" id=24]
+[ext_resource path="res://screens/casier/obamium/frame_12_delay-0.03s.png" type="Texture" id=25]
+[ext_resource path="res://screens/casier/obamium/frame_49_delay-0.03s.png" type="Texture" id=26]
+[ext_resource path="res://screens/casier/obamium/frame_46_delay-0.03s.png" type="Texture" id=27]
+[ext_resource path="res://screens/casier/obamium/frame_35_delay-0.03s.png" type="Texture" id=28]
+[ext_resource path="res://screens/casier/obamium/frame_15_delay-0.03s.png" type="Texture" id=29]
+[ext_resource path="res://screens/casier/obamium/frame_41_delay-0.03s.png" type="Texture" id=30]
+[ext_resource path="res://screens/casier/obamium/frame_18_delay-0.03s.png" type="Texture" id=31]
+[ext_resource path="res://screens/casier/obamium/frame_07_delay-0.03s.png" type="Texture" id=32]
+[ext_resource path="res://screens/casier/obamium/frame_47_delay-0.03s.png" type="Texture" id=33]
+[ext_resource path="res://screens/casier/obamium/frame_48_delay-0.03s.png" type="Texture" id=34]
+[ext_resource path="res://screens/casier/obamium/frame_34_delay-0.03s.png" type="Texture" id=35]
+[ext_resource path="res://screens/casier/obamium/frame_13_delay-0.03s.png" type="Texture" id=36]
+[ext_resource path="res://screens/casier/obamium/frame_19_delay-0.03s.png" type="Texture" id=37]
+[ext_resource path="res://screens/casier/obamium/frame_03_delay-0.03s.png" type="Texture" id=38]
+[ext_resource path="res://screens/casier/obamium/frame_08_delay-0.03s.png" type="Texture" id=39]
+[ext_resource path="res://screens/casier/obamium/frame_09_delay-0.03s.png" type="Texture" id=40]
+[ext_resource path="res://screens/casier/obamium/frame_06_delay-0.03s.png" type="Texture" id=41]
+[ext_resource path="res://screens/casier/obamium/frame_23_delay-0.03s.png" type="Texture" id=42]
+[ext_resource path="res://screens/casier/obamium/frame_22_delay-0.03s.png" type="Texture" id=43]
+[ext_resource path="res://screens/casier/obamium/frame_42_delay-0.03s.png" type="Texture" id=44]
+[ext_resource path="res://screens/casier/obamium/frame_44_delay-0.03s.png" type="Texture" id=45]
+[ext_resource path="res://screens/casier/obamium/frame_40_delay-0.03s.png" type="Texture" id=46]
+[ext_resource path="res://screens/casier/obamium/frame_11_delay-0.03s.png" type="Texture" id=47]
+[ext_resource path="res://screens/casier/obamium/frame_05_delay-0.03s.png" type="Texture" id=48]
+[ext_resource path="res://screens/casier/obamium/frame_10_delay-0.03s.png" type="Texture" id=49]
+[ext_resource path="res://screens/casier/obamium/frame_14_delay-0.03s.png" type="Texture" id=50]
+[ext_resource path="res://screens/casier/obamium/frame_39_delay-0.03s.png" type="Texture" id=51]
+[ext_resource path="res://screens/casier/obamium/frame_01_delay-0.03s.png" type="Texture" id=52]
+[ext_resource path="res://screens/magasin/FunkyPackIcon.png" type="Texture" id=53]
+[ext_resource path="res://screens/magasin/WindowBuy.gd" type="Script" id=54]
+[ext_resource path="res://screens/magasin/AcheterHover.png" type="Texture" id=55]
+[ext_resource path="res://screens/magasin/AcheterDisabled.png" type="Texture" id=56]
+[ext_resource path="res://screens/magasin/AcheterBase.png" type="Texture" id=57]
+[ext_resource path="res://audio/Effect/confetti.wav" type="AudioStream" id=58]
+[ext_resource path="res://screens/board/Obamasphere/1.png" type="Texture" id=59]
+[ext_resource path="res://screens/board/Obamasphere/6.png" type="Texture" id=60]
+[ext_resource path="res://screens/board/Obamasphere/4.png" type="Texture" id=61]
+[ext_resource path="res://screens/board/Obamasphere/2.png" type="Texture" id=62]
+[ext_resource path="res://screens/board/Obamasphere/8.png" type="Texture" id=63]
+[ext_resource path="res://screens/board/Obamasphere/7.png" type="Texture" id=64]
+[ext_resource path="res://screens/board/Obamasphere/9.png" type="Texture" id=65]
+[ext_resource path="res://screens/board/Obamasphere/10.png" type="Texture" id=66]
+[ext_resource path="res://screens/board/Obamasphere/11.png" type="Texture" id=67]
+[ext_resource path="res://screens/board/Obamasphere/12.png" type="Texture" id=68]
+[ext_resource path="res://screens/board/Obamasphere/3.png" type="Texture" id=69]
+[ext_resource path="res://screens/board/Obamasphere/13.png" type="Texture" id=70]
+[ext_resource path="res://screens/board/Obamasphere/5.png" type="Texture" id=71]
+[ext_resource path="res://screens/board/Obamasphere/20.png" type="Texture" id=72]
+[ext_resource path="res://screens/board/Obamasphere/19.png" type="Texture" id=73]
+[ext_resource path="res://screens/board/Obamasphere/16.png" type="Texture" id=74]
+[ext_resource path="res://screens/board/Obamasphere/14.png" type="Texture" id=75]
+[ext_resource path="res://screens/board/Obamasphere/15.png" type="Texture" id=76]
+[ext_resource path="res://screens/board/Obamasphere/17.png" type="Texture" id=77]
+[ext_resource path="res://screens/board/Obamasphere/21.png" type="Texture" id=78]
+[ext_resource path="res://screens/board/Obamasphere/18.png" type="Texture" id=79]
+[ext_resource path="res://screens/board/Obamasphere/23.png" type="Texture" id=80]
+[ext_resource path="res://screens/board/Obamasphere/22.png" type="Texture" id=81]
+[ext_resource path="res://screens/magasin/XRouge.png" type="Texture" id=82]
+[ext_resource path="res://screens/magasin/AcheterPress.png" type="Texture" id=83]
+[ext_resource path="res://screens/magasin/EcouterBase.png" type="Texture" id=84]
+[ext_resource path="res://screens/magasin/EcouterPress.png" type="Texture" id=85]
+[ext_resource path="res://screens/magasin/EcouterHover.png" type="Texture" id=86]
+
+[sub_resource type="DynamicFont" id=1]
+size = 52
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 30
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 24 ), ExtResource( 52 ), ExtResource( 17 ), ExtResource( 38 ), ExtResource( 18 ), ExtResource( 48 ), ExtResource( 41 ), ExtResource( 32 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 49 ), ExtResource( 47 ), ExtResource( 25 ), ExtResource( 36 ), ExtResource( 50 ), ExtResource( 29 ), ExtResource( 16 ), ExtResource( 11 ), ExtResource( 31 ), ExtResource( 37 ), ExtResource( 8 ), ExtResource( 22 ), ExtResource( 43 ), ExtResource( 42 ), ExtResource( 15 ), ExtResource( 4 ), ExtResource( 10 ), ExtResource( 3 ), ExtResource( 5 ), ExtResource( 9 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 35 ), ExtResource( 28 ), ExtResource( 20 ), ExtResource( 19 ), ExtResource( 21 ), ExtResource( 51 ), ExtResource( 46 ), ExtResource( 30 ), ExtResource( 44 ), ExtResource( 12 ), ExtResource( 45 ), ExtResource( 23 ), ExtResource( 27 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 26 ) ],
+"loop": true,
+"name": "default",
+"speed": 24.0
+} ]
+
+[sub_resource type="SpriteFrames" id=5]
+animations = [ {
+"frames": [ ExtResource( 59 ), ExtResource( 62 ), ExtResource( 69 ), ExtResource( 61 ), ExtResource( 71 ), ExtResource( 60 ), ExtResource( 64 ), ExtResource( 63 ), ExtResource( 65 ), ExtResource( 66 ), ExtResource( 67 ), ExtResource( 68 ), ExtResource( 70 ), ExtResource( 75 ), ExtResource( 76 ), ExtResource( 74 ), ExtResource( 77 ), ExtResource( 79 ), ExtResource( 73 ), ExtResource( 72 ), ExtResource( 78 ), ExtResource( 81 ), ExtResource( 80 ) ],
+"loop": true,
+"name": "default",
+"speed": 24.0
+} ]
+
+[node name="WindowsBuy" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 54 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 1280.0
+margin_bottom = 722.0
+texture = ExtResource( 1 )
+expand = true
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Prix" type="Label" parent="."]
+margin_left = 322.0
+margin_top = 514.0
+margin_right = 664.0
+margin_bottom = 567.0
+rect_pivot_offset = Vector2( 297, 15 )
+custom_fonts/font = SubResource( 1 )
+text = "250"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Nom" type="Label" parent="."]
+margin_left = 233.0
+margin_top = 143.0
+margin_right = 612.0
+margin_bottom = 196.0
+rect_pivot_offset = Vector2( 297, 15 )
+custom_fonts/font = SubResource( 1 )
+text = "Funky Pack"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Rarete" type="Label" parent="."]
+visible = false
+margin_left = 637.0
+margin_top = 263.0
+margin_right = 1016.0
+margin_bottom = 316.0
+rect_pivot_offset = Vector2( 297, 15 )
+custom_fonts/font = SubResource( 1 )
+text = "Commun"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Description" type="RichTextLabel" parent="."]
+margin_left = 665.0
+margin_top = 206.0
+margin_right = 1015.0
+margin_bottom = 492.0
+custom_fonts/normal_font = SubResource( 4 )
+text = "Description : Avec ses packs, vous pourrez peut être trouver des cartes cool, mais peut être pas ça reste du pif, unpe comme les NFT sauf que dans ce cas la ça ne coute pas du vrais argent, mais seulement de l'obamium, par contre #sex-admin incorporated ne promet aucun retour sur investissement en argent réel ou fictif baser sur l'achat d'un Funky Pack, même si trouver des cartes rares peut vous permettre de gagner plus d'obamium lors de vos games."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="TextureButton" parent="."]
+margin_left = 803.0
+margin_top = 518.0
+margin_right = 1034.0
+margin_bottom = 561.0
+texture_normal = ExtResource( 57 )
+texture_pressed = ExtResource( 83 )
+texture_hover = ExtResource( 55 )
+texture_disabled = ExtResource( 56 )
+expand = true
+stretch_mode = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button4" type="TextureButton" parent="."]
+visible = false
+margin_left = 571.0
+margin_top = 518.0
+margin_right = 802.0
+margin_bottom = 561.0
+texture_normal = ExtResource( 84 )
+texture_pressed = ExtResource( 85 )
+texture_hover = ExtResource( 86 )
+expand = true
+stretch_mode = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Exit" type="TextureButton" parent="."]
+margin_left = 1005.0
+margin_top = 155.0
+margin_right = 1042.0
+margin_bottom = 192.0
+texture_normal = ExtResource( 82 )
+expand = true
+stretch_mode = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Obamium" type="AnimatedSprite" parent="."]
+position = Vector2( 281, 538 )
+scale = Vector2( 0.2, 0.2 )
+frames = SubResource( 2 )
+frame = 9
+playing = true
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 418, 352 )
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 53 )
+
+[node name="Button2" type="Button" parent="."]
+margin_left = -1.0
+margin_top = 6.0
+margin_right = 139.0
+margin_bottom = 26.0
+text = "cheat 1000 obamium"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button3" type="Button" parent="."]
+margin_left = 167.0
+margin_top = 7.0
+margin_right = 315.0
+margin_bottom = 27.0
+text = "cheat set obamium"
+
+[node name="Trumpet" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 58 )
+
+[node name="TextEdit" type="TextEdit" parent="."]
+margin_left = 335.0
+margin_top = 7.0
+margin_right = 538.0
+margin_bottom = 47.0
+
+[node name="Obamasphere" type="AnimatedSprite" parent="."]
+visible = false
+position = Vector2( 413, 355 )
+scale = Vector2( 0.35, 0.35 )
+frames = SubResource( 5 )
+frame = 9
+playing = true
+
+[node name="EmoteSound" type="AudioStreamPlayer" parent="."]
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="Button4" to="." method="_on_Button4_pressed"]
+[connection signal="pressed" from="Exit" to="." method="_on_Exit_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_Button2_pressed"]
+[connection signal="pressed" from="Button3" to="." method="_on_Button3_pressed"]

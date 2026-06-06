@@ -1,0 +1,1829 @@
+[gd_scene load_steps=144 format=2]
+
+[ext_resource path="res://screens/board/board_screen.gd" type="Script" id=1]
+[ext_resource path="res://widgets/small_button/small_button.tscn" type="PackedScene" id=2]
+[ext_resource path="res://addons/cardengine/container/board.gd" type="Script" id=3]
+[ext_resource path="res://containers/hand/hand.tscn" type="PackedScene" id=4]
+[ext_resource path="res://containers/visible_pile/visible_pile.tscn" type="PackedScene" id=5]
+[ext_resource path="res://cards/normal/normal_card.tscn" type="PackedScene" id=6]
+[ext_resource path="res://containers/hidden_pile/hidden_pile.tscn" type="PackedScene" id=7]
+[ext_resource path="res://screens/board/ArenaTest.png" type="Texture" id=8]
+[ext_resource path="res://network/Players.tscn" type="PackedScene" id=9]
+[ext_resource path="res://fonts/SuperMario.ttf" type="DynamicFontData" id=10]
+[ext_resource path="res://network/Network_setup.gd" type="Script" id=11]
+[ext_resource path="res://screens/board/Button.png" type="Texture" id=12]
+[ext_resource path="res://screens/board/HealthBarEnnemie.png" type="Texture" id=13]
+[ext_resource path="res://screens/board/HealthBarOrbeEnnemie.png" type="Texture" id=14]
+[ext_resource path="res://screens/board/bobux.png" type="Texture" id=15]
+[ext_resource path="res://screens/board/HealthBarEmpty.png" type="Texture" id=16]
+[ext_resource path="res://screens/board/HealthBar.png" type="Texture" id=17]
+[ext_resource path="res://audio/Effect/nexturn.wav" type="AudioStream" id=18]
+[ext_resource path="res://screens/board/EmoteBarre.png" type="Texture" id=19]
+[ext_resource path="res://audio/Effect/spawn-sound.wav" type="AudioStream" id=20]
+[ext_resource path="res://audio/Effect/draw1.wav" type="AudioStream" id=21]
+[ext_resource path="res://widgets/menu_button/prochain_tour_normal.png" type="Texture" id=22]
+[ext_resource path="res://widgets/menu_button/prochain_tour_clicked.png" type="Texture" id=23]
+[ext_resource path="res://widgets/menu_button/prochain_tour_disabled.png" type="Texture" id=24]
+[ext_resource path="res://widgets/menu_button/quitter_pressed.png" type="Texture" id=25]
+[ext_resource path="res://widgets/menu_button/pioche_normal.png" type="Texture" id=26]
+[ext_resource path="res://widgets/menu_button/quitter_base.png" type="Texture" id=27]
+[ext_resource path="res://widgets/menu_button/pioche_pressed.png" type="Texture" id=28]
+[ext_resource path="res://widgets/menu_button/pioche_disabled.png" type="Texture" id=29]
+[ext_resource path="res://widgets/menu_button/Zeko/future.png" type="Texture" id=30]
+[ext_resource path="res://screens/board/card_slot.png" type="Texture" id=31]
+[ext_resource path="res://audio/Effect/click-sound.wav" type="AudioStream" id=32]
+[ext_resource path="res://audio/Effect/strongcard.wav" type="AudioStream" id=33]
+[ext_resource path="res://audio/Effect/hurt1.wav" type="AudioStream" id=34]
+[ext_resource path="res://screens/board/HealthBarOrbe.png" type="Texture" id=35]
+[ext_resource path="res://screens/board/Orbe_Bleue.png" type="Texture" id=36]
+[ext_resource path="res://audio/Effect/bruh.wav" type="AudioStream" id=37]
+[ext_resource path="res://screens/board/Orbe/Skin/HautForme.png" type="Texture" id=38]
+[ext_resource path="res://screens/casier/indicator.png" type="Texture" id=39]
+[ext_resource path="res://audio/Effect/45 seconds.wav" type="AudioStream" id=40]
+[ext_resource path="res://widgets/menu_button/quitter_hover.png" type="Texture" id=41]
+[ext_resource path="res://screens/board/Orbe/Skin/Nerd.png" type="Texture" id=42]
+[ext_resource path="res://screens/board/Orbe_France.png" type="Texture" id=43]
+[ext_resource path="res://screens/board/SpeachToDown.png" type="Texture" id=44]
+[ext_resource path="res://screens/board/SpeachToUp.png" type="Texture" id=45]
+[ext_resource path="res://audio/battle.ogg" type="AudioStream" id=46]
+[ext_resource path="res://screens/board/EmojiButton.png" type="Texture" id=47]
+[ext_resource path="res://screens/board/fnafJumpscare/frame_10_delay-0.04s.png" type="Texture" id=48]
+[ext_resource path="res://screens/board/fnafJumpscare/frame_09_delay-0.04s.png" type="Texture" id=49]
+[ext_resource path="res://screens/board/fnafJumpscare/frame_05_delay-0.04s.png" type="Texture" id=50]
+[ext_resource path="res://screens/board/fnafJumpscare/frame_14_delay-0.04s.png" type="Texture" id=51]
+[ext_resource path="res://screens/board/fnafJumpscare/frame_02_delay-0.04s.png" type="Texture" id=52]
+[ext_resource path="res://screens/board/fnafJumpscare/frame_08_delay-0.04s.png" type="Texture" id=53]
+[ext_resource path="res://screens/board/fnafJumpscare/frame_03_delay-0.04s.png" type="Texture" id=54]
+[ext_resource path="res://screens/board/fnafJumpscare/frame_15_delay-0.04s.png" type="Texture" id=55]
+[ext_resource path="res://screens/board/fnafJumpscare/frame_18_delay-0.04s.png" type="Texture" id=56]
+[ext_resource path="res://screens/board/fnafJumpscare/frame_00_delay-0.04s.png" type="Texture" id=57]
+[ext_resource path="res://screens/board/fnafJumpscare/frame_04_delay-0.04s.png" type="Texture" id=58]
+[ext_resource path="res://screens/board/fnafJumpscare/frame_06_delay-0.04s.png" type="Texture" id=59]
+[ext_resource path="res://screens/board/fnafJumpscare/frame_07_delay-0.04s.png" type="Texture" id=60]
+[ext_resource path="res://screens/board/fnafJumpscare/frame_17_delay-0.04s.png" type="Texture" id=61]
+[ext_resource path="res://screens/board/fnafJumpscare/frame_01_delay-0.04s.png" type="Texture" id=62]
+[ext_resource path="res://screens/board/fnafJumpscare/frame_16_delay-0.04s.png" type="Texture" id=63]
+[ext_resource path="res://screens/board/fnafJumpscare/frame_12_delay-0.04s.png" type="Texture" id=64]
+[ext_resource path="res://screens/board/fnafJumpscare/frame_13_delay-0.04s.png" type="Texture" id=65]
+[ext_resource path="res://screens/board/fnafJumpscare/frame_11_delay-0.04s.png" type="Texture" id=66]
+[ext_resource path="res://audio/Effect/jumpscare.wav" type="AudioStream" id=67]
+[ext_resource path="res://screens/board/start/Bande.png" type="Texture" id=68]
+[ext_resource path="res://screens/board/start/coeur.png" type="Texture" id=69]
+[ext_resource path="res://screens/board/start/YouIcon.png" type="Texture" id=70]
+[ext_resource path="res://screens/board/start/button/JoinBase.png" type="Texture" id=71]
+[ext_resource path="res://screens/board/start/button/CreateBase.png" type="Texture" id=72]
+[ext_resource path="res://screens/board/start/EnnemieIcon.png" type="Texture" id=73]
+[ext_resource path="res://screens/board/start/Crown.png" type="Texture" id=74]
+[ext_resource path="res://screens/board/start/Text.png" type="Texture" id=75]
+[ext_resource path="res://screens/board/start/button/LanceBase.png" type="Texture" id=76]
+[ext_resource path="res://screens/board/start/button/LanceDisabled.png" type="Texture" id=77]
+[ext_resource path="res://screens/board/GreenOwner.png" type="Texture" id=78]
+[ext_resource path="res://screens/board/RedOwner.png" type="Texture" id=79]
+[ext_resource path="res://screens/casier/button/RetourBase.png" type="Texture" id=80]
+[ext_resource path="res://screens/casier/button/RetourClicked.png" type="Texture" id=81]
+[ext_resource path="res://screens/casier/button/RetourHover.png" type="Texture" id=82]
+[ext_resource path="res://screens/board/Choix2.png" type="Texture" id=83]
+[ext_resource path="res://screens/board/choix1.png" type="Texture" id=84]
+[ext_resource path="res://screens/menu/succes/AffaireFamille.png" type="Texture" id=85]
+[ext_resource path="res://audio/Effect/succes.wav" type="AudioStream" id=86]
+[ext_resource path="res://screens/board/Obamasphere/19.png" type="Texture" id=87]
+[ext_resource path="res://screens/board/Obamasphere/15.png" type="Texture" id=88]
+[ext_resource path="res://screens/board/Obamasphere/16.png" type="Texture" id=89]
+[ext_resource path="res://screens/board/Obamasphere/10.png" type="Texture" id=90]
+[ext_resource path="res://screens/board/Obamasphere/17.png" type="Texture" id=91]
+[ext_resource path="res://screens/board/Obamasphere/21.png" type="Texture" id=92]
+[ext_resource path="res://screens/board/Obamasphere/18.png" type="Texture" id=93]
+[ext_resource path="res://screens/board/Obamasphere/14.png" type="Texture" id=94]
+[ext_resource path="res://screens/board/Obamasphere/23.png" type="Texture" id=95]
+[ext_resource path="res://screens/board/Obamasphere/4.png" type="Texture" id=96]
+[ext_resource path="res://screens/board/Obamasphere/3.png" type="Texture" id=97]
+[ext_resource path="res://screens/board/Obamasphere/13.png" type="Texture" id=98]
+[ext_resource path="res://screens/board/Obamasphere/5.png" type="Texture" id=99]
+[ext_resource path="res://screens/board/Obamasphere/2.png" type="Texture" id=100]
+[ext_resource path="res://screens/board/Obamasphere/7.png" type="Texture" id=101]
+[ext_resource path="res://screens/board/Obamasphere/9.png" type="Texture" id=102]
+[ext_resource path="res://screens/board/Obamasphere/12.png" type="Texture" id=103]
+[ext_resource path="res://screens/board/Obamasphere/1.png" type="Texture" id=104]
+[ext_resource path="res://screens/board/Obamasphere/6.png" type="Texture" id=105]
+[ext_resource path="res://screens/board/Obamasphere/11.png" type="Texture" id=106]
+[ext_resource path="res://screens/board/Obamasphere/8.png" type="Texture" id=107]
+[ext_resource path="res://screens/board/Obamasphere/20.png" type="Texture" id=108]
+[ext_resource path="res://screens/board/Obamasphere/22.png" type="Texture" id=109]
+[ext_resource path="res://screens/board/orbe_goku.png" type="Texture" id=110]
+[ext_resource path="res://screens/board/skin_masquarade.png" type="Texture" id=111]
+[ext_resource path="res://screens/board/unit_test.gd" type="Script" id=112]
+
+[sub_resource type="Animation" id=25]
+resource_name = "Hover"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1237, 502 ), Vector2( 1055, 502 ) ]
+}
+
+[sub_resource type="Animation" id=26]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1237, 502 ) ]
+}
+
+[sub_resource type="Animation" id=23]
+resource_name = "Hover"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1237, 438 ), Vector2( 1055, 438 ) ]
+}
+
+[sub_resource type="Animation" id=24]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1237, 438 ) ]
+}
+
+[sub_resource type="Shader" id=32]
+code = "/*
+Shader from Godot Shaders - the free shader library.
+godotshaders.com/shader/teleport-effect
+
+This shader is under CC0 license. Feel free to use, improve and 
+change this shader according to your needs and consider sharing 
+the modified result on godotshaders.com.
+*/
+
+shader_type canvas_item;
+
+uniform float progress : hint_range(0.0, 1.0);
+uniform float noise_desnity = 60;
+uniform float beam_size : hint_range(0.01, 0.15);
+uniform vec4 color : hint_color = vec4(0.0, 1.02, 1.2, 1.0);
+
+// We are generating our own noise here. You could experiment with the 
+// built in SimplexNoise or your own noise texture for other effects.
+vec2 random(vec2 uv){
+    uv = vec2( dot(uv, vec2(127.1,311.7) ),
+               dot(uv, vec2(269.5,183.3) ) );
+    return -1.0 + 2.0 * fract(sin(uv) * 43758.5453123);
+}
+
+float noise(vec2 uv) {
+    vec2 uv_index = floor(uv);
+    vec2 uv_fract = fract(uv);
+
+    vec2 blur = smoothstep(0.0, 1.0, uv_fract);
+
+    return mix( mix( dot( random(uv_index + vec2(0.0,0.0) ), uv_fract - vec2(0.0,0.0) ),
+                     dot( random(uv_index + vec2(1.0,0.0) ), uv_fract - vec2(1.0,0.0) ), blur.x),
+                mix( dot( random(uv_index + vec2(0.0,1.0) ), uv_fract - vec2(0.0,1.0) ),
+                     dot( random(uv_index + vec2(1.0,1.0) ), uv_fract - vec2(1.0,1.0) ), blur.x), blur.y) * 0.5 + 0.5;
+}
+
+void fragment()
+{
+	vec4 tex = texture(TEXTURE, UV);
+	
+	float noise = noise(UV * noise_desnity) * UV.y;
+	
+	float d1 = step(progress, noise);
+	float d2 = step(progress - beam_size, noise);
+	
+	vec3 beam = vec3(d2 - d1) * color.rgb;
+	
+	tex.rgb += beam;
+	tex.a *= d2;
+	
+	COLOR = tex;
+}"
+
+[sub_resource type="ShaderMaterial" id=7]
+shader = SubResource( 32 )
+shader_param/progress = null
+shader_param/noise_desnity = 60.0
+shader_param/beam_size = null
+shader_param/color = Color( 0, 1.02, 1.2, 1 )
+
+[sub_resource type="SpriteFrames" id=31]
+animations = [ {
+"frames": [ ExtResource( 104 ), ExtResource( 100 ), ExtResource( 97 ), ExtResource( 96 ), ExtResource( 99 ), ExtResource( 105 ), ExtResource( 101 ), ExtResource( 107 ), ExtResource( 102 ), ExtResource( 90 ), ExtResource( 106 ), ExtResource( 103 ), ExtResource( 98 ), ExtResource( 94 ), ExtResource( 88 ), ExtResource( 89 ), ExtResource( 91 ), ExtResource( 93 ), ExtResource( 87 ), ExtResource( 108 ), ExtResource( 92 ), ExtResource( 109 ), ExtResource( 95 ) ],
+"loop": true,
+"name": "default",
+"speed": 24.0
+} ]
+
+[sub_resource type="DynamicFont" id=4]
+size = 70
+outline_size = 3
+outline_color = Color( 0, 0.670588, 1, 1 )
+font_data = ExtResource( 10 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 30
+outline_size = 3
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 10 )
+
+[sub_resource type="Animation" id=15]
+resource_name = "Despawn"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../Bubble:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=14]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../Bubble:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=13]
+resource_name = "Spawn"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../Bubble:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=16]
+resource_name = "Despawn"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../BubbleEnnemie:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=17]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../BubbleEnnemie:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=18]
+resource_name = "Spawn"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../BubbleEnnemie:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="DynamicFont" id=5]
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 10 )
+
+[sub_resource type="DynamicFont" id=8]
+size = 67
+outline_size = 5
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 10 )
+
+[sub_resource type="SpriteFrames" id=19]
+animations = [ {
+"frames": [ ExtResource( 57 ), ExtResource( 62 ), ExtResource( 52 ), ExtResource( 54 ), ExtResource( 58 ), ExtResource( 50 ), ExtResource( 59 ), ExtResource( 60 ), ExtResource( 53 ), ExtResource( 49 ), ExtResource( 48 ), ExtResource( 66 ), ExtResource( 64 ), ExtResource( 65 ), ExtResource( 51 ), ExtResource( 55 ), ExtResource( 63 ), ExtResource( 61 ), ExtResource( 56 ) ],
+"loop": true,
+"name": "default",
+"speed": 24.0
+} ]
+
+[sub_resource type="Animation" id=27]
+resource_name = "Hover"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -209, 4 ), Vector2( 0, 4 ) ]
+}
+
+[sub_resource type="Animation" id=28]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 7, 4 ) ]
+}
+
+[sub_resource type="DynamicFont" id=22]
+size = 64
+outline_size = 3
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 10 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 28
+font_data = ExtResource( 10 )
+
+[sub_resource type="StyleBoxEmpty" id=20]
+
+[sub_resource type="StyleBoxEmpty" id=21]
+
+[sub_resource type="DynamicFont" id=12]
+size = 80
+outline_size = 5
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 10 )
+
+[sub_resource type="StyleBoxFlat" id=9]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+shadow_color = Color( 0, 0, 0, 0.513726 )
+
+[sub_resource type="StyleBoxFlat" id=10]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=11]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="DynamicFont" id=1]
+size = 40
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 10 )
+
+[sub_resource type="Animation" id=29]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 991, 794 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=30]
+resource_name = "Slideup"
+length = 2.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 1.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 991, 794 ), Vector2( 991, 610 ), Vector2( 991, 610 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1.8, 2.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[node name="BoardScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 1280.0
+margin_bottom = 720.0
+texture = ExtResource( 8 )
+
+[node name="Background" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 1, 1, 1, 0.313726 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Board" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+
+[node name="Pile1" parent="Board" instance=ExtResource( 5 )]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -610.0
+margin_top = -12.0
+margin_right = -457.0
+margin_bottom = 198.0
+
+[node name="ColorRect" type="TextureRect" parent="Board/Pile1"]
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+texture = ExtResource( 31 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Pile21" parent="Board" instance=ExtResource( 5 )]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -610.0
+margin_top = -243.0
+margin_right = -457.0
+margin_bottom = -33.0
+
+[node name="ColorRect" type="TextureRect" parent="Board/Pile21"]
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+texture = ExtResource( 31 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Pile2" parent="Board" instance=ExtResource( 5 )]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -438.0
+margin_top = -12.0
+margin_right = -285.0
+margin_bottom = 198.0
+
+[node name="ColorRect" type="TextureRect" parent="Board/Pile2"]
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+texture = ExtResource( 31 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Pile22" parent="Board" instance=ExtResource( 5 )]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -438.0
+margin_top = -241.0
+margin_right = -285.0
+margin_bottom = -31.0
+
+[node name="ColorRect" type="TextureRect" parent="Board/Pile22"]
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+texture = ExtResource( 31 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Pile23" parent="Board" instance=ExtResource( 5 )]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -267.0
+margin_top = -242.0
+margin_right = -114.0
+margin_bottom = -32.0
+
+[node name="ColorRect" type="TextureRect" parent="Board/Pile23"]
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+texture = ExtResource( 31 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Pile4" parent="Board" instance=ExtResource( 5 )]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -95.0
+margin_top = -12.0
+margin_right = 58.0
+margin_bottom = 198.0
+
+[node name="ColorRect" type="TextureRect" parent="Board/Pile4"]
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+texture = ExtResource( 31 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Pile3" parent="Board" instance=ExtResource( 5 )]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -267.0
+margin_top = -12.0
+margin_right = -114.0
+margin_bottom = 198.0
+
+[node name="ColorRect" type="TextureRect" parent="Board/Pile3"]
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+texture = ExtResource( 31 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Pile24" parent="Board" instance=ExtResource( 5 )]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -95.0
+margin_top = -242.0
+margin_right = 58.0
+margin_bottom = -32.0
+
+[node name="ColorRect" type="TextureRect" parent="Board/Pile24"]
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+texture = ExtResource( 31 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Pile5" parent="Board" instance=ExtResource( 5 )]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 77.0
+margin_top = -12.0
+margin_right = 230.0
+margin_bottom = 198.0
+
+[node name="ColorRect" type="TextureRect" parent="Board/Pile5"]
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+texture = ExtResource( 31 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Pile25" parent="Board" instance=ExtResource( 5 )]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 77.0
+margin_top = -243.0
+margin_right = 230.0
+margin_bottom = -33.0
+
+[node name="ColorRect" type="TextureRect" parent="Board/Pile25"]
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+texture = ExtResource( 31 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Pile30" parent="Board" instance=ExtResource( 5 )]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -14.0
+margin_top = -358.0
+margin_right = 628.0
+margin_bottom = -246.0
+
+[node name="PileDeck" parent="Board" instance=ExtResource( 7 )]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 235.0
+margin_top = -197.0
+margin_right = 435.0
+margin_bottom = 103.0
+card_visual = ExtResource( 6 )
+
+[node name="ColorRect" type="TextureRect" parent="Board/PileDeck"]
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+texture = ExtResource( 31 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ShuffleBtn" type="Button" parent="Board/PileDeck"]
+visible = false
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = 10.0
+margin_top = -40.0
+margin_right = 110.0
+margin_bottom = -10.0
+text = "Mélanger"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Hand" parent="Board" instance=ExtResource( 4 )]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -82.0
+margin_top = -140.0
+margin_right = 658.0
+margin_bottom = 80.0
+
+[node name="DiscardBtn" type="Button" parent="Board/Hand"]
+visible = false
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = 10.0001
+margin_top = -60.0
+margin_right = 110.0
+margin_bottom = -30.0
+text = "Discard last"
+
+[node name="DrawBtn" type="TextureButton" parent="Board"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = 1237.0
+margin_top = 502.0
+margin_right = 1462.0
+margin_bottom = 551.0
+texture_normal = ExtResource( 26 )
+texture_pressed = ExtResource( 28 )
+texture_disabled = ExtResource( 29 )
+expand = true
+stretch_mode = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Board/DrawBtn"]
+anims/Hover = SubResource( 25 )
+anims/RESET = SubResource( 26 )
+
+[node name="NextTurn" type="TextureButton" parent="Board"]
+margin_left = 1237.0
+margin_top = 438.0
+margin_right = 1462.0
+margin_bottom = 487.0
+texture_normal = ExtResource( 22 )
+texture_pressed = ExtResource( 23 )
+texture_disabled = ExtResource( 24 )
+expand = true
+stretch_mode = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Board/NextTurn"]
+anims/Hover = SubResource( 23 )
+anims/RESET = SubResource( 24 )
+
+[node name="Spot1" type="TextureButton" parent="Board"]
+visible = false
+margin_left = 30.0
+margin_top = 117.0
+margin_right = 183.0
+margin_bottom = 327.0
+texture_normal = ExtResource( 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Spot2" type="TextureButton" parent="Board"]
+visible = false
+margin_left = 202.0
+margin_top = 119.0
+margin_right = 355.0
+margin_bottom = 329.0
+texture_normal = ExtResource( 12 )
+
+[node name="Spot3" type="TextureButton" parent="Board"]
+visible = false
+margin_left = 373.0
+margin_top = 118.0
+margin_right = 526.0
+margin_bottom = 328.0
+texture_normal = ExtResource( 12 )
+
+[node name="Spot4" type="TextureButton" parent="Board"]
+visible = false
+margin_left = 545.0
+margin_top = 118.0
+margin_right = 698.0
+margin_bottom = 328.0
+texture_normal = ExtResource( 12 )
+
+[node name="Spot5" type="TextureButton" parent="Board"]
+visible = false
+margin_left = 717.0
+margin_top = 117.0
+margin_right = 870.0
+margin_bottom = 327.0
+texture_normal = ExtResource( 12 )
+
+[node name="Spot6" type="TextureButton" parent="Board"]
+visible = false
+margin_left = 30.0
+margin_top = 349.0
+margin_right = 183.0
+margin_bottom = 559.0
+texture_normal = ExtResource( 12 )
+
+[node name="Spot7" type="TextureButton" parent="Board"]
+visible = false
+margin_left = 202.0
+margin_top = 351.0
+margin_right = 355.0
+margin_bottom = 561.0
+texture_normal = ExtResource( 12 )
+
+[node name="Spot8" type="TextureButton" parent="Board"]
+visible = false
+margin_left = 373.0
+margin_top = 350.0
+margin_right = 526.0
+margin_bottom = 560.0
+texture_normal = ExtResource( 12 )
+
+[node name="Spot9" type="TextureButton" parent="Board"]
+visible = false
+margin_left = 545.0
+margin_top = 350.0
+margin_right = 698.0
+margin_bottom = 560.0
+texture_normal = ExtResource( 12 )
+
+[node name="Spot10" type="TextureButton" parent="Board"]
+visible = false
+margin_left = 717.0
+margin_top = 349.0
+margin_right = 870.0
+margin_bottom = 559.0
+texture_normal = ExtResource( 12 )
+
+[node name="TextureProgress" type="TextureProgress" parent="Board"]
+margin_left = 397.0
+margin_top = 616.0
+margin_right = 645.0
+margin_bottom = 700.0
+mouse_filter = 2
+max_value = 30.0
+value = 22.0
+texture_under = ExtResource( 16 )
+texture_progress = ExtResource( 17 )
+nine_patch_stretch = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HPEnnemie" type="TextureProgress" parent="Board"]
+visible = false
+margin_left = 378.0
+margin_top = 13.25
+margin_right = 626.0
+margin_bottom = 97.25
+max_value = 30.0
+value = 30.0
+texture_under = ExtResource( 16 )
+texture_progress = ExtResource( 13 )
+nine_patch_stretch = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OrbeContainer" type="Sprite" parent="Board"]
+material = SubResource( 7 )
+position = Vector2( 390, 659 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 35 )
+
+[node name="Orbe" type="Sprite" parent="Board"]
+material = SubResource( 7 )
+position = Vector2( 391, 664 )
+scale = Vector2( 0.35, 0.35 )
+texture = ExtResource( 43 )
+
+[node name="Obamasphere" type="AnimatedSprite" parent="Board"]
+visible = false
+position = Vector2( 391.02, 659.72 )
+scale = Vector2( 0.11, 0.11 )
+frames = SubResource( 31 )
+playing = true
+
+[node name="SkinOrbe" type="Sprite" parent="Board"]
+material = SubResource( 7 )
+position = Vector2( 391, 664 )
+scale = Vector2( 0.35, 0.35 )
+texture = ExtResource( 42 )
+
+[node name="OrbeContainerEnnemie" type="Sprite" parent="Board"]
+position = Vector2( 480, 53.25 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 14 )
+
+[node name="BobuxCounter" type="Sprite" parent="Board"]
+position = Vector2( 119.521, 661.007 )
+scale = Vector2( 0.288213, 0.28577 )
+texture = ExtResource( 15 )
+
+[node name="OrbeEnnemie" type="Sprite" parent="Board"]
+visible = false
+material = SubResource( 7 )
+position = Vector2( 373.625, 57.475 )
+scale = Vector2( 0.35, 0.35 )
+texture = ExtResource( 36 )
+
+[node name="Obamasphere2" type="AnimatedSprite" parent="Board"]
+visible = false
+position = Vector2( 372, 54 )
+scale = Vector2( 0.11, 0.11 )
+frames = SubResource( 31 )
+playing = true
+
+[node name="SkinOrbeEnnemie" type="Sprite" parent="Board"]
+visible = false
+material = SubResource( 7 )
+position = Vector2( 373.625, 57.475 )
+scale = Vector2( 0.35, 0.35 )
+texture = ExtResource( 38 )
+
+[node name="NameYou" type="Sprite" parent="Board"]
+position = Vector2( 120.5, 597 )
+scale = Vector2( 1, 1.5 )
+texture = ExtResource( 78 )
+
+[node name="NameEnnemie" type="Sprite" parent="Board"]
+position = Vector2( 120.5, 85 )
+scale = Vector2( 1, 1.5 )
+texture = ExtResource( 79 )
+
+[node name="Bobux" type="Label" parent="Board"]
+margin_left = 55.5206
+margin_top = 616.0
+margin_right = 233.521
+margin_bottom = 686.0
+custom_fonts/font = SubResource( 4 )
+text = "6"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OrbeHP" type="Label" parent="Board"]
+margin_left = 510.0
+margin_top = 639.0
+margin_right = 646.0
+margin_bottom = 694.0
+input_pass_on_modal_close_click = false
+custom_fonts/font = SubResource( 3 )
+text = "22/30"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OrbeHPEnnemie" type="Label" parent="Board"]
+visible = false
+margin_left = 485.0
+margin_top = 25.0
+margin_right = 621.0
+margin_bottom = 80.0
+custom_fonts/font = SubResource( 3 )
+text = "30/30"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Pseudo" type="Label" parent="Board"]
+margin_left = 33.0
+margin_top = 569.0
+margin_right = 169.0
+margin_bottom = 624.0
+input_pass_on_modal_close_click = false
+custom_fonts/font = SubResource( 3 )
+text = "dededede"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PseudoEnnemie" type="Label" parent="Board"]
+margin_left = 33.0
+margin_top = 57.0
+margin_right = 169.0
+margin_bottom = 112.0
+input_pass_on_modal_close_click = false
+custom_fonts/font = SubResource( 3 )
+text = "dededede"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="spawn" type="AudioStreamPlayer" parent="Board"]
+stream = ExtResource( 20 )
+bus = "Effect"
+
+[node name="Music" type="AudioStreamPlayer" parent="Board"]
+stream = ExtResource( 46 )
+autoplay = true
+bus = "Musique"
+
+[node name="draw" type="AudioStreamPlayer" parent="Board"]
+stream = ExtResource( 21 )
+volume_db = 12.0
+bus = "Effect"
+
+[node name="click" type="AudioStreamPlayer" parent="Board"]
+stream = ExtResource( 32 )
+bus = "Effect"
+
+[node name="horn" type="AudioStreamPlayer" parent="Board"]
+stream = ExtResource( 18 )
+volume_db = -10.0
+bus = "Effect"
+
+[node name="power" type="AudioStreamPlayer" parent="Board"]
+stream = ExtResource( 33 )
+bus = "Effect"
+
+[node name="hurt" type="AudioStreamPlayer" parent="Board"]
+stream = ExtResource( 34 )
+bus = "Effect"
+
+[node name="bruh" type="AudioStreamPlayer" parent="Board"]
+stream = ExtResource( 37 )
+bus = "Effect"
+
+[node name="EnnemieSound" type="AudioStreamPlayer" parent="Board"]
+stream = ExtResource( 40 )
+bus = "Effect"
+
+[node name="JumpScare" type="AudioStreamPlayer" parent="Board"]
+stream = ExtResource( 67 )
+volume_db = 24.0
+bus = "Effect"
+
+[node name="Bubble" type="TextureRect" parent="Board"]
+visible = false
+margin_left = 601.0
+margin_top = 412.0
+margin_right = 764.0
+margin_bottom = 576.0
+mouse_filter = 2
+texture = ExtResource( 44 )
+expand = true
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BubbleEnnemie" type="TextureRect" parent="Board"]
+visible = false
+margin_left = 380.0
+margin_top = 95.0
+margin_right = 543.0
+margin_bottom = 259.0
+mouse_filter = 2
+texture = ExtResource( 45 )
+expand = true
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EmoteCard" type="TextureRect" parent="Board"]
+visible = false
+margin_left = 632.0
+margin_top = 421.0
+margin_right = 761.0
+margin_bottom = 542.0
+mouse_filter = 2
+expand = true
+stretch_mode = 5
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Board/EmoteCard"]
+anims/Despawn = SubResource( 15 )
+anims/RESET = SubResource( 14 )
+anims/Spawn = SubResource( 13 )
+
+[node name="EmoteCard2" type="TextureRect" parent="Board"]
+visible = false
+margin_left = 413.0
+margin_top = 128.0
+margin_right = 542.0
+margin_bottom = 249.0
+expand = true
+stretch_mode = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Board/EmoteCard2"]
+anims/Despawn = SubResource( 16 )
+anims/RESET = SubResource( 17 )
+anims/Spawn = SubResource( 18 )
+
+[node name="FakeCard" type="TextureRect" parent="Board"]
+visible = false
+margin_left = 624.0
+margin_top = 1.0
+margin_right = 879.0
+margin_bottom = 115.0
+texture = ExtResource( 30 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Name" type="Label" parent="Board/FakeCard"]
+margin_left = 26.0
+margin_top = 29.0
+margin_right = 179.0
+margin_bottom = 43.0
+custom_fonts/font = SubResource( 5 )
+text = "8 - Bananakat"
+autowrap = true
+
+[node name="Mana" type="Label" parent="Board/FakeCard"]
+margin_left = 149.0
+margin_top = 30.0
+margin_right = 203.0
+margin_bottom = 47.0
+custom_fonts/font = SubResource( 5 )
+text = "3"
+align = 2
+
+[node name="HP" type="Label" parent="Board/FakeCard"]
+margin_left = 141.0
+margin_top = 90.0
+margin_right = 202.0
+margin_bottom = 107.0
+custom_fonts/font = SubResource( 5 )
+text = "bcp aussi"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Attack" type="Label" parent="Board/FakeCard"]
+margin_left = 46.0
+margin_top = 87.0
+margin_right = 100.0
+margin_bottom = 104.0
+custom_fonts/font = SubResource( 5 )
+text = "bcp"
+
+[node name="Deco" type="Label" parent="Board"]
+visible = false
+margin_left = 1.0
+margin_top = -12.0
+margin_right = 1280.0
+margin_bottom = 130.0
+custom_colors/font_color = Color( 0.945098, 1, 0, 1 )
+custom_fonts/font = SubResource( 8 )
+text = "Votre partenaire
+est déconnecté"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Cheat" type="Button" parent="Board"]
+visible = false
+margin_left = 221.0
+margin_top = 11.0
+margin_right = 269.0
+margin_bottom = 31.0
+text = "Cheat"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="TextureButton" parent="Board"]
+visible = false
+margin_left = 236.0
+margin_top = 620.0
+margin_right = 301.0
+margin_bottom = 683.0
+texture_normal = ExtResource( 47 )
+expand = true
+stretch_mode = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FNAF" type="AnimatedSprite" parent="Board"]
+visible = false
+scale = Vector2( 2.66667, 2.66667 )
+frames = SubResource( 19 )
+frame = 14
+centered = false
+
+[node name="MenuButton" parent="Board" instance=ExtResource( 2 )]
+margin_left = 7.0
+margin_top = 4.0
+margin_right = 190.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 0, 0 )
+texture_normal = ExtResource( 27 )
+texture_pressed = ExtResource( 25 )
+texture_hover = ExtResource( 41 )
+stretch_mode = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Board/MenuButton"]
+anims/Hover = SubResource( 27 )
+anims/RESET = SubResource( 28 )
+
+[node name="Darken" type="ColorRect" parent="Board"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 1.0
+margin_bottom = 1.0
+color = Color( 0, 0, 0, 0.607843 )
+
+[node name="ColorRect" type="TextureRect" parent="."]
+visible = false
+anchor_right = 1.0
+margin_left = 313.0
+margin_top = 565.0
+margin_right = -301.0
+margin_bottom = 709.0
+mouse_filter = 0
+texture = ExtResource( 19 )
+expand = true
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control" type="Control" parent="."]
+visible = false
+anchor_left = 0.245
+anchor_top = 0.671
+anchor_right = 0.675
+anchor_bottom = 1.0
+margin_left = 11.4
+margin_top = 92.88
+margin_right = 494.0
+margin_bottom = -60.0
+size_flags_horizontal = 3
+size_flags_vertical = 0
+
+[node name="Selector" type="TextureRect" parent="Control"]
+visible = false
+margin_left = 1.0
+margin_top = 91.0
+margin_right = 186.0
+margin_bottom = 276.0
+texture = ExtResource( 39 )
+stretch_mode = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="Control/VBoxContainer"]
+margin_right = 640.0
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/VBoxContainer/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = 124.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Control/VBoxContainer/Panel/MarginContainer"]
+margin_right = 640.0
+margin_bottom = 124.0
+follow_focus = true
+
+[node name="Grid" type="GridContainer" parent="Control/VBoxContainer/Panel/MarginContainer/ScrollContainer"]
+columns = 6
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Control"]
+margin_left = -3.0
+margin_top = -6.0
+margin_right = 647.0
+margin_bottom = 114.0
+mouse_filter = 2
+follow_focus = true
+scroll_vertical_enabled = false
+
+[node name="VBoxContainer" type="HBoxContainer" parent="Control/ScrollContainer"]
+margin_right = 650.0
+mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+
+[node name="Bande" type="TextureRect" parent="."]
+margin_right = 1280.0
+margin_bottom = 720.0
+texture = ExtResource( 68 )
+expand = true
+
+[node name="coeur" type="TextureRect" parent="."]
+margin_right = 1280.0
+margin_bottom = 720.0
+texture = ExtResource( 69 )
+expand = true
+
+[node name="YourArena" type="TextureRect" parent="coeur"]
+show_behind_parent = true
+margin_left = 82.0
+margin_top = 126.0
+margin_right = 576.0
+margin_bottom = 381.0
+texture = ExtResource( 8 )
+expand = true
+stretch_mode = 5
+
+[node name="EnnemieArena" type="TextureRect" parent="coeur"]
+show_behind_parent = true
+margin_left = 89.0
+margin_top = 368.0
+margin_right = 558.0
+margin_bottom = 619.0
+texture = ExtResource( 8 )
+expand = true
+stretch_mode = 5
+
+[node name="EnnemieIcon" type="TextureRect" parent="."]
+margin_left = -26.0
+margin_top = -3.0
+margin_right = 1254.0
+margin_bottom = 717.0
+texture = ExtResource( 73 )
+expand = true
+
+[node name="Obamasphere" type="AnimatedSprite" parent="EnnemieIcon"]
+visible = false
+position = Vector2( 172.175, 516.8 )
+scale = Vector2( 0.11, 0.11 )
+frames = SubResource( 31 )
+playing = true
+
+[node name="Orbe" type="Sprite" parent="EnnemieIcon"]
+visible = false
+material = SubResource( 7 )
+position = Vector2( 173.625, 520.475 )
+scale = Vector2( 0.35, 0.35 )
+texture = ExtResource( 43 )
+
+[node name="SkinOrbe" type="Sprite" parent="EnnemieIcon"]
+visible = false
+material = SubResource( 7 )
+position = Vector2( 173.625, 520.475 )
+scale = Vector2( 0.35, 0.35 )
+texture = ExtResource( 42 )
+
+[node name="YouIcon" type="TextureRect" parent="."]
+margin_left = -29.0
+margin_top = 10.0
+margin_right = 1251.0
+margin_bottom = 730.0
+texture = ExtResource( 70 )
+expand = true
+
+[node name="Obamasphere" type="AnimatedSprite" parent="YouIcon"]
+visible = false
+position = Vector2( 172, 265 )
+scale = Vector2( 0.11, 0.11 )
+frames = SubResource( 31 )
+playing = true
+
+[node name="Text" type="Sprite" parent="YouIcon"]
+position = Vector2( 338, 272 )
+scale = Vector2( 0.612245, 1 )
+texture = ExtResource( 75 )
+
+[node name="Orbe" type="Sprite" parent="YouIcon"]
+material = SubResource( 7 )
+position = Vector2( 172.625, 269.475 )
+scale = Vector2( 0.35, 0.35 )
+texture = ExtResource( 110 )
+
+[node name="SkinOrbe" type="Sprite" parent="YouIcon"]
+material = SubResource( 7 )
+position = Vector2( 172.625, 269.475 )
+scale = Vector2( 0.35, 0.35 )
+texture = ExtResource( 111 )
+
+[node name="EnnemieName" type="Label" parent="."]
+margin_left = 195.0
+margin_top = 482.0
+margin_right = 396.0
+margin_bottom = 547.0
+custom_fonts/font = SubResource( 22 )
+
+[node name="YourName" type="Label" parent="."]
+margin_left = 195.0
+margin_top = 247.0
+margin_right = 443.0
+margin_bottom = 312.0
+custom_fonts/font = SubResource( 22 )
+
+[node name="MenuButton" parent="." instance=ExtResource( 2 )]
+margin_left = 18.0
+margin_top = 654.0
+margin_right = 271.0
+margin_bottom = 718.0
+rect_min_size = Vector2( 0, 0 )
+texture_normal = ExtResource( 80 )
+texture_pressed = ExtResource( 81 )
+texture_hover = ExtResource( 82 )
+stretch_mode = 4
+
+[node name="Network_setup" type="Control" parent="."]
+margin_left = 992.0
+margin_right = 1032.0
+margin_bottom = 40.0
+script = ExtResource( 11 )
+
+[node name="Multiplayer_configur" type="Control" parent="Network_setup"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Text" type="Sprite" parent="Network_setup/Multiplayer_configur"]
+position = Vector2( 44.5, 309 )
+scale = Vector2( 0.936224, 1 )
+texture = ExtResource( 75 )
+
+[node name="create_server" type="TextureButton" parent="Network_setup/Multiplayer_configur"]
+margin_left = -129.0
+margin_top = 135.0
+margin_right = 225.0
+margin_bottom = 255.0
+texture_normal = ExtResource( 72 )
+expand = true
+stretch_mode = 4
+
+[node name="join_server" type="TextureButton" parent="Network_setup/Multiplayer_configur"]
+margin_left = -138.0
+margin_top = 343.0
+margin_right = 228.0
+margin_bottom = 415.0
+texture_normal = ExtResource( 71 )
+expand = true
+stretch_mode = 4
+
+[node name="Server_ip_adress" type="LineEdit" parent="Network_setup/Multiplayer_configur"]
+margin_left = -136.0
+margin_top = 283.0
+margin_right = 226.0
+margin_bottom = 336.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
+custom_styles/normal = SubResource( 20 )
+placeholder_text = "Met l'IP stp"
+
+[node name="userName" type="LineEdit" parent="Network_setup/Multiplayer_configur"]
+margin_left = -799.0
+margin_top = 253.0
+margin_right = -562.0
+margin_bottom = 306.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
+custom_styles/normal = SubResource( 21 )
+max_length = 20
+placeholder_text = "Pseudo"
+
+[node name="launch_game" type="TextureButton" parent="Network_setup/Multiplayer_configur"]
+visible = false
+margin_left = -87.0
+margin_top = 633.0
+margin_right = 279.0
+margin_bottom = 713.0
+disabled = true
+texture_normal = ExtResource( 76 )
+texture_disabled = ExtResource( 77 )
+expand = true
+stretch_mode = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CrownEnnemie" type="Sprite" parent="Network_setup/Multiplayer_configur"]
+visible = false
+position = Vector2( -487, 469 )
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 74 )
+
+[node name="CrownYou" type="Sprite" parent="Network_setup/Multiplayer_configur"]
+visible = false
+position = Vector2( -689, 224 )
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 74 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Network_setup"]
+
+[node name="Label" type="LineEdit" parent="Network_setup/CanvasLayer"]
+visible = false
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -107.0
+custom_colors/selection_color = Color( 0, 0.721569, 1, 1 )
+custom_colors/clear_button_color_pressed = Color( 1, 1, 1, 1 )
+custom_colors/font_color_selected = Color( 1, 1, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/clear_button_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_uneditable = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 12 )
+custom_styles/read_only = SubResource( 9 )
+custom_styles/focus = SubResource( 10 )
+custom_styles/normal = SubResource( 11 )
+text = "102.218.18.36"
+align = 1
+editable = false
+context_menu_enabled = false
+virtual_keyboard_enabled = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CheatMenu" type="Control" parent="."]
+margin_left = 29.0
+margin_top = 12.0
+margin_right = 69.0
+margin_bottom = 52.0
+
+[node name="Multiplayer_configur" type="Control" parent="CheatMenu"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="get" type="Button" parent="CheatMenu/Multiplayer_configur"]
+margin_top = 88.0
+margin_right = 141.0
+margin_bottom = 153.0
+custom_fonts/font = SubResource( 1 )
+text = "faire"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="result" type="LineEdit" parent="CheatMenu/Multiplayer_configur"]
+margin_left = 5.0
+margin_top = 260.0
+margin_right = 274.0
+margin_bottom = 313.0
+custom_fonts/font = SubResource( 2 )
+placeholder_text = "Résultat"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OptionButton" type="OptionButton" parent="CheatMenu/Multiplayer_configur"]
+margin_left = 4.0
+margin_top = 197.0
+margin_right = 68.0
+margin_bottom = 217.0
+text = "Cards"
+items = [ "Cards", null, false, 0, null, "Items", null, false, 1, null ]
+selected = 0
+
+[node name="OptionButton2" type="OptionButton" parent="CheatMenu/Multiplayer_configur"]
+margin_left = 4.0
+margin_top = 160.0
+margin_right = 68.0
+margin_bottom = 180.0
+text = "GET"
+items = [ "GET", null, false, 0, null, "SET", null, false, 1, null, "ADD", null, false, 2, null, "Hurt", null, false, 3, null, "GIVE CARD", null, false, 4, null, "SET BOBUX", null, false, 5, null, "Reset", null, false, 6, null, "Sparkle", null, false, 7, null, "Debug", null, false, 8, null, "Get Effects", null, false, 9, null ]
+selected = 0
+
+[node name="OptionButton3" type="OptionButton" parent="CheatMenu/Multiplayer_configur"]
+visible = false
+margin_left = 4.0
+margin_top = 232.0
+margin_right = 68.0
+margin_bottom = 252.0
+text = "Funky Pack"
+items = [ "Funky Pack", null, false, 0, null, "Orbe", null, false, 1, null, "Skin d'orbe", null, false, 2, null, "Emote", null, false, 3, null, "Arène", null, false, 4, null ]
+selected = 0
+
+[node name="Players" parent="." instance=ExtResource( 9 )]
+
+[node name="Choix1" type="TextureButton" parent="."]
+visible = false
+margin_top = 280.0
+margin_right = 90.0001
+margin_bottom = 314.0
+rect_scale = Vector2( 1.5, 1.5 )
+texture_normal = ExtResource( 84 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Choix2" type="TextureButton" parent="."]
+visible = false
+margin_left = 158.0
+margin_top = 280.0
+margin_right = 248.0
+margin_bottom = 314.0
+rect_scale = Vector2( 1.5, 1.5 )
+texture_normal = ExtResource( 83 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 991, 794 )
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 85 )
+
+[node name="SuccesAnim" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 29 )
+anims/Slideup = SubResource( 30 )
+
+[node name="succes" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 86 )
+volume_db = -5.0
+bus = "Effect"
+
+[node name="unit_test" type="Node" parent="."]
+script = ExtResource( 112 )
+
+[connection signal="card_dropped" from="Board/Pile1" to="." method="_on_pile_card_dropped" binds= [ 1 ]]
+[connection signal="card_dropped" from="Board/Pile21" to="." method="_on_enemy_pile_dropped" binds= [ 1 ]]
+[connection signal="card_dropped" from="Board/Pile2" to="." method="_on_pile_card_dropped" binds= [ 2 ]]
+[connection signal="card_dropped" from="Board/Pile22" to="." method="_on_enemy_pile_dropped" binds= [ 2 ]]
+[connection signal="card_dropped" from="Board/Pile23" to="." method="_on_enemy_pile_dropped" binds= [ 3 ]]
+[connection signal="card_dropped" from="Board/Pile4" to="." method="_on_pile_card_dropped" binds= [ 4 ]]
+[connection signal="card_dropped" from="Board/Pile3" to="." method="_on_pile_card_dropped" binds= [ 3 ]]
+[connection signal="card_dropped" from="Board/Pile24" to="." method="_on_enemy_pile_dropped" binds= [ 4 ]]
+[connection signal="card_dropped" from="Board/Pile5" to="." method="_on_pile_card_dropped" binds= [ 5 ]]
+[connection signal="card_dropped" from="Board/Pile25" to="." method="_on_enemy_pile_dropped" binds= [ 5 ]]
+[connection signal="card_dropped" from="Board/Pile30" to="." method="_on_Pile25_card_dropped"]
+[connection signal="card_dropped" from="Board/PileDeck" to="." method="_on_Pile3_card_dropped"]
+[connection signal="pressed" from="Board/PileDeck/ShuffleBtn" to="." method="_on_ShuffleBtn_pressed"]
+[connection signal="card_clicked" from="Board/Hand" to="." method="_on_Hand_card_clicked"]
+[connection signal="focus_exited" from="Board/Hand" to="." method="_on_Hand_focus_exited"]
+[connection signal="mouse_exited" from="Board/Hand" to="." method="_on_Hand_mouse_exited"]
+[connection signal="pressed" from="Board/Hand/DiscardBtn" to="." method="_on_DiscardBtn_pressed"]
+[connection signal="mouse_entered" from="Board/DrawBtn" to="." method="_on_DrawBtn_mouse_entered"]
+[connection signal="mouse_exited" from="Board/DrawBtn" to="." method="_on_DrawBtn_mouse_exited"]
+[connection signal="pressed" from="Board/DrawBtn" to="." method="_on_DrawBtn_pressed"]
+[connection signal="mouse_entered" from="Board/NextTurn" to="." method="_on_NextTurn_mouse_entered"]
+[connection signal="mouse_exited" from="Board/NextTurn" to="." method="_on_NextTurn_mouse_exited"]
+[connection signal="pressed" from="Board/NextTurn" to="." method="_on_NextTurn_pressed"]
+[connection signal="button_down" from="Board/Spot1" to="." method="_on_spot_pressed" binds= [ 1 ]]
+[connection signal="button_down" from="Board/Spot2" to="." method="_on_spot_pressed" binds= [ 2 ]]
+[connection signal="button_down" from="Board/Spot3" to="." method="_on_spot_pressed" binds= [ 3 ]]
+[connection signal="button_down" from="Board/Spot4" to="." method="_on_spot_pressed" binds= [ 4 ]]
+[connection signal="button_down" from="Board/Spot5" to="." method="_on_spot_pressed" binds= [ 5 ]]
+[connection signal="button_up" from="Board/Spot6" to="." method="_on_spot_pressed" binds= [ 6 ]]
+[connection signal="button_up" from="Board/Spot7" to="." method="_on_spot_pressed" binds= [ 7 ]]
+[connection signal="button_down" from="Board/Spot8" to="." method="_on_spot_pressed" binds= [ 8 ]]
+[connection signal="button_up" from="Board/Spot9" to="." method="_on_spot_pressed" binds= [ 9 ]]
+[connection signal="button_up" from="Board/Spot10" to="." method="_on_spot_pressed" binds= [ 10 ]]
+[connection signal="pressed" from="Board/Cheat" to="." method="_on_Cheat_pressed"]
+[connection signal="pressed" from="Board/Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="Board/MenuButton" to="." method="_on_MenuButton_pressed"]
+[connection signal="pressed" from="MenuButton" to="." method="_on_MenuButton_pressed"]
+[connection signal="pressed" from="Network_setup/Multiplayer_configur/create_server" to="Network_setup" method="_on_create_server_pressed"]
+[connection signal="pressed" from="Network_setup/Multiplayer_configur/join_server" to="Network_setup" method="_on_join_server_pressed"]
+[connection signal="text_changed" from="Network_setup/Multiplayer_configur/userName" to="." method="_on_userName_text_changed"]
+[connection signal="pressed" from="Network_setup/Multiplayer_configur/launch_game" to="." method="_on_launch_game_pressed"]
+[connection signal="pressed" from="CheatMenu/Multiplayer_configur/get" to="." method="_on_get_pressed"]
+[connection signal="pressed" from="Choix1" to="." method="_on_Choix1_pressed" binds= [ 1 ]]
+[connection signal="pressed" from="Choix2" to="." method="_on_Choix1_pressed" binds= [ 2 ]]

@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://screens/menu/ballon.png" type="Texture" id=1]
+[ext_resource path="res://screens/menu/ballonTige.png" type="Texture" id=2]
+[ext_resource path="res://screens/menu/Ballon.gd" type="Script" id=3]
+
+[node name="Ballon" type="TextureButton"]
+margin_right = 140.0
+margin_bottom = 168.0
+texture_normal = ExtResource( 1 )
+script = ExtResource( 3 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_left = 63.0
+margin_top = 168.0
+margin_right = 79.0
+margin_bottom = 395.0
+texture = ExtResource( 2 )
+
+[connection signal="pressed" from="." to="." method="_on_Ballon_pressed"]

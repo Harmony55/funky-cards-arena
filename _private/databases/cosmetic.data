@@ -1,0 +1,3408 @@
+[meta]
+
+id="cosmetic"
+name="Base de donnée pour cosmétique"
+
+[cards]
+
+orbe_1={
+"categories": {
+"type": "Orbe",
+"type_magasin": "orbe"
+},
+"texts": {
+"desc_casier": "Selon cette étude : https://doi.org/10.1002/col.21949 le rouge augmente marginalement notre rythme cardiaque, et selon cette autre étude :  https://doi.org/10.3389/fnhum.2015.00212 le rouge attire l'attention, donc avec cette magnifique orbe rouge, vous pouvez distraire vos ennemies, qui se concentrerons donc moins sur la game, et leur compétence serons marginalement inférieur, vous donnant possiblement un avantage !",
+"desc_magasin": "Une orbe mais qui est rouge",
+"name": "Orbe Rouge",
+"texture_casier": "res://screens/board/Orbe_Rouge.png",
+"texture_magasin": "res://screens/board/Orbe_Rouge.png"
+},
+"values": {
+"obamium": 150,
+"size": 0.5
+}
+}
+orbe_2={
+"categories": {
+"type": "Orbe",
+"type_magasin": "orbe"
+},
+"texts": {
+"desc_casier": "Bah c'est juste un orbe mais jaune tuve qje te dise quoi ?",
+"desc_magasin": "Une orbe mais qui est jaune",
+"name": "Orbe Jaune",
+"texture_casier": "res://screens/board/Orbe_Jaune_.png",
+"texture_magasin": "res://screens/board/Orbe_Jaune_.png"
+},
+"values": {
+"obamium": 150,
+"size": 0.5
+}
+}
+orbe_3={
+"categories": {
+"type": "Orbe",
+"type_magasin": "orbe"
+},
+"texts": {
+"desc_casier": "Wow, une orbe bleu",
+"desc_magasin": "Une orbe mais qui est bleue",
+"name": "Orbe Bleue",
+"texture_casier": "res://screens/board/Orbe_Bleue.png",
+"texture_magasin": "res://screens/board/Orbe_Bleue.png"
+},
+"values": {
+"obamium": 150,
+"size": 0.5
+}
+}
+orbe_4={
+"categories": {
+"type": "Orbe",
+"type_magasin": "orbe"
+},
+"texts": {
+"desc_casier": "C'est une orbe Orange tu sais lire ou pas ?",
+"desc_magasin": "Kirbo en personne recommande cette orbe",
+"name": "Orbe Orange",
+"texture_casier": "res://screens/board/Orbe_Orange.png",
+"texture_magasin": "res://screens/board/Orbe_Orange.png"
+},
+"values": {
+"obamium": 150,
+"size": 0.5
+}
+}
+orbe_5={
+"categories": {
+"type": "Orbe",
+"type_magasin": "orbe"
+},
+"texts": {
+"desc_casier": "L'orbe de base",
+"desc_magasin": "Les sociétés sont des esprits, les cultures sont leurs langages et leurs idées. Être contre le dialecte et la synthèse de la culture, c'est être contre l'esprit uni de l'humanité qui se réconcilie avec elle-même.",
+"name": "Orbe Verte",
+"texture_casier": "res://screens/board/Orbe_Verte.png",
+"texture_magasin": "res://screens/board/Orbe_Verte.png"
+},
+"values": {
+"obamium": 150,
+"size": 0.5
+}
+}
+orbe_6={
+"categories": {
+"type": "Orbe",
+"type_magasin": "orbe"
+},
+"texts": {
+"desc_casier": "Selon vos PV durant la game, la couleur de votre orbe changera !",
+"desc_magasin": "Cette orbe change selon vos PV, entre 15 et 30 l'orbe est verte, entre 5 et 15 l'orbe est orange, et en dessous elle est rouge",
+"name": "Orbe dynamique",
+"texture_casier": "res://screens/casier/icon/orbe/OrbeDynamique.png",
+"texture_magasin": "res://screens/casier/icon/orbe/OrbeDynamique.png"
+},
+"values": {
+"obamium": 450,
+"size": 0.5
+}
+}
+orbe_7={
+"categories": {
+"type": "Orbe",
+"type_magasin": "orbe"
+},
+"texts": {
+"desc_casier": "Avec cette orbe au couleurs du drapeau tricolore, vos cartes serons hanté par le fantome de Napoléon, perdrons la tête, et finirons dans un hospital psychiatrique.",
+"desc_magasin": "En achetant cette orbe patriote, soutenez l'industrie du jeu vidéo Andorran !",
+"name": "Orbe Française",
+"texture_casier": "res://screens/board/Orbe_France.png",
+"texture_magasin": "res://screens/board/Orbe_France.png"
+},
+"values": {
+"obamium": 450,
+"size": 0.5
+}
+}
+orbe_8={
+"categories": {
+"type": "Orbe",
+"type_magasin": "orbe"
+},
+"texts": {
+"desc_casier": "Cette orbe Godot vous mettra dans la peau du célèbre développeur Andorran de Funky Cards Arena !",
+"desc_magasin": "L'orbe représentant le moteur de dev le plus basé au monde",
+"name": "Godorbe",
+"texture_casier": "res://screens/board/orbe_godorbe.png",
+"texture_magasin": "res://screens/board/orbe_godorbe.png"
+},
+"values": {
+"obamium": 450,
+"size": 0.5
+}
+}
+orbe_9={
+"categories": {
+"type": "Orbe",
+"type_magasin": "orbe"
+},
+"texts": {
+"desc_casier": "Mais c'est littéralement Goku ma parole",
+"desc_magasin": "On achète même plus des orbes à ce compte là on achète directement un saiyan",
+"name": "Goku",
+"texture_casier": "res://screens/board/orbe_goku.png",
+"texture_magasin": "res://screens/board/orbe_goku.png"
+},
+"values": {
+"obamium": 700,
+"size": 0.5
+}
+}
+orbe_10={
+"categories": {
+"type": "Orbe",
+"type_magasin": "orbe"
+},
+"texts": {
+"desc_casier": "Aime: les paguepis, n'aime pas: les arabes",
+"desc_magasin": "L'orbe représentant un pays magnifique qui ignore le méchant fisc !",
+"name": "Andorbe",
+"texture_casier": "res://screens/board/orbe_andorbe.png",
+"texture_magasin": "res://screens/board/orbe_andorbe.png"
+},
+"values": {
+"obamium": 190,
+"size": 0.5
+}
+}
+orbe_11={
+"categories": {
+"type": "Orbe",
+"type_magasin": "orbe"
+},
+"texts": {
+"desc_casier": "Les français patriotes de france viennent tous d'ici",
+"desc_magasin": "Le roi du Maroc vous attend derrière chez vous",
+"name": "Orbe Maroc",
+"texture_casier": "res://screens/board/orbe_maroc.png",
+"texture_magasin": "res://screens/board/orbe_maroc.png"
+},
+"values": {
+"obamium": 250,
+"size": 0.5
+}
+}
+orbe_12={
+"categories": {
+"type": "Orbe",
+"type_magasin": "orbe"
+},
+"texts": {
+"desc_casier": "Oubliez pas le petit sucre sinon ce sera amer et dégeu",
+"desc_magasin": "Doux et moelleux",
+"name": "Tasse de Café",
+"texture_casier": "res://screens/board/orbe_tassedecafe.png",
+"texture_magasin": "res://screens/board/orbe_tassedecafe.png"
+},
+"values": {
+"obamium": 300,
+"size": 0.5
+}
+}
+orbe_13={
+"categories": {
+"type": "Orbe",
+"type_magasin": "orbe"
+},
+"texts": {
+"desc_casier": "Ne l'utilisez pas pour acheter des choses sinon vous n'aurez plus d'orbe",
+"desc_magasin": "Pour les fans d'argent et d'Europe",
+"name": "Pièce de 1 Eurorbe",
+"texture_casier": "res://screens/board/orbe_piece.png",
+"texture_magasin": "res://screens/board/orbe_piece.png"
+},
+"values": {
+"obamium": 250,
+"size": 0.5
+}
+}
+orbe_14={
+"categories": {
+"type": "Orbe",
+"type_magasin": "orbe"
+},
+"texts": {
+"desc_casier": "Cet artefact est plus rare que n'importe quelle autre orbe, c'est un honneur d'en posséder un",
+"desc_magasin": "Il vous faudra construire cette orbe vous-même",
+"name": "Orbama",
+"texture_casier": "res://screens/board/orbe_orbama.png",
+"texture_magasin": "res://screens/board/orbe_orbama.png"
+},
+"values": {
+"obamium": 700,
+"size": 0.5
+}
+}
+orbe_15={
+"categories": {
+"type": "Orbe",
+"type_magasin": "orbe"
+},
+"texts": {
+"desc_casier": "Vous vous sentez moche et méchant avec cette orbe",
+"desc_magasin": "Achetable uniquement de nuit non jdeconne",
+"name": "Orbe Lune",
+"texture_casier": "res://screens/board/orbe_lune.png",
+"texture_magasin": "res://screens/board/orbe_lune.png"
+},
+"values": {
+"obamium": 350,
+"size": 0.5
+}
+}
+orbe_16={
+"categories": {
+"type": "Orbe",
+"type_magasin": "orbe"
+},
+"texts": {
+"desc_casier": "C'est l'heure de jouer à fca",
+"desc_magasin": "L'heure intégrée au pc n'a qu'à se faire du soucis devant cette orbe qui affiche l'heure en direct",
+"name": "Horbloge",
+"texture_casier": "res://screens/board/orbe_horbloge.png",
+"texture_magasin": "res://screens/board/orbe_horbloge.png"
+},
+"values": {
+"obamium": 450,
+"size": 0.5
+}
+}
+orbe_17={
+"categories": {
+"type": "Orbe",
+"type_magasin": "orbe"
+},
+"texts": {
+"desc_casier": "Christiano Ronaldo serait très fier",
+"desc_magasin": "Finalement fca c'est un peu comme le foot, il faut défendre ses cages et tirer dans les cages adverses",
+"name": "Orbe de Foot",
+"texture_casier": "res://screens/board/orbe_foot.png",
+"texture_magasin": "res://screens/board/orbe_foot.png"
+},
+"values": {
+"obamium": 225,
+"size": 0.5
+}
+}
+orbe_18={
+"categories": {
+"type": "Orbe",
+"type_magasin": "orbe"
+},
+"texts": {
+"desc_casier": "Lebron James aurait dit un truc dujanre 'baket'",
+"desc_magasin": "C'est pas pour faire des dunk hein",
+"name": "Orbe de Basket",
+"texture_casier": "res://screens/board/orbe_basket.png",
+"texture_magasin": "res://screens/board/orbe_basket.png"
+},
+"values": {
+"obamium": 225,
+"size": 0.5
+}
+}
+orbe_19={
+"categories": {
+"type": "Orbe",
+"type_magasin": "orbe"
+},
+"texts": {
+"desc_casier": "Bien sûr que cette balle de tennis a 30 pv",
+"desc_magasin": "Même si y'avait une blague personne l'aurait comprise qui joue au tennis serieux",
+"name": "Orbe de Tennis",
+"texture_casier": "res://screens/board/orbe_tennis.png",
+"texture_magasin": "res://screens/board/orbe_tennis.png"
+},
+"values": {
+"obamium": 225,
+"size": 0.5
+}
+}
+orbe_20={
+"categories": {
+"type": "Orbe",
+"type_magasin": "orbe"
+},
+"texts": {
+"desc_casier": "Ooohh trop choupi ! je suis recherché dans 8 pays",
+"desc_magasin": "Pour les fans d'amour, de sexe intense et de la couleur jaune",
+"name": "Coeur Jaune",
+"texture_casier": "res://screens/board/orbe_coeurjaune.png",
+"texture_magasin": "res://screens/board/orbe_coeurjaune.png"
+},
+"values": {
+"obamium": 250,
+"size": 0.5
+}
+}
+orbe_21={
+"categories": {
+"type": "Orbe",
+"type_magasin": "orbe"
+},
+"texts": {
+"desc_casier": "27 personnalités se partagent cette orbe instable",
+"desc_magasin": "Cette orbe est subversive",
+"name": "Monsieur Orbe",
+"texture_casier": "res://screens/board/orbe_monsieur.png",
+"texture_magasin": "res://screens/board/orbe_monsieur.png"
+},
+"values": {
+"obamium": 527,
+"size": 0.5
+}
+}
+orbe_22={
+"categories": {
+"type": "Orbe",
+"type_magasin": "orbe"
+},
+"texts": {
+"desc_casier": "Vous ferez plus attention à l'avenir",
+"desc_magasin": "Cette orbe indique que vous n'êtes pas en sécurité",
+"name": "Orbe Warning",
+"texture_casier": "res://screens/board/orbe_warning.png",
+"texture_magasin": "res://screens/board/orbe_warning.png"
+},
+"values": {
+"obamium": 225,
+"size": 0.5
+}
+}
+orbe_23={
+"categories": {
+"type": "Orbe",
+"type_magasin": "orbe"
+},
+"texts": {
+"desc_casier": "Un vieux V-buck qui date de quand Fortnite avait encore du charme",
+"desc_magasin": "Hélas, ce V-buck ne vaut rien, par contre il fera un super orbe",
+"name": "V-orbe",
+"texture_casier": "res://screens/board/orbe_vbuck.png",
+"texture_magasin": "res://screens/board/orbe_vbuck.png"
+},
+"values": {
+"obamium": 500,
+"size": 0.5
+}
+}
+orbe_24={
+"categories": {
+"type": "Orbe",
+"type_magasin": "orbe"
+},
+"texts": {
+"desc_casier": "C'est pas avec ça qu'on va sauver le monde...",
+"desc_magasin": "Un regard légèrement insistant qui fera trembler les plus faibles",
+"name": "Tomatorbe",
+"texture_casier": "res://screens/board/orbe_tomatorbe.png",
+"texture_magasin": "res://screens/board/orbe_tomatorbe.png"
+},
+"values": {
+"obamium": 350,
+"size": 0.5
+}
+}
+orbe_25={
+"categories": {
+"type": "Orbe",
+"type_magasin": "orbe"
+},
+"texts": {
+"desc_casier": "C'est un super cadavre de poisson",
+"desc_magasin": "En vrais il est mort dès qu'on l'a sorti de l'océan",
+"name": "Poisson Glorbe",
+"texture_casier": "res://screens/board/orbe_poissonglorbe.png",
+"texture_magasin": "res://screens/board/orbe_poissonglorbe.png"
+},
+"values": {
+"obamium": 225,
+"size": 0.5
+}
+}
+orbe_26={
+"categories": {
+"type": "Orbe",
+"type_magasin": "orbe"
+},
+"texts": {
+"desc_casier": "Vous pourriez pas jouer sans",
+"desc_magasin": "Disponibilité limitée jusqu'à ce qu'on trouve un autre moyen de faire du online",
+"name": "Orbe Hamachi",
+"texture_casier": "res://screens/board/orbe_hamachi.png",
+"texture_magasin": "res://screens/board/orbe_hamachi.png"
+},
+"values": {
+"obamium": 200,
+"size": 0.5
+}
+}
+orbe_27={
+"categories": {
+"type": "Orbe",
+"type_magasin": "orbe"
+},
+"texts": {
+"desc_casier": "C'est ici que le Barbecue a pris forme...",
+"desc_magasin": "L'emblème des pédophiles et des furry!",
+"name": "Orbe Discord",
+"texture_casier": "res://screens/board/orbe_discord.png",
+"texture_magasin": "res://screens/board/orbe_discord.png"
+},
+"values": {
+"obamium": 200,
+"size": 0.5
+}
+}
+orbe_28={
+"categories": {
+"type": "Orbe",
+"type_magasin": "orbe"
+},
+"texts": {
+"desc_casier": "Un petit oiseau tout mimi gouzi gouzi mais seulement en apparence",
+"desc_magasin": "Le repère des horny politiser sans charme",
+"name": "Orbe Twitter",
+"texture_casier": "res://screens/board/orbe_twitter.png",
+"texture_magasin": "res://screens/board/orbe_twitter.png"
+},
+"values": {
+"obamium": 200,
+"size": 0.5
+}
+}
+orbe_29={
+"categories": {
+"type": "Orbe",
+"type_magasin": "orbe"
+},
+"texts": {
+"desc_casier": "Il est tellement gros que pour le voir entièrement, on doit reculer de trois pas :joy:",
+"desc_magasin": "Il est tres gros et tres marrant hihi",
+"name": "Big Chungorbe",
+"texture_casier": "res://screens/board/orbe_bigchungorbe.png",
+"texture_magasin": "res://screens/board/orbe_bigchungorbe.png"
+},
+"values": {
+"obamium": 550,
+"size": 0.5
+}
+}
+orbe_30={
+"categories": {
+"type": "Orbe",
+"type_magasin": "orbe"
+},
+"texts": {
+"desc_casier": "Un oeuf étrangement solide",
+"desc_magasin": "Qui est venu en premier? L'orbe ou le bananakat?",
+"name": "Orbe Oeuf",
+"texture_casier": "res://screens/board/orbe_oeuf.png",
+"texture_magasin": "res://screens/board/orbe_oeuf.png"
+},
+"values": {
+"obamium": 350,
+"size": 0.5
+}
+}
+orbe_31={
+"categories": {
+"type": "Orbe",
+"type_magasin": "orbe"
+},
+"texts": {
+"desc_casier": "À ne pas utiliser pour se protéger de la pluie mais bien de la horde de bananakat qui arrive en force",
+"desc_magasin": "Il protège très mal de la pluie, par contre il est assez résistant contre les funky cards",
+"name": "Orbe Parapluie",
+"texture_casier": "res://screens/board/orbe_parapluie.png",
+"texture_magasin": "res://screens/board/orbe_parapluie.png"
+},
+"values": {
+"obamium": 350,
+"size": 0.5
+}
+}
+orbe_32={
+"categories": {
+"type": "Orbe",
+"type_magasin": "orbe"
+},
+"texts": {
+"desc_casier": "Je suis fier d'être un poisson funky archiviste, que Funky Kong bénisse BBCC!",
+"desc_magasin": "Ne lui demandez pas où il était la nuit dernière",
+"name": "Kirborbe",
+"texture_casier": "res://screens/board/orbe_kirborbe.png",
+"texture_magasin": "res://screens/board/orbe_kirborbe.png"
+},
+"values": {
+"obamium": 500,
+"size": 0.5
+}
+}
+orbe_33={
+"categories": {
+"type": "Orbe",
+"type_magasin": "orbe"
+},
+"texts": {
+"desc_casier": "Voilà de quoi personnaliser son profil et utiliser les emojis personnalisés",
+"desc_magasin": "Les utilisateurs Nitro ont désormais accès à l'eau potable",
+"name": "Nitrorbe",
+"texture_casier": "res://screens/board/orbe_nitrorbe.png",
+"texture_magasin": "res://screens/board/orbe_nitrorbe.png"
+},
+"values": {
+"obamium": 525,
+"size": 0.5
+}
+}
+orbe_34={
+"categories": {
+"type": "Orbe",
+"type_magasin": "orbe"
+},
+"texts": {
+"desc_casier": "Est-ce qu'il a vraiment besoin de ces lunettes de soleil?",
+"desc_magasin": "Pour les appréciateurs de l'été",
+"name": "Orbe Soleil",
+"texture_casier": "res://screens/board/orbe_soleil.png",
+"texture_magasin": "res://screens/board/orbe_soleil.png"
+},
+"values": {
+"obamium": 375,
+"size": 0.5
+}
+}
+orbe_35={
+"categories": {
+"type": "Orbe",
+"type_magasin": "orbe"
+},
+"texts": {
+"desc_casier": "Orbe obtenu de façon parfaitement legale",
+"desc_magasin": "Le Funky Shop n'est pas responsable pour quelconque évènement tragique que les achats pourraient produire",
+"name": "Orbe Bombe",
+"texture_casier": "res://screens/board/orbe_bombe.png",
+"texture_magasin": "res://screens/board/orbe_bombe.png"
+},
+"values": {
+"obamium": 400,
+"size": 0.5
+}
+}
+orbe_36={
+"categories": {
+"type": "Orbe",
+"type_magasin": "orbe"
+},
+"texts": {
+"desc_casier": "Cet orbe N'EST PAS GROS!!",
+"desc_magasin": "Un peu de potion magique? allez ça part en clip twitch",
+"name": "Orbelix",
+"texture_casier": "res://screens/board/orbe_orbelix.png",
+"texture_magasin": "res://screens/board/orbe_orbelix.png"
+},
+"values": {
+"obamium": 600,
+"size": 0.5
+}
+}
+orbe_37={
+"categories": {
+"type": "Orbe",
+"type_magasin": "orbe"
+},
+"texts": {
+"desc_casier": "Ne surtout pas manger l'orbe",
+"desc_magasin": "Servi avec une barquette de frites à côté",
+"name": "Hamburgorbe",
+"texture_casier": "res://screens/board/orbe_hamburgorbe.png",
+"texture_magasin": "res://screens/board/orbe_hamburgorbe.png"
+},
+"values": {
+"obamium": 250,
+"size": 0.5
+}
+}
+orbe_38={
+"categories": {
+"type": "Orbe",
+"type_magasin": "orbe"
+},
+"texts": {
+"desc_casier": "Une super décoration et une encore meilleure orbe !",
+"desc_magasin": "Tout ça pour moi c'est du chinois",
+"name": "Lanterne chinoise",
+"texture_casier": "res://screens/board/orbe_lanternechinoise.png",
+"texture_magasin": "res://screens/board/orbe_lanternechinoise.png"
+},
+"values": {
+"obamium": 350,
+"size": 0.5
+}
+}
+orbe_39={
+"categories": {
+"type": "Orbe",
+"type_magasin": "orbe"
+},
+"texts": {
+"desc_casier": "Le bananakat c'est le buff, la pauvreté c'est l'obamium, Ingsorbe c'est la victoire",
+"desc_magasin": "Si vous désirez une image de cette orbe, imaginez jouer Sparkle... éternellement. Ou alors regardez juste la représentation de l'orbe à coté de ce texte.",
+"name": "Ingsorbe",
+"texture_casier": "res://screens/board/orbe_ingsorbe.png",
+"texture_magasin": "res://screens/board/orbe_ingsorbe.png"
+},
+"values": {
+"obamium": 275,
+"size": 0.5
+}
+}
+orbe_40={
+"categories": {
+"type": "Orbe",
+"type_magasin": "orbe"
+},
+"texts": {
+"desc_casier": "Il n'y aura aucune information sur l'obtention de cet orbe par l'équipe de funky dev",
+"desc_magasin": "Cette orbe vous mettra dans la peau des plus grands criminels de notre ère",
+"name": "Flopporbe",
+"texture_casier": "res://screens/board/orbe_flopporbe.png",
+"texture_magasin": "res://screens/board/orbe_flopporbe.png"
+},
+"values": {
+"obamium": 650,
+"size": 0.5
+}
+}
+orbe_41={
+"categories": {
+"type": "Orbe",
+"type_magasin": "orbe"
+},
+"texts": {
+"desc_casier": "C'est évidemment une réplique, les funky dev gardent la vraie avec eux",
+"desc_magasin": "Un beau panorama parfaitement réaliste sur notre belle planète bleue",
+"name": "Orbe Terrestre",
+"texture_casier": "res://screens/board/orbe_terrestre.png",
+"texture_magasin": "res://screens/board/orbe_terrestre.png"
+},
+"values": {
+"obamium": 320,
+"size": 0.5
+}
+}
+orbe_42={
+"categories": {
+"type": "Orbe",
+"type_magasin": "orbe"
+},
+"texts": {
+"desc_casier": "Rira bien qui rira le dernier",
+"desc_magasin": "Cet orbe change selon vos pv! évidemment vous ne le verrez pas si vous êtes trop fort",
+"name": "Orbe Comédie et Tragédie",
+"texture_casier": "res://screens/board/orbe_comedietragedie.png",
+"texture_magasin": "res://screens/board/orbe_comedietragedie.png"
+},
+"values": {
+"obamium": 450,
+"size": 0.4
+}
+}
+orbe_43={
+"categories": {
+"type": "Orbe",
+"type_magasin": "orbe"
+},
+"texts": {
+"desc_casier": "Ah non va falloir se débrouiller tout seul pour avoir du shield là",
+"desc_magasin": "50 de bouclier non garantis, effets secondaires garantis",
+"name": "Orbe de Bouclier",
+"texture_casier": "res://screens/board/orbe_bouclier.png",
+"texture_magasin": "res://screens/board/orbe_bouclier.png"
+},
+"values": {
+"obamium": 375,
+"size": 0.5
+}
+}
+orbe_44={
+"categories": {
+"type": "Orbe",
+"type_magasin": "orbe"
+},
+"texts": {
+"desc_casier": "C'est la merde la plus drôle que j'ai jamais vu",
+"desc_magasin": "c'est littéralement fluttershy orange",
+"name": "Fluttershy Orange",
+"texture_casier": "res://screens/board/orbe_fluttershyorange.png",
+"texture_magasin": "res://screens/board/orbe_fluttershyorange.png"
+},
+"values": {
+"obamium": 450,
+"size": 0.5
+}
+}
+orbe_45={
+"categories": {
+"type": "Orbe",
+"type_magasin": "orbe"
+},
+"texts": {
+"desc_casier": "Un vestige du passé déterré par nos meilleurs archéologues",
+"desc_magasin": "U mad?",
+"name": "Trorbe Face",
+"texture_casier": "res://screens/board/orbe_trorbeface.png",
+"texture_magasin": "res://screens/board/orbe_trorbeface.png"
+},
+"values": {
+"obamium": 675,
+"size": 0.5
+}
+}
+orbe_46={
+"categories": {
+"type": "Orbe",
+"type_magasin": "orbe"
+},
+"texts": {
+"desc_casier": "Extrait directement des mines de Barbecue City",
+"desc_magasin": "Le saviez-vous? c'est le deuxième ingrédient le plus utilisé pour le Luap, le premier étant le sucre",
+"name": "Orbe Luapium",
+"texture_casier": "res://screens/board/orbe_luapium.png",
+"texture_magasin": "res://screens/board/orbe_luapium.png"
+},
+"values": {
+"obamium": 400,
+"size": 0.5
+}
+}
+orbe_47={
+"categories": {
+"type": "Orbe",
+"type_magasin": "orbe"
+},
+"texts": {
+"desc_casier": "Un bel hommage pour notre cher ami tombé trop tôt",
+"desc_magasin": "1 point pour FCA, 0 pour Minecraft",
+"name": "Copper Gorbelem",
+"texture_casier": "res://screens/board/orbe_coppergorbelem.png",
+"texture_magasin": "res://screens/board/orbe_coppergorbelem.png"
+},
+"values": {
+"obamium": 500,
+"size": 0.5
+}
+}
+orbe_48={
+"categories": {
+"type": "Orbe",
+"type_magasin": "orbe"
+},
+"texts": {
+"desc_casier": "Si vous entrez dans la Maison 699, n'oubliez pas le 1 au début.",
+"desc_magasin": "Si quelqu'un toque a votre porte après votre achat de cette orbe, n'ouvrez pas.",
+"name": "Orbe Maison",
+"texture_casier": "res://screens/board/orbe_maison.png",
+"texture_magasin": "res://screens/board/orbe_maison.png"
+},
+"values": {
+"obamium": 632,
+"size": 0.5
+}
+}
+orbe_49={
+"categories": {
+"type": "Orbe",
+"type_magasin": "orbe"
+},
+"texts": {
+"desc_casier": "Fun fact : c'est la noix qui a tourner dans Coco de Dreamworks.",
+"desc_magasin": "Suicide toi",
+"name": "Noix de coco",
+"texture_casier": "res://screens/board/Orbe_Coco.png",
+"texture_magasin": "res://screens/board/Orbe_Coco.png"
+},
+"values": {
+"obamium": 34,
+"size": 0.5
+}
+}
+skin_1={
+"categories": {
+"type": "Skin d'orbe",
+"type_magasin": "skinOrbe"
+},
+"texts": {
+"desc_casier": "La classe de ce couvre chef est difficilement égalable",
+"desc_magasin": "Avec ce skin d'obre, vous faites parti de la haute société orbique.",
+"name": "Haut de forme",
+"texture_casier": "res://screens/board/Orbe/Skin/HautForme.png",
+"texture_magasin": "res://screens/casier/icon/skin/skin_hautdeforme.png"
+},
+"values": {
+"obamium": 250,
+"size": 0.5
+}
+}
+skin_2={
+"categories": {
+"type": "Skin d'orbe",
+"type_magasin": "skinOrbe"
+},
+"texts": {
+"desc_casier": "élémentaire mon cher res://screens/board/Orbe/Skin/Nerd.png",
+"desc_magasin": "Avec ce skin, rien n'arrêtera votre enquête, même si les corps n'ont pas été trouver depuis 2013.",
+"name": "Sherlock Horbes",
+"texture_casier": "res://screens/board/skin_sherlock.png",
+"texture_magasin": "res://screens/casier/icon/skin/skin_sherlock.png"
+},
+"values": {
+"obamium": 250,
+"size": 0.5
+}
+}
+skin_3={
+"categories": {
+"type": "Skin d'orbe",
+"type_magasin": "skinOrbe"
+},
+"texts": {
+"desc_casier": "Une légende raconte que le fait d'équipper ce skin fait augmenter la température environnante de 7 °C",
+"desc_magasin": "Montrez votre amour pour le Maroc avec ce chapeau traditionelle Marocain. 
+
+
+ Fabriquer en Chine",
+"name": "Fez",
+"texture_casier": "res://screens/board/Orbe/Skin/Fez.png",
+"texture_magasin": "res://screens/casier/icon/skin/skin_fez.png"
+},
+"values": {
+"obamium": 399,
+"size": 0.5
+}
+}
+skin_4={
+"categories": {
+"type": "Skin d'orbe",
+"type_magasin": "skinOrbe"
+},
+"texts": {
+"desc_casier": "Utiliser ce skin est illégale dans 83 pays du a une surcharge de style pouvant être dangereuse pour la santé mentale.",
+"desc_magasin": "Une méta-analyse réaliser sur 8392 études indépendante a trouver que les grolles maximisant le plus le drip sont celle président ici.",
+"name": "Chaussures drip",
+"texture_casier": "res://screens/board/Orbe/Skin/DripShoe.png",
+"texture_magasin": "res://screens/casier/icon/skin/skin_chaussuresdrip.png"
+},
+"values": {
+"obamium": 600,
+"size": 0.5
+}
+}
+skin_5={
+"categories": {
+"type": "Skin d'orbe",
+"type_magasin": "skinOrbe"
+},
+"texts": {
+"desc_casier": "Pas mal pour vous protéger du soleil, cacher votre identité pour commettre un vol a main armée a la MoraBanc d'Andorre-La-Vella Av. Meritxell 96 , (vous pouvez désactiver l'alarme en forant 50cm en desous du pot de fleur a l'entré), ou alors juste pour le style.",
+"desc_magasin": "Les lunettes les plus stylé de l'univers observable. Par contre dsl, c'est pas pris en charge par la sécu.",
+"name": "Lunettes stylé",
+"texture_casier": "res://screens/casier/icon/skin/skin_lunettesstyle.png",
+"texture_magasin": "res://screens/casier/icon/skin/skin_lunettesstyle.png"
+},
+"values": {
+"obamium": 350,
+"size": 0.5
+}
+}
+skin_6={
+"categories": {
+"type": "Skin d'orbe",
+"type_magasin": "skinOrbe"
+},
+"texts": {
+"desc_casier": "\"Nn mais enft techniquement c'est pas un skin, psk skin ça veut dire peau, et ici il est question de lunette et de bouche \" :nerd:",
+"desc_magasin": "\"Nn mais enft techniquement c'est pas un skin, psk skin ça veut dire peau, et ici il est question de lunette et de bouche \" :nerd:",
+"name": "Nerd",
+"texture_casier": "res://screens/board/skin_nerd.png",
+"texture_magasin": "res://screens/casier/icon/skin/skin_nerd.png"
+},
+"values": {
+"obamium": 200,
+"size": 0.5
+}
+}
+skin_7={
+"categories": {
+"type": "Skin d'orbe",
+"type_magasin": "skinOrbe"
+},
+"texts": {
+"desc_casier": "Ce tuba est parfait pour profiter de la plage Funky.",
+"desc_magasin": "Tu ne doit pas voir ça :quoi:",
+"name": "Tuba",
+"texture_casier": "res://screens/board/skin_tuba.png",
+"texture_magasin": "res://screens/casier/icon/skin/Tuba.png"
+},
+"values": {
+"obamium": 34,
+"size": 0.5
+}
+}
+skin_8={
+"categories": {
+"type": "Skin d'orbe",
+"type_magasin": "skinOrbe"
+},
+"texts": {
+"desc_casier": "mucho doritos",
+"desc_magasin": "De quoi célébrer le mexique et tout ca la",
+"name": "Sombrero",
+"texture_casier": "res://screens/board/skin_sombrero.png",
+"texture_magasin": "res://screens/casier/icon/skin/skin_sombrero.png"
+},
+"values": {
+"obamium": 430,
+"size": 0.5
+}
+}
+skin_9={
+"categories": {
+"type": "Skin d'orbe",
+"type_magasin": "skinOrbe"
+},
+"texts": {
+"desc_casier": "J'espère que tu as été sage cette année...",
+"desc_magasin": "Très utile pour mettre une pression vitale aux adversaires",
+"name": "Main avec l'arme",
+"texture_casier": "res://screens/board/skin_mainaveclarme.png",
+"texture_magasin": "res://screens/casier/icon/skin/skin_mainaveclarme.png"
+},
+"values": {
+"obamium": 460,
+"size": 0.5
+}
+}
+skin_10={
+"categories": {
+"type": "Skin d'orbe",
+"type_magasin": "skinOrbe"
+},
+"texts": {
+"desc_casier": "Ya-hoo !",
+"desc_magasin": "Souvent imitée mais jamais égalée",
+"name": "Casquette de Mario",
+"texture_casier": "res://screens/board/skin_casquettemario.png",
+"texture_magasin": "res://screens/casier/icon/skin/skin_casquettemario.png"
+},
+"values": {
+"obamium": 200,
+"size": 0.5
+}
+}
+skin_11={
+"categories": {
+"type": "Skin d'orbe",
+"type_magasin": "skinOrbe"
+},
+"texts": {
+"desc_casier": "Je ne suis plus gentil",
+"desc_magasin": "Une vraie casquette de propriétaire",
+"name": "Casquette de Luigi",
+"texture_casier": "res://screens/board/skin_casquetteluigi.png",
+"texture_magasin": "res://screens/casier/icon/skin/skin_casquetteluigi.png"
+},
+"values": {
+"obamium": 200,
+"size": 0.5
+}
+}
+skin_12={
+"categories": {
+"type": "Skin d'orbe",
+"type_magasin": "skinOrbe"
+},
+"texts": {
+"desc_casier": "C'est moi qui représente la loi dans cette ville",
+"desc_magasin": "Avec ça, vous aurez l'air de dégainer du bananakat plus vite que votre ombre",
+"name": "Chapeau de Shérif",
+"texture_casier": "res://screens/board/skin_sherif.png",
+"texture_magasin": "res://screens/casier/icon/skin/skin_sherif.png"
+},
+"values": {
+"obamium": 400,
+"size": 0.5
+}
+}
+skin_13={
+"categories": {
+"type": "Skin d'orbe",
+"type_magasin": "skinOrbe"
+},
+"texts": {
+"desc_casier": "Le chapeau de monsieur je sais tout",
+"desc_magasin": "Pour les diplômés de l'université de FCA",
+"name": "Coiffe de Diplômé",
+"texture_casier": "res://screens/board/skin_coiffedediplome.png",
+"texture_magasin": "res://screens/casier/icon/skin/skin_coiffedediplome.png"
+},
+"values": {
+"obamium": 270,
+"size": 0.5
+}
+}
+skin_14={
+"categories": {
+"type": "Skin d'orbe",
+"type_magasin": "skinOrbe"
+},
+"texts": {
+"desc_casier": "À qui vas-tu les offrir?",
+"desc_magasin": "Un peu de fleurs pour les gens qui adorent les fleurs",
+"name": "Bouquet",
+"texture_casier": "res://screens/board/skin_bouquet.png",
+"texture_magasin": "res://screens/casier/icon/skin/skin_bouquet.png"
+},
+"values": {
+"obamium": 150,
+"size": 0.5
+}
+}
+skin_15={
+"categories": {
+"type": "Skin d'orbe",
+"type_magasin": "skinOrbe"
+},
+"texts": {
+"desc_casier": "Et ça marche vraiment du coup?",
+"desc_magasin": "Tout le monde a envie de quelque chose pour faire fuir le fisc, par contre ça a un prix aussi hein",
+"name": "Pancarte Arrière Fisc",
+"texture_casier": "res://screens/board/skin_arrierefisc.png",
+"texture_magasin": "res://screens/casier/icon/skin/skin_arrierefisc.png"
+},
+"values": {
+"obamium": 450,
+"size": 0.5
+}
+}
+skin_16={
+"categories": {
+"type": "Skin d'orbe",
+"type_magasin": "skinOrbe"
+},
+"texts": {
+"desc_casier": "Personne n'est en sécurité nulle part",
+"desc_magasin": "Ce sera la dernière chose que votre adversaire verra",
+"name": "Main qui Attrape",
+"texture_casier": "res://screens/board/skin_mainquiattrape.png",
+"texture_magasin": "res://screens/casier/icon/skin/skin_mainquiattrape.png"
+},
+"values": {
+"obamium": 350,
+"size": 0.5
+}
+}
+skin_17={
+"categories": {
+"type": "Skin d'orbe",
+"type_magasin": "skinOrbe"
+},
+"texts": {
+"desc_casier": "Do you like my sword, sword, sword my diamond sword",
+"desc_magasin": "Ça va faire trembler les zombies et les squelettes",
+"name": "Épée en Diamant",
+"texture_casier": "res://screens/board/skin_epeeendiamant.png",
+"texture_magasin": "res://screens/casier/icon/skin/skin_epeeendiamant.png"
+},
+"values": {
+"obamium": 450,
+"size": 0.5
+}
+}
+skin_18={
+"categories": {
+"type": "Skin d'orbe",
+"type_magasin": "skinOrbe"
+},
+"texts": {
+"desc_casier": "L'époque où Fortnite avait du charme",
+"desc_magasin": "Munitions non fournies",
+"name": "Scar de Fortnite",
+"texture_casier": "res://screens/board/skin_scarfortnite.png",
+"texture_magasin": "res://screens/casier/icon/skin/skin_scarfortnite.png"
+},
+"values": {
+"obamium": 260,
+"size": 0.5
+}
+}
+skin_19={
+"categories": {
+"type": "Skin d'orbe",
+"type_magasin": "skinOrbe"
+},
+"texts": {
+"desc_casier": "Le couteau de l'imposteur among us impostor",
+"desc_magasin": "Très pratique quand y'a besoin de trahir des gens",
+"name": "Couteau d'Amogus",
+"texture_casier": "res://screens/board/skin_couteauamongus.png",
+"texture_magasin": "res://screens/casier/icon/skin/skin_couteauamongus.png"
+},
+"values": {
+"obamium": 200,
+"size": 0.5
+}
+}
+skin_20={
+"categories": {
+"type": "Skin d'orbe",
+"type_magasin": "skinOrbe"
+},
+"texts": {
+"desc_casier": "Les pro hiver être genre j'ai pas raison",
+"desc_magasin": "Garanti moins cher qu'un frigo",
+"name": "Glaçon",
+"texture_casier": "res://screens/board/skin_glacon.png",
+"texture_magasin": "res://screens/casier/icon/skin/skin_glacon.png"
+},
+"values": {
+"obamium": 330,
+"size": 0.5
+}
+}
+skin_21={
+"categories": {
+"type": "Skin d'orbe",
+"type_magasin": "skinOrbe"
+},
+"texts": {
+"desc_casier": "Bip boup zap bidibip",
+"desc_magasin": "Pour une orbe 100% automatisée ! (en vrai c'est plutot 3%)",
+"name": "Antenne de Robot",
+"texture_casier": "res://screens/board/skin_antennerobot.png",
+"texture_magasin": "res://screens/casier/icon/skin/skin_antennerobot.png"
+},
+"values": {
+"obamium": 150,
+"size": 0.5
+}
+}
+skin_22={
+"categories": {
+"type": "Skin d'orbe",
+"type_magasin": "skinOrbe"
+},
+"texts": {
+"desc_casier": "Le poti mogus de amogus",
+"desc_magasin": "Il vous tiendra compagnie pendant que vous perdez face à un castor",
+"name": "Mini Mogus",
+"texture_casier": "res://screens/board/skin_minimogus.png",
+"texture_magasin": "res://screens/casier/icon/skin/skin_minimogus.png"
+},
+"values": {
+"obamium": 270,
+"size": 0.5
+}
+}
+skin_23={
+"categories": {
+"type": "Skin d'orbe",
+"type_magasin": "skinOrbe"
+},
+"texts": {
+"desc_casier": "La moitié des bananakat ont disparu",
+"desc_magasin": "Pouvoirs d'ampleur galactique non fournis",
+"name": "Gant de l'Infinité",
+"texture_casier": "res://screens/board/skin_gantdelinfinite.png",
+"texture_magasin": "res://screens/casier/icon/skin/skin_gantdelinfinite.png"
+},
+"values": {
+"obamium": 410,
+"size": 1.0
+}
+}
+skin_24={
+"categories": {
+"type": "Skin d'orbe",
+"type_magasin": "skinOrbe"
+},
+"texts": {
+"desc_casier": "Ahi les golems qui mettent le masque en plein duel FCA",
+"desc_magasin": "C'est votre devoir de citoyen après tout",
+"name": "Masquarade",
+"texture_casier": "res://screens/board/skin_masquarade.png",
+"texture_magasin": "res://screens/casier/icon/skin/skin_masquarade.png"
+},
+"values": {
+"obamium": 260,
+"size": 0.5
+}
+}
+skin_25={
+"categories": {
+"type": "Skin d'orbe",
+"type_magasin": "skinOrbe"
+},
+"texts": {
+"desc_casier": "Votre orbe a reussi a se faire pousser la barbe apparemment",
+"desc_magasin": "Même pas besoin d'aller en Turquie c'est du tout frais",
+"name": "Barbe",
+"texture_casier": "res://screens/board/skin_barbe.png",
+"texture_magasin": "res://screens/casier/icon/skin/skin_barbe.png"
+},
+"values": {
+"obamium": 140,
+"size": 0.5
+}
+}
+skin_26={
+"categories": {
+"type": "Skin d'orbe",
+"type_magasin": "skinOrbe"
+},
+"texts": {
+"desc_casier": "Muchacho amigo",
+"desc_magasin": "Un accoutrement utile pour tout yeslife qui se respecte",
+"name": "Moustache",
+"texture_casier": "res://screens/board/skin_moustache.png",
+"texture_magasin": "res://screens/casier/icon/skin/skin_moustache.png"
+},
+"values": {
+"obamium": 140,
+"size": 0.5
+}
+}
+skin_27={
+"categories": {
+"type": "Skin d'orbe",
+"type_magasin": "skinOrbe"
+},
+"texts": {
+"desc_casier": "L'orbe est toute brillante maintenant",
+"desc_magasin": "À ne pas confondre avec la célèbre funky card de la hors vague 1",
+"name": "Sparkles",
+"texture_casier": "res://screens/board/skin_sparkles.png",
+"texture_magasin": "res://screens/casier/icon/skin/skin_sparkles.png"
+},
+"values": {
+"obamium": 440,
+"size": 0.5
+}
+}
+skin_28={
+"categories": {
+"type": "Skin d'orbe",
+"type_magasin": "skinOrbe"
+},
+"texts": {
+"desc_casier": "Tu devrais aller voir la notif, c'est peut-être une nouvelle Funky Card©",
+"desc_magasin": "Pour mettre un vent à quelqu'un pendant toute une partie",
+"name": "Notif Discord",
+"texture_casier": "res://screens/board/skin_notifdiscord.png",
+"texture_magasin": "res://screens/casier/icon/skin/skin_notifdiscord.png"
+},
+"values": {
+"obamium": 160,
+"size": 0.5
+}
+}
+skin_29={
+"categories": {
+"type": "Skin d'orbe",
+"type_magasin": "skinOrbe"
+},
+"texts": {
+"desc_casier": "L'orbe a eu une super idée",
+"desc_magasin": "C'est à ça qu'on voit si une idée est fiable ou pas",
+"name": "Ampoule d'idée",
+"texture_casier": "res://screens/board/skin_ampouleidee.png",
+"texture_magasin": "res://screens/casier/icon/skin/skin_ampouleidee.png"
+},
+"values": {
+"obamium": 150,
+"size": 0.5
+}
+}
+skin_30={
+"categories": {
+"type": "Skin d'orbe",
+"type_magasin": "skinOrbe"
+},
+"texts": {
+"desc_casier": "Il est l'heure de faire dodo",
+"desc_magasin": "Essentiellement pour les gens qui dorment en jouant",
+"name": "ZZZ",
+"texture_casier": "res://screens/board/skin_zzz.png",
+"texture_magasin": "res://screens/casier/icon/skin/skin_zzz.png"
+},
+"values": {
+"obamium": 130,
+"size": 0.5
+}
+}
+skin_31={
+"categories": {
+"type": "Skin d'orbe",
+"type_magasin": "skinOrbe"
+},
+"texts": {
+"desc_casier": "Avec ça au moins vous êtes en sécurité",
+"desc_magasin": "Pour filtrer tous les gaz toxiques, notamment l'odeur de texxit",
+"name": "Masque à gaz",
+"texture_casier": "res://screens/board/skin_masqueagaz.png",
+"texture_magasin": "res://screens/casier/icon/skin/skin_masqueagaz.png"
+},
+"values": {
+"obamium": 240,
+"size": 0.5
+}
+}
+skin_32={
+"categories": {
+"type": "Skin d'orbe",
+"type_magasin": "skinOrbe"
+},
+"texts": {
+"desc_casier": "Comment ça se stocke du feu enft",
+"desc_magasin": "Les flammes de l'enfer juste pour vous",
+"name": "Cercle de feu",
+"texture_casier": "res://screens/board/skin_feu.png",
+"texture_magasin": "res://screens/casier/icon/skin/skin_feu.png"
+},
+"values": {
+"obamium": 450,
+"size": 0.5
+}
+}
+skin_33={
+"categories": {
+"type": "Skin d'orbe",
+"type_magasin": "skinOrbe"
+},
+"texts": {
+"desc_casier": "Les orbes ne meurent jamais",
+"desc_magasin": "L'orbe ne va pas vraiment voler par contre",
+"name": "Ailes d'Ange",
+"texture_casier": "res://screens/board/skin_ailesdange.png",
+"texture_magasin": "res://screens/casier/icon/skin/skin_ailesdange.png"
+},
+"values": {
+"obamium": 360,
+"size": 0.5
+}
+}
+skin_34={
+"categories": {
+"type": "Skin d'orbe",
+"type_magasin": "skinOrbe"
+},
+"texts": {
+"desc_casier": "Avec ça on dirait que l'orbe est toute innocente",
+"desc_magasin": "En général ça se mérite ce genre de trucs mais bon là c'est pour 340 obamium",
+"name": "Auréole",
+"texture_casier": "res://screens/board/skin_aureole.png",
+"texture_magasin": "res://screens/casier/icon/skin/skin_aureole.png"
+},
+"values": {
+"obamium": 340,
+"size": 0.5
+}
+}
+skin_35={
+"categories": {
+"type": "Skin d'orbe",
+"type_magasin": "skinOrbe"
+},
+"texts": {
+"desc_casier": "L'orbe a l'air tellement diabolique avec ça",
+"desc_magasin": "Le diable en personne valide ce style",
+"name": "Cornes de Diable",
+"texture_casier": "res://screens/board/skin_cornesdiable.png",
+"texture_magasin": "res://screens/casier/icon/skin/skin_cornesdiable.png"
+},
+"values": {
+"obamium": 340,
+"size": 0.5
+}
+}
+skin_36={
+"categories": {
+"type": "Skin d'orbe",
+"type_magasin": "skinOrbe"
+},
+"texts": {
+"desc_casier": "Arrrg de mon temps on jouait le deck poisson",
+"desc_magasin": "Pillez tous leurs coffre de fortnite",
+"name": "Chapeau de Pirate",
+"texture_casier": "res://screens/board/skin_pirate.png",
+"texture_magasin": "res://screens/casier/icon/skin/skin_pirate.png"
+},
+"values": {
+"obamium": 380,
+"size": 0.5
+}
+}
+skin_37={
+"categories": {
+"type": "Skin d'orbe",
+"type_magasin": "skinOrbe"
+},
+"texts": {
+"desc_casier": "C'est ceux la même qu'utilisent nos mineurs sous-payés qui travaillent dans les mines de luapium",
+"desc_magasin": "Les mineurs quand ils entendent parler de tous les gens sur internet qui sont attirés par eux:",
+"name": "Casque de Mineur",
+"texture_casier": "res://screens/board/skin_casquemineur.png",
+"texture_magasin": "res://screens/casier/icon/skin/skin_casquemineur.png"
+},
+"values": {
+"obamium": 260,
+"size": 0.5
+}
+}
+skin_38={
+"categories": {
+"type": "Skin d'orbe",
+"type_magasin": "skinOrbe"
+},
+"texts": {
+"desc_casier": "On se sent toujours mieux dans un bon petit slip",
+"desc_magasin": "Serieusement on en est vraiment la dans fca en 2009",
+"name": "Slip",
+"texture_casier": "res://screens/board/skin_slip.png",
+"texture_magasin": "res://screens/casier/icon/skin/skin_slip.png"
+},
+"values": {
+"obamium": 500,
+"size": 0.5
+}
+}
+skin_39={
+"categories": {
+"type": "Skin d'orbe",
+"type_magasin": "skinOrbe"
+},
+"texts": {
+"desc_casier": "Trop la classe",
+"desc_magasin": "Elle irait bien à Goku...",
+"name": "Veste Drip",
+"texture_casier": "res://screens/board/skin_vestedrip.png",
+"texture_magasin": "res://screens/casier/icon/skin/skin_vestedrip.png"
+},
+"values": {
+"obamium": 600,
+"size": 0.5
+}
+}
+skin_40={
+"categories": {
+"type": "Skin d'orbe",
+"type_magasin": "skinOrbe"
+},
+"texts": {
+"desc_casier": "Pour broyer du noir avec fourmi triste",
+"desc_magasin": "Certifié par fourmi triste en personne",
+"name": "Bâton Triste",
+"texture_casier": "res://screens/board/skin_batonfourmitriste.png",
+"texture_magasin": "res://screens/casier/icon/skin/skin_batonfourmitriste.png"
+},
+"values": {
+"obamium": 220,
+"size": 0.5
+}
+}
+skin_41={
+"categories": {
+"type": "Skin d'orbe",
+"type_magasin": "skinOrbe"
+},
+"texts": {
+"desc_casier": "Un drapeau à secouer fièrement pour montrer son appartenance à la grande nation qu'est Barbecue City",
+"desc_magasin": "Y'a de quoi être fier de sa patrie quand même",
+"name": "Drapeau BBCC",
+"texture_casier": "res://screens/board/skin_drapeaubbcc.png",
+"texture_magasin": "res://screens/board/skin_drapeaubbcc.png"
+},
+"values": {
+"obamium": 540,
+"size": 0.5
+}
+}
+skin_42={
+"categories": {
+"type": "Skin d'orbe",
+"type_magasin": "skinOrbe"
+},
+"texts": {
+"desc_casier": "Mettre sa cravate, faire chauffer hamachi, détruire une orbe a coup de bananakat, la routine dans le monde du travaille",
+"desc_magasin": "Un bon skin si vous êtes un yeslife qui va au travaille mais que vous aimez quand même les JV",
+"name": "Cravate",
+"texture_casier": "res://screens/board/skin_cravate.png",
+"texture_magasin": "res://screens/casier/icon/skin/skin_cravate.png"
+},
+"values": {
+"obamium": 210,
+"size": 0.5
+}
+}
+skin_43={
+"categories": {
+"type": "Skin d'orbe",
+"type_magasin": "skinOrbe"
+},
+"texts": {
+"desc_casier": "Une orbe invisible.",
+"desc_magasin": "Pend toi",
+"name": ":lovide:",
+"texture_casier": "",
+"texture_magasin": ""
+},
+"values": {
+"obamium": 34,
+"size": 0.5
+}
+}
+arene_1={
+"categories": {
+"type": "Arène",
+"type_magasin": "arena"
+},
+"texts": {
+"desc_casier": "Un paradis mais pas fiscal",
+"desc_magasin": "Température moyenne du pays : bcp",
+"name": "Maroc",
+"texture_casier": "res://screens/board/Arena/arena_maroc.png",
+"texture_magasin": "res://screens/casier/icon/arena/arene_maroc.png"
+},
+"values": {
+"obamium": 300,
+"size": 0.5
+}
+}
+arene_2={
+"categories": {
+"type": "Arène",
+"type_magasin": "arena"
+},
+"texts": {
+"desc_casier": "Tout le monde est là comme dirait l'autre",
+"desc_magasin": "Un super crossover mais toujours moins ambitieux que FCA",
+"name": "Smash",
+"texture_casier": "res://screens/board/Arena/arene_smash.png",
+"texture_magasin": "res://screens/casier/icon/arena/arene_smash.png"
+},
+"values": {
+"obamium": 450,
+"size": 0.5
+}
+}
+arene_3={
+"categories": {
+"type": "Arène",
+"type_magasin": "arena"
+},
+"texts": {
+"desc_casier": "A la base on voulait mettre des trucs Arméniens ici pour faire mystérieux mais ça faisait tout planter",
+"desc_magasin": "Pour les gens qui veulent vivre dangereusement",
+"name": "BCA de Minuit",
+"texture_casier": "res://screens/board/Arena/arene_minuit.png",
+"texture_magasin": "res://screens/casier/icon/arena/arene_minuit.png"
+},
+"values": {
+"obamium": 250,
+"size": 0.5
+}
+}
+arene_4={
+"categories": {
+"type": "Arène",
+"type_magasin": "arena"
+},
+"texts": {
+"desc_casier": "C'est toujoursun bon choix de drop à Tilted",
+"desc_magasin": "On raconte que le stuff est dingue par ici",
+"name": "Tilted Towers",
+"texture_casier": "res://screens/board/Arena/arene_tiltedtowers.png",
+"texture_magasin": "res://screens/casier/icon/arena/arene_tiltedtowers.png"
+},
+"values": {
+"obamium": 350,
+"size": 0.5
+}
+}
+arene_5={
+"categories": {
+"type": "Arène",
+"type_magasin": "arena"
+},
+"texts": {
+"desc_casier": "On se sent seul hein?",
+"desc_magasin": "Pour les fans de Ratz et de trauma",
+"name": "Espace Liminal Ratz",
+"texture_casier": "res://screens/board/Arena/arene_ratzliminal.png",
+"texture_magasin": "res://screens/casier/icon/arena/arene_ratzliminal.png"
+},
+"values": {
+"obamium": 275,
+"size": 0.5
+}
+}
+arene_6={
+"categories": {
+"type": "Arène",
+"type_magasin": "arena"
+},
+"texts": {
+"desc_casier": "Vous avez noclip dans FCA",
+"desc_magasin": "Gros trauma",
+"name": "Backrooms",
+"texture_casier": "res://screens/board/Arena/arene_backrooms.png",
+"texture_magasin": "res://screens/casier/icon/arena/arene_backrooms.png"
+},
+"values": {
+"obamium": 325,
+"size": 0.5
+}
+}
+arene_7={
+"categories": {
+"type": "Arène",
+"type_magasin": "arena"
+},
+"texts": {
+"desc_casier": "C'est une scène culte",
+"desc_magasin": "Un screenshot de la série à succès de DEKESKUI_YT",
+"name": "L'Archive d'Or",
+"texture_casier": "res://screens/board/Arena/arene_archivedor.png",
+"texture_magasin": "res://screens/casier/icon/arena/arene_archivedor.png"
+},
+"values": {
+"obamium": 350,
+"size": 0.5
+}
+}
+arene_8={
+"categories": {
+"type": "Arène",
+"type_magasin": "arena"
+},
+"texts": {
+"desc_casier": "C'est ici qu'on classe toutes nos archives de messages comprométants de kirbo",
+"desc_magasin": "Vous pouvez entrer mais seulement si vous avez votre pass archival",
+"name": "Archives",
+"texture_casier": "res://screens/board/Arena/arene_archives.png",
+"texture_magasin": "res://screens/casier/icon/arena/arene_archives.png"
+},
+"values": {
+"obamium": 400,
+"size": 0.5
+}
+}
+arene_9={
+"categories": {
+"type": "Arène",
+"type_magasin": "arena"
+},
+"texts": {
+"desc_casier": "Le fond préféré de Ponce en personne",
+"desc_magasin": "Franchement je sais même pas qui va acheter ça",
+"name": "Twitch",
+"texture_casier": "res://screens/board/Arena/arene_twitch.png",
+"texture_magasin": "res://screens/casier/icon/arena/arene_twitch.png"
+},
+"values": {
+"obamium": 200,
+"size": 0.5
+}
+}
+arene_10={
+"categories": {
+"type": "Arène",
+"type_magasin": "arena"
+},
+"texts": {
+"desc_casier": "Attention à bien vérifier ton énergie régulièrement",
+"desc_magasin": "Risques possibles de mort attroce mais franchement ça vaut le coup",
+"name": "FNAF",
+"texture_casier": "res://screens/board/Arena/arene_fnaf.png",
+"texture_magasin": "res://screens/casier/icon/arena/arene_fnaf.png"
+},
+"values": {
+"obamium": 500,
+"size": 0.5
+}
+}
+arene_11={
+"categories": {
+"type": "Arène",
+"type_magasin": "arena"
+},
+"texts": {
+"desc_casier": "Le charme d'avant sur YouTube",
+"desc_magasin": "Par contre vous ne pourrez pas regarder les vidéos dessus",
+"name": "YouTube",
+"texture_casier": "res://screens/board/Arena/arene_youtube.png",
+"texture_magasin": "res://screens/casier/icon/arena/arene_youtube.png"
+},
+"values": {
+"obamium": 300,
+"size": 0.5
+}
+}
+arene_12={
+"categories": {
+"type": "Arène",
+"type_magasin": "arena"
+},
+"texts": {
+"desc_casier": "Merci monsieur Goatdot sans qui on ne pourrait pas jouer",
+"desc_magasin": "C'est un peu meta quand même",
+"name": "Godot",
+"texture_casier": "res://screens/board/Arena/arene_godot.png",
+"texture_magasin": "res://screens/casier/icon/arena/arene_godot.png"
+},
+"values": {
+"obamium": 300,
+"size": 0.5
+}
+}
+arene_13={
+"categories": {
+"type": "Arène",
+"type_magasin": "arena"
+},
+"texts": {
+"desc_casier": "Notre belle France a de très beaux paysages",
+"desc_magasin": "Aussi appelée la tour de Paris",
+"name": "Tour Eiffel",
+"texture_casier": "res://screens/board/Arena/arene_toureiffel.png",
+"texture_magasin": "res://screens/casier/icon/arena/arene_toureiffel.png"
+},
+"values": {
+"obamium": 350,
+"size": 0.5
+}
+}
+arene_14={
+"categories": {
+"type": "Arène",
+"type_magasin": "arena"
+},
+"texts": {
+"desc_casier": "100000000h de devoirs",
+"desc_magasin": "Pour les gens qui veulent chill un max pendant leur partie de FCA",
+"name": "LoFi",
+"texture_casier": "res://screens/board/Arena/arene_lofi.png",
+"texture_magasin": "res://screens/casier/icon/arena/arene_lofi.png"
+},
+"values": {
+"obamium": 375,
+"size": 0.5
+}
+}
+arene_15={
+"categories": {
+"type": "Arène",
+"type_magasin": "arena"
+},
+"texts": {
+"desc_casier": "Le PC a mis 15 minutes à s'allumer quand même",
+"desc_magasin": "Les fameuses plaines de on ne sait où 
+
+
+
+
+
+
+Note des développeurs : (En vrais on sais TeXXit, c'est 38°15'00.5\"N 122°24'38.9\"W)",
+"name": "Windows XP",
+"texture_casier": "res://screens/board/Arena/arene_windowsxp.png",
+"texture_magasin": "res://screens/casier/icon/arena/arene_windowsxp.png"
+},
+"values": {
+"obamium": 400,
+"size": 0.5
+}
+}
+arene_16={
+"categories": {
+"type": "Arène",
+"type_magasin": "arena"
+},
+"texts": {
+"desc_casier": "C'est le jeu des cubes",
+"desc_magasin": "Le deuxième jeu qui a fait le plus de ventes en arène (le premier étant FCA)",
+"name": "Minecraft",
+"texture_casier": "res://screens/board/Arena/arene_minecraft.png",
+"texture_magasin": "res://screens/casier/icon/arena/arene_minecraft.png"
+},
+"values": {
+"obamium": 475,
+"size": 0.5
+}
+}
+arene_17={
+"categories": {
+"type": "Arène",
+"type_magasin": "arena"
+},
+"texts": {
+"desc_casier": "Quelle est cette malédiction",
+"desc_magasin": "Ils ont l'air presque accueillants",
+"name": "Image Maudite",
+"texture_casier": "res://screens/board/Arena/arene_imagemaudite.png",
+"texture_magasin": "res://screens/casier/icon/arena/arene_imagemaudite.png"
+},
+"values": {
+"obamium": 325,
+"size": 0.5
+}
+}
+arene_18={
+"categories": {
+"type": "Arène",
+"type_magasin": "arena"
+},
+"texts": {
+"desc_casier": "Image exclusive de la Jungle à bafouilles",
+"desc_magasin": "Un certain héros sans membres est passé par là",
+"name": "Rayman",
+"texture_casier": "res://screens/board/Arena/arene_rayman.png",
+"texture_magasin": "res://screens/casier/icon/arena/arene_rayman.png"
+},
+"values": {
+"obamium": 375,
+"size": 0.5
+}
+}
+arene_19={
+"categories": {
+"type": "Arène",
+"type_magasin": "arena"
+},
+"texts": {
+"desc_casier": "Les négationnistes de Garfield quand leur lasagne disparait (ils vivent seuls)",
+"desc_magasin": "Quelque chose me dit qu'une pizza se trouve à l'intérieur de cette maison",
+"name": "Garfield",
+"texture_casier": "res://screens/board/Arena/arene_garfield.png",
+"texture_magasin": "res://screens/casier/icon/arena/arene_garfield.png"
+},
+"values": {
+"obamium": 400,
+"size": 0.5
+}
+}
+arene_20={
+"categories": {
+"type": "Arène",
+"type_magasin": "arena"
+},
+"texts": {
+"desc_casier": "Un duel très épique mais moins que ceux de FCA",
+"desc_magasin": "Qui va gagner?",
+"name": "TerminalMontage",
+"texture_casier": "res://screens/board/Arena/arene_terminalmontage.png",
+"texture_magasin": "res://screens/casier/icon/arena/arene_terminalmontage.png"
+},
+"values": {
+"obamium": 350,
+"size": 0.5
+}
+}
+arene_21={
+"categories": {
+"type": "Arène",
+"type_magasin": "arena"
+},
+"texts": {
+"desc_casier": "Un vaisseau impressionant 
+
+
+
+
+
+
+Note des développeurs : (SON NOM EST THE KERNEL CRUISER)",
+"desc_magasin": "Vers l'infini et même un peu plus loin",
+"name": "FTL",
+"texture_casier": "res://screens/board/Arena/arene_ftl.png",
+"texture_magasin": "res://screens/casier/icon/arena/arene_ftl.png"
+},
+"values": {
+"obamium": 250,
+"size": 0.5
+}
+}
+arene_22={
+"categories": {
+"type": "Arène",
+"type_magasin": "arena"
+},
+"texts": {
+"desc_casier": "Il y a un Bananakat parmi nous",
+"desc_magasin": "Challenge ne pas être éjecté",
+"name": "Among Us",
+"texture_casier": "res://screens/board/Arena/arene_amongus.png",
+"texture_magasin": "res://screens/casier/icon/arena/arene_amongus.png"
+},
+"values": {
+"obamium": 400,
+"size": 0.5
+}
+}
+arene_23={
+"categories": {
+"type": "Arène",
+"type_magasin": "arena"
+},
+"texts": {
+"desc_casier": "Tu sais la magie tout ca la",
+"desc_magasin": "Aucun sort ne permet de se procurer cette arène, faut l'acheter en gros",
+"name": "Harry Potter",
+"texture_casier": "res://screens/board/Arena/arene_harrypotter.png",
+"texture_magasin": "res://screens/casier/icon/arena/arene_harrypotter.png"
+},
+"values": {
+"obamium": 325,
+"size": 0.5
+}
+}
+arene_24={
+"categories": {
+"type": "Arène",
+"type_magasin": "arena"
+},
+"texts": {
+"desc_casier": "Il en a vécu des choses ce canapé...",
+"desc_magasin": "Tout paraît bizarre chez les GRENIER",
+"name": "JDG",
+"texture_casier": "res://screens/board/Arena/arene_jdg.png",
+"texture_magasin": "res://screens/casier/icon/arena/arene_jdg.png"
+},
+"values": {
+"obamium": 400,
+"size": 0.5
+}
+}
+arene_25={
+"categories": {
+"type": "Arène",
+"type_magasin": "arena"
+},
+"texts": {
+"desc_casier": "L'eau, la terre, le feu, l'air",
+"desc_magasin": "Le dernier maître des poissons",
+"name": "Avatar",
+"texture_casier": "res://screens/board/Arena/arene_avatar.png",
+"texture_magasin": "res://screens/casier/icon/arena/arene_avatar.png"
+},
+"values": {
+"obamium": 350,
+"size": 0.5
+}
+}
+arene_26={
+"categories": {
+"type": "Arène",
+"type_magasin": "arena"
+},
+"texts": {
+"desc_casier": "L'eau glou glou mmmmhhh",
+"desc_magasin": "Les pti mec bleus la",
+"name": "Avatar Bleu",
+"texture_casier": "res://screens/board/Arena/arene_avatarbleu.png",
+"texture_magasin": "res://screens/casier/icon/arena/arene_avatarbleu.png"
+},
+"values": {
+"obamium": 300,
+"size": 0.5
+}
+}
+arene_27={
+"categories": {
+"type": "Arène",
+"type_magasin": "arena"
+},
+"texts": {
+"desc_casier": "De quoi détruire la carrière de Kirbo",
+"desc_magasin": "Beaucoup n'ont pas survécu à ce screen",
+"name": "Discord",
+"texture_casier": "res://screens/board/Arena/arene_discord.png",
+"texture_magasin": "res://screens/casier/icon/arena/arene_discord.png"
+},
+"values": {
+"obamium": 350,
+"size": 0.5
+}
+}
+arene_28={
+"categories": {
+"type": "Arène",
+"type_magasin": "arena"
+},
+"texts": {
+"desc_casier": "Salut c'est Hugo",
+"desc_magasin": "Inspiration numero 1 pour les textures du jeu",
+"name": "Hugo Décrypte",
+"texture_casier": "res://screens/board/Arena/arene_hugodecrypte.png",
+"texture_magasin": "res://screens/casier/icon/arena/arene_hugodecrypte.png"
+},
+"values": {
+"obamium": 225,
+"size": 0.5
+}
+}
+arene_29={
+"categories": {
+"type": "Arène",
+"type_magasin": "arena"
+},
+"texts": {
+"desc_casier": "N'oubliez pas de manger du fromage",
+"desc_magasin": "Notre duo iconique préféré (en fait c'est pas notre préféré mais il est super quand même)",
+"name": "Wallace et Gromit",
+"texture_casier": "res://screens/board/Arena/arene_wallacegromit.png",
+"texture_magasin": "res://screens/casier/icon/arena/arene_wallacegromit.png"
+},
+"values": {
+"obamium": 400,
+"size": 0.5
+}
+}
+arene_30={
+"categories": {
+"type": "Arène",
+"type_magasin": "arena"
+},
+"texts": {
+"desc_casier": "Quelle base formidable ! je me demande comment elle va se développer dans le futur",
+"desc_magasin": "T-2 heures avant l'incident",
+"name": "Base de Juan",
+"texture_casier": "res://screens/board/Arena/arene_basedejuan.png",
+"texture_magasin": "res://screens/casier/icon/arena/arene_basedejuan.png"
+},
+"values": {
+"obamium": 425,
+"size": 0.5
+}
+}
+arene_31={
+"categories": {
+"type": "Arène",
+"type_magasin": "arena"
+},
+"texts": {
+"desc_casier": "WHAT WAS HE COOKING !!",
+"desc_magasin": "Un rat qui cuisine mieux que toi mdrrr la honte",
+"name": "Ratatouille",
+"texture_casier": "res://screens/board/Arena/arene_ratatouille.png",
+"texture_magasin": "res://screens/casier/icon/arena/arene_ratatouille.png"
+},
+"values": {
+"obamium": 350,
+"size": 0.5
+}
+}
+arene_32={
+"categories": {
+"type": "Arène",
+"type_magasin": "arena"
+},
+"texts": {
+"desc_casier": "Il est tellement badass",
+"desc_magasin": "Ce sympathique super héros est à 50m de ta position",
+"name": "Lego Batman",
+"texture_casier": "res://screens/board/Arena/arene_legobatman.png",
+"texture_magasin": "res://screens/casier/icon/arena/arene_legobatman.png"
+},
+"values": {
+"obamium": 500,
+"size": 0.5
+}
+}
+arene_33={
+"categories": {
+"type": "Arène",
+"type_magasin": "arena"
+},
+"texts": {
+"desc_casier": "Je me demande comment elle a pu finir dans cet état... force à ponce et les fleurs la",
+"desc_magasin": "Y'a aucune erreur dans le nom c'est bien la twitch con pourquoi",
+"name": "Twitch Con",
+"texture_casier": "res://screens/board/Arena/arene_twitchcon.png",
+"texture_magasin": "res://screens/casier/icon/arena/arene_twitchcon.png"
+},
+"values": {
+"obamium": 300,
+"size": 0.5
+}
+}
+arene_34={
+"categories": {
+"type": "Arène",
+"type_magasin": "arena"
+},
+"texts": {
+"desc_casier": "Je vais vous dire un secret ça reste entre nous mais le logo de FCA c'est le battlefield de smash",
+"desc_magasin": "La parfaite arène pour jouer son steve legit n'en déplaise au pros",
+"name": "Battlefield",
+"texture_casier": "res://screens/board/Arena/arene_battlefield.png",
+"texture_magasin": "res://screens/casier/icon/arena/arene_battlefield.png"
+},
+"values": {
+"obamium": 350,
+"size": 0.5
+}
+}
+arene_35={
+"categories": {
+"type": "Arène",
+"type_magasin": "arena"
+},
+"texts": {
+"desc_casier": "FCA regorge de mystères à résoudre !",
+"desc_magasin": "Bienvenue à gravité tombe",
+"name": "Gravity Falls",
+"texture_casier": "res://screens/board/Arena/arene_gravityfalls.png",
+"texture_magasin": "res://screens/casier/icon/arena/arene_gravityfalls.png"
+},
+"values": {
+"obamium": 375,
+"size": 0.5
+}
+}
+arene_36={
+"categories": {
+"type": "Arène",
+"type_magasin": "arena"
+},
+"texts": {
+"desc_casier": "Est ce que mon donut sucré au sucre est prêt ?",
+"desc_magasin": "Oh pinaise",
+"name": "Maison Simpson",
+"texture_casier": "res://screens/board/Arena/arene_simpson.png",
+"texture_magasin": "res://screens/casier/icon/arena/arene_simpson.png"
+},
+"values": {
+"obamium": 325,
+"size": 0.5
+}
+}
+arene_37={
+"categories": {
+"type": "Arène",
+"type_magasin": "arena"
+},
+"texts": {
+"desc_casier": "On entend papa pig ronfler de là",
+"desc_magasin": "C'est la maison la plus haram du monde",
+"name": "Maison Peppa Pig",
+"texture_casier": "res://screens/board/Arena/arene_peppapig.png",
+"texture_magasin": "res://screens/casier/icon/arena/arene_peppapig.png"
+},
+"values": {
+"obamium": 325,
+"size": 0.5
+}
+}
+arene_38={
+"categories": {
+"type": "Arène",
+"type_magasin": "arena"
+},
+"texts": {
+"desc_casier": "Quel est votre Kong préféré ? moi c'est le gorille là",
+"desc_magasin": "Le new Funky mode n'est malheureusement pas inclus",
+"name": "Donkey Kong",
+"texture_casier": "res://screens/board/Arena/arene_donkeykong.png",
+"texture_magasin": "res://screens/casier/icon/arena/arene_donkeykong.png"
+},
+"values": {
+"obamium": 325,
+"size": 0.5
+}
+}
+arene_39={
+"categories": {
+"type": "Arène",
+"type_magasin": "arena"
+},
+"texts": {
+"desc_casier": "Vous prendrez bien un petit Nigola® pour la route ?",
+"desc_magasin": "Videz vous la tête à Nigoland® !",
+"name": "Nigoland",
+"texture_casier": "res://screens/board/Arena/arene_nigoland.png",
+"texture_magasin": "res://screens/casier/icon/arena/arene_nigoland.png"
+},
+"values": {
+"obamium": 250,
+"size": 0.5
+}
+}
+arene_40={
+"categories": {
+"type": "Arène",
+"type_magasin": "arena"
+},
+"texts": {
+"desc_casier": "Le meilleurs lycée de tout Andorre (et aussi le seul)",
+"desc_magasin": "Le fameux lycée du jeu à succès Calus [les caractères chinois ne sont pas supporter par la police Super Mario]",
+"name": "Lycée Compte de Foix",
+"texture_casier": "res://screens/board/Arena/arene_comptedefoix.png",
+"texture_magasin": "res://screens/casier/icon/arena/arene_comptedefoix.png"
+},
+"values": {
+"obamium": 350,
+"size": 0.5
+}
+}
+arene_41={
+"categories": {
+"type": "Arène",
+"type_magasin": "arena"
+},
+"texts": {
+"desc_casier": "Détendez vous avec cette arène de la magnifique capitale d'Andorre ! (N'oubliez pas d'aller visiter Andorre aussi)",
+"desc_magasin": "Pas besoin de payer vos impôts sur l'obamium avec cette arrière plan de la magnifique capitale Andoranne !",
+"name": "Andorra-La-Vella",
+"texture_casier": "res://screens/board/Arena/arene_andorralavella.png",
+"texture_magasin": "res://screens/casier/icon/arena/arene_andorralavella.png"
+},
+"values": {
+"obamium": 350,
+"size": 0.5
+}
+}
+arene_42={
+"categories": {
+"type": "Arène",
+"type_magasin": "arena"
+},
+"texts": {
+"desc_casier": "L'arène par défaut avec le logo de Funky Cards Arena, simple, mais efficace !",
+"desc_magasin": "fr si t'achète l'arène de base de FCA t'est le plus gros pigeon de 2012",
+"name": "Funky Cards Arena",
+"texture_casier": "res://screens/board/ArenaTest.png",
+"texture_magasin": "res://screens/casier/icon/arena/arene_funkycardsarena.png"
+},
+"values": {
+"obamium": 420,
+"size": 0.5
+}
+}
+arene_43={
+"categories": {
+"type": "Arène",
+"type_magasin": "arena"
+},
+"texts": {
+"desc_casier": "Halo ? Cyprien ? Tu fait caca !",
+"desc_magasin": "C'est la cours des grands",
+"name": "Studio de Cyprien",
+"texture_casier": "res://screens/board/Arena/arene_cyprien.png",
+"texture_magasin": "res://screens/casier/icon/arena/arene_cyprien.png"
+},
+"values": {
+"obamium": 350,
+"size": 0.5
+}
+}
+arene_44={
+"categories": {
+"type": "Arène",
+"type_magasin": "arena"
+},
+"texts": {
+"desc_casier": "Cc sé la planaite :)",
+"desc_magasin": "La planaite",
+"name": "6-KILPO",
+"texture_casier": "res://screens/board/Arena/arene_kilpo.png",
+"texture_magasin": "res://screens/casier/icon/arena/arene_kilpo.png"
+},
+"values": {
+"obamium": 500,
+"size": 0.5
+}
+}
+arene_45={
+"categories": {
+"type": "Arène",
+"type_magasin": "arena"
+},
+"texts": {
+"desc_casier": "Zig et Sharko c'est unpe comme ej",
+"desc_magasin": "sé dingue",
+"name": "Zig et Sharko",
+"texture_casier": "res://screens/board/Arena/arene_zigetsharko.png",
+"texture_magasin": "res://screens/casier/icon/arena/arene_zigetsharko.png"
+},
+"values": {
+"obamium": 250,
+"size": 0.5
+}
+}
+arene_46={
+"categories": {
+"type": "Arène",
+"type_magasin": "arena"
+},
+"texts": {
+"desc_casier": "Cette arène va énormement impacter le prix du passe de combat",
+"desc_magasin": "Le deuxième meilleur jeu du monde dans le meilleur jeu du monde, que demander de plus ?",
+"name": "Fortnite",
+"texture_casier": "res://screens/board/Arena/arene_fortnite.png",
+"texture_magasin": "res://screens/casier/icon/arena/arene_fortnite.png"
+},
+"values": {
+"obamium": 600,
+"size": 0.5
+}
+}
+arene_47={
+"categories": {
+"type": "Arène",
+"type_magasin": "arena"
+},
+"texts": {
+"desc_casier": "Cette arène est tellement rapide qu'elle a battu Zeko a la course a pied",
+"desc_magasin": "Une magnifique arène Sonic ! Gotta go fast pour commettre un meurtre a base de carte",
+"name": "Sonic",
+"texture_casier": "res://screens/board/Arena/arene_sonic.png",
+"texture_magasin": "res://screens/casier/icon/arena/arene_sonic.png"
+},
+"values": {
+"obamium": 600,
+"size": 0.5
+}
+}
+arene_48={
+"categories": {
+"type": "Arène",
+"type_magasin": "arena"
+},
+"texts": {
+"desc_casier": "Oubliez pas votre crème solaire Funky",
+"desc_magasin": "T'est pas censer voir ça :cr8:",
+"name": "Plage",
+"texture_casier": "res://screens/board/Arena/arene_plage.png",
+"texture_magasin": "res://screens/casier/icon/arena/arene_plage.png"
+},
+"values": {
+"obamium": 27,
+"size": 0.5
+}
+}
+emote_1={
+"categories": {
+"type": "Emote",
+"type_magasin": "emote"
+},
+"texts": {
+"desc_casier": "On raconte qu'il a 7892 goals à son actif",
+"desc_magasin": "La célébration du fameux footballer funky",
+"name": "SIUUUUU",
+"texture_casier": "res://screens/board/Emote/emote_siuu.png",
+"texture_magasin": "res://screens/board/Emote/emote/emote_siuu.png"
+},
+"values": {
+"obamium": 250,
+"size": 0.4
+}
+}
+emote_2={
+"categories": {
+"type": "Emote",
+"type_magasin": "emote"
+},
+"texts": {
+"desc_casier": "Il se moque de toi",
+"desc_magasin": "Le rire iconique",
+"name": "Rire de Klayte",
+"texture_casier": "res://screens/board/Emote/emote_rireklayte.png",
+"texture_magasin": "res://screens/board/Emote/emote/emote_rireklayte.png"
+},
+"values": {
+"obamium": 200,
+"size": 0.4
+}
+}
+emote_3={
+"categories": {
+"type": "Emote",
+"type_magasin": "emote"
+},
+"texts": {
+"desc_casier": "WHAT THE WTF",
+"desc_magasin": "Pour être surpris de la situation actuelle",
+"name": "Gasp",
+"texture_casier": "res://screens/board/Emote/emote_gasp.png",
+"texture_magasin": "res://screens/board/Emote/emote/emote_gasp.png"
+},
+"values": {
+"obamium": 200,
+"size": 0.4
+}
+}
+emote_4={
+"categories": {
+"type": "Emote",
+"type_magasin": "emote"
+},
+"texts": {
+"desc_casier": "En général c'est la dernière emote que tu met",
+"desc_magasin": "Quand quelque chose de terrible arrive",
+"name": "Cat Bruh",
+"texture_casier": "res://screens/board/Emote/emote_catbruh.png",
+"texture_magasin": "res://screens/board/Emote/emote/emote_catbruh.png"
+},
+"values": {
+"obamium": 250,
+"size": 0.4
+}
+}
+emote_5={
+"categories": {
+"type": "Emote",
+"type_magasin": "emote"
+},
+"texts": {
+"desc_casier": "La fin de la vie sur terre",
+"desc_magasin": "C'est le visage d'une personne complètement au fond du trou",
+"name": "Traumatisme",
+"texture_casier": "res://screens/board/Emote/emote_traumatisme.png",
+"texture_magasin": "res://screens/board/Emote/emote/emote_traumatisme.png"
+},
+"values": {
+"obamium": 250,
+"size": 0.4
+}
+}
+emote_6={
+"categories": {
+"type": "Emote",
+"type_magasin": "emote"
+},
+"texts": {
+"desc_casier": "Il a l'air tout déprimé le pauvre",
+"desc_magasin": "Il vient de voir l'historique de seven",
+"name": "Nooooon",
+"texture_casier": "res://screens/board/Emote/emote_nooon.png",
+"texture_magasin": "res://screens/board/Emote/emote/emote_nooon.png"
+},
+"values": {
+"obamium": 200,
+"size": 0.4
+}
+}
+emote_7={
+"categories": {
+"type": "Emote",
+"type_magasin": "emote"
+},
+"texts": {
+"desc_casier": "Quelque chose de malicieux se cook",
+"desc_magasin": "Il a tout prévu",
+"name": "Hihihi",
+"texture_casier": "res://screens/board/Emote/emote_hihihi.png",
+"texture_magasin": "res://screens/board/Emote/emote/emote_hihihi.png"
+},
+"values": {
+"obamium": 250,
+"size": 0.4
+}
+}
+emote_8={
+"categories": {
+"type": "Emote",
+"type_magasin": "emote"
+},
+"texts": {
+"desc_casier": "Ça ne présage rien de bon",
+"desc_magasin": "Honteusement volé à Clash Royale mais bon business is business",
+"name": "Gobelin qui a peure",
+"texture_casier": "res://screens/board/Emote/emote_gobelinpeure.png",
+"texture_magasin": "res://screens/board/Emote/emote/emote_gobelinpeure.png"
+},
+"values": {
+"obamium": 300,
+"size": 0.4
+}
+}
+emote_9={
+"categories": {
+"type": "Emote",
+"type_magasin": "emote"
+},
+"texts": {
+"desc_casier": "C'est un grand moment de bruh",
+"desc_magasin": "Il te regarde de très près",
+"name": "Mewa",
+"texture_casier": "res://screens/board/Emote/emote_mewa.png",
+"texture_magasin": "res://screens/board/Emote/emote/emote_mewa.png"
+},
+"values": {
+"obamium": 200,
+"size": 0.4
+}
+}
+emote_10={
+"categories": {
+"type": "Emote",
+"type_magasin": "emote"
+},
+"texts": {
+"desc_casier": "Arrêtez tout de suite de vous amuser !",
+"desc_magasin": "Pour mettre un peu d'ordre dans une partie",
+"name": "Stop",
+"texture_casier": "res://screens/board/Emote/emote_stop.png",
+"texture_magasin": "res://screens/board/Emote/emote/emote_stop.png"
+},
+"values": {
+"obamium": 350,
+"size": 0.4
+}
+}
+emote_11={
+"categories": {
+"type": "Emote",
+"type_magasin": "emote"
+},
+"texts": {
+"desc_casier": "Un peu d'amour ça fait pas de mal",
+"desc_magasin": "Rare moment d'entente entre deux adversaires",
+"name": "Merci",
+"texture_casier": "res://screens/board/Emote/emote_merci.png",
+"texture_magasin": "res://screens/board/Emote/emote/emote_merci.png"
+},
+"values": {
+"obamium": 150,
+"size": 0.4
+}
+}
+emote_12={
+"categories": {
+"type": "Emote",
+"type_magasin": "emote"
+},
+"texts": {
+"desc_casier": "Ça veut dire bien fait en arabe enfin je crois",
+"desc_magasin": "Pour se moquer un max du malheur son adversaire parce que c'est ça l'esprit de fca !",
+"name": "Cheh",
+"texture_casier": "res://screens/board/Emote/emote_cheh.png",
+"texture_magasin": "res://screens/board/Emote/emote/emote_cheh.png"
+},
+"values": {
+"obamium": 300,
+"size": 0.4
+}
+}
+emote_13={
+"categories": {
+"type": "Emote",
+"type_magasin": "emote"
+},
+"texts": {
+"desc_casier": "Regarde ce que tu as fait à spongebob",
+"desc_magasin": "Il fait pitié",
+"name": "Spunchbop",
+"texture_casier": "res://screens/board/Emote/emote_spunchbop.png",
+"texture_magasin": "res://screens/board/Emote/emote/emote_spunchbop.png"
+},
+"values": {
+"obamium": 200,
+"size": 0.4
+}
+}
+emote_14={
+"categories": {
+"type": "Emote",
+"type_magasin": "emote"
+},
+"texts": {
+"desc_casier": "C'est toujours moralement correct de se moquer des gens intelligent",
+"desc_magasin": "Et puis ratio aussi",
+"name": "Nerd Alert",
+"texture_casier": "res://screens/board/Emote/emote_nerd.png",
+"texture_magasin": "res://screens/board/Emote/emote/emote_nerd.png"
+},
+"values": {
+"obamium": 250,
+"size": 0.4
+}
+}
+emote_15={
+"categories": {
+"type": "Emote",
+"type_magasin": "emote"
+},
+"texts": {
+"desc_casier": "Écoutez le c'est important",
+"desc_magasin": "Ça doit être important",
+"name": "Alarme",
+"texture_casier": "res://screens/board/Emote/emote_alarme.png",
+"texture_magasin": "res://screens/board/Emote/emote/emote_alarme.png"
+},
+"values": {
+"obamium": 350,
+"size": 0.4
+}
+}
+emote_16={
+"categories": {
+"type": "Emote",
+"type_magasin": "emote"
+},
+"texts": {
+"desc_casier": "En vrai c'est la cover de la musique Guillotine de Death Grips source knowyourmeme",
+"desc_magasin": "SORT DE MA TETE SORT DE MA TETE SORT DE MA TETE SORT DE MA TETE SORT DE MA TETE SORT DE MA TETE SORT DE MA TETE SORT DE MA TETE",
+"name": "The Voices",
+"texture_casier": "res://screens/board/Emote/emote_thevoices.png",
+"texture_magasin": "res://screens/board/Emote/emote/emote_thevoices.png"
+},
+"values": {
+"obamium": 250,
+"size": 0.4
+}
+}
+emote_17={
+"categories": {
+"type": "Emote",
+"type_magasin": "emote"
+},
+"texts": {
+"desc_casier": "C'est l'heure d'aller au lit",
+"desc_magasin": "Bonne nuit les petits",
+"name": "Dodo",
+"texture_casier": "res://screens/board/Emote/emote_dodo.png",
+"texture_magasin": "res://screens/board/Emote/emote/emote_dodo.png"
+},
+"values": {
+"obamium": 200,
+"size": 0.4
+}
+}
+emote_18={
+"categories": {
+"type": "Emote",
+"type_magasin": "emote"
+},
+"texts": {
+"desc_casier": "Salut les fleurs aujourd'hui on fait un stream sur le jeu indé Funky Cards Arena",
+"desc_magasin": "Mon streamer favori",
+"name": "Ponce",
+"texture_casier": "res://screens/board/Emote/emote_ponce.png",
+"texture_magasin": "res://screens/board/Emote/emote/emote_ponce.png"
+},
+"values": {
+"obamium": 150,
+"size": 0.4
+}
+}
+emote_19={
+"categories": {
+"type": "Emote",
+"type_magasin": "emote"
+},
+"texts": {
+"desc_casier": "Tu viens de tuer sa famille devant ses yeux",
+"desc_magasin": "Référence à la vague 4",
+"name": "Fishe",
+"texture_casier": "res://screens/board/Emote/emote_fishe.png",
+"texture_magasin": "res://screens/board/Emote/emote/emote_fishe.png"
+},
+"values": {
+"obamium": 250,
+"size": 0.4
+}
+}
+emote_20={
+"categories": {
+"type": "Emote",
+"type_magasin": "emote"
+},
+"texts": {
+"desc_casier": "Bonne question",
+"desc_magasin": "Ma réaction tout à fait sincère quand la paire de Nike rebondit sur le mur",
+"name": "What the hell",
+"texture_casier": "res://screens/board/Emote/emote_whatthehell.png",
+"texture_magasin": "res://screens/board/Emote/emote/emote_whatthehell.png"
+},
+"values": {
+"obamium": 250,
+"size": 0.4
+}
+}
+emote_21={
+"categories": {
+"type": "Emote",
+"type_magasin": "emote"
+},
+"texts": {
+"desc_casier": "J'ai pleuré quand la barre de fer est tombée au sol et a fait fsdhjsgdhfgsdlsdjlfsmh",
+"desc_magasin": "Top 10 des barres de fer",
+"name": "Barre De Fer",
+"texture_casier": "res://screens/board/Emote/emote_barredefer.png",
+"texture_magasin": "res://screens/board/Emote/emote/emote_barredefer.png"
+},
+"values": {
+"obamium": 190,
+"size": 0.4
+}
+}
+emote_22={
+"categories": {
+"type": "Emote",
+"type_magasin": "emote"
+},
+"texts": {
+"desc_casier": "les fans de CharmeMC seraient au chomage sans cette vidéo",
+"desc_magasin": "T'es un joueur deck poissons mais tu es un humain après tout",
+"name": "Im a Human",
+"texture_casier": "res://screens/board/Emote/emote_human.png",
+"texture_magasin": "res://screens/board/Emote/emote/emote_human.png"
+},
+"values": {
+"obamium": 270,
+"size": 0.4
+}
+}
+emote_23={
+"categories": {
+"type": "Emote",
+"type_magasin": "emote"
+},
+"texts": {
+"desc_casier": "Good night, farewell, my own true heart.",
+"desc_magasin": "Une entité particulièrement amusante est a l'intérieur de ton logement",
+"name": "maison",
+"texture_casier": "res://screens/board/Emote/emote_maison.png",
+"texture_magasin": "res://screens/board/Emote/emote/emote_maison.png"
+},
+"values": {
+"obamium": 190,
+"size": 0.4
+}
+}
+emote_24={
+"categories": {
+"type": "Emote",
+"type_magasin": "emote"
+},
+"texts": {
+"desc_casier": "totototoooot",
+"desc_magasin": "Jvais pas faire la trompette sur du texte quand même",
+"name": "Trompette",
+"texture_casier": "res://screens/board/Emote/emote_trompette.png",
+"texture_magasin": "res://screens/board/Emote/emote/emote_trompette.png"
+},
+"values": {
+"obamium": 160,
+"size": 0.4
+}
+}
+emote_25={
+"categories": {
+"type": "Emote",
+"type_magasin": "emote"
+},
+"texts": {
+"desc_casier": "Tu peux l'utiliser uniquement si tu as du sang 100% roumain",
+"desc_magasin": "Les roumains quand ils apprennent que cyprien est né en France",
+"name": "Je suis roumain",
+"texture_casier": "res://screens/board/Emote/emote_jesuisroumain.png",
+"texture_magasin": "res://screens/board/Emote/emote/emote_jesuisroumain.png"
+},
+"values": {
+"obamium": 200,
+"size": 0.4
+}
+}
+emote_26={
+"categories": {
+"type": "Emote",
+"type_magasin": "emote"
+},
+"texts": {
+"desc_casier": "Hugo Décrypte déchainant son meilleur sourire pour son introduction mythique \"Salut c'est hugo!\" avant d'attaquer un sujet traitant d'un drame humain en asie de l'est",
+"desc_magasin": "Salut c'est Hugo et on est parti pour un nouveau décryptage des textures du jeu en moins de 10 minutes",
+"name": "Salut C'est Hugo",
+"texture_casier": "res://screens/board/Emote/emote_hugodecrypte.png",
+"texture_magasin": "res://screens/board/Emote/emote/emote_hugodecrypte.png"
+},
+"values": {
+"obamium": 200,
+"size": 0.4
+}
+}
+emote_27={
+"categories": {
+"type": "Emote",
+"type_magasin": "emote"
+},
+"texts": {
+"desc_casier": "Ça sera la dernière emote que vous verrez",
+"desc_magasin": "On espère que vous avez bien profité de vos 9 vies :)",
+"name": "Le loup",
+"texture_casier": "res://screens/board/Emote/emote_loup.png",
+"texture_magasin": "res://screens/board/Emote/emote/emote_loup.png"
+},
+"values": {
+"obamium": 400,
+"size": 0.4
+}
+}
+emote_28={
+"categories": {
+"type": "Emote",
+"type_magasin": "emote"
+},
+"texts": {
+"desc_casier": "Vous ne pouvez pas échapper à cette musique",
+"desc_magasin": "Le \"Funky\" dans le nom de l'émote ainsi que le poisson dans l'image prouvent l'existence du multivers",
+"name": "Funky Town",
+"texture_casier": "res://screens/board/Emote/emote_funkytown.png",
+"texture_magasin": "res://screens/board/Emote/emote/emote_funkytown.png"
+},
+"values": {
+"obamium": 275,
+"size": 0.4
+}
+}
+emote_29={
+"categories": {
+"type": "Emote",
+"type_magasin": "emote"
+},
+"texts": {
+"desc_casier": "Si vous êtes en détresse émotionelle, composez le 09 72 39 40 50 (24h/24,7j7)",
+"desc_magasin": "Nous vous déconseillons fortement d'executer son ordre",
+"name": "Kill Yourself",
+"texture_casier": "res://screens/board/Emote/emote_killyourself.png",
+"texture_magasin": "res://screens/board/Emote/emote/emote_killyourself.png"
+},
+"values": {
+"obamium": 300,
+"size": 0.4
+}
+}
+emote_30={
+"categories": {
+"type": "Emote",
+"type_magasin": "emote"
+},
+"texts": {
+"desc_casier": "Quand je répend intentionellement une dévastation total sur Funky Cards Arena",
+"desc_magasin": "Achetez cette emote, vous ne le regrèterais pas :mdr:",
+"name": "mdr",
+"texture_casier": "res://screens/board/Emote/emote_mdr.png",
+"texture_magasin": "res://screens/board/Emote/emote/emote_mdr.png"
+},
+"values": {
+"obamium": 350,
+"size": 0.4
+}
+}
+emote_31={
+"categories": {
+"type": "Emote",
+"type_magasin": "emote"
+},
+"texts": {
+"desc_casier": "Augmente le niveau de bruh de 18% en présence d'un \"Detecteur de Bruh 2020\"",
+"desc_magasin": "Un emote bruh ? Bruh moment",
+"name": "bruh",
+"texture_casier": "res://screens/board/Emote/emote_bruh.png",
+"texture_magasin": "res://screens/board/Emote/emote/emote_bruh.png"
+},
+"values": {
+"obamium": 250,
+"size": 0.4
+}
+}
+emote_32={
+"categories": {
+"type": "Emote",
+"type_magasin": "emote"
+},
+"texts": {
+"desc_casier": "Au cas ou vous avez besoin d'une trad (je ne vise persone), ça veut dire : \"Oh, enfer, non !\"",
+"desc_magasin": "Je sais ce qu'il va se passer, mais je refuse de le croire.",
+"name": "Oh hell no",
+"texture_casier": "res://screens/board/Emote/emote_hellno.png",
+"texture_magasin": "res://screens/board/Emote/emote/emote_hellno.png"
+},
+"values": {
+"obamium": 150,
+"size": 0.4
+}
+}
+emote_33={
+"categories": {
+"type": "Emote",
+"type_magasin": "emote"
+},
+"texts": {
+"desc_casier": "Il était a seulement 823m de vous, bien jouer ! Il va maintenant rester complètement immobile pour l'éternité sans pouvoir rien faire. Il n'a pas de bouche, mais il doit crier.",
+"desc_magasin": "Il ta repérer. Il sais ou tu est. Il s'approche. La seul façon de l'arrêter est d'acheter cette emote.",
+"name": "The horse",
+"texture_casier": "res://screens/board/Emote/emote_horse.png",
+"texture_magasin": "res://screens/board/Emote/emote/emote_horse.png"
+},
+"values": {
+"obamium": 250,
+"size": 0.4
+}
+}
+emote_34={
+"categories": {
+"type": "Emote",
+"type_magasin": "emote"
+},
+"texts": {
+"desc_casier": "Si vous utilisez ça vous mourrez direct IRL psk votre adversaire va finir par vous assasiner",
+"desc_magasin": "!!!! ATTENTION !!!! 
+ maintenant que j'ai votre attention, n'oubliez pas de manger de l'eau, et d'acheter cette emote.",
+"name": "Warning",
+"texture_casier": "res://screens/board/Emote/emote_warning.png",
+"texture_magasin": "res://screens/board/Emote/emote/emote_warning.png"
+},
+"values": {
+"obamium": 350,
+"size": 0.4
+}
+}
+emote_35={
+"categories": {
+"type": "Emote",
+"type_magasin": "emote"
+},
+"texts": {
+"desc_casier": "tic 44, tac 43, tic 42, tac 41, tik 40, tok 39...",
+"desc_magasin": "Utilisez cette emote juste avant de faire une action terrible",
+"name": "45 seconds",
+"texture_casier": "res://screens/board/Emote/emote_seconds.png",
+"texture_magasin": "res://screens/board/Emote/emote/emote_seconds.png"
+},
+"values": {
+"obamium": 400,
+"size": 0.4
+}
+}
+emote_36={
+"categories": {
+"type": "Emote",
+"type_magasin": "emote"
+},
+"texts": {
+"desc_casier": "haiiii ^^",
+"desc_magasin": "Pend toi",
+"name": "cc",
+"texture_casier": "res://screens/board/Emote/emote_cc.png",
+"texture_magasin": "res://screens/board/Emote/emote/emote_cc.png"
+},
+"values": {
+"obamium": 34,
+"size": 0.4
+}
+}
+emote_37={
+"categories": {
+"type": "Emote",
+"type_magasin": "emote"
+},
+"texts": {
+"desc_casier": "haiiii ^^",
+"desc_magasin": "Pend toi",
+"name": "FRIEND",
+"texture_casier": "res://screens/board/Emote/emote_friend.png",
+"texture_magasin": "res://screens/board/Emote/emote/emote_friend.png"
+},
+"values": {
+"obamium": 34,
+"size": 0
+}
+}
+emote_38={
+"categories": {
+"type": "Emote",
+"type_magasin": "emote"
+},
+"texts": {
+"desc_casier": "haiiii ^^",
+"desc_magasin": "Pend toi",
+"name": "Lancer",
+"texture_casier": "res://screens/board/Emote/emote_lancer.png",
+"texture_magasin": "res://screens/board/Emote/emote/emote_lancer.png"
+},
+"values": {
+"obamium": 34,
+"size": 0
+}
+}
+emote_39={
+"categories": {
+"type": "Emote",
+"type_magasin": "emote"
+},
+"texts": {
+"desc_casier": "haiiii ^^",
+"desc_magasin": "Pend toi",
+"name": "Battat",
+"texture_casier": "res://screens/board/Emote/emote_battat.png",
+"texture_magasin": "res://screens/board/Emote/emote/emote_battat.png"
+},
+"values": {
+"obamium": 34,
+"size": 0
+}
+}
+emote_40={
+"categories": {
+"type": "Emote",
+"type_magasin": "emote"
+},
+"texts": {
+"desc_casier": "Vous avez intéret a jouer Palestinien de votre coté",
+"desc_magasin": "Megamind + Kvikant + Dekeskui Cowboy + Stop Netanyahu applaudis la performance",
+"name": "Meilleur soldat israélien",
+"texture_casier": "res://screens/board/Emote/emote_israel.png",
+"texture_magasin": "res://screens/board/Emote/emote/emote_israel.png"
+},
+"values": {
+"obamium": 300,
+"size": 0.4
+}
+}
+emote_41={
+"categories": {
+"type": "Emote",
+"type_magasin": "emote"
+},
+"texts": {
+"desc_casier": "Kvikant sur Kuikui Cochon n'était pas une erreur, mais ils ne le saurons jamais",
+"desc_magasin": "Oups Kvikant sur le Cochon",
+"name": "Made a mistake",
+"texture_casier": "res://screens/board/Emote/emote_mademistake.png",
+"texture_magasin": "res://screens/board/Emote/emote/emote_mistake.png"
+},
+"values": {
+"obamium": 200,
+"size": 0.4
+}
+}
+emote_42={
+"categories": {
+"type": "Emote",
+"type_magasin": "emote"
+},
+"texts": {
+"desc_casier": "Plot twist : Ceux qui achètent l'emote on efface leur save",
+"desc_magasin": "67",
+"name": "67",
+"texture_casier": "res://screens/board/Emote/emote_67.png",
+"texture_magasin": "res://screens/board/Emote/emote/emote_67.png"
+},
+"values": {
+"obamium": 67,
+"size": 0.4
+}
+}
+emote_43={
+"categories": {
+"type": "Emote",
+"type_magasin": "emote"
+},
+"texts": {
+"desc_casier": "La dernière emote que vous aller utiliser",
+"desc_magasin": "Oui c'était bien un Requin Cerbère, oui vous n'avez plus que 2 PV, oui c'est le tour d'attaque",
+"name": "Die Next Week",
+"texture_casier": "res://screens/board/Emote/emote_dienextweek.png",
+"texture_magasin": "res://screens/board/Emote/emote/emote_dienextweek.png"
+},
+"values": {
+"obamium": 150,
+"size": 0.4
+}
+}
+emote_44={
+"categories": {
+"type": "Emote",
+"type_magasin": "emote"
+},
+"texts": {
+"desc_casier": "Tente un autre instrument la prochaine fois",
+"desc_magasin": "Une excuse c'est pas grand chose mais c'est un début",
+"name": "Sorry",
+"texture_casier": "res://screens/board/Emote/emote_sorry.png",
+"texture_magasin": "res://screens/board/Emote/emote/emote_sorry.png"
+},
+"values": {
+"obamium": 176,
+"size": 0.4
+}
+}
+emote_45={
+"categories": {
+"type": "Emote",
+"type_magasin": "emote"
+},
+"texts": {
+"desc_casier": "I mold",
+"desc_magasin": "Jouer deck Peppa ça vous fait vieillire de 30 ans en général",
+"name": "Im old",
+"texture_casier": "res://screens/board/Emote/emote_imold.png",
+"texture_magasin": "res://screens/board/Emote/emote/emote_imold.png"
+},
+"values": {
+"obamium": 2202,
+"size": 0.4
+}
+}
+emote_46={
+"categories": {
+"type": "Emote",
+"type_magasin": "emote"
+},
+"texts": {
+"desc_casier": "I mold",
+"desc_magasin": "Jouer deck Peppa ça vous fait vieillire de 30 ans en général",
+"name": "Taking too long",
+"texture_casier": "res://screens/board/Emote/emote_takingtoolong.png",
+"texture_magasin": "res://screens/board/Emote/emote/emote_takingtoolong.png"
+},
+"values": {
+"obamium": 2202,
+"size": 0.4
+}
+}
+emote_47={
+"categories": {
+"type": "Emote",
+"type_magasin": "emote"
+},
+"texts": {
+"desc_casier": "I mold",
+"desc_magasin": "Jouer deck Peppa ça vous fait vieillire de 30 ans en général",
+"name": "Maison hantée",
+"texture_casier": "res://screens/board/Emote/emote_thea.png",
+"texture_magasin": "res://screens/board/Emote/emote/emote_thea.png"
+},
+"values": {
+"obamium": 1225,
+"size": 0.4
+}
+}
+emote_48={
+"categories": {
+"type": "Emote",
+"type_magasin": "emote"
+},
+"texts": {
+"desc_casier": "I mold",
+"desc_magasin": "Jouer deck Peppa ça vous fait vieillire de 30 ans en général",
+"name": "Knife grows dull",
+"texture_casier": "res://screens/board/Emote/emote_eram.png",
+"texture_magasin": "res://screens/board/Emote/emote/emote_eram.png"
+},
+"values": {
+"obamium": 1225,
+"size": 0.4
+}
+}
+emote_49={
+"categories": {
+"type": "Emote",
+"type_magasin": "emote"
+},
+"texts": {
+"desc_casier": "Un grand héro Funky",
+"desc_magasin": "We are Patrik Kvikant we carry the meta",
+"name": "Charlie Kirk",
+"texture_casier": "res://screens/board/Emote/emote_kirk.png",
+"texture_magasin": "res://screens/board/Emote/emote/emote_kirk.png"
+},
+"values": {
+"obamium": 250,
+"size": 0.4
+}
+}
+emote_50={
+"categories": {
+"type": "Emote",
+"type_magasin": "emote"
+},
+"texts": {
+"desc_casier": "Quand mfchacho essaye de crée la meta Cludine",
+"desc_magasin": "My Bananakat is kind off buffless",
+"name": "Please Speed",
+"texture_casier": "res://screens/board/Emote/emote_pleasespeed.png",
+"texture_magasin": "res://screens/board/Emote/emote/emote_pleasespeed.png"
+},
+"values": {
+"obamium": 300,
+"size": 0.4
+}
+}
+emote_51={
+"categories": {
+"type": "Emote",
+"type_magasin": "emote"
+},
+"texts": {
+"desc_casier": "Ok la partie a été abandonner la",
+"desc_magasin": "Hello ?",
+"name": "Ben News",
+"texture_casier": "res://screens/board/Emote/emote_bennews.png",
+"texture_magasin": "res://screens/board/Emote/emote/emote_bennews.png"
+},
+"values": {
+"obamium": 225,
+"size": 0.4
+}
+}
+emote_52={
+"categories": {
+"type": "Emote",
+"type_magasin": "emote"
+},
+"texts": {
+"desc_casier": "Si tu fuis, la vie qu'on vie aujourdh'ui",
+"desc_magasin": "Deck Poisson si t'es champion, appuis sur le champignon",
+"name": "Speed Drive",
+"texture_casier": "res://screens/board/Emote/emote_speeddrive.png",
+"texture_magasin": "res://screens/board/Emote/emote/emote_speeddrive.png"
+},
+"values": {
+"obamium": 200,
+"size": 0.4
+}
+}
+emote_53={
+"categories": {
+"type": "Emote",
+"type_magasin": "emote"
+},
+"texts": {
+"desc_casier": "Tout ça pour se prendre un Pizza Time",
+"desc_magasin": "La chance te souris enfin après 27 game",
+"name": "Pray",
+"texture_casier": "res://screens/board/Emote/emote_pray.png",
+"texture_magasin": "res://screens/board/Emote/emote/emote_pray.png"
+},
+"values": {
+"obamium": 200,
+"size": 0.4
+}
+}
+emote_54={
+"categories": {
+"type": "Emote",
+"type_magasin": "emote"
+},
+"texts": {
+"desc_casier": "J'avoue que la meta Megamind Bananakat on a pas encore la vision",
+"desc_magasin": "Pourquoi il a fait ça aussi",
+"name": "Speed Désert",
+"texture_casier": "res://screens/board/Emote/emote_speeddesert.png",
+"texture_magasin": "res://screens/board/Emote/emote/emote_speeddesert.png"
+},
+"values": {
+"obamium": 275,
+"size": 0.4
+}
+}
+emote_55={
+"categories": {
+"type": "Emote",
+"type_magasin": "emote"
+},
+"texts": {
+"desc_casier": "La vérité c'est que ce jeu deviens jamais bien :untroll:",
+"desc_magasin": "Pioche, pioche",
+"name": "Skip Skip",
+"texture_casier": "res://screens/board/Emote/emote_skipskip.png",
+"texture_magasin": "res://screens/board/Emote/emote/emote_skipskip.png"
+},
+"values": {
+"obamium": 150,
+"size": 0.4
+}
+}
+emote_56={
+"categories": {
+"type": "Emote",
+"type_magasin": "emote"
+},
+"texts": {
+"desc_casier": "C'est bon vous êtes calme ?",
+"desc_magasin": "TUER TUER TUER POISSON TUER KONG TUER",
+"name": "Kill that boy",
+"texture_casier": "res://screens/board/Emote/emote_killthatboy.png",
+"texture_magasin": "res://screens/board/Emote/emote/emote_killthatboy.png"
+},
+"values": {
+"obamium": 250,
+"size": 0.4
+}
+}
+emote_57={
+"categories": {
+"type": "Emote",
+"type_magasin": "emote"
+},
+"texts": {
+"desc_casier": "C'est l'emote la plus cher que j'ai dans le casier",
+"desc_magasin": "JE VAIS TE TOUILLER ORBE VERTE",
+"name": "TOUILLER",
+"texture_casier": "res://screens/board/Emote/emote_touiller.png",
+"texture_magasin": "res://screens/board/Emote/emote/emote_touiller.png"
+},
+"values": {
+"obamium": 350,
+"size": 0.4
+}
+}
+emote_58={
+"categories": {
+"type": "Emote",
+"type_magasin": "emote"
+},
+"texts": {
+"desc_casier": "Merci Yanikam pour le doublage",
+"desc_magasin": "HARMONYYYYYY REND LES MIMIR",
+"name": "HARMONYYYYYY",
+"texture_casier": "res://screens/board/Emote/emote_harmonyyyy.png",
+"texture_magasin": "res://screens/board/Emote/emote/emote_harmonyyyy.png"
+},
+"values": {
+"obamium": 200,
+"size": 0.4
+}
+}
+emote_59={
+"categories": {
+"type": "Emote",
+"type_magasin": "emote"
+},
+"texts": {
+"desc_casier": "Merci Yanikam pour le doublage",
+"desc_magasin": "HARMONYYYYYY REND LES DODO",
+"name": "Weird Route",
+"texture_casier": "res://screens/board/Emote/emote_weirdroute.png",
+"texture_magasin": "res://screens/board/Emote/emote/emote_weirdroute.png"
+},
+"values": {
+"obamium": 1225,
+"size": 0.4
+}
+}

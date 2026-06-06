@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://screens/board/Particle/Sleep.png" type="Texture" id=1]
+
+[sub_resource type="Gradient" id=25]
+colors = PoolColorArray( 1, 1, 1, 1, 1, 1, 1, 0 )
+
+[sub_resource type="GradientTexture" id=24]
+gradient = SubResource( 25 )
+
+[sub_resource type="ParticlesMaterial" id=26]
+lifetime_randomness = 0.3
+emission_shape = 1
+emission_sphere_radius = 20.0
+flag_disable_z = true
+direction = Vector3( 1, -90, 0 )
+spread = 10.0
+gravity = Vector3( 0, -20, 0 )
+initial_velocity = 100.0
+initial_velocity_random = 0.14
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+color_ramp = SubResource( 24 )
+anim_speed_random = 0.26
+
+[node name="AtkParticle" type="Particles2D"]
+scale = Vector2( 0.6, 0.6 )
+amount = 3
+lifetime = 5.0
+randomness = 1.0
+process_material = SubResource( 26 )
+texture = ExtResource( 1 )

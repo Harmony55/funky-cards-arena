@@ -1,0 +1,2400 @@
+[meta]
+
+id="main"
+name="Main Database"
+
+[cards]
+
+card_1={
+"categories": {
+"class": "character",
+"creature_type": "monke",
+"rarity": "atypique"
+},
+"texts": {
+"desc": "Cette carte gagne +1 PV quand une autre carte est posée à côté.",
+"name": "1 - Bernadette"
+},
+"values": {
+"attack": 3,
+"hp": 3,
+"id": 1,
+"mana": 3,
+"tempAtk": 0,
+"tempDef": 0,
+"tempHp": 0,
+"timer": 0,
+"vague": 1
+}
+}
+card_2={
+"categories": {
+"class": "character",
+"creature_type": "none",
+"rarity": "ultra_rare"
+},
+"texts": {
+"desc": "L'orbe et toutes les autres cartes alliées (excepté cettte carte) gagnent +3 PV",
+"name": "2 - TeXXit"
+},
+"values": {
+"attack": 4,
+"hp": 3,
+"mana": 6,
+"tempAtk": 0,
+"tempDef": 0,
+"tempHp": 0,
+"timer": 0,
+"vague": 1
+}
+}
+card_3={
+"categories": {
+"class": "character",
+"creature_type": "none",
+"rarity": "ultra_rare"
+},
+"texts": {
+"desc": "Invoque 2 carte de type Monke dans votre main",
+"name": "3 - Kirbo"
+},
+"values": {
+"attack": 6,
+"hp": 6,
+"mana": 7,
+"tempAtk": 0,
+"tempDef": 0,
+"tempHp": 0,
+"timer": 0,
+"vague": 1
+}
+}
+card_4={
+"categories": {
+"class": "character",
+"creature_type": "monke",
+"rarity": "divin"
+},
+"texts": {
+"desc": "Attaque bonus.",
+"name": "4 - Funky Kong"
+},
+"values": {
+"attack": 5,
+"hp": 6,
+"mana": 7,
+"tempAtk": 0,
+"tempDef": 0,
+"tempHp": 0,
+"timer": 0,
+"vague": 1
+}
+}
+card_5={
+"categories": {
+"class": "character",
+"creature_type": "none",
+"rarity": "commun"
+},
+"texts": {
+"desc": "Une carte adverse est endormie pour le prochain tour.",
+"name": "5 - Dodo"
+},
+"values": {
+"attack": 2,
+"hp": 1,
+"mana": 2,
+"tempAtk": 0,
+"tempDef": 0,
+"tempHp": 0,
+"timer": 0,
+"vague": 1
+}
+}
+card_6={
+"categories": {
+"class": "character",
+"creature_type": "kirbo",
+"rarity": "divin"
+},
+"texts": {
+"desc": "A la mort, invoque la carte Kirbo dans votre main.",
+"name": "6 - Mapendoboy"
+},
+"values": {
+"attack": 6,
+"hp": 6,
+"mana": 6,
+"tempAtk": 0,
+"tempDef": 0,
+"tempHp": 0,
+"timer": 0,
+"vague": 1
+}
+}
+card_7={
+"categories": {
+"class": "character",
+"creature_type": "none",
+"rarity": "ultra_rare"
+},
+"texts": {
+"desc": "Gagne +1/+1 dans votre main quand vous piochez une carte.",
+"name": "7 - Cyprien"
+},
+"values": {
+"attack": 1,
+"hp": 1,
+"mana": 6,
+"tempAtk": 0,
+"tempDef": 0,
+"tempHp": 0,
+"timer": 0,
+"vague": 1
+}
+}
+card_8={
+"categories": {
+"class": "character",
+"creature_type": "none",
+"rarity": "commun"
+},
+"texts": {
+"desc": "Si n'importe quel sort est joué, invoque un Bananakat sur le terrain.",
+"name": "8 - Bananakat"
+},
+"values": {
+"attack": 1,
+"hp": 1,
+"mana": 1,
+"tempAtk": 0,
+"tempDef": 0,
+"tempHp": 0,
+"timer": 0,
+"vague": 2
+}
+}
+card_9={
+"categories": {
+"class": "character",
+"creature_type": "none",
+"rarity": "commun"
+},
+"texts": {
+"desc": "Cette carte gagne +1 ATK quand elle inflige des dégâts.",
+"name": "9 - Arab"
+},
+"values": {
+"attack": 1,
+"hp": 2,
+"mana": 2,
+"tempAtk": 0,
+"tempDef": 0,
+"tempHp": 0,
+"timer": 0,
+"vague": 2
+}
+}
+card_10={
+"categories": {
+"class": "character",
+"creature_type": "monke",
+"rarity": "atypique"
+},
+"texts": {
+"desc": "Cette carte gagne +1 ATK quand elle inflige des dégâts.",
+"name": "10 - Maes Yves Oscar II"
+},
+"values": {
+"attack": 1,
+"hp": 3,
+"mana": 3,
+"tempAtk": 0,
+"tempDef": 0,
+"tempHp": 0,
+"timer": 0,
+"vague": 2
+}
+}
+card_11={
+"categories": {
+"class": "character",
+"creature_type": "none",
+"rarity": "commun"
+},
+"texts": {
+"desc": "Posée, la carte d'en face subit -1/-1.",
+"name": "11 - Armand le balayeur de daronnes"
+},
+"values": {
+"attack": 2,
+"hp": 1,
+"mana": 2,
+"tempAtk": 0,
+"tempDef": 0,
+"tempHp": 0,
+"timer": 0,
+"vague": 2
+}
+}
+card_12={
+"categories": {
+"class": "character",
+"creature_type": "none",
+"rarity": "atypique"
+},
+"texts": {
+"desc": "Posée, cette carte copie les stats d'une carte adverse (uniquement les PV et ATK)",
+"name": "12 - Marselo"
+},
+"values": {
+"attack": 1,
+"hp": 1,
+"mana": 3,
+"tempAtk": 0,
+"tempDef": 0,
+"tempHp": 0,
+"timer": 0,
+"vague": 2
+}
+}
+card_13={
+"categories": {
+"class": "character",
+"creature_type": "dekeskui",
+"rarity": "commun"
+},
+"texts": {
+"desc": "Posée, inflige 1 dégât à n'importe quelle carte adverse.",
+"name": "13 - Kuikui Caillou"
+},
+"values": {
+"attack": 2,
+"hp": 1,
+"mana": 2,
+"tempAtk": 0,
+"tempDef": 0,
+"tempHp": 0,
+"timer": 0,
+"vague": 3
+}
+}
+card_14={
+"categories": {
+"class": "character",
+"creature_type": "dekeskui",
+"rarity": "rare"
+},
+"texts": {
+"desc": "A la mort, fait apparaitre 2 Kuikui Caillou sur les lignes adjacentes.",
+"name": "14 - Kuikui Caillou Obèse"
+},
+"values": {
+"attack": 3,
+"hp": 4,
+"mana": 4,
+"tempAtk": 0,
+"tempDef": 0,
+"tempHp": 0,
+"timer": 0,
+"vague": 3
+}
+}
+card_15={
+"categories": {
+"class": "character",
+"creature_type": "dekeskui",
+"rarity": "commun"
+},
+"texts": {
+"desc": "Donne 1 pt. d'ATK à tout les personnages alliés.",
+"name": "15 - Kuikui Yéti"
+},
+"values": {
+"attack": 3,
+"hp": 4,
+"mana": 4,
+"tempAtk": 0,
+"tempDef": 0,
+"tempHp": 0,
+"timer": 0,
+"vague": 3
+}
+}
+card_16={
+"categories": {
+"class": "character",
+"creature_type": "dekeskui",
+"rarity": "ultra_rare"
+},
+"texts": {
+"desc": "Lorsqu'il attaque, toutes les cartes adversses dans les autres lignes prennent également les dégâts.",
+"name": "16 - Dekeskui Cowboy"
+},
+"values": {
+"attack": 1,
+"hp": 1,
+"mana": 3,
+"tempAtk": 0,
+"tempDef": 0,
+"tempHp": 0,
+"timer": 0,
+"vague": 3
+}
+}
+card_17={
+"categories": {
+"class": "character",
+"creature_type": "dekeskui",
+"rarity": "rare"
+},
+"texts": {
+"desc": "Invoque 2 Dekeskui (sauf kuikui vert) dans votre main.",
+"name": "17 - Kuikui Vert"
+},
+"values": {
+"attack": 3,
+"hp": 3,
+"mana": 4,
+"tempAtk": 0,
+"tempDef": 0,
+"tempHp": 0,
+"timer": 0,
+"vague": 3
+}
+}
+card_18={
+"categories": {
+"class": "character",
+"creature_type": "dekeskui",
+"rarity": "atypique"
+},
+"texts": {
+"desc": "Dekeskui cochon ne peut pas attaquer l'orbe adverse.",
+"name": "18 - Kuikui cochon"
+},
+"values": {
+"attack": 4,
+"hp": 3,
+"mana": 2,
+"tempAtk": 0,
+"tempDef": 0,
+"tempHp": 0,
+"timer": 0,
+"vague": 3
+}
+}
+card_19={
+"categories": {
+"class": "character",
+"creature_type": "dekeskui",
+"rarity": "rare",
+"type2": "china"
+},
+"texts": {
+"desc": "Tant que cette carte est présente, tous les personnages alliés ont +1/+1",
+"name": "19 - Kuikui china"
+},
+"values": {
+"attack": 2,
+"hp": 2,
+"mana": 4,
+"tempAtk": 0,
+"tempDef": 0,
+"tempHp": 0,
+"timer": 0,
+"vague": 3
+}
+}
+card_20={
+"categories": {
+"class": "character",
+"creature_type": "null",
+"rarity": "rare"
+},
+"texts": {
+"desc": "Posée, la personne d'en face doit montrer une de ses cartes.",
+"name": "20 - Sparkle"
+},
+"values": {
+"attack": 3,
+"hp": 3,
+"mana": 3,
+"tempAtk": 0,
+"tempDef": 0,
+"tempHp": 0,
+"timer": 0,
+"vague": 1
+}
+}
+card_21={
+"categories": {
+"class": "character",
+"creature_type": "china",
+"rarity": "ultra_rare"
+},
+"texts": {
+"desc": "Posée, la personne d'en face doit montrer une de ses cartes.",
+"name": "21 - Xi Jinping"
+},
+"values": {
+"attack": 4,
+"hp": 4,
+"mana": 6,
+"tempAtk": 0,
+"tempDef": 0,
+"tempHp": 0,
+"timer": 0,
+"vague": 1
+}
+}
+card_22={
+"categories": {
+"class": "character",
+"creature_type": "poisson",
+"rarity": "commun"
+},
+"texts": {
+"desc": "Aucune capacité.",
+"name": "22 - Truite"
+},
+"values": {
+"attack": 1,
+"hp": 2,
+"mana": 1,
+"tempAtk": 0,
+"tempDef": 0,
+"tempHp": 0,
+"timer": 0,
+"vague": 4
+}
+}
+card_23={
+"categories": {
+"class": "character",
+"creature_type": "poisson",
+"rarity": "commun"
+},
+"texts": {
+"desc": "Aucune capacité.",
+"name": "23 - Daurade"
+},
+"values": {
+"attack": 3,
+"hp": 4,
+"mana": 3,
+"tempAtk": 0,
+"tempDef": 0,
+"tempHp": 0,
+"timer": 0,
+"vague": 4
+}
+}
+card_24={
+"categories": {
+"class": "character",
+"creature_type": "poisson",
+"rarity": "commun"
+},
+"texts": {
+"desc": "Aucune capacité.",
+"name": "24 - Espadon"
+},
+"values": {
+"attack": 5,
+"hp": 4,
+"mana": 4,
+"tempAtk": 0,
+"tempDef": 0,
+"tempHp": 0,
+"timer": 0,
+"vague": 4
+}
+}
+card_25={
+"categories": {
+"class": "character",
+"creature_type": "poisson",
+"rarity": "atypique"
+},
+"texts": {
+"desc": "Détruite : toutes les cartes alliées ont +2ATK",
+"name": "25 - Carpe Lame"
+},
+"values": {
+"attack": 4,
+"hp": 3,
+"mana": 4,
+"tempAtk": 0,
+"tempDef": 0,
+"tempHp": 0,
+"timer": 0,
+"vague": 4
+}
+}
+card_26={
+"categories": {
+"class": "character",
+"creature_type": "poisson",
+"rarity": "atypique"
+},
+"texts": {
+"desc": "Lorsqu'il meurt : inflige 2 dégâts à la carte qui l'a tué (si c'était un sort, inflige 2 dégâts à l'orbe)",
+"name": "26 - Requin Lutin"
+},
+"values": {
+"attack": 5,
+"hp": 4,
+"mana": 5,
+"tempAtk": 0,
+"tempDef": 0,
+"tempHp": 0,
+"timer": 0,
+"vague": 4
+}
+}
+card_27={
+"categories": {
+"class": "character",
+"creature_type": "poisson",
+"rarity": "commun"
+},
+"texts": {
+"desc": "Aucune capacité.",
+"name": "27 - Bar"
+},
+"values": {
+"attack": 3,
+"hp": 2,
+"mana": 2,
+"tempAtk": 0,
+"tempDef": 0,
+"tempHp": 0,
+"timer": 0,
+"vague": 4
+}
+}
+card_28={
+"categories": {
+"class": "character",
+"creature_type": "poisson",
+"rarity": "commun"
+},
+"texts": {
+"desc": "Aucune capacité.",
+"name": "28 - Vivaneau"
+},
+"values": {
+"attack": 3,
+"def": 1,
+"hp": 2,
+"mana": 3,
+"tempAtk": 0,
+"tempDef": 0,
+"tempHp": 0,
+"timer": 0,
+"vague": 4
+}
+}
+card_29={
+"categories": {
+"class": "character",
+"creature_type": "poisson",
+"rarity": "atypique"
+},
+"texts": {
+"desc": "Tué, revient dans la main en perdant 1 bobux, 1ATK et 1PV (jusqu'à ce qu'il en ai 0).",
+"name": "29 - tropical_fish"
+},
+"values": {
+"attack": 4,
+"hp": 4,
+"mana": 4,
+"tempAtk": 0,
+"tempDef": 0,
+"tempHp": 0,
+"timer": 0,
+"vague": 4
+}
+}
+card_30={
+"categories": {
+"class": "character",
+"creature_type": "poisson",
+"rarity": "atypique"
+},
+"texts": {
+"desc": "Lorsqu'il meurt, inflige 2 dégâts à toutes les cartes sur le terrain (alliées inclus)",
+"name": "30 - Poisson Globe"
+},
+"values": {
+"attack": 2,
+"hp": 3,
+"mana": 3,
+"tempAtk": 0,
+"tempDef": 0,
+"tempHp": 0,
+"timer": 0,
+"vague": 4
+}
+}
+card_31={
+"categories": {
+"class": "character",
+"creature_type": "poisson",
+"rarity": "ultra_rare"
+},
+"texts": {
+"desc": "Attaque 3 fois de suite.",
+"name": "31 - Requin Cerbère"
+},
+"values": {
+"attack": 3,
+"hp": 6,
+"mana": 8,
+"tempAtk": 0,
+"tempDef": 0,
+"tempHp": 0,
+"timer": 0,
+"vague": 4
+}
+}
+card_32={
+"categories": {
+"class": "character",
+"creature_type": "null",
+"rarity": "rare"
+},
+"texts": {
+"desc": "Lorsqu'il meurt, invoque un os dans la main.",
+"name": "32 - Juan",
+"reac": "Gagne +2/+2 lorsqu'il y'a un poulet sur le terrain."
+},
+"values": {
+"attack": 2,
+"hp": 2,
+"mana": 3,
+"tempAtk": 0,
+"tempDef": 0,
+"tempHp": 0,
+"timer": 0,
+"vague": 5
+}
+}
+card_33={
+"categories": {
+"class": "character",
+"creature_type": "null",
+"rarity": "ultra_rare"
+},
+"texts": {
+"desc": "Tous les adversaires ont -1ATK tant que Dora est sur le terrain.",
+"name": "33 - Dora",
+"reac": "Empêche Chippeur de faire son sort"
+},
+"values": {
+"attack": 2,
+"hp": 2,
+"mana": 4,
+"tempAtk": 0,
+"tempDef": 0,
+"tempHp": 0,
+"timer": 0,
+"vague": 5
+}
+}
+card_34={
+"categories": {
+"class": "character",
+"creature_type": "null",
+"rarity": "rare"
+},
+"texts": {
+"desc": "Vous volez une carte aléatoire de la main de l'adversaire.",
+"name": "34 - Chippeur",
+"reac": "Ne peut pas être utilisé en présence de Dora."
+},
+"values": {
+"attack": 2,
+"hp": 3,
+"mana": 3,
+"tempAtk": 0,
+"tempDef": 0,
+"tempHp": 0,
+"timer": 0,
+"vague": 5
+}
+}
+card_35={
+"categories": {
+"class": "character",
+"creature_type": "null",
+"rarity": "atypique"
+},
+"texts": {
+"desc": "Lorsque cette carte attaque, les dégât ricochent sur l'orbe adverse aussi.",
+"name": "35 - Bouliste"
+},
+"values": {
+"attack": 2,
+"hp": 5,
+"mana": 5,
+"tempAtk": 0,
+"tempDef": 0,
+"tempHp": 0,
+"timer": 0,
+"vague": 5
+}
+}
+card_36={
+"categories": {
+"class": "character",
+"creature_type": "null",
+"rarity": "rare"
+},
+"texts": {
+"desc": "Cette carte gagne +2PV lorsqu'elle tue une carte adverse.",
+"name": "36 - Garfield"
+},
+"values": {
+"attack": 3,
+"hp": 4,
+"mana": 4,
+"tempAtk": 0,
+"tempDef": 0,
+"tempHp": 0,
+"timer": 0,
+"vague": 5
+}
+}
+card_37={
+"categories": {
+"class": "character",
+"creature_type": "null",
+"rarity": "ultra_rare"
+},
+"texts": {
+"desc": "Si une carte alliée meurt, Lego Batman attaque celle qui l'a tué.",
+"name": "37 - Lego Batman"
+},
+"values": {
+"attack": 3,
+"hp": 5,
+"mana": 5,
+"tempAtk": 0,
+"tempDef": 0,
+"tempHp": 0,
+"timer": 0,
+"vague": 5
+}
+}
+card_38={
+"categories": {
+"class": "character",
+"creature_type": "null",
+"rarity": "commun"
+},
+"texts": {
+"desc": "A la mort, piochez 2 cartes.",
+"name": "38 - Poulet"
+},
+"values": {
+"attack": 1,
+"hp": 1,
+"mana": 1,
+"tempAtk": 0,
+"tempDef": 0,
+"tempHp": 0,
+"timer": 0,
+"vague": 6
+}
+}
+card_39={
+"categories": {
+"class": "character",
+"creature_type": "null",
+"rarity": "atypique"
+},
+"texts": {
+"desc": "Posée: une autre carte gagne +2/+2",
+"name": "39 - Megamind"
+},
+"values": {
+"attack": 2,
+"hp": 2,
+"mana": 4,
+"tempAtk": 0,
+"tempDef": 0,
+"tempHp": 0,
+"timer": 0,
+"vague": 6
+}
+}
+card_40={
+"categories": {
+"class": "character",
+"creature_type": "null",
+"rarity": "rare"
+},
+"texts": {
+"desc": "Détruit la carte qui la tue.",
+"name": "40 - Cludine"
+},
+"values": {
+"attack": 2,
+"hp": 2,
+"mana": 3,
+"tempAtk": 0,
+"tempDef": 0,
+"tempHp": 0,
+"timer": 0,
+"vague": 6
+}
+}
+card_41={
+"categories": {
+"class": "character",
+"creature_type": "null",
+"rarity": "atypique"
+},
+"texts": {
+"desc": "Si Zig est touché sans mourir, il revient dans la main avec ses stats de base.",
+"name": "41 - Zig",
+"reac": "Gagne 1PV quand Sharko est posé."
+},
+"values": {
+"attack": 2,
+"hp": 3,
+"mana": 2,
+"tempAtk": 0,
+"tempDef": 0,
+"tempHp": 0,
+"timer": 0,
+"vague": 6
+}
+}
+card_42={
+"categories": {
+"class": "character",
+"creature_type": "null",
+"rarity": "rare"
+},
+"texts": {
+"desc": "Posée : Détruit tout les poissons ennemies du terrain.",
+"name": "42 - Sharko",
+"reac": "Gagne 1ATK quand Zig est posé."
+},
+"values": {
+"attack": 4,
+"hp": 4,
+"mana": 5,
+"tempAtk": 0,
+"tempDef": 0,
+"tempHp": 0,
+"timer": 0,
+"vague": 6
+}
+}
+card_43={
+"categories": {
+"class": "character",
+"creature_type": "fortnite",
+"rarity": "rare"
+},
+"texts": {
+"desc": "Posée : invoque un autre Naruto sur le terrain.",
+"name": "43 - Naruto"
+},
+"values": {
+"attack": 3,
+"hp": 3,
+"mana": 5,
+"tempAtk": 0,
+"tempDef": 0,
+"tempHp": 0,
+"timer": 0,
+"vague": 7
+}
+}
+card_44={
+"categories": {
+"class": "character",
+"creature_type": "fortnite",
+"rarity": "ultra_rare"
+},
+"texts": {
+"desc": "Toutes les cartes alliées ont +2ATK pendant un tour.",
+"name": "44 - Kratos"
+},
+"values": {
+"attack": 4,
+"hp": 5,
+"mana": 6,
+"tempAtk": 0,
+"tempDef": 0,
+"tempHp": 0,
+"timer": 0,
+"vague": 7
+}
+}
+card_45={
+"categories": {
+"class": "character",
+"creature_type": "fortnite",
+"rarity": "atypique"
+},
+"texts": {
+"desc": "Lorsque vous piochez une carte, inflige 1 dégât à l'orbe ennemie.",
+"name": "45 - Ryu"
+},
+"values": {
+"attack": 2,
+"hp": 4,
+"mana": 3,
+"tempAtk": 0,
+"tempDef": 0,
+"tempHp": 0,
+"timer": 0,
+"vague": 7
+}
+}
+card_46={
+"categories": {
+"class": "character",
+"creature_type": "fortnite",
+"rarity": "atypique"
+},
+"texts": {
+"desc": "Les cartes alliées ici et sur les lignes voisines gagnent 2PV.",
+"name": "46 - Marshmello"
+},
+"values": {
+"attack": 2,
+"hp": 2,
+"mana": 3,
+"tempAtk": 0,
+"tempDef": 0,
+"tempHp": 0,
+"timer": 0,
+"vague": 7
+}
+}
+card_47={
+"categories": {
+"class": "character",
+"creature_type": "fortnite",
+"rarity": "atypique"
+},
+"texts": {
+"desc": "Une autre carte alliée gagne +1/+1 lorsqu'il détruit une carte adverse.",
+"name": "47 - Master Chief"
+},
+"values": {
+"attack": 4,
+"def": 1,
+"hp": 3,
+"mana": 5,
+"tempAtk": 0,
+"tempDef": 0,
+"tempHp": 0,
+"timer": 0,
+"vague": 7
+}
+}
+card_48={
+"categories": {
+"class": "character",
+"creature_type": "fortnite",
+"rarity": "rare"
+},
+"texts": {
+"desc": "Posée : Inflige 1 dégât à toutes les cartes adverses.",
+"name": "48 - Le Mandalorien"
+},
+"values": {
+"attack": 3,
+"def": 2,
+"hp": 2,
+"mana": 5,
+"tempAtk": 0,
+"tempDef": 0,
+"tempHp": 0,
+"timer": 0,
+"vague": 7
+}
+}
+card_49={
+"categories": {
+"class": "character",
+"creature_type": "fortnite",
+"rarity": "ultra_rare"
+},
+"texts": {
+"desc": "Devient invincible (ne peut pas se faire toucher ni attaquer) 1 tour sur 2.",
+"name": "49 - B.R.U.T.E."
+},
+"values": {
+"attack": 7,
+"def": 1,
+"hp": 7,
+"mana": 7,
+"tempAtk": 0,
+"tempDef": 0,
+"tempHp": 0,
+"timer": 0,
+"vague": 7
+}
+}
+card_50={
+"categories": {
+"class": "character",
+"creature_type": "fortnite",
+"rarity": "atypique"
+},
+"texts": {
+"desc": "Attaque sur une ligne aléatoire.",
+"name": "50 - Neymar"
+},
+"values": {
+"attack": 4,
+"hp": 3,
+"mana": 3,
+"tempAtk": 0,
+"tempDef": 0,
+"tempHp": 0,
+"timer": 0,
+"vague": 7
+}
+}
+card_51={
+"categories": {
+"class": "character",
+"creature_type": "nintendo",
+"rarity": "atypique"
+},
+"texts": {
+"desc": "Posée : les cartes d'à côté gagnent +1/+1.",
+"name": "51 - Boshi"
+},
+"values": {
+"attack": 2,
+"hp": 2,
+"mana": 3,
+"tempAtk": 0,
+"tempDef": 0,
+"tempHp": 0,
+"timer": 0,
+"vague": 8
+}
+}
+card_52={
+"categories": {
+"class": "character",
+"creature_type": "nintendo",
+"rarity": "commun"
+},
+"texts": {
+"desc": "2 cartes de rareté Rare max. perdent 1 bobux",
+"name": "52 - Slippy Toad"
+},
+"values": {
+"attack": 3,
+"hp": 2,
+"mana": 3,
+"tempAtk": 0,
+"tempDef": 0,
+"tempHp": 0,
+"timer": 0,
+"vague": 8
+}
+}
+card_53={
+"categories": {
+"class": "character",
+"creature_type": "nintendo",
+"rarity": "atypique"
+},
+"texts": {
+"desc": "Gagne 2ATK devant une carte pouvant one-shot Meta Knight.",
+"name": "53 - Meta Knight"
+},
+"values": {
+"attack": 3,
+"hp": 3,
+"mana": 3,
+"tempAtk": 0,
+"tempDef": 0,
+"tempHp": 0,
+"timer": 0,
+"vague": 8
+}
+}
+card_57={
+"categories": {
+"class": "character",
+"creature_type": "nintendo",
+"rarity": "rare"
+},
+"texts": {
+"desc": "Attaque aussi les lignes adjascentes.",
+"name": "57 - Sans"
+},
+"values": {
+"attack": 2,
+"hp": 3,
+"mana": 5,
+"tempAtk": 0,
+"tempDef": 0,
+"tempHp": 0,
+"timer": 0,
+"vague": 8
+}
+}
+card_58={
+"categories": {
+"class": "character",
+"creature_type": "funky",
+"rarity": "divin"
+},
+"texts": {
+"desc": "Tant que Harmony55 est présent sur le terrain, toutes les cartes de la main coûtent -1 Bobux.",
+"name": "58 - Harmony55"
+},
+"values": {
+"attack": 3,
+"hp": 3,
+"mana": 5,
+"tempAtk": 0,
+"tempDef": 0,
+"tempHp": 0,
+"timer": 0,
+"vague": 0
+}
+}
+card_59={
+"categories": {
+"class": "character",
+"creature_type": "funky",
+"rarity": "ultra_rare"
+},
+"texts": {
+"desc": "Renvoie la moitité des dégâts (arrondi au plus bas).",
+"name": "59 - AO"
+},
+"values": {
+"attack": 1,
+"hp": 10,
+"mana": 7,
+"tempAtk": 0,
+"tempDef": 0,
+"tempHp": 0,
+"timer": 0,
+"vague": 0
+}
+}
+card_60={
+"categories": {
+"class": "character",
+"creature_type": "funky",
+"rarity": "ultra_rare"
+},
+"texts": {
+"desc": "Renvoie la moitité des dégâts (arrondi au plus bas).",
+"name": "60 - Zeko'Chu"
+},
+"values": {
+"attack": 3,
+"hp": 5,
+"mana": 4,
+"tempAtk": 0,
+"tempDef": 0,
+"tempHp": 0,
+"timer": 0,
+"vague": 0
+}
+}
+card_61={
+"categories": {
+"class": "character",
+"creature_type": "funky",
+"rarity": "ultra_rare"
+},
+"texts": {
+"desc": "Lorsque cette carte inflige des dégâts, invoque un sort dans la main.",
+"name": "61 - BleachFox"
+},
+"values": {
+"attack": 2,
+"hp": 4,
+"mana": 3,
+"tempAtk": 0,
+"tempDef": 0,
+"tempHp": 0,
+"timer": 0,
+"vague": 0
+}
+}
+card_62={
+"categories": {
+"class": "character",
+"creature_type": "funky",
+"rarity": "ultra_rare"
+},
+"texts": {
+"desc": "Chob inflige +2ATK lorsqu'il est devant l'orbe adverse.",
+"name": "62 - Chob"
+},
+"values": {
+"attack": 4,
+"hp": 4,
+"mana": 4,
+"tempAtk": 0,
+"tempDef": 0,
+"tempHp": 0,
+"timer": 0,
+"vague": 0
+}
+}
+card_63={
+"categories": {
+"class": "character",
+"creature_type": "funky",
+"rarity": "ultra_rare"
+},
+"texts": {
+"desc": "Quand une carte alliée est touchée, Herokin inflige 1 dégât à la carte attaquante (ou à l'orbe si c'était une carte sort), si une carte ennemie tombe à 1PV par une carte alliée, elle est détruite.",
+"name": "63 - Herokin"
+},
+"values": {
+"attack": 3,
+"hp": 5,
+"mana": 6,
+"tempAtk": 0,
+"tempDef": 0,
+"tempHp": 0,
+"timer": 0,
+"vague": 0
+}
+}
+card_64={
+"categories": {
+"class": "character",
+"creature_type": "funky",
+"rarity": "ultra_rare"
+},
+"texts": {
+"desc": "Joué, 2 cartes alliées changent leur place.",
+"name": "64 - Fredender"
+},
+"values": {
+"attack": 5,
+"hp": 5,
+"mana": 5,
+"tempAtk": 0,
+"tempDef": 0,
+"tempHp": 0,
+"timer": 0,
+"vague": 0
+}
+}
+card_65={
+"categories": {
+"class": "character",
+"creature_type": "nintendo",
+"rarity": "rare"
+},
+"texts": {
+"desc": "Inflige 1 dégât ici avant de se battre.",
+"name": "65 - Future Rosalina"
+},
+"values": {
+"attack": 3,
+"hp": 4,
+"mana": 4,
+"tempAtk": 0,
+"tempDef": 0,
+"tempHp": 0,
+"timer": 0,
+"vague": 8
+}
+}
+card_66={
+"categories": {
+"class": "character",
+"creature_type": "nintendo",
+"rarity": "rare"
+},
+"texts": {
+"desc": "Lorsque Future Geno détruit une carte, elle va dans votre main.",
+"name": "66 - Future Geno"
+},
+"values": {
+"attack": 4,
+"hp": 3,
+"mana": 4,
+"tempAtk": 0,
+"tempDef": 0,
+"tempHp": 0,
+"timer": 0,
+"vague": 8
+}
+}
+card_67={
+"categories": {
+"class": "character",
+"creature_type": "nintendo",
+"rarity": "atypique"
+},
+"texts": {
+"desc": "Joué : Attaque bonus",
+"name": "67 - Speedrunner Mario"
+},
+"values": {
+"attack": 2,
+"hp": 2,
+"mana": 3,
+"tempAtk": 0,
+"tempDef": 0,
+"tempHp": 0,
+"timer": 0,
+"vague": 8
+}
+}
+card_68={
+"categories": {
+"class": "character",
+"creature_type": "null",
+"rarity": "ultra_rare"
+},
+"texts": {
+"desc": "Joué : Invoque 2 cartes coûtant 1 Bobux sur le terrain allié.",
+"name": "68 - Nouri Al-Maliki",
+"reac": "Si une Maliki alliée se retrouve à 1PV, elle gagne +1/+1"
+},
+"values": {
+"attack": 3,
+"hp": 3,
+"mana": 4,
+"tempAtk": 0,
+"tempDef": 0,
+"tempHp": 0,
+"timer": 0,
+"vague": 9
+}
+}
+card_69={
+"categories": {
+"class": "character",
+"creature_type": "null",
+"rarity": "ultra_rare"
+},
+"texts": {
+"desc": "Si Maliki se retrouve à un PV, elle gagne +2/+2",
+"name": "69 - Maliki",
+"reac": "Si un Nouri Al-Maliki allié est posé, il invoque deux cartes coûtant 2 bobux au lieu de 1."
+},
+"values": {
+"attack": 2,
+"hp": 3,
+"mana": 4,
+"tempAtk": 0,
+"tempDef": 0,
+"tempHp": 0,
+"timer": 0,
+"vague": 9
+}
+}
+card_70={
+"categories": {
+"class": "character",
+"creature_type": "null",
+"rarity": "atypique"
+},
+"texts": {
+"desc": "Aucune capacité",
+"name": "70 - Ours Polaire",
+"reac": "Si le sort Sibérie est joué, gagne +2ATK permanant."
+},
+"values": {
+"attack": 7,
+"hp": 7,
+"mana": 7,
+"tempAtk": 0,
+"tempDef": 0,
+"tempHp": 0,
+"timer": 0,
+"vague": 9
+}
+}
+card_71={
+"categories": {
+"class": "character",
+"creature_type": "null",
+"rarity": "rare"
+},
+"texts": {
+"desc": "Posée : Joue un sort dans votre main gratuitement",
+"name": "71 - Eddy-Malou"
+},
+"values": {
+"attack": 3,
+"hp": 5,
+"mana": 5,
+"tempAtk": 0,
+"tempDef": 0,
+"tempHp": 0,
+"timer": 0,
+"vague": 9
+}
+}
+card_72={
+"categories": {
+"class": "character",
+"creature_type": "null",
+"rarity": "atypique"
+},
+"texts": {
+"desc": "Touché : Invoque un poisson dans la main.",
+"name": "72 - Arthuro"
+},
+"values": {
+"attack": 2,
+"hp": 5,
+"mana": 4,
+"tempAtk": 0,
+"tempDef": 0,
+"tempHp": 0,
+"timer": 0,
+"vague": 10
+}
+}
+card_73={
+"categories": {
+"class": "character",
+"creature_type": "null",
+"rarity": "atypique"
+},
+"texts": {
+"desc": "Posé : Copie le passif ou le sort d'une carte alliée.",
+"name": "73 - Patrik Kvikant"
+},
+"values": {
+"attack": 2,
+"hp": 3,
+"mana": 3,
+"tempAtk": 0,
+"tempDef": 0,
+"tempHp": 0,
+"timer": 0,
+"vague": 10
+}
+}
+card_74={
+"categories": {
+"class": "character",
+"creature_type": "fortnite",
+"rarity": "atypique"
+},
+"texts": {
+"desc": "Soigne 1PV à l'orbe.",
+"name": "74 - Ariana Grande"
+},
+"values": {
+"attack": 2,
+"hp": 2,
+"mana": 2,
+"tempAtk": 0,
+"tempDef": 0,
+"tempHp": 0,
+"timer": 0,
+"vague": 10
+}
+}
+card_75={
+"categories": {
+"class": "character",
+"creature_type": "china",
+"rarity": "ultra_rare"
+},
+"texts": {
+"desc": "Gagne 2PV à chaque tour.",
+"name": "75 - Winnie l'ourson",
+"reac": "Ne peut pas être posé face à Xi Jinping."
+},
+"values": {
+"attack": 3,
+"hp": 5,
+"mana": 6,
+"tempAtk": 0,
+"tempDef": 0,
+"tempHp": 0,
+"timer": 0,
+"vague": 10
+}
+}
+card_01={
+"categories": {
+"class": "sort",
+"creature_type": "null",
+"rarity": "ultra_rare"
+},
+"texts": {
+"desc": "Invoque 3 carte de type Monke sur le terrain.",
+"name": "Random Chimp Event"
+},
+"values": {
+"mana": 1,
+"tempAtk": 0,
+"tempDef": 0,
+"tempHp": 0,
+"timer": 0,
+"vague": 1
+}
+}
+card_02={
+"categories": {
+"class": "sort",
+"creature_type": "null",
+"rarity": "commun"
+},
+"texts": {
+"desc": "Inflige 2 dégâts à une carte adverse et aux lignes d'à coté.",
+"name": "Slugterra Air Elemental Ghoul"
+},
+"values": {
+"mana": 4,
+"tempAtk": 0,
+"tempDef": 0,
+"tempHp": 0,
+"timer": 0,
+"vague": 2
+}
+}
+card_03={
+"categories": {
+"class": "sort",
+"creature_type": "null",
+"rarity": "rare"
+},
+"texts": {
+"desc": "Les cartes adverses ne peuvent plus attaquer pour le tour suivant.",
+"name": "STOP"
+},
+"values": {
+"mana": 5,
+"tempAtk": 0,
+"tempDef": 0,
+"tempHp": 0,
+"timer": 0,
+"vague": 1
+}
+}
+card_04={
+"categories": {
+"class": "sort",
+"creature_type": "null",
+"rarity": "atypique"
+},
+"texts": {
+"desc": "Une carte alliée gagne +2PV et réduit les dégâts subits de 1.",
+"name": "Gilet Jaune"
+},
+"values": {
+"mana": 3,
+"tempAtk": 0,
+"tempDef": 0,
+"tempHp": 0,
+"timer": 0,
+"vague": 2
+}
+}
+card_05={
+"categories": {
+"class": "sort",
+"creature_type": "null",
+"rarity": "rare"
+},
+"texts": {
+"desc": "Renouvèle toutes les cartes de votre main.",
+"name": "nouvelle intro"
+},
+"values": {
+"mana": 1,
+"tempAtk": 0,
+"tempDef": 0,
+"tempHp": 0,
+"timer": 0,
+"vague": 1
+}
+}
+card_06={
+"categories": {
+"class": "sort",
+"creature_type": "poisson",
+"rarity": "atypique"
+},
+"texts": {
+"desc": "Invoque 2 poissons dans votre main.",
+"name": "!peche"
+},
+"values": {
+"mana": 2,
+"tempAtk": 0,
+"tempDef": 0,
+"tempHp": 0,
+"timer": 0,
+"vague": 4
+}
+}
+card_07={
+"categories": {
+"class": "sort",
+"creature_type": "null",
+"rarity": "rare"
+},
+"texts": {
+"desc": "Invoque une carte au hasard de tout le jeu dans la main.",
+"name": "Coffre au Trésor"
+},
+"values": {
+"mana": 0,
+"tempAtk": 0,
+"tempDef": 0,
+"tempHp": 0,
+"timer": 0,
+"vague": 4
+}
+}
+card_08={
+"categories": {
+"class": "sort",
+"creature_type": "null",
+"rarity": "exclusif"
+},
+"texts": {
+"desc": "Donne +1/+1 à toutes les cartes alliées.",
+"name": "OsJuan"
+},
+"values": {
+"mana": 2,
+"tempAtk": 0,
+"tempDef": 0,
+"tempHp": 0,
+"timer": 0,
+"vague": 0
+}
+}
+card_09={
+"categories": {
+"class": "sort",
+"creature_type": "null",
+"rarity": "rare"
+},
+"texts": {
+"desc": "Une carte gagne +1/+1 et effectue une attaque bonus.",
+"name": "Pizza Time"
+},
+"values": {
+"mana": 5,
+"tempAtk": 0,
+"tempDef": 0,
+"tempHp": 0,
+"timer": 0,
+"vague": 5
+}
+}
+card_010={
+"categories": {
+"class": "sort",
+"creature_type": "fortnite",
+"rarity": "commun"
+},
+"texts": {
+"desc": "Invoque 2 sorts et 1 carte dans la main (rare maximum)",
+"name": "Coffre"
+},
+"values": {
+"mana": 2,
+"tempAtk": 0,
+"tempDef": 0,
+"tempHp": 0,
+"timer": 0,
+"vague": 7
+}
+}
+card_011={
+"categories": {
+"class": "sort",
+"creature_type": "fortnite",
+"rarity": "ultra_rare"
+},
+"texts": {
+"desc": "Invoque 2 carte de rareté \"très rare\" ou plus.",
+"name": "Coffre Cosmique"
+},
+"values": {
+"mana": 3,
+"tempAtk": 0,
+"tempDef": 0,
+"tempHp": 0,
+"timer": 0,
+"vague": 7
+}
+}
+card_012={
+"categories": {
+"class": "sort",
+"creature_type": "fortnite",
+"rarity": "ultra_rare"
+},
+"texts": {
+"desc": "Invoque 3 cartes type Mec de Fortnite dans la main.",
+"name": "Passe de Combat"
+},
+"values": {
+"mana": 3,
+"tempAtk": 0,
+"tempDef": 0,
+"tempHp": 0,
+"timer": 0,
+"vague": 7
+}
+}
+card_013={
+"categories": {
+"class": "sort",
+"creature_type": "fortnite",
+"rarity": "rare"
+},
+"texts": {
+"desc": "Détruit une carte adverse avec 4 ATK ou plus.",
+"name": "Météorite de Fortnite"
+},
+"values": {
+"mana": 4,
+"tempAtk": 0,
+"tempDef": 0,
+"tempHp": 0,
+"timer": 0,
+"vague": 7
+}
+}
+card_54={
+"categories": {
+"class": "character",
+"creature_type": "nintendo",
+"rarity": "exclusif"
+},
+"texts": {
+"desc": "/",
+"name": "54 - Korbo"
+},
+"values": {
+"attack": 2,
+"hp": 1,
+"mana": 1,
+"tempAtk": 0,
+"tempDef": 0,
+"tempHp": 0,
+"timer": 0,
+"vague": 8
+}
+}
+card_55={
+"categories": {
+"class": "character",
+"creature_type": "nintendo",
+"rarity": "exclusif"
+},
+"texts": {
+"desc": "Joué : une carte aléatoire de la main adverse gagne 1 bobux",
+"name": "55 - Kiibo"
+},
+"values": {
+"attack": 1,
+"hp": 1,
+"mana": 1,
+"tempAtk": 0,
+"tempDef": 0,
+"tempHp": 0,
+"timer": 0,
+"vague": 8
+}
+}
+card_56={
+"categories": {
+"class": "character",
+"creature_type": "nintendo",
+"rarity": "exclusif"
+},
+"texts": {
+"desc": "/",
+"name": "56 - Kirb"
+},
+"values": {
+"attack": 1,
+"hp": 2,
+"mana": 1,
+"tempAtk": 0,
+"tempDef": 0,
+"tempHp": 0,
+"timer": 0,
+"vague": 8
+}
+}
+card_014={
+"categories": {
+"class": "sort",
+"creature_type": "nintendo",
+"rarity": "rare"
+},
+"texts": {
+"desc": "Pose 3 Kirby aléatoire.",
+"name": "Poyo Pals"
+},
+"values": {
+"mana": 3,
+"tempAtk": 0,
+"tempDef": 0,
+"tempHp": 0,
+"timer": 0,
+"vague": 8
+}
+}
+card_015={
+"categories": {
+"class": "sort",
+"creature_type": "nintendo",
+"rarity": "atypique"
+},
+"texts": {
+"desc": "Déplace une carte alliée puis celle ci effectue une attaque bonus.",
+"name": "Cucui Ganon"
+},
+"values": {
+"mana": 4,
+"tempAtk": 0,
+"tempDef": 0,
+"tempHp": 0,
+"timer": 0,
+"vague": 8
+}
+}
+card_016={
+"categories": {
+"class": "sort",
+"creature_type": "null",
+"rarity": "atypique"
+},
+"texts": {
+"desc": "L'adversaire a -2 bobux au prochain tour",
+"name": "FISC"
+},
+"values": {
+"mana": 2,
+"tempAtk": 0,
+"tempDef": 0,
+"tempHp": 0,
+"timer": 0,
+"vague": 0
+}
+}
+card_017={
+"categories": {
+"class": "sort",
+"creature_type": "funky",
+"rarity": "ultra_rare"
+},
+"texts": {
+"desc": "Transforme une carte alliées en une autre carte valant 1 bobux de plus.",
+"name": "Hérisson rouge"
+},
+"values": {
+"mana": 2,
+"tempAtk": 0,
+"tempDef": 0,
+"tempHp": 0,
+"timer": 0,
+"vague": 0
+}
+}
+card_018={
+"categories": {
+"class": "sort",
+"creature_type": "funky",
+"rarity": "rare"
+},
+"texts": {
+"desc": "Les 3 prochains sorts que vous utilisez vous coutent 2 bobux de moins.",
+"name": "Eau de Javel"
+},
+"values": {
+"mana": 3,
+"tempAtk": 0,
+"tempDef": 0,
+"tempHp": 0,
+"timer": 0,
+"vague": 0
+}
+}
+card_019={
+"categories": {
+"class": "sort",
+"creature_type": "funky",
+"rarity": "ultra_rare"
+},
+"texts": {
+"desc": "Renvoie une carte adverse dans sa main.",
+"name": "Retraçage d'IP"
+},
+"values": {
+"mana": 3,
+"tempAtk": 0,
+"tempDef": 0,
+"tempHp": 0,
+"timer": 0,
+"vague": 0
+}
+}
+card_020={
+"categories": {
+"class": "sort",
+"creature_type": "funky",
+"rarity": "rare"
+},
+"texts": {
+"desc": "Les cartes que vous envoyez ce tour sont masquer",
+"name": "Attaque DDOS"
+},
+"values": {
+"mana": 2,
+"tempAtk": 0,
+"tempDef": 0,
+"tempHp": 0,
+"timer": 0,
+"vague": 0
+}
+}
+card_021={
+"categories": {
+"class": "sort",
+"creature_type": "funky",
+"rarity": "ultra_rare"
+},
+"texts": {
+"desc": "Bloque un ennemie pendant 2 tours",
+"name": "Prison"
+},
+"values": {
+"mana": 4,
+"tempAtk": 0,
+"tempDef": 0,
+"tempHp": 0,
+"timer": 0,
+"vague": 0
+}
+}
+card_022={
+"categories": {
+"class": "sort",
+"creature_type": "null",
+"rarity": "commun"
+},
+"texts": {
+"desc": "Donne -1/4",
+"name": "Vaccin"
+},
+"values": {
+"mana": 2,
+"tempAtk": 0,
+"tempDef": 0,
+"tempHp": 0,
+"timer": 0,
+"vague": 10
+}
+}
+card_76={
+"categories": {
+"class": "character",
+"creature_type": "simpson",
+"rarity": "atypique"
+},
+"texts": {
+"desc": "L'orbe adversse subit 3ATK lorsque l'adverssaire joue un sort. ",
+"name": "76 - Bart Simpson",
+"reac": "/"
+},
+"values": {
+"attack": 2,
+"hp": 3,
+"mana": 3,
+"tempAtk": 0,
+"tempDef": 0,
+"tempHp": 0,
+"timer": 0,
+"vague": 11
+}
+}
+card_77={
+"categories": {
+"class": "character",
+"creature_type": "peppapig",
+"rarity": "ultra_rare"
+},
+"texts": {
+"desc": "Papa Cerdito",
+"name": "77 - Papa Cerdito",
+"reac": "Papa Cerdito"
+},
+"values": {
+"attack": 2,
+"def": 1,
+"hp": 7,
+"mana": 5,
+"tempAtk": 0,
+"tempDef": 0,
+"tempHp": 0,
+"timer": 0,
+"vague": 11
+}
+}
+card_78={
+"categories": {
+"class": "character",
+"creature_type": "simpson",
+"rarity": "ultra_rare"
+},
+"texts": {
+"desc": "Se déplace sur une ligne aléatoire",
+"name": "78 - Homero Simpson",
+"reac": "/"
+},
+"values": {
+"attack": 3,
+"hp": 3,
+"mana": 3,
+"tempAtk": 0,
+"tempDef": 0,
+"tempHp": 0,
+"timer": 0,
+"vague": 11
+}
+}
+card_79={
+"categories": {
+"class": "character",
+"creature_type": "peppapig",
+"rarity": "atypique"
+},
+"texts": {
+"desc": "Toutes les cartes alliées de 5 ou plus font double atk ",
+"name": "79 - Bebe George",
+"reac": "/"
+},
+"values": {
+"attack": 1,
+"hp": 2,
+"mana": 3,
+"tempAtk": 0,
+"tempDef": 0,
+"tempHp": 0,
+"timer": 0,
+"vague": 11
+}
+}
+card_80={
+"categories": {
+"class": "character",
+"creature_type": "simpson",
+"rarity": "atypique"
+},
+"texts": {
+"desc": "Marge",
+"name": "80 - Marge Simpson",
+"reac": "Marge"
+},
+"values": {
+"attack": 3,
+"hp": 2,
+"mana": 3,
+"tempAtk": 0,
+"tempDef": 0,
+"tempHp": 0,
+"timer": 0,
+"vague": 11
+}
+}
+card_81={
+"categories": {
+"class": "character",
+"creature_type": "peppapig",
+"rarity": "commun"
+},
+"texts": {
+"desc": "Peppa Pig",
+"name": "81 - Peppa Pig",
+"reac": "/"
+},
+"values": {
+"attack": 2,
+"hp": 2,
+"mana": 3,
+"tempAtk": 0,
+"tempDef": 0,
+"tempHp": 0,
+"timer": 0,
+"vague": 11
+}
+}
+card_82={
+"categories": {
+"class": "character",
+"creature_type": "simpson",
+"rarity": "atypique"
+},
+"texts": {
+"desc": "Lia Simpson",
+"name": "82 - Lisa Simpson",
+"reac": "/"
+},
+"values": {
+"attack": 2,
+"hp": 3,
+"mana": 3,
+"tempAtk": 0,
+"tempDef": 0,
+"tempHp": 0,
+"timer": 0,
+"vague": 11
+}
+}
+card_83={
+"categories": {
+"class": "character",
+"creature_type": "peppapig",
+"rarity": "rare"
+},
+"texts": {
+"desc": "Lia Simpson",
+"name": "83 - Mama Cerdita",
+"reac": "/"
+},
+"values": {
+"attack": 3,
+"hp": 4,
+"mana": 4,
+"tempAtk": 0,
+"tempDef": 0,
+"tempHp": 0,
+"timer": 0,
+"vague": 11
+}
+}
+card_113={
+"categories": {
+"class": "character",
+"creature_type": "monke",
+"rarity": "atypique"
+},
+"texts": {
+"desc": "kong",
+"name": "113 - Donkey Kong",
+"reac": "/"
+},
+"values": {
+"attack": 4,
+"hp": 3,
+"mana": 4,
+"tempAtk": 0,
+"tempDef": 0,
+"tempHp": 0,
+"timer": 0,
+"vague": 14
+}
+}
+card_114={
+"categories": {
+"class": "character",
+"creature_type": "monke",
+"rarity": "commun"
+},
+"texts": {
+"desc": "kong",
+"name": "114 - Dixie Kong",
+"reac": "/"
+},
+"values": {
+"attack": 2,
+"hp": 2,
+"mana": 2,
+"tempAtk": 0,
+"tempDef": 0,
+"tempHp": 0,
+"timer": 0,
+"vague": 14
+}
+}
+card_115={
+"categories": {
+"class": "character",
+"creature_type": "monke",
+"rarity": "rare"
+},
+"texts": {
+"desc": "kong",
+"name": "115 - Ninja Kong",
+"reac": "/"
+},
+"values": {
+"attack": 2,
+"hp": 2,
+"mana": 5,
+"tempAtk": 0,
+"tempDef": 0,
+"tempHp": 0,
+"timer": 0,
+"vague": 14
+}
+}
+card_116={
+"categories": {
+"class": "character",
+"creature_type": "monke",
+"rarity": "rare"
+},
+"texts": {
+"desc": "kong",
+"name": "116 - Lanky Kong",
+"reac": "/"
+},
+"values": {
+"attack": 2,
+"hp": 2,
+"mana": 3,
+"tempAtk": 0,
+"tempDef": 0,
+"tempHp": 0,
+"timer": 0,
+"vague": 14
+}
+}
+card_117={
+"categories": {
+"class": "character",
+"creature_type": "monke",
+"rarity": "atypique"
+},
+"texts": {
+"desc": "kong",
+"name": "117 - Chunky Kong",
+"reac": "/"
+},
+"values": {
+"attack": 3,
+"hp": 3,
+"mana": 2,
+"tempAtk": 0,
+"tempDef": 0,
+"tempHp": 0,
+"timer": 0,
+"vague": 14
+}
+}
+card_118={
+"categories": {
+"class": "character",
+"creature_type": "monke",
+"rarity": "ultra_rare"
+},
+"texts": {
+"desc": "kong",
+"name": "118 - Karate Kong",
+"reac": "/"
+},
+"values": {
+"attack": 3,
+"hp": 3,
+"mana": 3,
+"tempAtk": 0,
+"tempDef": 0,
+"tempHp": 0,
+"timer": 0,
+"vague": 14
+}
+}
+card_119={
+"categories": {
+"class": "character",
+"creature_type": "monke",
+"rarity": "commun"
+},
+"texts": {
+"desc": "kong",
+"name": "119 - Diddy Kong",
+"reac": "/"
+},
+"values": {
+"attack": 2,
+"hp": 2,
+"mana": 2,
+"tempAtk": 0,
+"tempDef": 0,
+"tempHp": 0,
+"timer": 0,
+"vague": 14
+}
+}
+card_120={
+"categories": {
+"class": "character",
+"creature_type": "monke",
+"rarity": "divin"
+},
+"texts": {
+"desc": "kong",
+"name": "120 - Santa Funky",
+"reac": "/"
+},
+"values": {
+"attack": 5,
+"hp": 6,
+"mana": 5,
+"tempAtk": 0,
+"tempDef": 0,
+"tempHp": 0,
+"timer": 0,
+"vague": 14
+}
+}
+card_023={
+"categories": {
+"class": "sort",
+"creature_type": "null",
+"rarity": "commun"
+},
+"texts": {
+"desc": "Donne -1/4",
+"name": "Jaxi"
+},
+"values": {
+"mana": 2,
+"timer": 0,
+"vague": 9
+}
+}
+card_024={
+"categories": {
+"class": "sort",
+"creature_type": "null",
+"rarity": "commun"
+},
+"texts": {
+"desc": "Donne -1/4",
+"name": "Banane Glissante"
+},
+"values": {
+"mana": 2,
+"timer": 0,
+"vague": 14
+}
+}

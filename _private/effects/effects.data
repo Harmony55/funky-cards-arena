@@ -1,0 +1,8 @@
+[effects]
+
+count=5
+mana_double="Double the Mana"
+mana_incr="Mana +1"
+mana_decr="Mana -1"
+texxit_boost="HP +2"
+juan_chicken_buff="+2 / +2"

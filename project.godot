@@ -1,0 +1,584 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "Control",
+"class": "AbstractBoard",
+"language": "GDScript",
+"path": "res://addons/cardengine/card/abstract_board.gd"
+}, {
+"base": "Node2D",
+"class": "AbstractCard",
+"language": "GDScript",
+"path": "res://addons/cardengine/card/abstract_card.gd"
+}, {
+"base": "Control",
+"class": "AbstractContainer",
+"language": "GDScript",
+"path": "res://addons/cardengine/container/abstract_container.gd"
+}, {
+"base": "Reference",
+"class": "AbstractEffect",
+"language": "GDScript",
+"path": "res://addons/cardengine/effect/effect.gd"
+}, {
+"base": "WindowDialog",
+"class": "AbstractFormDialog",
+"language": "GDScript",
+"path": "res://addons/cardengine/ui/dialogs/abstract_form_dialog/abstract_form_dialog.gd"
+}, {
+"base": "Node",
+"class": "AbstractManager",
+"language": "GDScript",
+"path": "res://addons/cardengine/core/abstract_manager.gd"
+}, {
+"base": "Reference",
+"class": "AbstractModifier",
+"language": "GDScript",
+"path": "res://addons/cardengine/effect/modifier.gd"
+}, {
+"base": "Node",
+"class": "AbstractScreen",
+"language": "GDScript",
+"path": "res://screens/abstract_screen.gd"
+}, {
+"base": "Reference",
+"class": "AbstractStore",
+"language": "GDScript",
+"path": "res://addons/cardengine/store/abstract_store.gd"
+}, {
+"base": "WindowDialog",
+"class": "AnimPreviewDialog",
+"language": "GDScript",
+"path": "res://addons/cardengine/ui/dialogs/anim_preview_dialog/anim_preview_dialog.gd"
+}, {
+"base": "Reference",
+"class": "AnimationBlock",
+"language": "GDScript",
+"path": "res://addons/cardengine/animation/animation_block.gd"
+}, {
+"base": "Reference",
+"class": "AnimationData",
+"language": "GDScript",
+"path": "res://addons/cardengine/animation/animation.gd"
+}, {
+"base": "AbstractManager",
+"class": "AnimationManager",
+"language": "GDScript",
+"path": "res://addons/cardengine/animation/animation_manager.gd"
+}, {
+"base": "Reference",
+"class": "AnimationSequence",
+"language": "GDScript",
+"path": "res://addons/cardengine/animation/animation_sequence.gd"
+}, {
+"base": "Reference",
+"class": "AnimationStep",
+"language": "GDScript",
+"path": "res://addons/cardengine/animation/animation_step.gd"
+}, {
+"base": "Control",
+"class": "AnimationsUi",
+"language": "GDScript",
+"path": "res://addons/cardengine/ui/animations_ui.gd"
+}, {
+"base": "AbstractBoard",
+"class": "Board",
+"language": "GDScript",
+"path": "res://addons/cardengine/container/board.gd"
+}, {
+"base": "Reference",
+"class": "CardData",
+"language": "GDScript",
+"path": "res://addons/cardengine/card/card.gd"
+}, {
+"base": "Reference",
+"class": "CardDatabase",
+"language": "GDScript",
+"path": "res://addons/cardengine/database/database.gd"
+}, {
+"base": "AbstractStore",
+"class": "CardDeck",
+"language": "GDScript",
+"path": "res://addons/cardengine/store/card_deck.gd"
+}, {
+"base": "Node",
+"class": "CardEngineInstance",
+"language": "GDScript",
+"path": "res://addons/cardengine/core/card_engine_instance.gd"
+}, {
+"base": "Control",
+"class": "CardEngineUI",
+"language": "GDScript",
+"path": "res://addons/cardengine/ui/card_engine_ui.gd"
+}, {
+"base": "AbstractStore",
+"class": "CardHand",
+"language": "GDScript",
+"path": "res://addons/cardengine/store/card_hand.gd"
+}, {
+"base": "Reference",
+"class": "CardInstance",
+"language": "GDScript",
+"path": "res://addons/cardengine/store/card_instance.gd"
+}, {
+"base": "CardListPrivate",
+"class": "CardList",
+"language": "GDScript",
+"path": "res://containers/card_list/card_list.gd"
+}, {
+"base": "AbstractContainer",
+"class": "CardListPrivate",
+"language": "GDScript",
+"path": "res://_private/containers/card_list/card_list_private.gd"
+}, {
+"base": "AbstractStore",
+"class": "CardPile",
+"language": "GDScript",
+"path": "res://addons/cardengine/store/card_pile.gd"
+}, {
+"base": "Reference",
+"class": "CardTransform",
+"language": "GDScript",
+"path": "res://addons/cardengine/card/card_transform.gd"
+}, {
+"base": "Reference",
+"class": "CardTransitions",
+"language": "GDScript",
+"path": "res://addons/cardengine/card/card_transitions.gd"
+}, {
+"base": "Control",
+"class": "CardsUi",
+"language": "GDScript",
+"path": "res://addons/cardengine/ui/cards_ui.gd"
+}, {
+"base": "Resource",
+"class": "ChatMessage",
+"language": "GDScript",
+"path": "res://addons/discord_game_sdk/example/lobby/chat_message.gd"
+}, {
+"base": "Reference",
+"class": "ContainerData",
+"language": "GDScript",
+"path": "res://addons/cardengine/container/container.gd"
+}, {
+"base": "AbstractManager",
+"class": "ContainerManager",
+"language": "GDScript",
+"path": "res://addons/cardengine/container/container_manager.gd"
+}, {
+"base": "Control",
+"class": "ContainersUi",
+"language": "GDScript",
+"path": "res://addons/cardengine/ui/containers_ui.gd"
+}, {
+"base": "AbstractManager",
+"class": "DatabaseManager",
+"language": "GDScript",
+"path": "res://addons/cardengine/database/database_manager.gd"
+}, {
+"base": "Control",
+"class": "DatabasesUi",
+"language": "GDScript",
+"path": "res://addons/cardengine/ui/databases_ui.gd"
+}, {
+"base": "Reference",
+"class": "DiscordActivity",
+"language": "NativeScript",
+"path": "res://addons/discord_game_sdk/discord_activity.gdns"
+}, {
+"base": "Reference",
+"class": "DiscordActivityAssets",
+"language": "NativeScript",
+"path": "res://addons/discord_game_sdk/discord_activity_assets.gdns"
+}, {
+"base": "Reference",
+"class": "DiscordActivityManager",
+"language": "NativeScript",
+"path": "res://addons/discord_game_sdk/discord_activity_manager.gdns"
+}, {
+"base": "Reference",
+"class": "DiscordActivityParty",
+"language": "NativeScript",
+"path": "res://addons/discord_game_sdk/discord_activity_party.gdns"
+}, {
+"base": "Reference",
+"class": "DiscordActivitySecrets",
+"language": "NativeScript",
+"path": "res://addons/discord_game_sdk/discord_activity_secrets.gdns"
+}, {
+"base": "",
+"class": "DiscordActivityTimestamps",
+"language": "NativeScript",
+"path": "res://addons/discord_game_sdk/discord_activity_timestamps.gdns"
+}, {
+"base": "Reference",
+"class": "DiscordCore",
+"language": "NativeScript",
+"path": "res://addons/discord_game_sdk/discord_core.gdns"
+}, {
+"base": "",
+"class": "DiscordLobby",
+"language": "NativeScript",
+"path": "res://addons/discord_game_sdk/discord_lobby.gdns"
+}, {
+"base": "",
+"class": "DiscordLobbyManager",
+"language": "NativeScript",
+"path": "res://addons/discord_game_sdk/discord_lobby_manager.gdns"
+}, {
+"base": "Reference",
+"class": "DiscordLobbyTransaction",
+"language": "NativeScript",
+"path": "res://addons/discord_game_sdk/discord_lobby_transaction.gdns"
+}, {
+"base": "",
+"class": "DiscordOverlayManager",
+"language": "NativeScript",
+"path": "res://addons/discord_game_sdk/discord_overlay_manager.gdns"
+}, {
+"base": "",
+"class": "DiscordPartySize",
+"language": "NativeScript",
+"path": "res://addons/discord_game_sdk/discord_party_size.gdns"
+}, {
+"base": "Reference",
+"class": "DiscordResult",
+"language": "NativeScript",
+"path": "res://addons/discord_game_sdk/discord_result.gdns"
+}, {
+"base": "Reference",
+"class": "DiscordUser",
+"language": "NativeScript",
+"path": "res://addons/discord_game_sdk/discord_user.gdns"
+}, {
+"base": "Control",
+"class": "DropArea",
+"language": "GDScript",
+"path": "res://addons/cardengine/core/drop_area.gd"
+}, {
+"base": "Reference",
+"class": "EffectInstance",
+"language": "GDScript",
+"path": "res://addons/cardengine/effect/effect_instance.gd"
+}, {
+"base": "AbstractManager",
+"class": "EffectManager",
+"language": "GDScript",
+"path": "res://addons/cardengine/effect/effect_manager.gd"
+}, {
+"base": "Control",
+"class": "EffectsUi",
+"language": "GDScript",
+"path": "res://addons/cardengine/ui/effects_ui.gd"
+}, {
+"base": "Node2D",
+"class": "FakeConfettiParticles",
+"language": "GDScript",
+"path": "res://confeti/fake_confetti_particles.gd"
+}, {
+"base": "Resource",
+"class": "GameState",
+"language": "GDScript",
+"path": "res://addons/discord_game_sdk/example/lobby/game_state.gd"
+}, {
+"base": "AbstractManager",
+"class": "GeneralManager",
+"language": "GDScript",
+"path": "res://addons/cardengine/core/general_manager.gd"
+}, {
+"base": "HandContainerPrivate",
+"class": "HandContainer",
+"language": "GDScript",
+"path": "res://containers/hand/hand.gd"
+}, {
+"base": "AbstractContainer",
+"class": "HandContainerPrivate",
+"language": "GDScript",
+"path": "res://_private/containers/hand/hand_private.gd"
+}, {
+"base": "HiddenPilePrivate",
+"class": "HiddenPile",
+"language": "GDScript",
+"path": "res://containers/hidden_pile/hidden_pile.gd"
+}, {
+"base": "AbstractContainer",
+"class": "HiddenPilePrivate",
+"language": "GDScript",
+"path": "res://_private/containers/hidden_pile/hidden_pile_private.gd"
+}, {
+"base": "HomeDisplayPrivate",
+"class": "HomeDisplay",
+"language": "GDScript",
+"path": "res://containers/home_display/home_display.gd"
+}, {
+"base": "AbstractContainer",
+"class": "HomeDisplayPrivate",
+"language": "GDScript",
+"path": "res://_private/containers/home_display/home_display_private.gd"
+}, {
+"base": "Resource",
+"class": "Member",
+"language": "GDScript",
+"path": "res://addons/discord_game_sdk/example/lobby/member.gd"
+}, {
+"base": "AnimationSequence",
+"class": "PositionSequence",
+"language": "GDScript",
+"path": "res://addons/cardengine/animation/position_sequence.gd"
+}, {
+"base": "Reference",
+"class": "PseudoRng",
+"language": "GDScript",
+"path": "res://addons/cardengine/rng/pseudo_rng.gd"
+}, {
+"base": "Reference",
+"class": "Query",
+"language": "GDScript",
+"path": "res://addons/cardengine/database/query.gd"
+}, {
+"base": "AnimationSequence",
+"class": "RotationSequence",
+"language": "GDScript",
+"path": "res://addons/cardengine/animation/rotation_sequence.gd"
+}, {
+"base": "AnimationSequence",
+"class": "ScaleSequence",
+"language": "GDScript",
+"path": "res://addons/cardengine/animation/scale_sequence.gd"
+}, {
+"base": "Reference",
+"class": "StepTransition",
+"language": "GDScript",
+"path": "res://addons/cardengine/animation/step_transition.gd"
+}, {
+"base": "Reference",
+"class": "StepValue",
+"language": "GDScript",
+"path": "res://addons/cardengine/animation/step_value.gd"
+}, {
+"base": "TokenGridPrivate",
+"class": "TokenGrid",
+"language": "GDScript",
+"path": "res://containers/token_grid/token_grid.gd"
+}, {
+"base": "AbstractContainer",
+"class": "TokenGridPrivate",
+"language": "GDScript",
+"path": "res://_private/containers/token_grid/token_grid_private.gd"
+}, {
+"base": "Node",
+"class": "UDStores",
+"language": "GDScript",
+"path": "res://user_data/ud_stores.gd"
+}, {
+"base": "Node",
+"class": "UtilsInstance",
+"language": "GDScript",
+"path": "res://addons/cardengine/core/utils.gd"
+}, {
+"base": "AbstractModifier",
+"class": "ValueChange",
+"language": "GDScript",
+"path": "res://addons/cardengine/effect/value_change.gd"
+}, {
+"base": "AbstractModifier",
+"class": "ValueMultiplier",
+"language": "GDScript",
+"path": "res://addons/cardengine/effect/value_multiplier.gd"
+}, {
+"base": "AbstractModifier",
+"class": "ValueSetter",
+"language": "GDScript",
+"path": "res://addons/cardengine/effect/value_setter.gd"
+}, {
+"base": "VisiblePilePrivate",
+"class": "VisiblePile",
+"language": "GDScript",
+"path": "res://containers/visible_pile/visible_pile.gd"
+}, {
+"base": "AbstractContainer",
+"class": "VisiblePilePrivate",
+"language": "GDScript",
+"path": "res://_private/containers/visible_pile/visible_pile_private.gd"
+} ]
+_global_script_class_icons={
+"AbstractBoard": "",
+"AbstractCard": "",
+"AbstractContainer": "",
+"AbstractEffect": "",
+"AbstractFormDialog": "",
+"AbstractManager": "",
+"AbstractModifier": "",
+"AbstractScreen": "",
+"AbstractStore": "",
+"AnimPreviewDialog": "",
+"AnimationBlock": "",
+"AnimationData": "",
+"AnimationManager": "",
+"AnimationSequence": "",
+"AnimationStep": "",
+"AnimationsUi": "",
+"Board": "",
+"CardData": "",
+"CardDatabase": "",
+"CardDeck": "",
+"CardEngineInstance": "",
+"CardEngineUI": "",
+"CardHand": "",
+"CardInstance": "",
+"CardList": "",
+"CardListPrivate": "",
+"CardPile": "",
+"CardTransform": "",
+"CardTransitions": "",
+"CardsUi": "",
+"ChatMessage": "",
+"ContainerData": "",
+"ContainerManager": "",
+"ContainersUi": "",
+"DatabaseManager": "",
+"DatabasesUi": "",
+"DiscordActivity": "",
+"DiscordActivityAssets": "",
+"DiscordActivityManager": "",
+"DiscordActivityParty": "",
+"DiscordActivitySecrets": "",
+"DiscordActivityTimestamps": "",
+"DiscordCore": "",
+"DiscordLobby": "",
+"DiscordLobbyManager": "",
+"DiscordLobbyTransaction": "",
+"DiscordOverlayManager": "",
+"DiscordPartySize": "",
+"DiscordResult": "",
+"DiscordUser": "",
+"DropArea": "",
+"EffectInstance": "",
+"EffectManager": "",
+"EffectsUi": "",
+"FakeConfettiParticles": "",
+"GameState": "",
+"GeneralManager": "",
+"HandContainer": "",
+"HandContainerPrivate": "",
+"HiddenPile": "",
+"HiddenPilePrivate": "",
+"HomeDisplay": "",
+"HomeDisplayPrivate": "",
+"Member": "",
+"PositionSequence": "",
+"PseudoRng": "",
+"Query": "",
+"RotationSequence": "",
+"ScaleSequence": "",
+"StepTransition": "",
+"StepValue": "",
+"TokenGrid": "",
+"TokenGridPrivate": "",
+"UDStores": "",
+"UtilsInstance": "",
+"ValueChange": "",
+"ValueMultiplier": "",
+"ValueSetter": "",
+"VisiblePile": "",
+"VisiblePilePrivate": ""
+}
+
+[application]
+
+config/name="FunkyCardsArena"
+config/description="Un jeu mega funky !"
+run/main_scene="res://main.tscn"
+boot_splash/image="res://screens/board/ArenaTest.png"
+config/icon="res://icon.png"
+config/windows_native_icon="res://icon.ico"
+
+[autoload]
+
+Utils="*res://addons/cardengine/core/utils.gd"
+CardEngine="*res://addons/cardengine/core/card_engine_instance.gd"
+Gameplay="*res://gameplay.gd"
+UserStores="*res://user_data/ud_stores.gd"
+Network="*res://network/network.gd"
+Global="*res://network/global.gd"
+Players="*res://network/Players.tscn"
+Discord="*res://addons/discord_game_sdk/discord.gd"
+
+[debug]
+
+gdscript/warnings/unused_class_variable=true
+gdscript/warnings/unsafe_property_access=true
+gdscript/warnings/unsafe_method_access=true
+gdscript/warnings/unsafe_cast=true
+gdscript/warnings/unsafe_call_argument=true
+
+[display]
+
+window/size/width=1280
+window/size/height=720
+window/size/test_width=960
+window/size/test_height=540
+window/stretch/mode="2d"
+window/stretch/aspect="keep"
+
+[editor]
+
+convert_text_resources_to_binary_on_export=true
+
+[editor_plugins]
+
+enabled=PoolStringArray( "res://addons/cardengine/plugin.cfg", "res://addons/discord_game_sdk/plugin.cfg", "res://addons/project-statistics/plugin.cfg", "res://addons/simple-project-timer/plugin.cfg" )
+
+[global]
+
+icon=false
+
+[gui]
+
+timers/tooltip_delay_sec=0.1
+
+[input]
+
+quentincaffeino_console_toggle={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":true,"meta":false,"command":true,"pressed":false,"scancode":96,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+quentincaffeino_console_autocomplete={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777218,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+quentincaffeino_console_history_up={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777232,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+quentincaffeino_console_history_down={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777234,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+
+[mono]
+
+project/assembly_name="FunkyCardsArena"
+
+[rendering]
+
+quality/filters/anisotropic_filter_level=16
+environment/default_clear_color=Color( 0, 0, 0, 1 )
+quality/filters/msaa=3
+environment/default_environment="res://default_env.tres"
+
+[statistics]
+
+force_include=PoolStringArray(  )

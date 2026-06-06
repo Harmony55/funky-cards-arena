@@ -1,0 +1,34 @@
+[meta]
+
+id="dead"
+name="dead"
+
+[idle]
+
+pos=[  ]
+scale=[  ]
+rot=[  ]
+
+[focused]
+
+pos=[  ]
+scale=[  ]
+rot=[  ]
+
+[activated]
+
+pos=[  ]
+scale=[  ]
+rot=[  ]
+
+[deactivated]
+
+pos=[  ]
+scale=[  ]
+rot=[  ]
+
+[unfocused]
+
+pos=[  ]
+scale=[  ]
+rot=[  ]

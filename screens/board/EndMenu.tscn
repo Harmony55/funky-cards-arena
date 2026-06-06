@@ -1,0 +1,243 @@
+[gd_scene load_steps=59 format=2]
+
+[ext_resource path="res://screens/casier/obamium/frame_29_delay-0.03s.png" type="Texture" id=1]
+[ext_resource path="res://screens/casier/obamium/frame_25_delay-0.03s.png" type="Texture" id=2]
+[ext_resource path="res://screens/casier/obamium/frame_47_delay-0.03s.png" type="Texture" id=3]
+[ext_resource path="res://screens/casier/obamium/frame_34_delay-0.03s.png" type="Texture" id=4]
+[ext_resource path="res://screens/casier/obamium/frame_39_delay-0.03s.png" type="Texture" id=5]
+[ext_resource path="res://screens/casier/obamium/frame_46_delay-0.03s.png" type="Texture" id=6]
+[ext_resource path="res://screens/casier/obamium/frame_33_delay-0.03s.png" type="Texture" id=7]
+[ext_resource path="res://screens/board/defaite.png" type="Texture" id=8]
+[ext_resource path="res://screens/casier/obamium/frame_28_delay-0.03s.png" type="Texture" id=9]
+[ext_resource path="res://screens/casier/obamium/frame_30_delay-0.03s.png" type="Texture" id=10]
+[ext_resource path="res://screens/casier/obamium/frame_48_delay-0.03s.png" type="Texture" id=11]
+[ext_resource path="res://screens/casier/obamium/frame_40_delay-0.03s.png" type="Texture" id=12]
+[ext_resource path="res://screens/casier/obamium/frame_43_delay-0.03s.png" type="Texture" id=13]
+[ext_resource path="res://screens/casier/obamium/frame_32_delay-0.03s.png" type="Texture" id=14]
+[ext_resource path="res://screens/casier/obamium/frame_49_delay-0.03s.png" type="Texture" id=15]
+[ext_resource path="res://screens/casier/obamium/frame_20_delay-0.03s.png" type="Texture" id=16]
+[ext_resource path="res://screens/casier/obamium/frame_27_delay-0.03s.png" type="Texture" id=17]
+[ext_resource path="res://screens/casier/obamium/frame_23_delay-0.03s.png" type="Texture" id=18]
+[ext_resource path="res://screens/casier/obamium/frame_21_delay-0.03s.png" type="Texture" id=19]
+[ext_resource path="res://screens/casier/obamium/frame_26_delay-0.03s.png" type="Texture" id=20]
+[ext_resource path="res://screens/casier/obamium/frame_24_delay-0.03s.png" type="Texture" id=21]
+[ext_resource path="res://screens/casier/obamium/frame_41_delay-0.03s.png" type="Texture" id=22]
+[ext_resource path="res://screens/casier/obamium/frame_38_delay-0.03s.png" type="Texture" id=23]
+[ext_resource path="res://screens/casier/obamium/frame_37_delay-0.03s.png" type="Texture" id=24]
+[ext_resource path="res://screens/casier/obamium/frame_31_delay-0.03s.png" type="Texture" id=25]
+[ext_resource path="res://screens/casier/obamium/frame_22_delay-0.03s.png" type="Texture" id=26]
+[ext_resource path="res://screens/casier/obamium/frame_35_delay-0.03s.png" type="Texture" id=27]
+[ext_resource path="res://screens/casier/obamium/frame_45_delay-0.03s.png" type="Texture" id=28]
+[ext_resource path="res://screens/casier/obamium/frame_42_delay-0.03s.png" type="Texture" id=29]
+[ext_resource path="res://screens/casier/obamium/frame_36_delay-0.03s.png" type="Texture" id=30]
+[ext_resource path="res://screens/casier/obamium/frame_44_delay-0.03s.png" type="Texture" id=31]
+[ext_resource path="res://screens/casier/obamium/frame_15_delay-0.03s.png" type="Texture" id=32]
+[ext_resource path="res://screens/casier/obamium/frame_14_delay-0.03s.png" type="Texture" id=33]
+[ext_resource path="res://screens/casier/obamium/frame_10_delay-0.03s.png" type="Texture" id=34]
+[ext_resource path="res://screens/casier/obamium/frame_16_delay-0.03s.png" type="Texture" id=35]
+[ext_resource path="res://screens/casier/obamium/frame_19_delay-0.03s.png" type="Texture" id=36]
+[ext_resource path="res://screens/casier/obamium/frame_18_delay-0.03s.png" type="Texture" id=37]
+[ext_resource path="res://screens/casier/obamium/frame_00_delay-0.03s.png" type="Texture" id=38]
+[ext_resource path="res://screens/casier/obamium/frame_02_delay-0.03s.png" type="Texture" id=39]
+[ext_resource path="res://screens/casier/obamium/frame_04_delay-0.03s.png" type="Texture" id=40]
+[ext_resource path="res://screens/casier/obamium/frame_08_delay-0.03s.png" type="Texture" id=41]
+[ext_resource path="res://screens/casier/obamium/frame_01_delay-0.03s.png" type="Texture" id=42]
+[ext_resource path="res://screens/casier/obamium/frame_03_delay-0.03s.png" type="Texture" id=43]
+[ext_resource path="res://screens/casier/obamium/frame_07_delay-0.03s.png" type="Texture" id=44]
+[ext_resource path="res://screens/casier/obamium/frame_06_delay-0.03s.png" type="Texture" id=45]
+[ext_resource path="res://screens/casier/obamium/frame_12_delay-0.03s.png" type="Texture" id=46]
+[ext_resource path="res://screens/casier/obamium/frame_17_delay-0.03s.png" type="Texture" id=47]
+[ext_resource path="res://screens/casier/obamium/frame_13_delay-0.03s.png" type="Texture" id=48]
+[ext_resource path="res://screens/casier/obamium/frame_11_delay-0.03s.png" type="Texture" id=49]
+[ext_resource path="res://screens/casier/obamium/frame_09_delay-0.03s.png" type="Texture" id=50]
+[ext_resource path="res://screens/casier/obamium/frame_05_delay-0.03s.png" type="Texture" id=51]
+[ext_resource path="res://fonts/SuperMario.ttf" type="DynamicFontData" id=52]
+[ext_resource path="res://screens/board/EndMenu.gd" type="Script" id=53]
+[ext_resource path="res://widgets/small_button/small_button.tscn" type="PackedScene" id=54]
+
+[sub_resource type="DynamicFont" id=8]
+size = 39
+font_data = ExtResource( 52 )
+
+[sub_resource type="DynamicFont" id=11]
+size = 61
+font_data = ExtResource( 52 )
+
+[sub_resource type="DynamicFont" id=9]
+size = 80
+font_data = ExtResource( 52 )
+
+[sub_resource type="SpriteFrames" id=10]
+animations = [ {
+"frames": [ ExtResource( 38 ), ExtResource( 42 ), ExtResource( 39 ), ExtResource( 43 ), ExtResource( 40 ), ExtResource( 51 ), ExtResource( 45 ), ExtResource( 44 ), ExtResource( 41 ), ExtResource( 50 ), ExtResource( 34 ), ExtResource( 49 ), ExtResource( 46 ), ExtResource( 48 ), ExtResource( 33 ), ExtResource( 32 ), ExtResource( 35 ), ExtResource( 47 ), ExtResource( 37 ), ExtResource( 36 ), ExtResource( 16 ), ExtResource( 19 ), ExtResource( 26 ), ExtResource( 18 ), ExtResource( 21 ), ExtResource( 2 ), ExtResource( 20 ), ExtResource( 17 ), ExtResource( 9 ), ExtResource( 1 ), ExtResource( 10 ), ExtResource( 25 ), ExtResource( 14 ), ExtResource( 7 ), ExtResource( 4 ), ExtResource( 27 ), ExtResource( 30 ), ExtResource( 24 ), ExtResource( 23 ), ExtResource( 5 ), ExtResource( 12 ), ExtResource( 22 ), ExtResource( 29 ), ExtResource( 13 ), ExtResource( 31 ), ExtResource( 28 ), ExtResource( 6 ), ExtResource( 3 ), ExtResource( 11 ), ExtResource( 15 ) ],
+"loop": true,
+"name": "default",
+"speed": 24.0
+} ]
+
+[node name="EndMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 53 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.627451 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Victoire" type="Sprite" parent="."]
+position = Vector2( 640.5, 35 )
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 8 )
+
+[node name="FunkyScore" type="Label" parent="."]
+visible = false
+margin_left = 428.0
+margin_top = 168.0
+margin_right = 1705.0
+margin_bottom = 208.0
+custom_fonts/font = SubResource( 8 )
+text = "Score de Funky :        200"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PVLeft" type="Label" parent="."]
+margin_left = 428.0
+margin_top = 208.0
+margin_right = 1705.0
+margin_bottom = 248.0
+custom_fonts/font = SubResource( 8 )
+text = "PV restants :             200"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BobuxLeft" type="Label" parent="."]
+visible = false
+margin_left = 428.0
+margin_top = 202.0
+margin_right = 1705.0
+margin_bottom = 242.0
+custom_fonts/font = SubResource( 8 )
+text = "Bobux restants :        200"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CardKilledNumber" type="Label" parent="."]
+margin_left = 428.0
+margin_top = 246.0
+margin_right = 1705.0
+margin_bottom = 286.0
+custom_fonts/font = SubResource( 8 )
+text = "Carte tuer (nombre) : 200"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CardKilledBobux" type="Label" parent="."]
+margin_left = 428.0
+margin_top = 285.0
+margin_right = 1705.0
+margin_bottom = 325.0
+custom_fonts/font = SubResource( 8 )
+text = "Carte tuer (bobux) :   200"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CardDeadBobux" type="Label" parent="."]
+margin_left = 428.0
+margin_top = 324.0
+margin_right = 1705.0
+margin_bottom = 364.0
+custom_fonts/font = SubResource( 8 )
+text = "Carte morte (bobux) : 200"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Efficacité" type="Label" parent="."]
+margin_left = 428.0
+margin_top = 361.0
+margin_right = 1705.0
+margin_bottom = 401.0
+custom_fonts/font = SubResource( 8 )
+text = "Efficacité des bobux : 200"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TurnNumber" type="Label" parent="."]
+margin_left = 428.0
+margin_top = 394.0
+margin_right = 1705.0
+margin_bottom = 434.0
+custom_fonts/font = SubResource( 8 )
+text = "Nombre de tour :        200"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Total" type="Label" parent="."]
+margin_left = 441.0
+margin_top = 465.0
+margin_right = 1002.0
+margin_bottom = 527.0
+custom_fonts/font = SubResource( 11 )
+text = "Score total : 1600"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Recompense" type="Label" parent="."]
+margin_left = 272.0
+margin_top = 573.25
+margin_right = 709.0
+margin_bottom = 653.25
+custom_fonts/font = SubResource( 9 )
+text = "Récompense :"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ObamiumNumber" type="Label" parent="."]
+margin_left = 467.0
+margin_top = 576.25
+margin_right = 904.0
+margin_bottom = 656.25
+custom_fonts/font = SubResource( 9 )
+text = "289"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Obamium" type="AnimatedSprite" parent="."]
+position = Vector2( 950, 604.25 )
+scale = Vector2( 0.3, 0.3 )
+frames = SubResource( 10 )
+frame = 4
+playing = true
+
+[node name="MenuButton" parent="." instance=ExtResource( 54 )]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -1279.0
+margin_right = -1104.0
+rect_min_size = Vector2( 0, 0 )
+
+[node name="BaseScreen" type="Sprite" parent="."]
+position = Vector2( 162, 281 )
+scale = Vector2( 0.7, 0.7 )
+
+[node name="EndScreenshot" type="Sprite" parent="."]
+position = Vector2( 162, 281 )
+scale = Vector2( 0.7, 0.7 )
+
+[connection signal="pressed" from="MenuButton" to="." method="_on_MenuButton_pressed"]

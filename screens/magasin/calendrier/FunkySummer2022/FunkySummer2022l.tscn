@@ -1,0 +1,308 @@
+[gd_scene load_steps=73 format=2]
+
+[ext_resource path="res://screens/magasin/calendrier/FunkySummer2022/background.png" type="Texture" id=1]
+[ext_resource path="res://screens/magasin/calendrier/FunkySummer2022/case/Jour1.png" type="Texture" id=2]
+[ext_resource path="res://screens/magasin/calendrier/FunkySummer2022/case/Jour2.png" type="Texture" id=3]
+[ext_resource path="res://screens/magasin/calendrier/FunkySummer2022/case/Jour3.png" type="Texture" id=4]
+[ext_resource path="res://screens/magasin/calendrier/FunkySummer2022/case/Jour6.png" type="Texture" id=5]
+[ext_resource path="res://screens/magasin/calendrier/FunkySummer2022/case/Jour7.png" type="Texture" id=6]
+[ext_resource path="res://screens/magasin/calendrier/FunkySummer2022/case/Jour4.png" type="Texture" id=7]
+[ext_resource path="res://screens/magasin/calendrier/FunkySummer2022/case/Jour5.png" type="Texture" id=8]
+[ext_resource path="res://screens/magasin/calendrier/FunkySummer2022/button/RecupHover.png" type="Texture" id=9]
+[ext_resource path="res://screens/magasin/calendrier/FunkySummer2022/button/RecupBase.png" type="Texture" id=10]
+[ext_resource path="res://screens/magasin/calendrier/FunkySummer2022/button/RecupClick.png" type="Texture" id=11]
+[ext_resource path="res://fonts/SuperMario.ttf" type="DynamicFontData" id=12]
+[ext_resource path="res://screens/casier/obamium/frame_20_delay-0.03s.png" type="Texture" id=13]
+[ext_resource path="res://screens/casier/obamium/frame_35_delay-0.03s.png" type="Texture" id=14]
+[ext_resource path="res://screens/casier/obamium/frame_03_delay-0.03s.png" type="Texture" id=15]
+[ext_resource path="res://screens/casier/obamium/frame_04_delay-0.03s.png" type="Texture" id=16]
+[ext_resource path="res://screens/casier/obamium/frame_17_delay-0.03s.png" type="Texture" id=17]
+[ext_resource path="res://screens/casier/obamium/frame_45_delay-0.03s.png" type="Texture" id=18]
+[ext_resource path="res://screens/casier/obamium/frame_41_delay-0.03s.png" type="Texture" id=19]
+[ext_resource path="res://screens/casier/obamium/frame_47_delay-0.03s.png" type="Texture" id=20]
+[ext_resource path="res://screens/casier/obamium/frame_40_delay-0.03s.png" type="Texture" id=21]
+[ext_resource path="res://screens/casier/obamium/frame_10_delay-0.03s.png" type="Texture" id=22]
+[ext_resource path="res://screens/casier/obamium/frame_29_delay-0.03s.png" type="Texture" id=23]
+[ext_resource path="res://screens/casier/obamium/frame_14_delay-0.03s.png" type="Texture" id=24]
+[ext_resource path="res://screens/casier/obamium/frame_38_delay-0.03s.png" type="Texture" id=25]
+[ext_resource path="res://screens/casier/obamium/frame_23_delay-0.03s.png" type="Texture" id=26]
+[ext_resource path="res://screens/casier/obamium/frame_05_delay-0.03s.png" type="Texture" id=27]
+[ext_resource path="res://screens/casier/obamium/frame_39_delay-0.03s.png" type="Texture" id=28]
+[ext_resource path="res://screens/casier/obamium/frame_43_delay-0.03s.png" type="Texture" id=29]
+[ext_resource path="res://screens/casier/obamium/frame_01_delay-0.03s.png" type="Texture" id=30]
+[ext_resource path="res://screens/casier/obamium/frame_26_delay-0.03s.png" type="Texture" id=31]
+[ext_resource path="res://screens/casier/obamium/frame_16_delay-0.03s.png" type="Texture" id=32]
+[ext_resource path="res://screens/casier/obamium/frame_31_delay-0.03s.png" type="Texture" id=33]
+[ext_resource path="res://screens/casier/obamium/frame_19_delay-0.03s.png" type="Texture" id=34]
+[ext_resource path="res://screens/casier/obamium/frame_33_delay-0.03s.png" type="Texture" id=35]
+[ext_resource path="res://screens/casier/obamium/frame_37_delay-0.03s.png" type="Texture" id=36]
+[ext_resource path="res://screens/casier/obamium/frame_24_delay-0.03s.png" type="Texture" id=37]
+[ext_resource path="res://screens/casier/obamium/frame_00_delay-0.03s.png" type="Texture" id=38]
+[ext_resource path="res://screens/casier/obamium/frame_15_delay-0.03s.png" type="Texture" id=39]
+[ext_resource path="res://screens/casier/obamium/frame_48_delay-0.03s.png" type="Texture" id=40]
+[ext_resource path="res://screens/casier/obamium/frame_42_delay-0.03s.png" type="Texture" id=41]
+[ext_resource path="res://screens/casier/obamium/frame_11_delay-0.03s.png" type="Texture" id=42]
+[ext_resource path="res://screens/casier/obamium/frame_06_delay-0.03s.png" type="Texture" id=43]
+[ext_resource path="res://screens/casier/obamium/frame_21_delay-0.03s.png" type="Texture" id=44]
+[ext_resource path="res://screens/casier/obamium/frame_12_delay-0.03s.png" type="Texture" id=45]
+[ext_resource path="res://screens/casier/obamium/frame_07_delay-0.03s.png" type="Texture" id=46]
+[ext_resource path="res://screens/casier/obamium/frame_36_delay-0.03s.png" type="Texture" id=47]
+[ext_resource path="res://screens/casier/obamium/frame_32_delay-0.03s.png" type="Texture" id=48]
+[ext_resource path="res://screens/casier/obamium/frame_49_delay-0.03s.png" type="Texture" id=49]
+[ext_resource path="res://screens/casier/obamium/frame_30_delay-0.03s.png" type="Texture" id=50]
+[ext_resource path="res://screens/casier/obamium/frame_02_delay-0.03s.png" type="Texture" id=51]
+[ext_resource path="res://screens/casier/obamium/frame_34_delay-0.03s.png" type="Texture" id=52]
+[ext_resource path="res://screens/casier/obamium/frame_13_delay-0.03s.png" type="Texture" id=53]
+[ext_resource path="res://screens/casier/obamium/frame_08_delay-0.03s.png" type="Texture" id=54]
+[ext_resource path="res://screens/casier/obamium/frame_18_delay-0.03s.png" type="Texture" id=55]
+[ext_resource path="res://screens/casier/obamium/frame_09_delay-0.03s.png" type="Texture" id=56]
+[ext_resource path="res://screens/casier/obamium/frame_22_delay-0.03s.png" type="Texture" id=57]
+[ext_resource path="res://screens/casier/obamium/frame_44_delay-0.03s.png" type="Texture" id=58]
+[ext_resource path="res://screens/casier/obamium/frame_25_delay-0.03s.png" type="Texture" id=59]
+[ext_resource path="res://screens/casier/obamium/frame_46_delay-0.03s.png" type="Texture" id=60]
+[ext_resource path="res://screens/casier/obamium/frame_27_delay-0.03s.png" type="Texture" id=61]
+[ext_resource path="res://screens/casier/obamium/frame_28_delay-0.03s.png" type="Texture" id=62]
+[ext_resource path="res://screens/magasin/calendrier/FunkySummer2022/button/RecupDisabled.png" type="Texture" id=63]
+[ext_resource path="res://screens/magasin/calendrier/FunkySummer2022/FunkySummer2022l.gd" type="Script" id=64]
+[ext_resource path="res://screens/board/Orbe/Skin/Tuba.png" type="Texture" id=65]
+[ext_resource path="res://screens/board/Orbe_Coco.png" type="Texture" id=66]
+[ext_resource path="res://screens/board/Arena/Plage.png" type="Texture" id=67]
+[ext_resource path="res://screens/opening/FunkyPack.png" type="Texture" id=68]
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 38 ), ExtResource( 30 ), ExtResource( 51 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 27 ), ExtResource( 43 ), ExtResource( 46 ), ExtResource( 54 ), ExtResource( 56 ), ExtResource( 22 ), ExtResource( 42 ), ExtResource( 45 ), ExtResource( 53 ), ExtResource( 24 ), ExtResource( 39 ), ExtResource( 32 ), ExtResource( 17 ), ExtResource( 55 ), ExtResource( 34 ), ExtResource( 13 ), ExtResource( 44 ), ExtResource( 57 ), ExtResource( 26 ), ExtResource( 37 ), ExtResource( 59 ), ExtResource( 31 ), ExtResource( 61 ), ExtResource( 62 ), ExtResource( 23 ), ExtResource( 50 ), ExtResource( 33 ), ExtResource( 48 ), ExtResource( 35 ), ExtResource( 52 ), ExtResource( 14 ), ExtResource( 47 ), ExtResource( 36 ), ExtResource( 25 ), ExtResource( 28 ), ExtResource( 21 ), ExtResource( 19 ), ExtResource( 41 ), ExtResource( 29 ), ExtResource( 58 ), ExtResource( 18 ), ExtResource( 60 ), ExtResource( 20 ), ExtResource( 40 ), ExtResource( 49 ) ],
+"loop": true,
+"name": "default",
+"speed": 24.0
+} ]
+
+[sub_resource type="DynamicFont" id=1]
+size = 58
+outline_size = 4
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 12 )
+
+[sub_resource type="Animation" id=3]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ "Chargement de la récompense" ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "chargement"
+length = 1.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1, 1.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ "Chargement de la récompense", "Chargement de la récompense.", "Chargement de la récompense..", "Chargement de la récompense...", "Chargement de la récompense..", "Chargement de la récompense.", "Chargement de la récompense" ]
+}
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 64 )
+
+[node name="Background" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 1 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Day1" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 2 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Day2" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Day3" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 4 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Day4" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 7 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Day5" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 8 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Day6" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 5 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Day7" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 6 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton" type="TextureButton" parent="."]
+visible = false
+margin_left = 719.0
+margin_top = 449.0
+margin_right = 1037.0
+margin_bottom = 523.0
+rect_pivot_offset = Vector2( 250, 114 )
+texture_normal = ExtResource( 10 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 11 )
+texture_disabled = ExtResource( 63 )
+expand = true
+stretch_mode = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Obamium" type="AnimatedSprite" parent="."]
+visible = false
+position = Vector2( 520, 475 )
+scale = Vector2( 0.8, 0.8 )
+frames = SubResource( 2 )
+frame = 27
+playing = true
+
+[node name="Tuba" type="Sprite" parent="."]
+visible = false
+position = Vector2( 517, 470 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 65 )
+
+[node name="Coco" type="Sprite" parent="."]
+visible = false
+position = Vector2( 517, 519 )
+texture = ExtResource( 66 )
+
+[node name="Plage" type="Sprite" parent="."]
+visible = false
+position = Vector2( 522, 469 )
+texture = ExtResource( 67 )
+
+[node name="Funk" type="Sprite" parent="."]
+visible = false
+position = Vector2( 522, 469 )
+rotation = 0.219911
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 68 )
+
+[node name="Label" type="Label" parent="."]
+visible = false
+margin_left = 600.0
+margin_top = 366.0
+margin_right = 1131.0
+margin_bottom = 431.0
+custom_fonts/font = SubResource( 1 )
+text = "Jour 1 Obamium x100"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Loading" type="Label" parent="."]
+margin_left = 368.0
+margin_top = 422.0
+margin_right = 1082.0
+margin_bottom = 487.0
+custom_fonts/font = SubResource( 1 )
+text = "Chargement de la récompense"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Loading"]
+anims/RESET = SubResource( 3 )
+anims/chargement = SubResource( 4 )
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.4
+
+[node name="ClickOutside" type="TextureButton" parent="."]
+margin_right = 139.0
+margin_bottom = 720.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ClickOutside2" type="TextureButton" parent="."]
+margin_right = 1280.0
+margin_bottom = 94.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ClickOutside3" type="TextureButton" parent="."]
+margin_left = 1151.0
+margin_right = 1280.0
+margin_bottom = 720.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ClickOutside4" type="TextureButton" parent="."]
+margin_top = 640.0
+margin_right = 1280.0
+margin_bottom = 720.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_TextureButton_pressed"]
+[connection signal="request_completed" from="HTTPRequest" to="." method="_on_HTTPRequest_request_completed"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="pressed" from="ClickOutside" to="." method="_on_ClickOutside_pressed"]
+[connection signal="pressed" from="ClickOutside2" to="." method="_on_ClickOutside_pressed"]
+[connection signal="pressed" from="ClickOutside3" to="." method="_on_ClickOutside_pressed"]
+[connection signal="pressed" from="ClickOutside4" to="." method="_on_ClickOutside_pressed"]
