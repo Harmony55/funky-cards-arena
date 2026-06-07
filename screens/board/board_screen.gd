@@ -1121,7 +1121,7 @@ func card_placed(card: CardInstance, row: int, is_kvikant: bool = false) -> void
 				if neighbor_data:
 					var neighbor_name = get_data(neighbor).get_text("name")
 					if neighbor_name == "1 - Bernadette":
-						effectCard(row, 0, 1)
+						effectCard(row, 0, -1)
 					elif neighbor_name == "114 - Dixie Kong":
 						draw()
 		
@@ -3012,7 +3012,7 @@ func effectCard(index: int, atk: int, hp: int, def: int = 0, type: String = "buf
 	#Cartes qui redirigent les buffs
 	if type == "buff":
 		# Buff de Ninja Kong (si c'était un buff)
-		if atk <= 0 or hp <= 0:
+		if atk < 0 or hp < 0:
 			if data.get_text("name") != "115 - Ninja Kong":
 				for i in returnCards("115 - Ninja Kong"):
 					if i != index:
