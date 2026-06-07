@@ -1121,7 +1121,7 @@ func card_placed(card: CardInstance, row: int, is_kvikant: bool = false) -> void
 				if neighbor_data:
 					var neighbor_name = get_data(neighbor).get_text("name")
 					if neighbor_name == "1 - Bernadette":
-						effectCard(row, 0, 1)
+						effectCard(row, 0, -1)
 					elif neighbor_name == "114 - Dixie Kong":
 						draw()
 		
@@ -1341,20 +1341,20 @@ func conditional_effects(card, row):
 	if ennemie_has_card("33 - Dora"):
 		if not card.has_effect("dora_debuff"):
 			card.add_effect("dora_debuff")
-			effectCard(row, 1, 0)
+			effectCard(row, -1, 0)
 	else:
 		if card.has_effect("dora_debuff"):
 			card.remove_effect("dora_debuff")
-			effectCard(row, -1, 0, 0, "bounceback")
+			effectCard(row, 1, 0, 0, "bounceback")
 	
 	if has_card("19 - Kuikui china") and not card.data().get_text("name") == "19 - Kuikui china":
 		if not card.has_effect("china_buff"):
 			card.add_effect("china_buff")
-			effectCard(row, 1, 1)
+			effectCard(row, -1, -1)
 	else:
 		if card.has_effect("china_buff"):
 			card.remove_effect("china_buff")
-			effectCard(row, -1, -1)
+			effectCard(row, 1, 1)
 
 func _on_DiscardBtn_pressed() -> void:
 	var card := _hand_store.get_last()
