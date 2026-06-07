@@ -1350,11 +1350,11 @@ func conditional_effects(card, row):
 	if has_card("19 - Kuikui china") and not card.data().get_text("name") == "19 - Kuikui china":
 		if not card.has_effect("china_buff"):
 			card.add_effect("china_buff")
-			effectCard(row, 1, 1)
+			effectCard(row, -1, -1)
 	else:
 		if card.has_effect("china_buff"):
 			card.remove_effect("china_buff")
-			effectCard(row, -1, -1)
+			effectCard(row, 1, 1)
 
 func _on_DiscardBtn_pressed() -> void:
 	var card := _hand_store.get_last()
