@@ -3395,8 +3395,10 @@ func pressedAllied(row):
 	yield(get_tree().create_timer(0.1), "timeout")
 	if effect_click == "kvikant":
 		effect_card.data().set_text("name", get_data(row).get_text("name"))
-		if not effect_card.data().get_text("name") == "73 - Patrik Kvikant":
-			card_placed(effect_card, effect_base, true)
+		if get_data(row).get_text("name") == "18 - Kuikui cochon":
+				effectCard(effect_base, 0, 1000)
+		elif not effect_card.data().get_text("name") == "73 - Patrik Kvikant":
+				card_placed(effect_card, effect_base, true)
 	elif effect_click == "cerdita":
 		cardDef(row, 2)
 		tempStat(row, 0, 0, 2)
