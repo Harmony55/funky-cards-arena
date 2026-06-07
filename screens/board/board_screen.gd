@@ -23,6 +23,7 @@ var hidenRows = []
 var buffKratos = 0
 var cardKilled = 0
 var cardKilledBobux = 0
+var dejatouiller = false
 
 var deadCardBobux = 0
 var invisibleCards = 0
@@ -2626,11 +2627,6 @@ remotesync func attack_row(i: int, bonus: bool) -> void:
 			"116 - Lanky Kong":
 				_damage(i + 1, attack, i)
 				_damage(i - 1, attack, i)
-				
-			"57 - Sans":
-				_damage(i + 1, attack, i)
-				_damage(i, attack, i)
-				_damage(i - 1, attack, i)
 			
 			"31 - Requin Cerbère":
 				if not bonus:
@@ -2999,6 +2995,14 @@ func effectCard(index: int, atk: int, hp: int, def: int = 0, type: String = "buf
 	# Les cartes qui peuvent pas buff leur attaque
 	if data.get_text("name") == "57 - Sans" and atk < 0:
 		atk = 0
+
+	#si sans a deja n'a pas été touiller
+		
+	if data.get_text("name") == "57 - Sans" and not dejatouiller:
+		reload()
+		check_death()
+		dejatouiller = true
+		return
 	
 	# Applique les changements de stats (pas d'attaque en dessous de 0)
 	data.set_value("hp", data.get_value("hp") - hp)
