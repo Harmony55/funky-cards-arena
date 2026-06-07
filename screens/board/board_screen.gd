@@ -23,7 +23,6 @@ var hidenRows = []
 var buffKratos = 0
 var cardKilled = 0
 var cardKilledBobux = 0
-var dejatouiller = false
 
 var deadCardBobux = 0
 var invisibleCards = 0
