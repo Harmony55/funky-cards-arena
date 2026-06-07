@@ -1136,13 +1136,13 @@ card_57={
 "rarity": "rare"
 },
 "texts": {
-"desc": "Attaque aussi les lignes adjascentes.",
+"desc": "Esquive la premiere attaque reçu.",
 "name": "57 - Sans"
 },
 "values": {
-"attack": 2,
-"hp": 3,
-"mana": 5,
+"attack": 1,
+"hp": 1,
+"mana": 2,
 "tempAtk": 0,
 "tempDef": 0,
 "tempHp": 0,
