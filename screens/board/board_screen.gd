@@ -34,6 +34,7 @@ var doubleLife = false
 
 var bruteInvincible = true
 
+var poissons_sans_passif = ["22 - Truite","23 - Daurade", "24 - Espadon", "27 - Bar", "28 - Vivaneau"]
 
 var ccNn
 var bleach = 0
@@ -927,7 +928,7 @@ func card_placed(card: CardInstance, row: int, is_kvikant: bool = false) -> void
 		"43 - Naruto", "44 - Kratos", "46 - Marshmello",
 		"48 - Le Mandalorien", "51 - Boshi", "52 - Slippy Toad",
 		"60 - Zeko'Chu", "64 - Fredender", "67 - Speedrunner Mario",
-		"68 - Nouri Al-Maliki"
+		"68 - Nouri Al-Maliki", "card_picture_patrik_plongeur"
 	]
 	
 	if ccNn and place.has(name):
@@ -1112,6 +1113,11 @@ func card_placed(card: CardInstance, row: int, is_kvikant: bool = false) -> void
 			var cards = _query_type("creature_type", "dekeskui")
 			cards.erase("card_17")
 			_add_cards_to_hand(cards, 2)
+
+		"card_picture_patrik_plongeur":
+			if get_store_ennemie(row).cards().size() > 0:
+				if get_data_ennemie(row).get_category("creature_type") == "poisson":
+					rpc("effectCardRemote", row, 0, 1000)
 	
 	if not is_kvikant:
 
@@ -3394,9 +3400,14 @@ func pressedAllied(row):
 	$Board/Spot10.visible = false
 	yield(get_tree().create_timer(0.1), "timeout")
 	if effect_click == "kvikant":
-		effect_card.data().set_text("name", get_data(row).get_text("name"))
-		if not effect_card.data().get_text("name") == "73 - Patrik Kvikant":
-			card_placed(effect_card, effect_base, true)
+		if get_data(row).get_text("name") in poissons_sans_passif:
+			effect_card.data().set_text("name","card_picture_patrik_plongeur")
+			if not effect_card.data().get_text("name") == "73 - Patrik Kvikant":
+				card_placed(effect_card, effect_base, true)
+		else:
+			effect_card.data().set_text("name", get_data(row).get_text("name"))
+			if not effect_card.data().get_text("name") == "73 - Patrik Kvikant":
+				card_placed(effect_card, effect_base, true)
 	elif effect_click == "cerdita":
 		cardDef(row, 2)
 		tempStat(row, 0, 0, 2)
