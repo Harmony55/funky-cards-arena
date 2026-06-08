@@ -1141,6 +1141,7 @@ card_57={
 },
 "values": {
 "attack": 1,
+"def": 1,
 "hp": 1,
 "mana": 2,
 "tempAtk": 0,

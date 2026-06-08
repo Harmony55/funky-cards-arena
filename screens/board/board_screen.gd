@@ -23,7 +23,6 @@ var hidenRows = []
 var buffKratos = 0
 var cardKilled = 0
 var cardKilledBobux = 0
-var dejatouiller = false
 
 var deadCardBobux = 0
 var invisibleCards = 0
@@ -1113,6 +1112,9 @@ func card_placed(card: CardInstance, row: int, is_kvikant: bool = false) -> void
 			var cards = _query_type("creature_type", "dekeskui")
 			cards.erase("card_17")
 			_add_cards_to_hand(cards, 2)
+
+		"57 - Sans":
+			card.data.add_value("dejatouiller", true)
 	
 	if not is_kvikant:
 
@@ -2991,17 +2993,13 @@ func effectCard(index: int, atk: int, hp: int, def: int = 0, type: String = "buf
 	# Les cartes qui peuvent pas buff leur attaque
 	if data.get_text("name") == "16 - Dekeskui Cowboy" and atk < 0:
 		atk = 0
-	
-	# Les cartes qui peuvent pas buff leur attaque
-	if data.get_text("name") == "57 - Sans" and atk < 0:
-		atk = 0
 
 	#si sans a deja n'a pas été touiller
 		
-	if data.get_text("name") == "57 - Sans" and not dejatouiller:
+	if data.get_text("name") == "57 - Sans" and not data.get_value("dejatouiller"):
 		reload()
 		check_death()
-		dejatouiller = true
+		data.set_value("dejatouiller", true)
 		return
 	
 	# Applique les changements de stats (pas d'attaque en dessous de 0)
