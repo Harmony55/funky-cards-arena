@@ -1344,11 +1344,11 @@ func conditional_effects(card, row):
 	if ennemie_has_card("33 - Dora"):
 		if not card.has_effect("dora_debuff"):
 			card.add_effect("dora_debuff")
-			effectCard(row, -1, 0)
+			effectCard(row, 1, 0)
 	else:
 		if card.has_effect("dora_debuff"):
 			card.remove_effect("dora_debuff")
-			effectCard(row, 1, 0, 0, "bounceback")
+			effectCard(row, -1, 0, 0, "bounceback")
 	
 	if has_card("19 - Kuikui china") and not card.data().get_text("name") == "19 - Kuikui china":
 		if not card.has_effect("china_buff"):
