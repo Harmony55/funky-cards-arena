@@ -3406,3 +3406,20 @@ emote_59={
 "size": 0.4
 }
 }
+emote_60={
+"categories": {
+"type": "Emote",
+"type_magasin": "emote"
+},
+"texts": {
+"desc_casier": "Pas toujours facile d'etre le GOAT de FCA, les gens ne se rendent pas compte de la pression que c'est",
+"desc_magasin": "Vrai homme joue que des cartes à 10 bobux",
+"name": "Soit Fort",
+"texture_casier": "res://screens/board/Emote/emote_soitfort.png",
+"texture_magasin": "res://screens/board/Emote/emote/emote_soitfort.png"
+},
+"values": {
+"obamium": 500,
+"size": 0.4
+}
+}
