@@ -3413,7 +3413,7 @@ emote_60={
 },
 "texts": {
 "desc_casier": "Pas toujours facile d'etre le GOAT de FCA, les gens ne se rendent pas compte de la pression que c'est",
-"desc_magasin": "Vrai homme joue que des cartes à 10 bobux.",
+"desc_magasin": "Vrai homme joue que des cartes à 10 bobux",
 "name": "Soit Fort",
 "texture_casier": "res://screens/board/Emote/emote_soitfort.png",
 "texture_magasin": "res://screens/board/Emote/emote/emote_soitfort.png"
