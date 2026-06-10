@@ -1576,6 +1576,10 @@ func spell(card, row: int) -> void:
 			if _player_pile_stores[row-1].cards().size() > 0:
 				var cost = get_data(row).get_value("mana") + 1
 				if cost < 9:
+					if get_data(row).get_text("name") == "58 - Harmony55":
+						effectAllCardHand(0, 0, 1)
+					if get_data(row).get_text("name") == "44 - Kratos":
+						effectAllCardBut(row, -1, 0)
 					var newCard: CardInstance = placeCardBobux(row, cost)
 					get_data(row).set_text("name", newCard.data().get_text("name"))
 					get_data(row).set_value("hp", newCard.data().get_value("hp"))
@@ -1667,6 +1671,7 @@ func spell(card, row: int) -> void:
 
 		"Gilet Jaune":
 			effectCard(row, 0, -2, 1)
+			cardDef(row, 1)
 			if get_data(row) and get_data(row).get_text("name") == "21 - Xi Jinping":
 				_unlock_achievement("SuccesHongKong", "res://screens/menu/succes/ManifsHongKong.png")
 
