@@ -1113,11 +1113,6 @@ func card_placed(card: CardInstance, row: int, is_kvikant: bool = false) -> void
 			var cards = _query_type("creature_type", "dekeskui")
 			cards.erase("card_17")
 			_add_cards_to_hand(cards, 2)
-
-		"card_picture_patrik_plongeur":
-			if get_store_ennemie(row).cards().size() > 0:
-				if get_data_ennemie(row).get_category("creature_type") == "poisson":
-					rpc("effectCardRemote", row, 0, 1000)
           
 		"57 - Sans":
 			card.data.add_value("dejatouiller", true)
@@ -3405,11 +3400,7 @@ func pressedAllied(row):
 		if get_data(row).get_text("name") in poissons_sans_passif:
 			effect_card.data().set_text("name","card_picture_patrik_plongeur")
 			if not effect_card.data().get_text("name") == "73 - Patrik Kvikant":
-<<<<<<< Updated upstream
-				card_placed(effect_card, effect_base, true)
-=======
-				effectCard(effect_card, 0, 1000)
->>>>>>> Stashed changes
+				effectCard(row, 0, 1000)
 		else:
 			effect_card.data().set_text("name", get_data(row).get_text("name"))
 			if not effect_card.data().get_text("name") == "73 - Patrik Kvikant":
