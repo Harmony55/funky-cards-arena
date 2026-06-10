@@ -3423,3 +3423,20 @@ emote_60={
 "size": 0.4
 }
 }
+emote_61={
+"categories": {
+"type": "Emote",
+"type_magasin": "emote"
+},
+"texts": {
+"desc_casier": "Maintenant on va rentrer dans un endroit qui est interdit au public, le casier secret du Maréchal Pétain",
+"desc_magasin": "C'est le vrais Kuikui Cowboy, d'Adolf Hitler",
+"name": "Mein Kampf",
+"texture_casier": "res://screens/board/Emote/emote_hitler.png",
+"texture_magasin": "res://screens/board/Emote/emote/emote_hitler.png"
+},
+"values": {
+"obamium": 300,
+"size": 0.4
+}
+}

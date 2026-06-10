@@ -301,22 +301,51 @@ func reset():
 	list = []
 	
 	q = Query.new()
+	
+	# Arènes
 	var arena = q.from(["type_magasin:arena"]).execute(db)
+	
+	# On enlèves les arrênes qu'on peut pas drop
 	arena.erase("arene_48")
 	arena.erase("arene_42")
 	
 	var store5 = CardPile.new()
 	store5.populate(db, arena)
-	store5.shuffle()
-	store5.keep(6)
 	
+	var owned_arenas = []
+	var unowned_arenas = []
+	var user_arenas = UserStores._get_items().get("arena", [])
+	for card in store5.cards():
+		if user_arenas.has(card.data().get_text("name")):
+			owned_arenas.append(card)
+		else:
+			unowned_arenas.append(card)
 	
-	oneArena = store5.cards()[0].data()
-	twoArena = store5.cards()[1].data()
-	threeArena = store5.cards()[2].data()
-	fourArena = store5.cards()[3].data()
-	fiveArena = store5.cards()[4].data()
-	sixArena = store5.cards()[5].data()
+	owned_arenas.shuffle()
+	unowned_arenas.shuffle()
+
+	var chosen_arenas = []
+	# Prend 3 arène que ta pas encore
+	var target_unowned_arenas = min(3, unowned_arenas.size())
+	
+	# Prend en 3
+	for i in range(target_unowned_arenas):
+		chosen_arenas.append(unowned_arenas.pop_back())
+		
+	# Les 3 autres c'est tirer random comme dab
+	var remaining_arenas = []
+	remaining_arenas.append_array(unowned_arenas)
+	remaining_arenas.append_array(owned_arenas)
+	remaining_arenas.shuffle()
+	while chosen_arenas.size() < 6 and not remaining_arenas.empty():
+		chosen_arenas.append(remaining_arenas.pop_back())
+	
+	oneArena = chosen_arenas[0].data()
+	twoArena = chosen_arenas[1].data()
+	threeArena = chosen_arenas[2].data()
+	fourArena = chosen_arenas[3].data()
+	fiveArena = chosen_arenas[4].data()
+	sixArena = chosen_arenas[5].data()
 	
 	save += "|"
 	save += oneArena.id
@@ -331,6 +360,7 @@ func reset():
 	save += "|"
 	save += sixArena.id
 	
+	# Les emotes les emotes !!!!
 	q = Query.new()
 	var emote = q.from(["type_magasin:emote"]).execute(db)
 	
@@ -344,20 +374,43 @@ func reset():
 	emote.erase("emote_48")
 	emote.erase("emote_59")
 	
+	# Bon ça marche pareil que les arènes brf
 	var store6 = CardPile.new()
 	store6.populate(db, emote)
-	store6.shuffle()
-	store6.keep(6)
 	
+	var owned_emotes = []
+	var unowned_emotes = []
+	var user_emotes = UserStores._get_items().get("emote", []) 
 
+	for card in store6.cards():
+		if user_emotes.has(card.data().get_text("name")):
+			owned_emotes.append(card)
+		else:
+			unowned_emotes.append(card)
 	
+	owned_emotes.shuffle()
+	unowned_emotes.shuffle()
 	
-	oneEmote = store6.cards()[0].data()
-	twoEmote = store6.cards()[1].data()
-	threeEmote = store6.cards()[2].data()
-	fourEmote = store6.cards()[3].data()
-	fiveEmote = store6.cards()[4].data()
-	sixEmote = store6.cards()[5].data()
+	var chosen_emotes = []
+	var target_unowned_emotes = min(3, unowned_emotes.size())
+	
+	for i in range(target_unowned_emotes):
+		chosen_emotes.append(unowned_emotes.pop_back())
+	
+	var remaining_emotes = []
+	remaining_emotes.append_array(unowned_emotes)
+	remaining_emotes.append_array(owned_emotes)
+	remaining_emotes.shuffle()
+	
+	while chosen_emotes.size() < 6 and not remaining_emotes.empty():
+		chosen_emotes.append(remaining_emotes.pop_back())
+		
+	oneEmote = chosen_emotes[0].data()
+	twoEmote = chosen_emotes[1].data()
+	threeEmote = chosen_emotes[2].data()
+	fourEmote = chosen_emotes[3].data()
+	fiveEmote = chosen_emotes[4].data()
+	sixEmote = chosen_emotes[5].data()
 	
 	save += "|"
 	save += oneEmote.id
