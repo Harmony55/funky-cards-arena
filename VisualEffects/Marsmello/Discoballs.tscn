@@ -1,0 +1,157 @@
+[gd_scene load_steps=8 format=3 uid="uid://b1icf11723onx"]
+
+[ext_resource type="Texture2D" uid="uid://cvuv6gnfvgpmm" path="res://Marsmello/Capture d’écran 2026-06-04 233052.png" id="1_6grco"]
+[ext_resource type="Texture2D" uid="uid://w0gdu2h35jcd" path="res://Marsmello/ezgif-1ee22b36d65befbc.png" id="2_aes00"]
+
+[sub_resource type="Gradient" id="Gradient_mhqic"]
+offsets = PackedFloat32Array(0.16433567, 0.27622378)
+colors = PackedColorArray(0, 0, 0, 0, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_rllvl"]
+gradient = SubResource("Gradient_mhqic")
+fill_to = Vector2(0, 1)
+
+[sub_resource type="Animation" id="Animation_t6qry"]
+resource_name = "DiscoBallAnimation"
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D/Ezgif1Ee22b36d65Befbc:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, -50), Vector2(0, 3.755867), Vector2(0, 3.755867), Vector2(0, -50)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D/Ezgif1Ee22b36d65Befbc:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.90000004),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 11]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D2/Ezgif1Ee22b36d65Befbc:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, -50), Vector2(0, 3.756), Vector2(0, 3.756), Vector2(0, -50)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D2/Ezgif1Ee22b36d65Befbc:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [11, 0]
+}
+
+[sub_resource type="Animation" id="Animation_d1yw1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D/Ezgif1Ee22b36d65Befbc:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -50)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D/Ezgif1Ee22b36d65Befbc:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [11]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D2/Ezgif1Ee22b36d65Befbc:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 3.756)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D2/Ezgif1Ee22b36d65Befbc:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vefdq"]
+_data = {
+&"DiscoBallAnimation": SubResource("Animation_t6qry"),
+&"RESET": SubResource("Animation_d1yw1")
+}
+
+[node name="Discoballs" type="Node2D"]
+
+[node name="CaptureD’écran20260604233052" type="Sprite2D" parent="."]
+texture = ExtResource("1_6grco")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+clip_children = 1
+position = Vector2(-173, -60.499996)
+scale = Vector2(2.03125, 3.3281252)
+texture = SubResource("GradientTexture2D_rllvl")
+
+[node name="Ezgif1Ee22b36d65Befbc" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(0, -50)
+scale = Vector2(0.492, 0.271)
+texture = ExtResource("2_aes00")
+vframes = 12
+frame = 11
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+clip_children = 1
+position = Vector2(175, -60.000004)
+scale = Vector2(2.03125, 3.3281252)
+texture = SubResource("GradientTexture2D_rllvl")
+
+[node name="Ezgif1Ee22b36d65Befbc" type="Sprite2D" parent="Sprite2D2"]
+position = Vector2(0, 3.756)
+scale = Vector2(0.492, 0.271)
+texture = ExtResource("2_aes00")
+vframes = 12
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_vefdq")
+}
+speed_scale = 0.6
