@@ -1,4 +1,4 @@
-[gd_scene load_steps=144 format=2]
+[gd_scene load_steps=147 format=2]
 
 [ext_resource path="res://screens/board/board_screen.gd" type="Script" id=1]
 [ext_resource path="res://widgets/small_button/small_button.tscn" type="PackedScene" id=2]
@@ -1782,6 +1782,13 @@ bus = "Effect"
 
 [node name="unit_test" type="Node" parent="."]
 script = ExtResource( 112 )
+
+[node name="BOARDVISUALEFFECTS" type="Node2D" parent="."]
+script = ExtResource( 114 )
+
+[node name="CaptureD’écran2026-06-04233052" type="Sprite" parent="."]
+position = Vector2( 537, 65 )
+texture = ExtResource( 115 )
 
 [connection signal="card_dropped" from="Board/Pile1" to="." method="_on_pile_card_dropped" binds= [ 1 ]]
 [connection signal="card_dropped" from="Board/Pile21" to="." method="_on_enemy_pile_dropped" binds= [ 1 ]]

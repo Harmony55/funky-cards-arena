@@ -79,6 +79,7 @@ var orbeEnnemieHp = 0
 
 puppet var card_number = 0
 
+onready var Visual_effects = $BOARDVISUALEFFECTS
 onready var _board = $Board
 
 onready var _hand = $Board/Hand
@@ -101,6 +102,7 @@ onready var _pile25 = $Board/Pile25
 onready var _enemy_piles = [_pile21, _pile22, _pile23, _pile24, _pile25]
 
 onready var orbeEnnemie = $Board/OrbeHPEnnemie
+
 
 var OrbeVerte = preload("res://screens/board/Orbe_Verte.png")
 var OrbeRouge = preload("res://screens/board/Orbe_Rouge.png")
@@ -1040,6 +1042,7 @@ func card_placed(card: CardInstance, row: int, is_kvikant: bool = false) -> void
 
 		"46 - Marshmello":
 			yield(get_tree().create_timer(0.1), "timeout")
+			Visual_effects.add_effect(row,"Marshmello")
 			if row < 5: effectCard(row + 1, 0, -2)
 			if row > 1: effectCard(row - 1, 0, -2)
 
