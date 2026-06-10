@@ -314,7 +314,7 @@ func reset():
 	
 	var owned_arenas = []
 	var unowned_arenas = []
-	var user_arenas = UserStores._get_items().get("arena", [])
+	var user_arenas = UserStores._get_items().get("arena")
 	for card in store5.cards():
 		if user_arenas.has(card.data().get_text("name")):
 			owned_arenas.append(card)
@@ -380,7 +380,7 @@ func reset():
 	
 	var owned_emotes = []
 	var unowned_emotes = []
-	var user_emotes = UserStores._get_items().get("emote", []) 
+	var user_emotes = UserStores._get_items().get("emote") 
 
 	for card in store6.cards():
 		if user_emotes.has(card.data().get_text("name")):

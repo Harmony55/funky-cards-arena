@@ -3048,6 +3048,10 @@ func effectCard(index: int, atk: int, hp: int, def: int = 0, type: String = "buf
 					if def > 0:
 						cardDef(target_idx, def)
 	
+	# Si ça prend des dégats
+	if hp > 0:
+		pass
+	
 	reload()
 	check_death()
 	
