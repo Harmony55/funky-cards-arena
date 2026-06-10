@@ -3405,9 +3405,8 @@ func pressedAllied(row):
 	if effect_click == "kvikant":
 		if get_data(row).get_text("name") in poissons_sans_passif:
 			effect_card.data().set_text("name","card_picture_patrik_plongeur")
-# Les pauvres poissons
-#			if not effect_card.data().get_text("name") == "73 - Patrik Kvikant":
-#				effectCard(row, 0, 1000)
+			if not effect_card.data().get_text("name") == "73 - Patrik Kvikant":
+				effectCard(row, 0, 1000)
 		else:
 			effect_card.data().set_text("name", get_data(row).get_text("name"))
 			if not effect_card.data().get_text("name") == "73 - Patrik Kvikant":
