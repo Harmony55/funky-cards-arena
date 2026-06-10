@@ -744,6 +744,10 @@ func getTypeNumber(type):
 		if _player_pile_stores[i - 1].cards().size() > 0:
 			if _player_pile_stores[i - 1].cards()[0].data().get_category("creature_type") == type:
 				number += 1
+	for i in range(1, 6):
+		if _enemy_pile_stores[i - 1].cards().size() > 0:
+			if _enemy_pile_stores[i - 1].cards()[0].data().get_category("creature_type") == type:
+				number += 1
 	return number
 
 remote func giveCardTypeRemote(type, number):
