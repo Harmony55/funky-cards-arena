@@ -34,6 +34,7 @@ var doubleLife = false
 
 var bruteInvincible = true
 
+var poissons_sans_passif = ["22 - Truite","23 - Daurade", "24 - Espadon", "27 - Bar", "28 - Vivaneau"]
 
 var ccNn
 var bleach = 0
@@ -743,6 +744,9 @@ func getTypeNumber(type):
 	for i in range(1, 6):
 		if _player_pile_stores[i - 1].cards().size() > 0:
 			if _player_pile_stores[i - 1].cards()[0].data().get_category("creature_type") == type:
+				number += 1
+		if _enemy_pile_stores[i - 1].cards().size() > 0:
+			if _enemy_pile_stores[i - 1].cards()[0].data().get_category("creature_type") == type:
 				number += 1
 	return number
 
@@ -3399,9 +3403,14 @@ func pressedAllied(row):
 	$Board/Spot10.visible = false
 	yield(get_tree().create_timer(0.1), "timeout")
 	if effect_click == "kvikant":
-		effect_card.data().set_text("name", get_data(row).get_text("name"))
-		if not effect_card.data().get_text("name") == "73 - Patrik Kvikant":
-			card_placed(effect_card, effect_base, true)
+		if get_data(row).get_text("name") in poissons_sans_passif:
+			effect_card.data().set_text("name","card_picture_patrik_plongeur")
+			if not effect_card.data().get_text("name") == "73 - Patrik Kvikant":
+				effectCard(row, 0, 1000)
+		else:
+			effect_card.data().set_text("name", get_data(row).get_text("name"))
+			if not effect_card.data().get_text("name") == "73 - Patrik Kvikant":
+				card_placed(effect_card, effect_base, true)
 	elif effect_click == "cerdita":
 		cardDef(row, 2)
 		tempStat(row, 0, 0, 2)
