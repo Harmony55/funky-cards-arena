@@ -1113,8 +1113,6 @@ func card_placed(card: CardInstance, row: int, is_kvikant: bool = false) -> void
 			cards.erase("card_17")
 			_add_cards_to_hand(cards, 2)
 
-		"57 - Sans":
-			card.data.add_value("dejatouiller", true)
 	
 	if not is_kvikant:
 
@@ -2996,10 +2994,10 @@ func effectCard(index: int, atk: int, hp: int, def: int = 0, type: String = "buf
 
 	#si sans a deja n'a pas été touiller
 		
-	if data.get_text("name") == "57 - Sans" and not data.get_value("dejatouiller"):
+	if data.get_text("name") == "57 - Sans" and not get_store(index).cards()[0].has_effect("dejatouiller"):
 		reload()
 		check_death()
-		data.set_value("dejatouiller", true)
+		get_store(index).cards()[0].add_effect("dejatouiller")
 		return
 	
 	# Applique les changements de stats (pas d'attaque en dessous de 0)
