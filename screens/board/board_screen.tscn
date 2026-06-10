@@ -112,6 +112,9 @@
 [ext_resource path="res://screens/board/orbe_goku.png" type="Texture" id=110]
 [ext_resource path="res://screens/board/skin_masquarade.png" type="Texture" id=111]
 [ext_resource path="res://screens/board/unit_test.gd" type="Script" id=112]
+[ext_resource path="res://VisualEffects/Marsmello/Marselo.tscn" type="PackedScene" id=113]
+[ext_resource path="res://screens/board/BoardVisualEffects.gd" type="Script" id=114]
+[ext_resource path="res://VisualEffects/Marsmello/Capture d’écran 2026-06-04 233052.png" type="Texture" id=115]
 
 [sub_resource type="Animation" id=25]
 resource_name = "Hover"
