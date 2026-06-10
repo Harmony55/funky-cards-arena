@@ -3301,7 +3301,7 @@ emote_53={
 },
 "values": {
 "obamium": 200,
-"size": 0
+"size": 0.4
 }
 }
 emote_54={
@@ -3437,6 +3437,6 @@ emote_61={
 },
 "values": {
 "obamium": 300,
-"size": 0
+"size": 0.4
 }
 }
