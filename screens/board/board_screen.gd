@@ -744,6 +744,10 @@ func getTypeNumber(type):
 		if _player_pile_stores[i - 1].cards().size() > 0:
 			if _player_pile_stores[i - 1].cards()[0].data().get_category("creature_type") == type:
 				number += 1
+	for i in range(1, 6):
+		if _enemy_pile_stores[i - 1].cards().size() > 0:
+			if _enemy_pile_stores[i - 1].cards()[0].data().get_category("creature_type") == type:
+				number += 1
 	return number
 
 remote func giveCardTypeRemote(type, number):
@@ -2559,6 +2563,8 @@ func take_damage(target_row: int, attacker_row: int, damage: int, type: String =
 		if type != "noharam" and type != "spell" and type != "magic":
 			if type == "chob":
 				hurtOrbe(2, attacker_row)
+			if type =="justice":
+				return
 			hurtOrbe(damage, attacker_row)
 	
 	if data:
@@ -3015,7 +3021,7 @@ func effectCard(index: int, atk: int, hp: int, def: int = 0, type: String = "buf
 	#Cartes qui redirigent les buffs
 	if type == "buff":
 		# Buff de Ninja Kong (si c'était un buff)
-		if atk <= 0 or hp <= 0:
+		if atk < 0 or hp < 0:
 			if data.get_text("name") != "115 - Ninja Kong":
 				for i in returnCards("115 - Ninja Kong"):
 					if i != index:
