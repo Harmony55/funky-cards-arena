@@ -3293,7 +3293,7 @@ emote_53={
 "type_magasin": "emote"
 },
 "texts": {
-"desc_casier": "Tout ça pour se prendre un Pizza Time",
+"desc_casier": "Legendary coffre au trésor pull",
 "desc_magasin": "La chance te souris enfin après 27 game",
 "name": "Pray",
 "texture_casier": "res://screens/board/Emote/emote_pray.png",
@@ -3301,7 +3301,7 @@ emote_53={
 },
 "values": {
 "obamium": 200,
-"size": 0.4
+"size": 0
 }
 }
 emote_54={
@@ -3437,6 +3437,6 @@ emote_61={
 },
 "values": {
 "obamium": 300,
-"size": 0.4
+"size": 0
 }
 }

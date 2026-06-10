@@ -1658,7 +1658,7 @@ card_07={
 "name": "Coffre au Trésor"
 },
 "values": {
-"mana": 0,
+"mana": 1,
 "tempAtk": 0,
 "tempDef": 0,
 "tempHp": 0,
