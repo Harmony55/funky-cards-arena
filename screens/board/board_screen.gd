@@ -1667,6 +1667,7 @@ func spell(card, row: int) -> void:
 
 		"Gilet Jaune":
 			effectCard(row, 0, -2, 1)
+			cardDef(row, 1)
 			if get_data(row) and get_data(row).get_text("name") == "21 - Xi Jinping":
 				_unlock_achievement("SuccesHongKong", "res://screens/menu/succes/ManifsHongKong.png")
 
