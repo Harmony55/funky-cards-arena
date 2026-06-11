@@ -2560,7 +2560,7 @@ func take_damage(target_row: int, attacker_row: int, damage: int, type: String =
 			effectCard(target_row, 0, damage)
 	# Il y a pas de carte, attaquer l'orbe
 	else:
-		if type != "noharam" and type != "spell" and type != "magic":
+		if type != "noharam" and type != "spell" and type != "magic" and type != "justice":
 			if type == "chob":
 				hurtOrbe(2, attacker_row)
 			hurtOrbe(damage, attacker_row)
