@@ -3411,10 +3411,12 @@ func pressedAllied(row):
 			effect_card.data().set_text("name","card_picture_patrik_plongeur")
 			if not effect_card.data().get_text("name") == "73 - Patrik Kvikant":
 				effectCard(row, 0, 1000)
-		else:
-			effect_card.data().set_text("name", get_data(row).get_text("name"))
-			if not effect_card.data().get_text("name") == "73 - Patrik Kvikant":
-				card_placed(effect_card, effect_base, true)
+		elif not get_store(row).cards()[0].has_effect("c kvikant"):
+				effect_card.data().set_text("name", get_data(row).get_text("name"))
+				effect_card.add_effect("c kvikant")
+				if not effect_card.data().get_text("name") == "73 - Patrik Kvikant":
+					card_placed(effect_card, effect_base, true)
+					
 	elif effect_click == "cerdita":
 		cardDef(row, 2)
 		tempStat(row, 0, 0, 2)
