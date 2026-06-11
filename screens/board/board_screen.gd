@@ -36,6 +36,8 @@ var bruteInvincible = true
 
 var poissons_sans_passif = ["22 - Truite","23 - Daurade", "24 - Espadon", "27 - Bar", "28 - Vivaneau"]
 
+var dejachipper = false
+
 var ccNn
 var bleach = 0
 
@@ -1062,7 +1064,8 @@ func card_placed(card: CardInstance, row: int, is_kvikant: bool = false) -> void
 			rpc("killFish")
 
 		"34 - Chippeur":
-			if not ennemie_has_card("33 - Dora"):
+			if not ennemie_has_card("33 - Dora") and not dejachipper:
+				dejachipper = true
 				rpc("randomHandCardRemote")
 
 		"20 - Sparkle":
@@ -2810,6 +2813,7 @@ remotesync func attack():
 		cringe_orba()
 
 func turnPass():
+	dejachipper = false
 	for i in range(1,6):
 		if _player_pile_stores[i-1].cards().size() > 0:
 			if get_data(i).get_value("tempHp") > 0 or get_data(i).get_value("tempAtk") > 0 or get_data(i).get_value("tempDef") > 0:
