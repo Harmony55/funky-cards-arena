@@ -482,10 +482,10 @@ anchor_left = 0.001
 anchor_top = 0.001
 anchor_right = 0.001
 anchor_bottom = 0.001
-margin_left = 1.0
-margin_top = 1.0
-margin_right = 1284.0
-margin_bottom = 388.0
+margin_left = -0.28
+margin_top = 0.28
+margin_right = 1282.72
+margin_bottom = 387.28
 texture = ExtResource( 10 )
 expand = true
 stretch_mode = 5
@@ -530,16 +530,16 @@ anchor_left = 0.016
 anchor_top = 0.139
 anchor_right = 0.985
 anchor_bottom = 0.903
-margin_left = 21.0
-margin_top = 360.0
-margin_right = 1261.0
-margin_bottom = 910.0
+margin_left = 0.519999
+margin_top = 259.92
+margin_right = 0.199951
+margin_bottom = 259.84
 rect_min_size = Vector2( 1240, 550 )
 
 [node name="LibraryBg" type="TextureRect" parent="BuilderLayout"]
 self_modulate = Color( 1, 1, 1, 0 )
-margin_right = 3476.0
-margin_bottom = 1650.0
+margin_right = 2236.0
+margin_bottom = 1100.0
 rect_min_size = Vector2( 0, 60 )
 size_flags_horizontal = 3
 texture = ExtResource( 2 )
@@ -555,8 +555,8 @@ margin_right = -292.02
 margin_bottom = -58.2
 
 [node name="LibraryContainer" parent="BuilderLayout/LibraryBg/LibraryScroll" instance=ExtResource( 4 )]
-margin_right = 4052.12
-margin_bottom = 1057.9
+margin_right = 2509.56
+margin_bottom = 788.95
 size_flags_horizontal = 3
 size_flags_vertical = 3
 in_anchor = NodePath("../../InAnchor")
@@ -577,9 +577,9 @@ rect_rotation = 90.0
 rect_scale = Vector2( 1e-05, 1e-05 )
 
 [node name="DeckBg" type="TextureRect" parent="BuilderLayout"]
-margin_left = 3480.0
-margin_right = 3720.0
-margin_bottom = 1650.0
+margin_left = 2240.0
+margin_right = 2480.0
+margin_bottom = 1100.0
 rect_min_size = Vector2( 240, 0 )
 
 [node name="CardDrop" type="Control" parent="BuilderLayout/DeckBg"]
@@ -685,18 +685,20 @@ margin_bottom = 16.0
 [node name="DeckScroll" type="ScrollContainer" parent="BuilderLayout/DeckBg/CardDrop/DeckLayout"]
 margin_top = 20.0
 margin_right = 1237.0
-margin_bottom = 1340.0
+margin_bottom = 20.0
 mouse_filter = 1
-size_flags_vertical = 3
 scroll_horizontal_enabled = false
 scroll_vertical_enabled = false
 
 [node name="DeckList" type="GridContainer" parent="BuilderLayout/DeckBg/CardDrop/DeckLayout/DeckScroll"]
-margin_right = 1237.0
-margin_bottom = 1320.0
-size_flags_horizontal = 3
 size_flags_vertical = 3
 columns = 9
+
+[node name="DeckBtn" type="Button" parent="BuilderLayout/DeckBg/CardDrop"]
+margin_left = -701.48
+margin_top = -263.08
+margin_right = -407.48
+margin_bottom = -231.08
 
 [node name="Search" type="Sprite" parent="."]
 position = Vector2( 1000, 394 )
@@ -740,7 +742,7 @@ __meta__ = {
 anchor_right = 1.0
 margin_left = 992.0
 margin_top = 450.0
-margin_right = 1275.0
+margin_right = -5.0
 margin_bottom = 713.0
 rect_min_size = Vector2( 283, 263 )
 color = Color( 0, 0, 0, 0 )
@@ -767,16 +769,16 @@ __meta__ = {
 }
 
 [node name="Separator" type="Control" parent="TitleBg/TitleLayout"]
-margin_right = 2833.0
+margin_right = 1553.0
 rect_min_size = Vector2( 20, 0 )
 
 [node name="CategoriesLayout" type="VBoxContainer" parent="TitleBg/TitleLayout"]
 margin_top = 4.0
-margin_right = 2833.0
+margin_right = 1553.0
 margin_bottom = 52.0
 
 [node name="ClassLayout" type="HBoxContainer" parent="TitleBg/TitleLayout/CategoriesLayout"]
-margin_right = 2833.0
+margin_right = 1553.0
 margin_bottom = 20.0
 
 [node name="ClassLbl" type="Label" parent="TitleBg/TitleLayout/CategoriesLayout/ClassLayout"]
@@ -803,7 +805,7 @@ text = "ccc"
 
 [node name="RarityLayout" type="HBoxContainer" parent="TitleBg/TitleLayout/CategoriesLayout"]
 margin_top = 24.0
-margin_right = 2833.0
+margin_right = 1553.0
 margin_bottom = 48.0
 
 [node name="RarityLbl" type="Label" parent="TitleBg/TitleLayout/CategoriesLayout/RarityLayout"]
@@ -832,11 +834,11 @@ text = "ccc"
 
 [node name="ValuesLayout" type="VBoxContainer" parent="TitleBg/TitleLayout"]
 margin_top = 56.0
-margin_right = 2833.0
+margin_right = 1553.0
 margin_bottom = 101.0
 
 [node name="Values" type="OptionButton" parent="TitleBg/TitleLayout/ValuesLayout"]
-margin_right = 2833.0
+margin_right = 1553.0
 margin_bottom = 17.0
 rect_min_size = Vector2( 150, 0 )
 custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
@@ -856,11 +858,11 @@ __meta__ = {
 
 [node name="ComparisionLayout" type="HBoxContainer" parent="TitleBg/TitleLayout/ValuesLayout"]
 margin_top = 21.0
-margin_right = 2833.0
+margin_right = 1553.0
 margin_bottom = 45.0
 
 [node name="ComparisonOperator" type="OptionButton" parent="TitleBg/TitleLayout/ValuesLayout/ComparisionLayout"]
-margin_right = 2755.0
+margin_right = 1475.0
 margin_bottom = 24.0
 size_flags_horizontal = 3
 custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
@@ -881,8 +883,8 @@ __meta__ = {
 }
 
 [node name="ComparisonValue" type="SpinBox" parent="TitleBg/TitleLayout/ValuesLayout/ComparisionLayout"]
-margin_left = 2759.0
-margin_right = 2833.0
+margin_left = 1479.0
+margin_right = 1553.0
 margin_bottom = 24.0
 allow_greater = true
 allow_lesser = true
@@ -892,7 +894,7 @@ __meta__ = {
 
 [node name="SortLayout" type="GridContainer" parent="TitleBg/TitleLayout"]
 margin_top = 105.0
-margin_right = 2833.0
+margin_right = 1553.0
 margin_bottom = 197.0
 
 [node name="RaritySort" type="CheckBox" parent="TitleBg/TitleLayout/SortLayout"]
@@ -917,7 +919,7 @@ text = "Trie par nom"
 
 [node name="Spacer" type="Control" parent="TitleBg/TitleLayout"]
 margin_top = 201.0
-margin_right = 2833.0
+margin_right = 1553.0
 margin_bottom = 201.0
 size_flags_horizontal = 3
 
@@ -1098,6 +1100,16 @@ texture_pressed = ExtResource( 39 )
 texture_hover = ExtResource( 41 )
 expand = true
 stretch_mode = 5
+
+[node name="DeckPanel" type="Panel" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="DeckPanel"]
+margin_right = 12.0
+margin_bottom = 12.0
+
+[node name="DeckVBox" type="VBoxContainer" parent="DeckPanel/ScrollContainer"]
 
 [connection signal="mouse_entered" from="Bande" to="." method="_on_Bande_mouse_entered"]
 [connection signal="resized" from="BuilderLayout/LibraryBg/LibraryScroll" to="." method="_on_LibraryScroll_resized"]

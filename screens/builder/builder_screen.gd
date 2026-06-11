@@ -25,6 +25,11 @@ onready var _save_btn = $SaveBtn
 onready var _deck_name = $BuilderLayout/DeckBg/CardDrop/DeckName
 onready var _use_btn = $BuilderLayout/DeckBg/CardDrop/UseBtn
 
+#Pour la liste des decks:
+onready var _deck_btn = $BuilderLayout/DeckBg/CardDrop/DeckBtn
+onready var _deck_panel = $DeckPanel
+onready var _deck_vbox = $DeckPanel/ScrollContainer/DeckVBox
+var _deck_ids = []
 
 
 onready var texture = preload("res://screens/menu/Ribanbelle3AM.png")
@@ -37,9 +42,22 @@ onready var boxOn = preload("res://screens/builder/boxFull.png")
 	
 
 func _ready() -> void:
+	_deck_select.hide()  # pour cacher l'ancien bouton de liste des decks
+	_deck_panel.hide()  # caché par défaut
+	_deck_btn.connect("pressed", self, "_on_DeckBtn_pressed")
+	
+	_deck_panel.rect_min_size = Vector2(300, 250)
+	$DeckPanel/ScrollContainer.rect_min_size = Vector2(300, 250)
+	
+	
 	$BuilderLayout.rect_size = Vector2(1240, 550)
 	
 	$AudioStreamPlayer.play(Global.music_timeCasier)
+	
+	# Eviter le bug qui empêche de scroller dans les 67 decks (ca appel 2 fonctions)
+	var popup = find_node("DeckSelect").get_popup()
+	popup.connect("about_to_show", self, "_on_deck_popup_show")
+	
 	
 	var db = CardEngine.db().get_database("main")
 	var cards = Global.cardsHad.keys()
@@ -91,7 +109,7 @@ func _ready() -> void:
 		$AudioStreamPlayer.play()
 		
 	$BuilderLayout/DeckBg.rect_position = Vector2(1000,-12)
-	
+
 	if _contains and _contains.get_child_count() > 1:
 		var inner_container = _contains.get_child(1).get_child(0)
 		for child in inner_container.get_children():
@@ -365,14 +383,23 @@ func _change_btn_text(btn, txt: String) -> void:
 
 
 func _update_deck_select() -> void:
-	_deck_select.clear()
-	var decks = UserStores.saved_stores()
-	_deck_select.add_item("Charger deck")
-	_deck_select.set_item_disabled(0, true)
-	for id in decks:
-		_deck_select.add_item(decks[id])
-		_deck_select.set_item_metadata(_deck_select.get_item_count()-1, id)
+	for child in _deck_vbox.get_children():
+		child.queue_free()
+	_deck_ids.clear()
 
+	var decks = UserStores.saved_stores()
+	_deck_btn.text = "Charger deck"
+
+	var i = 0
+	for id in decks:
+		_deck_ids.append(id)
+		var btn = Button.new()
+		btn.text = decks[id]
+		btn.rect_min_size = Vector2(280, 35)  # ← ajoute ça
+		btn.size_flags_horizontal = Control.SIZE_EXPAND_FILL  # ← et ça
+		btn.connect("pressed", self, "_select_deck", [i])
+		_deck_vbox.add_child(btn)
+		i += 1
 
 func _update_save_btn() -> void:
 	if _deck_name.text.empty() or _deck.is_empty():
@@ -512,12 +539,25 @@ func _on_CardDrop_dropped(card: CardInstance, _source: String, _on_card: CardIns
 	_update_save_btn()
 
 
-func _on_DeckCard_pressed(id: String) -> void:
-	_deck.remove_last(id)
+func _on_DeckBtn_pressed():
+	$click.play()
+	if _deck_panel.visible:
+		_deck_panel.hide()
+		return
+	var gpos = _deck_btn.rect_global_position
+	_deck_panel.rect_position = Vector2(gpos.x, gpos.y + _deck_btn.rect_size.y)
+	_deck_panel.show()
+
+func _select_deck(index: int):
+	_deck_panel.hide()
+	_deck.clear()
+	UserStores.load_store(_deck_ids[index], _deck)
+	_deck_name.text = _deck.save_name
+	_deck_btn.text = _deck.save_name
 	_update_deck_list()
 	_update_save_btn()
-
-
+	Global.deckSelect = index + 1
+	
 func _on_DeckSelect_item_selected(index: int) -> void:
 	if index == 0:
 		return
