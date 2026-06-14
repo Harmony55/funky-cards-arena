@@ -3005,16 +3005,12 @@ func effectCard(index: int, atk: int, hp: int, def: int = 0, type: String = "buf
 	if data.get_text("name") == "16 - Dekeskui Cowboy" and atk < 0:
 		atk = 0
 
-	#si sans a deja n'a pas été touiller
-		
-	if data.get_text("name") == "57 - Sans" and not get_store(index).cards()[0].has_effect("dejatouiller"):
-		reload()
-		check_death()
-		get_store(index).cards()[0].add_effect("dejatouiller")
-		return
-	
 	# Applique les changements de stats (pas d'attaque en dessous de 0)
-	data.set_value("hp", data.get_value("hp") - hp)
+	# Si Sans n'a pas deja été touiller
+	if data.get_text("name") == "57 - Sans" and not get_store(index).cards()[0].has_effect("dejatouiller") and hp > 0:
+		get_store(index).cards()[0].add_effect("dejatouiller")
+	else:
+		data.set_value("hp", data.get_value("hp") - hp)
 	data.set_value("attack", data.get_value("attack") - atk)
 	if data.get_value("attack") - atk < 0:
 		data.set_value("attack", 0) 
