@@ -519,6 +519,13 @@ func _on_DeckCard_pressed(id: String) -> void:
 
 
 func _on_DeckSelect_item_selected(index: int) -> void:
+	
+	var popup = get_node("_popup") # ou $PopupMenu selon la build exacte
+	
+	# Si trouvé, on bride sa hauteur par rapport à l'écran
+	if popup:
+		var window_height = get_viewport().size.y
+		popup.max_size.y = window_height * 0.5
 	if index == 0:
 		return
 
